@@ -9,6 +9,7 @@ Some of my learning notes.
 - [Programming](https://github.com/Wafer-Li/Learnning/tree/master/Programming)
   - [Android](https://github.com/Wafer-Li/Learnning/blob/master/Programming/Android%20Learning.markdown)
   - [Java](https://github.com/Wafer-Li/Learnning/blob/master/Programming/Java%20Learning.markdown)
+  - [Algorithm](https://github.com/Wafer-Li/Learnning/blob/master/Programming/Algorithm.markdown)
 
 ## Language
 [Cmd Markdown](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown)
