@@ -706,6 +706,268 @@ public static void merge(Comparable[] a, int lo, int mid, int hi) {
 }
 ```
 
+#### 2) From Top To Bottom
+
+> This theory is divide the Set and recursive sort and merge.
+
+```java
+public static void sort(Comparable[] a) {
+    aux = new Comparable[a.lenth];
+    sort(a, 0, a.lenth - 1);
+}
+
+private static void sort(Comparable[] a, int lo, int hi) {
+    if (hi <= lo) return;
+    int mid = lo + (hi - lo) / 2;
+    
+    sort(a, lo, mid);       // Sort the left side
+    sort(a, mid + 1, hi);   // Sort the right side
+    
+    merge(a, lo, mid, hi);  // Merge the result
+}
+```
+
+- Notice:
+> Only the `merge()` method work with the sort, The `sort()` method is to divide and do the recursive `merge()`
+
+- Conclusion
+    1. The From Top To Buttom Merge Sort needs ${1 \over 2} NlogN \sim NlogN$
+    2. For the $N$ lenth array, from top to buttom merge sort needs $6NlogN$ times array accesses
+
+#### 3) From Buttom To Top
+
+> This theory is to merge the child array pairly, that is, 
+first we merge that child array which contains 2 items, and then 4, then 8, $\dots$
+
+- Implementation
+
+```java
+public static void sort(Comparable[] a) {
+    int N = a.lenth;
+    aux = new Comparable[N];
+    
+    for (int sz = 1; sz < N; sz = sz + sz) {
+        for (int lo = 0; lo < N - sz; lo + = sz + sz) {
+            merge (a, log, lo + sz - 1, Math.min(lo + sz + sz - 1, N - 1));
+        }
+    }
+}
+```
+
+- Notice:
+> It use the loop to implemente the algorithm, rather than recursive.
+
+- Conclusion
+    1. For the $N$ lenth array, this sort method needs ${1 \over 2} NlogN \sim NlogN$ times comparisions and needs to access the array $6NlogN$ times at **most**.
+    2. This method fixs with the **Linked List** organized data, it Only need to reorganize the the linking with sorting it successful. Do NOT need to create the List Node.
+        
+#### 4) Comparision
+
+> Here are the comparasion of two ways of Merge Sort
+
+1. Two ways have **the same cost**, when the array is $2^N$
+> They have the same level of times item comparision, and the same level of times of accessing the arrray.
+
+2. Normally, **the BU way is more efficiently** than the UB way
+> Just because the UB way use the implementation of recursive.
+It will cost **more memory spece** than the loop version.
+
+3. In some situation, the conclusion might be **opposite**.
+
+#### 5) Outlook
+
+<span style="font-size:20px;">
+The Merge sort is the **Progressive optimal** sort algorithm when base on **Comparision**[^footnote5]
+</span>
+
+[^footnote5]: That is the Merge Sort Algorithm **Ensure** that even in the worst situation, the least times needed are $NlogN$ level.
+And we know that is **NO** algorithm which is base on **Comparision** can ensure the least times comparisions less than $log(N!)$, as we know $\sim NlogN$
+
+### 5) Quick Sort
+
+> Quick Sort is an special Merge Sort algorithm. It bases on the Divided & Conquer theory,
+Divide the array into two parts, and individually sort each subarray
+
+> **The partition is extremely important.** 
+When the left and right subarray was sorted, the whole array is ordered.
+
+#### 1. Implementation
+```java
+public class Quick {
+    public static void sort (Comparable[] a) {
+        // Disable the dependency to the input String
+        // It's very important.
+        StdRandom.shuffle(a);
+        sort(a, 0, a.lenth - 1);
+    }
+    
+    private static void sort (Comparable[] a, int lo, int hi) {
+        if (hi <= lo) return;
+        int j = partition(a, lo, hi);
+        // Sort the left subarray.
+        sort(a, lo, j - 1);
+        // Sort the right subarray.
+        sort(a, j + 1, hi);
+    }
+}
+```
+
+#### 2. The Partition
+
+> The goal of the partition is to find the element,
+
+> - **It's left side is *not large* than it,**
+- **It's right side is *not small* than it.**
+
+> Usually, we cannot find such element directly, so we just:
+
+> 1. Choose the element **randoml**
+2. Scan the array from left to right and backword at the meanwhile
+3. Exchange the element which is at the incorrect position
+    >> Exchange the $i$ and $j$ when the a[$i$] is **larger** than $v$ or
+    the a[$j$] is **smaller than $v$
+> 4. Until the two pointer meet each other, and place the partition element in the position.
+
+![The Partition](http://algs4.cs.princeton.edu/23quicksort/images/partitioning-overview.png)
+
+##### 1) Implementation
+
+```java
+private static int partition(Comparable[] a, int lo, int hi) {
+    int i = lo, j = hi + 1;     // The scanner
+    Comparable v = a[lo];
+    while (true) {
+        /**
+        * Scan the left and ritht, and exchange
+        */
+        // Check for the a[i] is less than the v
+        while (less(a[++i], v)) {
+            if (i == hi) {
+                break;
+            }
+        }
+        // Check the a[j] is larger than the v
+        while (less(v, a[--j])) {
+             if (j == lo) {     // Redundant, because the v is the lo
+                break;
+             } 
+        }
+        if (i >= j) {
+            break;
+        }
+        
+        // if all were checked, then exchange the a[i] and a[j]
+        exch(a, i, j);
+    }
+    
+    // Place the v into the a[j] place
+    exch(a, lo, j);
+    return j;
+}
+```
+
+##### 2) Notation
+
+1. Partition occurs in the original space.
+    > If we use a assistant array to do the partition, it will be more costly
+
+2. Do not cross the boundary.
+3. Maintain the Randomness
+4. Beware the endless loop.
+    > A normal mistake is not considering the element which is the same.
+5. Beware of the recursive
+    > If you cannot place the partition element into the right place, it might cause the infinity recursive trap.
+
+#### 3. The Performance
+
+> Quick sort needs $\sim 2NlnN$ times comparations, and $1/6$ exchanges.
+In the worst situation, Quick Sort needs $N^2 / 2$ times comparations.
+**But the *shuffle* can prevent this situation.**
+
+#### 4. Improvement
+
+##### 1) Switch to the Insertion Sort.
+
+> For the small array, the Insertion Sort is a better way compare with the original Quick Sort.
+So, we can switch to the Insertion Sort when the subarray is small.
+
+```java
+if (hi <= lo) return;
+//Just replace the statement as
+if (ho <= lo + M) {
+    Insertion.sort(a, lo, hi); 
+    return;
+}
+// Usually the M value is system-related, but within 5 to 15 is considerable.
+```
+
+##### 2) 3 sampling Partition
+
+> We can randomly pick up some small samples and calculate their **median** to be the partition element.
+Usually the number set to 3 will be the best.
 
 
+##### 3) 3-Way Partition
 
+> When we recieve an array which contains a lot of repeating elements, using the original Quick Sort seems to be slow.
+In this situation, we use the 3-Way Partition.
+
+###### 1. Theory
+
+> Using 3 pointer to maintain the 3 parts: less equal larger
+
+> - Point $lt$ make the a[lo...lt - 1] is less than the $v$
+> - Pointer $gt$ make the a[gt + 1... hi] is larger than the $v$
+> - Pointer $i$ make the a[lt...i - 1] is equal to the $v$
+
+1. When a[$i$] is less than $v$, exchange a[$lt$] and a[$i$], and plus the $lt$ and $i$.
+2. When a[$i$] is larger than $v$, exchange a[$gt$] and a[$i$], and minus the $gt$.
+3. When a[$i$] is equal  to the $v$, plus the $v$.[^footnote6]
+
+[^footnote6]: **All the operation will ensure the element of the array is static, and shorthen the value of $gt - 1$**, only in this way the loop is finite.
+
+###### 2. Implementation
+
+```java
+public class Quick3way {
+    private static void sort(Comparable a, int lo, int hi) {
+        if (hi <= lo) return;
+        int lt = lo, i = lo + 1, gt = hi;
+        Comararble v = a[lo];
+        while (i <= gt) {
+            int cmp = a[i].compareTo(v);l
+            if (cmp < 0) {
+                exch(a, lt++, i++);
+            }
+            else if (cmp >0) {
+                exch(a, i, gt--);
+            }
+            else {
+                i++;
+            }
+        }
+        sort(a, lo, lt - 1);
+        sort(a, gt + 1, hi);
+    }
+}
+```
+
+![3way Quick Sort](http://algs4.cs.princeton.edu/23quicksort/images/partitioning3-overview.png)
+
+###### 3. Performance
+
+> For the array which contains the repeated element, there is a variable to describe it. It calls the *Shannon Information*
+
+$$H = -(p_1lgp_1 + p2lgp_2 + \cdots + p_klgp_k)$$
+
+$H - The \ Shannon\ information$
+$p_i - The\ posibillty\ of\ the\ ith\ key\ was\ selected$
+
+> For the array which contains repeated element, there is no algorithm which is base on comparatiion can guarantee it can be within $NH - N$ times comparations complete the sort of the array contains $N$ elements.
+In the other way, the up bound of comparation sort for this array is $NH - N$
+
+> For the $N$ array, the 3way Partition needs $\sim 2(ln2)NH$ times comparations.
+
+So it prove that the 3way Partition algorithm is the best of the comparation sort.
+
+## 5. Priority Queue
