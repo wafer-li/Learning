@@ -2,6 +2,8 @@
 
 Tags: Programming-Learning Algorithm
 
+<span style="font-size:20px">Base on *Algorithm 4th(Robert Sedgewick)*</span>
+
 [TOC]
 
 ---
@@ -821,7 +823,7 @@ public class Quick {
 
 > Usually, we cannot find such element directly, so we just:
 
-> 1. Choose the element **randoml**
+> 1. Choose the element **randomly**
 2. Scan the array from left to right and backword at the meanwhile
 3. Exchange the element which is at the incorrect position
     >> Exchange the $i$ and $j$ when the a[$i$] is **larger** than $v$ or
@@ -956,7 +958,7 @@ public class Quick3way {
 
 ###### 3. Performance
 
-> For the array which contains the repeated element, there is a variable to describe it. It calls the *Shannon Information*
+> For the array which contains the repeated element, there is a variable to describe it. It calls the **Shannon Information**
 
 $$H = -(p_1lgp_1 + p2lgp_2 + \cdots + p_klgp_k)$$
 
@@ -971,3 +973,196 @@ In the other way, the up bound of comparation sort for this array is $NH - N$
 So it prove that the 3way Partition algorithm is the best of the comparation sort.
 
 ## 5. Priority Queue
+
+> Priority Queue is DataStucture which is like a queue,
+but support **Delete the Biggest or the Smallest element** and **Insert element**.
+
+> And the most important point is the priority queue can sort the extremely big data, or when your memory was rather small.
+
+### 1) Implementation
+
+#### 1. Primary
+
+1. Array implementation (Without Order)
+> When the order is not important, we could reuse the *Stack* DataStructure. 
+The `insert()` method is the same as the `push()` method in the *Stack*.
+As the `delMax()` method, we could sort the *Stack* and **Exchange the biggest element and the element at boundary**
+
+2. Array implementation (With Order)
+> We can use array to implement it with order.
+To maintain the order, we could move the larger element to the right, and the array is always ordered.
+We could just use `pop()` method to delete the biggest element.
+
+3. Linked List
+> As the *Stack* and the *Queue*, we could just use the **linked list** to implement the priority queue.
+Rather ordered or not is the same as the *Array implementation*, just override the `push()` and `pop()` method is okay.
+
+#### 2. Binary Heap Implementation
+
+##### 1) The definition of binary heap
+
+> Binary Heap is a group of elements,
+which could be sorted as the **heap ordered** **complete binary tree** 
+and stored as the **layer level** in the array.
+
+$\Delta$ Heap Ordered:
+> When **all** the nodes of a binary tree is **greater or equal** to its **two subnodes**, it's called **Heap Ordered**.
+
+> So that,
+The **root node** is the **biggest** node in the heap ordered binary tree.
+
+For the Prerequisite Knowledge, see the [Binary Tree](#BinaryTree).
+
+##### 2) The implementation of binary heap
+
+> Notice that, the binary heap is just the **complete binary tree**, 
+so it's easy to use the **array** to implement it.
+
+
+## Supplement 1: The Binary Tree {#BinaryTree}
+
+### 1. The definition of Binary Tree
+
+> Binary Tree is a tree which only has **two child nodes at most**.
+Tree is an connected graph which has **no loop**
+
+> The node which is at the top layer is called the **root node**
+The node which contains no child node is called **leaf node**, which contains child node is called **internal node**
+
+### 2. Types of Binary Tree
+
+1. Full Binary Tree
+> The full binary is that the node is **either leaf node** or **has two chrildren exactly**.
+
+2. The Complete Binary Tree
+> The Complete Binary Tree is 
+if all levels except possibly the last are completely full, 
+and the last level has all its nodes to the left side.
+
+![Full Binary Tree](http://web.cecs.pdx.edu/~sheard/course/Cs163/Graphics/FullBinary.jpg)       ![Complete Binary Tree](http://web.cecs.pdx.edu/~sheard/course/Cs163/Graphics/CompleteBinary.jpg)
+
+> **A Full Binary Tree is not always a Complete Binary Tree.**
+**On the contrary, it' s also true**.
+
+### 3. The implementation
+
+#### 1. Array
+
+> This method is just place the element as the order of the corresponding complete binary tree,
+so, if a node is at position $k$, then,
+its **parent** is at position $\lfloor k \rfloor$,
+its **leftChild** is at position $2k$, the **right** is at $2k + 1$
+
+> As you see, the array implementation is only **suitable** for the **complete binary tree** 
+With the incomplete one, it will waste lots of space.
+
+#### 2. Linked List
+
+> The Linked List way is much more space-saving. It has 3 parts of the node.
+The `data field`, the `leftChild pointer`, the `rightChild pointer`
+
+Node:
+<table style="width:20em;">
+<tr>
+<td>leftChild</td> <td>data</td> <td>rightChild</td>
+</tr>
+</table>
+
+
+### 4. The Traversal Algorithm
+
+> Normally, There are 3 different ways to traversal a binary tree. They are:
+
+> 1. PreOrder Traversal ($DLR$)
+2. InOrder Traversal ($LDR$)
+3. PostOrder Traversal ($LRD$)
+
+> Actually, there are 3 more ways, but we assume the left child is alway **the elder brother** of the right child. So we reduce to 3 ways.
+
+> The traversal Algorithm all use the **recursive way** to implement.
+
+#### 1) Depth-first
+
+> The first child, then **the grand child** before the second child
+
+##### 1. PreOrder Traversal
+
+1. Display the data part of root element (or current element)
+2. Traverse the left subtree by recursively calling the pre-order function.
+3. Traverse the right subtree by recursively calling the pre-order function.
+
+##### 2. InOreder Traversal 
+
+1. Traverse the left subtree by recursively calling the in-order function
+2. Display the data part of current element.
+3. Traverse the right subtree by recursively calling the in-order function
+
+##### 3. PostOrder Traversal
+
+1. Traverse the left subtree by recursively calling the post-order function.
+2. Traverse the right subtree by recursively calling the post-order function.
+3. Display the data part of root element (or current element).
+
+#### 2) Breadth-first
+
+> The first child, then the second child, and then the first grand child, the second grand child, and so on.
+We do not go to the next level until the current level is done.
+
+```java
+
+interface Visitable<Item> {
+    void onVisit(Item item);
+}
+
+class BreadthFirst {
+    Visitable<Node> visiter;
+    ....
+    void breadFirstTraversal(Node root) {
+        Queue q = new Queue();
+        q.enQueue(root);
+        while (!q.isEmpty()) {
+            Node node = q.deQueue();
+            visiter.onVisit(node);
+            if(node.lChild != null) {
+                q.enQueue(node.lChild);
+            }
+            if(node.rChild != null) {
+                q.enQueue(node.rChild);
+            }
+        }
+    }
+}
+```
+
+### 5. Binary Tree & Forest
+
+#### 1) The definition of Forest
+
+> Forest is consist of a lot of individual trees, when they come together, we call them **Forest**
+
+![Forest](https://helloacm.com/wp-images/acm/2012/data-structure/disjoint1.jpg)
+
+> We could link its root nodes of each tree to bulid a big tree.
+
+#### 1) The Representation of Forest
+
+> Firstly, we tranfer it to the bing tree, just link its root node of each tree together.
+
+##### 1. The Child and Brother Representation
+
+> It's a linked list implementation, The node contains 3 parts, 
+the `Data Field`, 
+the `leftChild pointer` (or reference), which point to its **left most child**
+and the `brother pointer` (or reference), which point to its **right brother**.
+
+Node:
+<table style="width:20em;">
+<tr>
+<td>leftChild</td> <td>Data</td> <td>brother</td>
+</tr>
+</table>
+
+> Since the Node has **the same number** of parts compare with the **binary tree's node**,
+We could transfer **the big tree** to the specific **binary tree**, 
+as the big tree is transfered from the **forest**,
+so that, we could transfer **the forest** to **the binary tree** easily.
