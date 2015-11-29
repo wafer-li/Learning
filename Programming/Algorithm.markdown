@@ -972,16 +972,16 @@ In the other way, the up bound of comparation sort for this array is $NH - N$
 
 So it prove that the 3way Partition algorithm is the best of the comparation sort.
 
-## 5. Priority Queue
+### 6) Priority Queue
 
 > Priority Queue is DataStucture which is like a queue,
 but support **Delete the Biggest or the Smallest element** and **Insert element**.
 
 > And the most important point is the priority queue can sort the extremely big data, or when your memory was rather small.
 
-### 1) Implementation
+#### 1. Implementation
 
-#### 1. Primary
+##### 1) Primary
 
 1. Array implementation (Without Order)
 > When the order is not important, we could reuse the *Stack* DataStructure. 
@@ -997,9 +997,9 @@ We could just use `pop()` method to delete the biggest element.
 > As the *Stack* and the *Queue*, we could just use the **linked list** to implement the priority queue.
 Rather ordered or not is the same as the *Array implementation*, just override the `push()` and `pop()` method is okay.
 
-#### 2. Binary Heap Implementation
+##### 2) Binary Heap Implementation
 
-##### 1) The definition of binary heap
+###### 1. The definition of binary heap
 
 > Binary Heap is a group of elements,
 which could be sorted as the **heap ordered** **complete binary tree** 
@@ -1013,10 +1013,245 @@ The **root node** is the **biggest** node in the heap ordered binary tree.
 
 For the Prerequisite Knowledge, see the [Binary Tree](#BinaryTree).
 
-##### 2) The implementation of binary heap
+###### 2. The implementation of binary heap
 
 > Notice that, the binary heap is just the **complete binary tree**, 
 so it's easy to use the **array** to implement it.
+Notice that: **WE DO NOT USE a[0]**
+
+For the Prerequisite Knowledge, see the [Complete Binary Tree](#CompleteBinaryTree).
+
+###### 3. Theory
+
+> The main theory is **how to reorder the Heap**,
+When we do the comparations and the exchanges, the order of the heap will be destroyed. 
+So, we need to reheapifying the heap.
+
+> The main idea is **swim** and **sink**
+When a node gain the upper priority (usually when we insert a new node at the bottom fot the heap) , we **swim it**
+When a node gain the lower priority (usually when we replace the root node with the low priority one), we **sink it**
+
+1. Swim
+> When the node is bigger than its parent, we exchange it with its parent to recover the order of the heap,
+KEEP SWIM IT, UNTIL REACH THE BIGGER PARENT
+
+2. Sink
+> When the node is less than **both** of its children, we exchange it with the bigger child to recover the order of the heap,
+KEEP SINK IT, UNTIL REACH THE **BOTH** LESS CHILD
+
+###### 4. Implementation of methods
+
+1. Insert element
+> We insert the new element at the end of **array**,
+increase the size of heap, and **swim** the element.
+
+2. Delete the Biggest element
+> We **exchange** the **root node** with the node at **the end of the array**,
+delete the old root and sink the new root.
+
+```java
+public void insert(Key v) {
+    pq[++ N] = v;
+    swim(N);
+}
+
+public Key delMax() {
+    Key max = pq[1];
+    exch(1, N--);
+    pq[N + 1] = null;   // Prevent the object free
+    sink(1);
+    return max;
+}
+```
+
+#### 2. Index Priority Queue
+
+> The index priority queue is the priority queue with an index.
+With the index, we can deal with the extremely large input data(even cannot be read into memory at one time.) or with the devices with very small memory.
+
+> The main changes is that:
+1. We insert the element itself with its index.
+2. We delete the max (or the min) element and **return its index**.
+
+##### Example: Multiway Merge
+
+```java
+public calss Multiway {
+    public static void merge(In[] streams) {
+        int N = streams.lenth;    
+        // Notice tha the N is the number of the STREAM,
+        // not the input strings.
+        IndexMinPQ<String> pq = new IndexMinPQ<String> (N);
+        
+        for (int i = 0; i < N; i++) {
+            if (!streams[i].isEmpty) {  // That is a Stream
+                // Insert the stream
+                pq.insert(i, streams[i].readString());
+            }
+        }
+        
+        while (!pq.isEmpty()) {
+            // Output the Min element
+            StdOut.println(pq.min());
+            int i = pq.delMin();
+            
+            // Keep reading next String
+            if (!streams[i].isEmpty() {
+                pq.insert(i, streams[i].readString());
+            }
+        }
+        
+        public static void main(String[] args) {
+            int N = args.lenth;
+            In[] streams = new In[N];
+            for (int i = 0; i < N; i++) {
+                streams[i] = new In(args[i]);
+            }
+            merge(streams);
+        }
+    }
+}
+```
+
+#### 3. Heap Sort
+
+> Heap Sort is the usage of the priority queue.
+It insert the element into the priority queue, and invoke the `delMax()` or the `delMin()` method to output the right order.
+
+> This algorithm due to the priority queue, it can deal with the extreameyly huge data, or run at the small memory device.
+
+> It contains two process, **build heap** and **destroy heap**
+
+##### 1) Build Heap
+> Notice that: **The array is alread a heap!**
+So, we only need to reheapifying it, the buliding process is complete.
+
+##### 2) Destroy Heap (Sort)
+> The heap help us to pick up the max or the min element,
+So, we only need to pick it out of the heap.
+Notice that: How we delete the biggest element?
+We delete it by **exchange it with the element which is at the end of the array!**
+In fact, we do not need to really *delete* the element, or in another way, free its memory.
+We are doing the **SORT**, so, we just **exchange** it (or place it into the right place) is okay.
+
+```java
+public static void sort(Comparable[] a) {
+    int N = a.lenth;
+    
+    /**
+    * Build the heap
+    * We only need to traversal the nodes
+    * who contains children.
+    * As the heap's theory, we convince that the k = N/2
+    */
+    for (int k = N/2; k >= 1; k--) {
+        sink(a, k, N);
+    }
+    
+    // Destory the heap
+    while (N>1) {
+        exch(a,1, N--);
+        sink(a, 1, N);
+    }
+}
+```
+
+##### 3) Performance
+
+> To sort $N$ elements, the heap sort only need less than $(2NlgN + 2N)$ times comparations and half times exchanges
+
+### 7) Applications
+
+#### 1. Multiple Sort way
+
+> Using the `Comparator` interface, we can use different sort method (or keys) to one kind of data object
+
+#### 2. Comparation of Sort Algorithm
+
+<table>
+<tr>
+<td rowspan="2" style="text-align:center;vertical-align:middle">Algorithm</td>
+<td rowspan="2" style="text-align:center;vertical-align:middle">Stable?</td>
+<td rowspan="2" style="text-align:center;vertical-align:middle">Inplace?</td>
+<td colspan="2" style="text-align:center;">Grow Rate to Sort N Items</td>
+<td rowspan="2" style="text-align:center;vertical-align:middle">Notes</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align:middle;">Running Time</td>
+<td style="width:6em;">Extra Space</td>
+</tr>
+
+<tr>
+<td style="text-align:center;vertical-align:middle;">Selection Sort</td>
+<td style="text-align:center;vertical-align:middle;">No</td>
+<td style="text-align:center;vertical-align:middle;">Yes</td>
+<td style="text-align:center;vertical-align:middle;">$N^2$</td>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td style="text-align:center;vertical-align:middle;"></td>
+</tr>
+
+<tr>
+<td style="text-align:center;vertical-align:middle;">Insertion Sort</td>
+<td style="text-align:center;vertical-align:middle;">Yes</td>
+<td style="text-align:center;vertical-align:middle;">Yes</td>
+<td style="text-align:center;vertical-align:middle;">Between $N$ and $N^2$</td>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td style="text-align:center;vertical-align:middle;">Base on the input</td>
+</tr>
+
+<tr>
+<td style="text-align:center;vertical-align:middle;">Shell Sort</td>
+<td style="text-align:center;vertical-align:middle;">No</td>
+<td style="text-align:center;vertical-align:middle;">Yes</td>
+<td style="text-align:center;vertical-align:middle;">$N^{6/5}$</td>
+<td style="text-align:center;vertical-align:middle;">1</td>
+<td style="text-align:center;vertical-align:middle;"></td>
+</tr>
+
+<tr>
+<td style="text-align:center;vertical-align:middle;">Quick Sort</td>
+<td style="text-align:center;vertical-align:middle;">No</td>
+<td style="text-align:center;vertical-align:middle;">Yes</td>
+<td style="text-align:center;vertical-align:middle;">$NlogN$</td>
+<td style="text-align:center;vertical-align:middle;">$lgN$</td>
+<td style="text-align:center;vertical-align:middle;">The efficiency is guaranteed by the posibility</td>
+</tr>
+
+<tr>
+<td style="text-align:center;vertical-align:middle;">3-way Partitioning <br/>Quick Sort</td>
+<td style="text-align:center;vertical-align:middle;">No</td>
+<td style="text-align:center;vertical-align:middle;">Yes</td>
+<td style="text-align:center;vertical-align:middle;">between $N$ and $NlogN$</td>
+<td style="text-align:center;vertical-align:middle;">$lgN$</td>
+<td style="text-align:center;vertical-align:middle;">The efficiency is guaranteed by the posibility, meanwhile it also depens on the input</td>
+</tr>
+
+<tr>
+<td style="text-align:center;vertical-align:middle;">Merge Sort</td>
+<td style="text-align:center;vertical-align:middle;">Yes</td>
+<td style="text-align:center;vertical-align:middle;">No</td>
+<td style="text-align:center;vertical-align:middle;">$NlogN$</td>
+<td style="text-align:center;vertical-align:middle;">$N$</td>
+<td style="text-align:center;vertical-align:middle;"></td>
+</tr>
+
+<tr>
+<td style="text-align:center;vertical-align:middle;">Heap Sort</td>
+<td style="text-align:center;vertical-align:middle;">No</td>
+<td style="text-align:center;vertical-align:middle;">Yes</td>
+<td style="text-align:center;vertical-align:middle;">$NlogN$</td>
+<td style="text-align:center;vertical-align:middle;">$N$</td>
+<td style="text-align:center;vertical-align:middle;"></td>
+</tr>
+</table>
+
+$\Delta$ Conclusions:
+
+1. The Quick Sort is the most fast general Sort Algorithm
+> The Quick Sort is at $\sim cNlogN$ level, and the constant $c$ is much less than the other sort algorithm.
+Particularly, when using the **3-way Partitioning** some of the situations might be the liner level.
+2. When the stability is important, and the space is not so tense, the **Merge Sort** is the best choice.
+3. When the space is extremely small, the **Heap Sort** is an good choice.
 
 
 ## Supplement 1: The Binary Tree {#BinaryTree}
@@ -1044,7 +1279,7 @@ and the last level has all its nodes to the left side.
 > **A Full Binary Tree is not always a Complete Binary Tree.**
 **On the contrary, it' s also true**.
 
-### 3. The implementation
+### 3. The implementation {#CompleteBinaryTree}
 
 #### 1. Array
 
@@ -1064,7 +1299,7 @@ The `data field`, the `leftChild pointer`, the `rightChild pointer`
 Node:
 <table style="width:20em;">
 <tr>
-<td>leftChild</td> <td>data</td> <td>rightChild</td>
+<td style="text-align:center;vertical-align:middle;">leftChild</td> <td style="text-align:center;vertical-align:middle;">data</td> <td style="text-align:center;vertical-align:middle;">rightChild</td>
 </tr>
 </table>
 
@@ -1158,7 +1393,7 @@ and the `brother pointer` (or reference), which point to its **right brother**.
 Node:
 <table style="width:20em;">
 <tr>
-<td>leftChild</td> <td>Data</td> <td>brother</td>
+<td style="text-align:center;vertical-align:middle;">leftChild</td> <td style="text-align:center;vertical-align:middle;">Data</td> <td style="text-align:center;vertical-align:middle;">brother</td>
 </tr>
 </table>
 
