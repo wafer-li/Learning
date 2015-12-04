@@ -13,6 +13,9 @@ Some of my learning notes.
   - [Algorithm](https://github.com/Wafer-Li/Learnning/blob/master/Programming/Algorithm.markdown)
   - [Python](https://github.com/Wafer-Li/Learnning/blob/master/Programming/Python.markdown)
 
+- [Linux](https://github.com/Wafer-Li/Learnning/tree/master/Linux)
+  - [My Linux Experiences](https://github.com/Wafer-Li/Learnning/blob/master/Linux/My%20Linux%20Experiences.markdown)
+
 ## Language
 [Cmd Markdown](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown)
 
