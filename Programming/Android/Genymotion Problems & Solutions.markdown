@@ -2,6 +2,8 @@
 
 Tags: Android
 
+[TOC]
+
 ---
 
 ## 0. Intro
