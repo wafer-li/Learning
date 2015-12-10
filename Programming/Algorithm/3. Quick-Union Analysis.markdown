@@ -1,0 +1,225 @@
+﻿# 3. Quick-Union Analysis
+
+Tags: Algorithm
+
+---
+
+> Judge if we need a new link or line to make the two point linking
+
+## 1) Concepts
+- Link
+> Link is an equivalence relationship, means the following
+    - Reflexive: $p$ links with $p$
+    - Symmetry: If $p$ link with $q$, then $q$ links with $p$
+    - Transitive: If $p$ links with $q$, and $q$ links with $r$, then $p$ links with $r$
+
+- Network Concepts
+    - Contact
+    > The contact we call is the object in the array.
+
+    - Connected Component
+    > This word in here means a **Set** which **contain the linked contact**,
+    in other way, the contact in the set is all linked with each other
+    
+## 2) Implementation of Union-Find
+
+```java
+public static void main(String[] args) {
+    int N = StdIn.readInt();    //read the Number of CONTACTS
+    UF UF = new UF(N);          //Initialize the data structure
+    
+    while(!StdIn.isEmpty()) {
+        int p = StdIn.readInt();
+        int q = StdIn.readInt();
+        
+        if(uf.connected(p,q)) {
+            //If it is connected, ignore it
+            continue;
+        }
+        
+        uf.uinon(p,q);          //Merge the contacts
+        StdOut.println(p + " " + q);
+    }
+}
+```
+
+## 3) Implementation of `union()` and `find()`
+
+> All base on the  `id[]` array which its **index** is the **CONTACT**
+
+### 1. quick-find algorithm
+> This version needs $(N + 3)(N - 1) \sim N^2$ times accesses of array
+
+```java
+public int find (int p) {
+    return id[p];
+}
+
+public void union(int p, int q) {
+    // Merge p and q into the same component
+    int pID = find(p);
+    int qID = find(q);
+    
+    // If the p and q are at the same component,
+    // do nothing and return.
+    if(pID = qID) {
+        retrun;
+    }
+    
+    // Rename the p component to the q component
+    for(int i = 0; i< id.lenth; i++) {
+        if(id[i] == pID) {
+            id[i] = qID;
+        }
+    }
+    count --;   // Decrease the component counter
+}
+```
+
+### 2. quick-union alogrithm
+
+#### 1) Basic concepts
+- Use **Tree** as the base data structure
+- Each contact's `id[]` element is the other contact's name, we call it **linked**
+> For instance, $p$ and $q$ two contacts
+If $p$ links with $q$, than `id[p] == q`
+- When the `id[p]` is `p`, we call $p$ as a ***root*** contact
+
+#### 2) Implementation
+
+```java
+private int find(int p) {
+    // Find the root of the contact's component
+    while (p != id[p]) {
+        p = id[p];
+    }
+    return p;
+}
+
+public void union(int p, int q) {
+    // Merge the root contact of the p's component and the q's component
+    int pRoot = find(p);
+    int qRoot = find(q);
+    
+    // If the two components' root are the same, return.
+    if (pRoot == qRoot) {
+        return;
+    }
+    
+    // Set the p's tree links with q's tree.
+    // Now, the qRoot is the father contact of the qRoot.
+    id[pRoot] = qRoot;
+    
+    count --;
+}
+```
+
+#### 3) The inprovement 
+
+> The **quick-union** alogrithm use tree as the basic data structure.
+Avoid the scanning of **the whole array** in each `union()` operation.
+
+#### 4) The complexity
+
+> Although, usually, the **quick-union** alogrithm is better than the **quick-find**, but in the worst situation, it still need $2(1 + 2 + \dots + N) \sim N^2$ times array accesses
+
+> The `find()` method will recursively scan the tree, until reach the root contact, so what if the depts of the tree keep growing?
+The accesses of the array will continue growing.
+So we reach the result of the top.
+
+### 3. Weighted quick-union alogrithm
+
+> Now we are talking about hwo to optimilize the **quick-union** alogrithm.
+The basic theory is to reduce the depts of the tree.
+
+- **Weight each tree**
+> The reason why the depts of the tree will growing, it's normally as
+**The larger tree was linked to the smaller tree**, so the tree's depts keep growing.
+> So, why not to count the tree's contacts to avoid the situation happen?
+
+```java
+public class WeightedQuickUnionUF {
+    
+    /**
+    * We need a new array to count the tree's size
+    * The index is the root contact
+    * The value is the corresponding size of the tree
+    
+    * Baically, we use the root contact to stand for the tree
+    */
+    private int[] sz;   
+    ....
+    public WeightedQuickUnionUF (int N) {
+        ...
+        sz = new int[N];
+        for (int i = 0; i < N; i++) {
+            // Initialize the sz[] as 1.
+            // No one was linked at the first.
+            sz[i] = 1;
+        }
+    }
+    ...
+    public int find(int p) {
+        // Find the root contact
+        while (p != id[p]) {
+            p = id[p];
+        }
+        retrun p;
+    }
+    
+    public void union(int p, int q) {
+        ...
+        if (sz[i] < sz[j]) {    // Link the smaller tree's root contact to the bigger one
+            id[i] = j;
+            sz[j] += sz[i];     // Adding the weight(or size) of the component
+        }
+        else {
+            id[j] = i;
+            sz[i] += sz[j];
+        }
+    }
+}
+```
+
+- The improvement
+> This algorithm ensures even in the bad situation, which is at **each operation**, the trees' size are all **equal**, the accesses times of the array will limit as $logN$ [^footnote4]
+
+[^footnote4]: The $logN$ in algorithm is equal to $log_2{N}$
+
+### 4) The weighted quick-union with path compresson
+> More adventurous, we can link the contact to the root to more reduce our tree's depts.
+It' easy to implement, and do not have any side effect, so why not?
+
+- The Implementation
+> The other parts is base on the **weighted quick-union** algorithm
+```java
+public int find(int p) {
+    int pParent = p;
+    
+    // Find the p's root
+    while(pParent != id[pParent]) {
+        pParent = id[pParent];
+    }
+    // Now, the pParent equals to the pRoot
+    
+    /**
+    * Notice:
+    * When run the find() method,
+    * They will link all the contacts of this component to the root
+    */
+    while (id[p] != p) {
+        p = id[p];  // Move p to its parent
+        id[p] = pParent;    // The id[p] is still p's prarent, now link it to the root
+    }
+    
+    return pParent;
+}
+```
+
+- The improvement
+
+> This alogrithm's complexity is very very close to the constant level
+
+### 5) The comparation
+
+![The comparation of the Union-Find algorithm](http://algs4.cs.princeton.edu/15uf/images/uf-performance.png)

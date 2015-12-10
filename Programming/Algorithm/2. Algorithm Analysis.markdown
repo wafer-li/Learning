@@ -1,0 +1,189 @@
+﻿# 2. Algorithm Analysis
+
+Tags: Algorithm
+
+---
+
+## 1) Observe
+
+> - Run the program and use the time counter to measure the time usage
+- Use the large data to guess and verify the mathematical model
+
+## 2) Mathematical Model
+
+### 1. Time
+
+> The time usage is connected to 
+
+> - The time usage of the operation of each statement.
+- The frequency of each statement being operate.
+
+#### 1) Approximation
+
+> We use $\sim f(N)$ refer to when N grows, the result of divided by $f(N)$ equals to $1$,
+use $g(N) \sim f(N)$ refer to when N grows, the result of $g(N)/f(N)$ equals to $1$
+
+#### 2) Inner Loop
+
+> - The inner loop refers to the operation which the program execute the **MOST** frequently
+- The program's time usage depens on the inner loop.
+
+#### 3) Cost Model
+
+> - The cost model refers to the basic operation of the algorithm
+- Such as 3-sum, the cost model of 3-sum is the frequency of access the array element
+
+#### 4) The step of gain the mathematical model
+
+1. Verify the **input model**, and the size of the problem
+2. Identify the **inner loop**
+3. According to the inner loop, to verify the **cost model**
+4. Accroding to the input model, verify the frequency of each operation
+
+#### 5) The classification of the growing level
+
+![Classification](http://algs4.cs.princeton.edu/14analysis/images/classifications.png)
+
+##### 1. Constant
+
+> Most of the Java operation
+
+##### 2. Logarithmic
+
+> A little slow than the constant, such as **BinarySearch**
+
+##### 3. Liner
+
+> The single `for` loop
+
+##### 4. Linerithmic
+
+> Such as the `Merge.sort()` and the `Quick.sort()`
+
+##### 5. Quadratic
+
+> Two `for` loop, such as `Selection.sort()`, the `Insertion.sort()` and the `Bubble.sort()`
+
+##### 6. Cubic
+
+> Three `for` loop, such as the **3-sum**
+
+##### 7. Exponential
+
+> Very slow, try to avoid to use it.
+
+#### 6) Build the faster algorithm
+
+> The ***Divide and Conquer Algorithm*** to solve 3-sum problem
+    
+- 2-sum problem
+
+> if the result of 2-sum is zero, there must be $ A + B = 0 $
+or $A = -B$
+So, we can use **BinarySearch** to find the opposite number of the specific number.
+
+Notes:
+
+> if the return value of **BinarySearch** is in the range $ 0< return < spec$ it means we **refind** the previous number, the number is **redundancy** , we should **abort** it
+
+> So, we reduce the running time from the $N^2$ level to the $logN$ level
+
+- 3-sum problem 
+
+> As the 2-sum, when the $-(a[i] + a[j])$ is the part of the array, nor the $a[i]$ or $a[j]$, and the pair $(a[i], a[j])$ is the part of the 3-sum.
+
+> By using the BinarySearch, we reduce the running time from the  $N^3$ level to the $N^2logN$ level
+
+#### 7) The prediction of running time in growing levels
+
+| Describe   | Function | Modulus is 2  | Modulus is 10 | Handle the 10N | Handle 10N in 10 times faster|
+|--------|------|------|-------|-----|-----|
+| Linear| $N$|2|10| a day| couples of hours|
+| Linearrithmic|$NlogN$|2|10|a day | couples of hours|
+| Quadratic| $N^2$| 4| 100| a few weeks| a day|
+| Cubic| $N^3$ | 8 | 1000 | a few months | couples of weeks|
+| Exponential| $2^N$ | $2^N$ | $2^{10N}$ | forever | forever
+
+#### 8) The notice of algorithm analysis
+
+##### 1. Big constant number
+
+> Normally, we suppose that $2N^2 + cN$ is $\sim 2N^2$, but when c is equal to $10^3$ or $10^6$, that is incorrect.
+
+##### 2. No decisive inner cycle
+
+> The wrong cost model cannot get the correct analysis result.
+
+##### 3. Time of instructions
+
+> If you are using the ARRAY to access some number which doesn't nearby, it might cost a lot of time
+
+##### 4. The system cause
+
+> When you are running your program to analysis the algorithm, perhaps your computer is not only running your program, but **OTHER** program, basically, it cannot be reproduce
+
+##### 5. This part might be good, but other doesn't
+
+> The choice of algorithm often depend on the situation, in some situation, the algorithm $A$ might be the best, but other situation doesn't.
+
+##### 6. Dependencies of input
+
+> In 3-sum problem, when we ask "is there exsist the number which match the 3-sum?", if **YES**, the growing level is **constant**, but if **NOT**, the growing level is $N^3$.
+
+> In this case, we often decribe the growing level as  $T_w$ which means **Time of WORST** situation, and the $T_{av}$ which means **Time of AVERAGE**
+
+##### 7. Multiable paramater
+
+> When using the BinarySearch to figure out the *White Name List* problem, the List cotains $N$ numbers, which the Input contains $M$ numbers, the growing level is usually $MlogN$
+
+### 2. Memory
+
+> When in java, the usage of the memory is filled as **the multiple of 8**
+
+#### 1) Object
+- Integer
+    - Totally 24 bytes
+    - 16 bytes of the Object itself (stable)
+    - 4 bytes of the int value 
+    - reference, which the address of memory, cost 8 bytes (stable)
+
+#### 2) Linked List
+- Node(inner class)
+    - Totally 40 bytes
+    - 16 bytes Object itslef
+    - 2 * 8 bytes reference (2 reference)
+    - when inner class, need another reference point to the owener, 8 bytes
+    - The cost of the data
+
+#### 3) Array
+
+- The Object array
+    - 24 bytes header message
+        -  16 bytes object cost
+        -  4 bytes fill cost
+
+#### 4) String
+
+- 40 bytes
+- Object cost, 16 bytes
+- reference, 8 bytes
+- 3 int, 12 bytes
+    - offset 
+    - counter 
+    - hash 
+
+> The subString
+when you involved the `substring()` method, it does create a new String object, but it doesn't create the `value[]` array, it was contained in the **constant area**
+
+> So, the subString extra memory need is a **constant**
+
+## 3) Outlook
+
+- Premature optimization is the root of all evil
+    - if the running time is peticularly fast, it is worthless to make the speed ten times faster
+- But we **DO NEED** the great algorithm, when we handle the **large-scale** problem, the faster algorithm make more profits.
+
+
+
+
+
