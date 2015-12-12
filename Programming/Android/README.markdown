@@ -20,3 +20,5 @@ Tags: Android
 ## Other
 
 [Genymotion FAQ](https://github.com/Wafer-Li/Learnning/blob/master/Programming/Android/Genymotion%20Problems%20%26%20Solutions.markdown)
+
+[Android Studio FAQ](https://github.com/Wafer-Li/Learnning/blob/14dcf12bad7e5b4d00f3f99cd9292f2bbac20b54/Programming/Android/Android%20Studio%20FAQ.markdown)
