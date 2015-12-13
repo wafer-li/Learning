@@ -53,3 +53,16 @@ So, there is my `.gitignore`, only works in `Android Studio`
 5. Build -> Rebuild the project
 
 > And remenber, when you finish cloning, using the `Open existing Project` or `Import from gradle` rather than click it in the `recently projects`
+
+## 3. When cannot recongnize module
+
+> If your Android Studio cannot recongnize your moudule, such as `app` and other modules.
+In the Build menu, it's just a few items
+
+![Poisonous](http://ww2.sinaimg.cn/large/8c1fca6bjw1eyyb1dvnnmj20zk0qotb3.jpg)
+
+<span style="font-size:1.5em;font-weight:bold">
+Backup your repo into the remote repository, and reclone it.
+When the clone is finished, rebuild the project
+</span>
+
