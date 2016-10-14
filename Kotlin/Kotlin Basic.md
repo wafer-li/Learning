@@ -4,7 +4,44 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin Basic](#kotlin-basic)  
+&emsp;[1. 基本语法](#1-基本语法)  
+&emsp;&emsp;[1.1 变量定义](#11-变量定义)  
+&emsp;&emsp;[1.2 注释](#12-注释)  
+&emsp;[2. 编码规范](#2-编码规范)  
+&emsp;&emsp;[2.1 命名风格](#21-命名风格)  
+&emsp;&emsp;[2.2 关于冒号](#22-关于冒号)  
+&emsp;&emsp;[2.3 Lambda 表达式](#23-lambda-表达式)  
+&emsp;&emsp;[2.4 关于 Unit](#24-关于-unit)  
+&emsp;[3. 基本类型](#3-基本类型)  
+&emsp;&emsp;[3.1 数字类型](#31-数字类型)  
+&emsp;&emsp;&emsp;[3.1.1 位宽](#311-位宽)  
+&emsp;&emsp;&emsp;[3.1.2 字面常量](#312-字面常量)  
+&emsp;&emsp;&emsp;[3.1.3 表示法](#313-表示法)  
+&emsp;&emsp;&emsp;[3.1.4 转换](#314-转换)  
+&emsp;&emsp;&emsp;[3.1.5 位运算符](#315-位运算符)  
+&emsp;&emsp;[3.2 字符类型](#32-字符类型)  
+&emsp;&emsp;[3.3 布尔类型](#33-布尔类型)  
+&emsp;&emsp;[3.4 数组](#34-数组)  
+&emsp;&emsp;&emsp;[3.4.1 创建数组](#341-创建数组)  
+&emsp;&emsp;&emsp;[3.4.2 访问数组](#342-访问数组)  
+&emsp;&emsp;&emsp;[3.4.3 多维数组](#343-多维数组)  
+&emsp;&emsp;[3.5 字符串](#35-字符串)  
+&emsp;&emsp;&emsp;[3.5.1 相对 Java 增加的新特性](#351-相对-java-增加的新特性)  
+&emsp;&emsp;&emsp;[3.5.2 raw string](#352-raw-string)  
+&emsp;&emsp;&emsp;[3.5.3 字符串模板](#353-字符串模板)  
+&emsp;[4. 包和导入](#4-包和导入)  
+&emsp;[5. 控制流程](#5-控制流程)  
+&emsp;&emsp;[5.1 If](#51-if)  
+&emsp;&emsp;[5.2 When](#52-when)  
+&emsp;&emsp;[5.3 For](#53-for)  
+&emsp;&emsp;[5.4 While 和 do-while](#54-while-和-do-while)  
+&emsp;&emsp;[5.5 跳转](#55-跳转)  
+&emsp;&emsp;&emsp;[5.5.1 带标签的 return](#551-带标签的-return)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -20,9 +57,9 @@ Tags: Kotlin
     val c: Int  // 如果没有进行变量初始化，则需要指定变量类型
     c = 1
     ```
-    
+
     > 注意，kotlin 取消了分号
-    
+
 2. 使用 `var` 定义变量
 
     ```
@@ -202,7 +239,7 @@ fun check(c: Char) {
 
 > Kotlin 同样拥有 `List` 和 `ArrayList` 类型，在 JVM 上，`Array` 会被替换成 Java array。
 
-> 所以，事实上 `Array` 只是 
+> 所以，事实上 `Array` 只是
 
 
 #### 3.4.1 创建数组
@@ -363,7 +400,7 @@ else -> { // Note the block
 
 ```
 when (x) {
-    0, 1 -> print("x == 0 or x == 1") 
+    0, 1 -> print("x == 0 or x == 1")
     else -> print("otherwise")
 }
 ```
@@ -372,7 +409,7 @@ when (x) {
 
 ```
 when (x) {
-    parseInt(s) -> print("s encodes x") 
+    parseInt(s) -> print("s encodes x")
     else -> print("s does not encode x")
 }
 ```
@@ -383,14 +420,14 @@ when (x) {
 when (x) {
     in 1..10 -> print("x is in the range")
     in validNumbers -> print("x is valid")
-    !in 10..20 -> print("x is outside the range") 
+    !in 10..20 -> print("x is outside the range")
     else ->     print("none of the above")
 }
 ```
 
 ```
 val hasPrefix = when(x) {
-    is String -> x.startsWith("prefix") 
+    is String -> x.startsWith("prefix")
     else -> false
 }
 ```
@@ -402,13 +439,13 @@ Kotlin 在这里拥有一个非常好的特性叫 **smart casts**，
 
 ```
 when {
-    x.isOdd() -> print("x is odd") 
-    x.isEven() -> print("x is even") 
+    x.isOdd() -> print("x is odd")
+    x.isEven() -> print("x is even")
     else -> print("x is funny")
 }
 ```
 
-### 5.3 For 
+### 5.3 For
 
 Kotlin 中的 `for` 类似 Python 和 Java 中的 `for-each` 结构，使用 `in` 标识符来分隔 `item` 和 `collection`。
 
@@ -447,10 +484,10 @@ Kotlin 支持三种形式的跳转：
 与 Java 一样，Kotlin 也支持**带标签的跳转**，标签使用 `@` 符号来指定。
 
 ```
-loop@ for (i in 1..100) { 
+loop@ for (i in 1..100) {
     for (j in 1..100) {
         if (...) break@loop
-    } 
+    }
 }
 ```
 
@@ -463,10 +500,10 @@ loop@ for (i in 1..100) {
 一个比较普遍的使用场景是在 Lamda 表达式上。
 
 ```
-fun foo() { 
-    ints.forEach { 
+fun foo() {
+    ints.forEach {
         if (it == 0) return
-        print(it) 
+        print(it)
     }
 }
 ```
@@ -476,10 +513,10 @@ fun foo() {
 但是如果我们要只从 Lambda 函数中返回(`forEach`)，则需要指定一个标签。
 
 ```
-fun foo() { 
+fun foo() {
     ints.forEach lit@ {
         if (it == 0) re turn@lit
-        print(it) 
+        print(it)
     }
 }
 ```
@@ -487,10 +524,10 @@ fun foo() {
 一个更为常用的形式是**直接使用 Lambda 表达式的名字**。
 
 ```
-fun foo() { 
+fun foo() {
     ints.forEach {
         if (it == 0) return@forEach
-        print(it) 
+        print(it)
     }
 }
 ```
@@ -498,7 +535,7 @@ fun foo() {
 另外的，我们也可以使用传统的匿名函数，来实现这个功能。
 
 ```
-fun foo() { 
+fun foo() {
     ints.forEach(fun(value: Int) {
         if (value == 0) return
         print(value)

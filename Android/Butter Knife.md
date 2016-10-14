@@ -4,7 +4,30 @@ Tags: Android
 
 Butter Knife 是一个 Android 的注解开发框架，旨在减少烦人的 `findViewById()` 的使用和 Cast
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Butter Knife](#butter-knife)  
+&emsp;[1. 安装与配置](#1-安装与配置)  
+&emsp;&emsp;[1.1 添加 Gradle 依赖](#11-添加-gradle-依赖)  
+&emsp;&emsp;[1.2 压制 Lint Warnning](#12-压制-lint-warnning)  
+&emsp;&emsp;[1.3 配置 ProGuard](#13-配置-proguard)  
+&emsp;[2. 使用](#2-使用)  
+&emsp;&emsp;[2.1 绑定视图](#21-绑定视图)  
+&emsp;&emsp;&emsp;[2.1.1 在 Activity 中进行绑定](#211-在-activity-中进行绑定)  
+&emsp;&emsp;&emsp;[2.1.2 在 Fragment 中进行绑定](#212-在-fragment-中进行绑定)  
+&emsp;&emsp;&emsp;[2.1.3 在 ViewHolder 中实现绑定](#213-在-viewholder-中实现绑定)  
+&emsp;&emsp;&emsp;[2.1.4 其他情形](#214-其他情形)  
+&emsp;&emsp;&emsp;[2.1.5 其他绑定 API](#215-其他绑定-api)  
+&emsp;&emsp;&emsp;[2.1.6 绑定 View 列表](#216-绑定-view-列表)  
+&emsp;&emsp;[2.2 绑定监听器](#22-绑定监听器)  
+&emsp;&emsp;[2.3 取消绑定](#23-取消绑定)  
+&emsp;&emsp;[2.4 可选的绑定](#24-可选的绑定)  
+&emsp;&emsp;[2.5 对于多个方法的监听器绑定](#25-对于多个方法的监听器绑定)  
+&emsp;&emsp;[2.6 简化的 findViewById()](#26-简化的-findviewbyid)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -30,7 +53,7 @@ lintOptions {
 }
 ```
 
-### 1.3 配置 ProGuard 
+### 1.3 配置 ProGuard
 
 由于 Android 在 Release apk 时，会使用 ProGuard 来进行代码优化和混淆，但是它很可能无法正确区分所需要的代码，从而将 Butter Knife 的代码删除，所以要配置一些 Keep 选项。
 
@@ -75,7 +98,7 @@ class ExampleActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.simple_activity);
     // 注意，这个必须在 setContentView之后执行
-    ButterKnife.bind(this); 
+    ButterKnife.bind(this);
     // TODO Use fields...
   }
 }
@@ -103,7 +126,7 @@ public class FancyFragment extends Fragment {
   @Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fancy_fragment, container, false);
     // 通过提供一个根布局实现 Fragment 的绑定
-    ButterKnife.bind(this, view);   
+    ButterKnife.bind(this, view);
     // TODO Use fields...
     return view;
   }

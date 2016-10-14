@@ -4,7 +4,22 @@ Tags: Java
 
 Base on *Core Java Volume Ⅰ——Fundamentals**
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Java Generics](#java-generics)  
+&emsp;[6. 泛型](#6-泛型)  
+&emsp;&emsp;[6.1 泛型类](#61-泛型类)  
+&emsp;&emsp;[6.2 泛型方法](#62-泛型方法)  
+&emsp;&emsp;[6.3 类型变量的限定](#63-类型变量的限定)  
+&emsp;&emsp;[6.4 泛型类的实例化](#64-泛型类的实例化)  
+&emsp;&emsp;&emsp;[6.4.1 类型擦除](#641-类型擦除)  
+&emsp;&emsp;&emsp;[6.4.2 翻译泛型表达式](#642-翻译泛型表达式)  
+&emsp;&emsp;&emsp;[6.4.3 泛型方法的实例化和桥方法](#643-泛型方法的实例化和桥方法)  
+&emsp;&emsp;&emsp;[6.4.4 约束和局限性](#644-约束和局限性)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -32,16 +47,16 @@ ArrayList<String> files = new ArrayList<>();
     public class Pair<T> {
         private T first;
         private T second;
-        
+
         public Pair() {
             first = null;
             second = null;
         }
-        
+
         public T getFirst() {
             return this.first;
         }
-        
+
         public T getSecond() {
             return this.second;
         }
@@ -63,7 +78,7 @@ ArrayList<String> files = new ArrayList<>();
 
 ```
 class ArrarAlg {
-    
+
     /**
     * 这是一个泛型方法，
     * <T> 表示其为泛型方法
@@ -94,16 +109,16 @@ String middle = ArrayAlg.<String>getMiddle("John", "Q.", "Public");
     ```
     public static <T extends Comarable> T min(T[] a) ...
     ```
-    
+
     > 这里我们限定了 T 必须是实现了 Comarable 接口的变量。
     如果 Comarable 是一个类，那么 T 必须是它，或者它的子类
-    
+
 2. 限定上界
 
     ```
     public static <T super Child> T doSomeThings(T[] a) ...
     ```
-    
+
     > 这里限定了 T 必须是 Child 的超类，或者它本身。
 
 ### 6.4 泛型类的实例化
@@ -111,7 +126,7 @@ String middle = ArrayAlg.<String>getMiddle("John", "Q.", "Public");
 #### 6.4.1 类型擦除
 
 Java 中的泛型类采用 **类型擦除** 方式来进行实例化。
-    
+
 > 类型擦除即为，擦除类型参数，并将其替换为限定的类型。
 如果类型没有被限定，则替换为 `Object`
 
@@ -128,11 +143,11 @@ public class Pair {
         first = null;
         second = null;
     }
-        
+
     public Object getFirst() {
         return this.first;
     }
-        
+
     public Object getSecond() {
         return this.second;
     }
@@ -195,64 +210,51 @@ public void setSecond(Objedt second) {
 }
 ```
 
-#### 6.4.4 约束和局限性 
+#### 6.4.4 约束和局限性
 
 1. 不能用基本类型实例化类型参数
 
     由于泛型使用**类型擦除**来实现，所有的未限定类型均会被替换成 `Object`；
     而 `Object` 不能储存基本类型
-    
+
     > 此时一般使用对象包装器来实现基本类型的实例化
-    
+
 2. 运行时的类型查询只适用于原始类型
 
     由于使用了类型擦除，所有的类型查询都只对泛型类的**原始类型**适用，而对泛型版本不适用。
     `instanceof` 和 `getClass()` 返回的都是原始类型
-    
+
 3. 不能创建参数化类型的数组
 
     创建泛型类的**数组**是不合法的。
     由于类型擦除的存在，所有的未限定泛型类都会被替换成 `Object`
     例如
-    
+
     ```
     Pair<String>[] table = new Pair<String> [10];   // ERROR
     // After erase
     Pair[] table = new Pair[10];
     ```
-    
+
     此时，如果有下面的一条语句
-    
+
     ```
     Object[] objects = table;   // OK, Pair is a type of Object
-    
+
     // But, if edit one of the elements
     objects[0] = "Hello";   // ERROR, because the objects[0] is Pair, not String
     ```
-    
+
     > 当需要收集参数化类型对象时，使用 `ArrayList` 来代替数组实现
-    
+
 4. Varargs 警告
 
     当使用可变参数的泛型类作为形参时，由于可变类型是一个数组，此时违反了上面一条规则，但是对于这种情况，规则有所放松，使用这个会得到一个**警告**，可以用 `@SafeVarargs` 注解来压制这个警告
-    
+
 5. 不能实例化类型变量
 
     所谓的类型变量指的是 `T`
     不能使用  `new T(...)` 类似这样的表达式
     而是通过反射调用 `Class.newInstance`
-    
-6. 
 
-
-
-
-
-
-
-
-
-
-
-
-
+6.

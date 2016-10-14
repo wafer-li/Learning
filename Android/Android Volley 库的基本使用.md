@@ -2,7 +2,24 @@
 
 Tags: Android
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Android Volley 库的基本使用](#android-volley-库的基本使用)  
+&emsp;[1. Volley 介绍与基本使用场景](#1-volley-介绍与基本使用场景)  
+&emsp;[2. Volley 的基本使用](#2-volley-的基本使用)  
+&emsp;&emsp;[2.1 添加编译依赖](#21-添加编译依赖)  
+&emsp;&emsp;[2.2 添加网络访问权限](#22-添加网络访问权限)  
+&emsp;&emsp;[2.3 发起网络请求](#23-发起网络请求)  
+&emsp;&emsp;&emsp;[2.3.1 例子](#231-例子)  
+&emsp;&emsp;&emsp;[2.3.2 基本原理](#232-基本原理)  
+&emsp;&emsp;[2.4 取消请求](#24-取消请求)  
+&emsp;[3. 构建队列单例](#3-构建队列单例)  
+&emsp;&emsp;[3.1 自定义队列](#31-自定义队列)  
+&emsp;&emsp;[3.2 构建单例模型](#32-构建单例模型)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -157,7 +174,7 @@ protected void onStop () {
     ```
     mRequestQueue.start();
     ```
-    
+
 ### 3.2 构建单例模型
 
 为了节省系统资源，我们构建一个单例模型，整个 App 只使用这一个请求队列。
@@ -166,26 +183,26 @@ protected void onStop () {
 public class NetworkSingleton {
     private static NetworkSingleton mInstance;
     private static mContext;
-    
+
     private RequestQueue mRequestQueue;
-    
+
     // Use private constructor
     private NetworkSingleton(Context context) {
         mContext = context;
         mRequestQueue = getRequestQueue();
     }
-    
+
     public static synchronized NetworkSingleton getInstance(
                                                 Context context) {
         if (mInstance == null) {
             mInstance = new NetworkSingleton(context);
-        }                                            
+        }
         return mInstance;
     }
-    
+
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
-        
+
             // The request queue needs the Application context
             // if someone pass a Activity context
             // using the getApplicationContext() could prevent
@@ -195,7 +212,7 @@ public class NetworkSingleton {
         }
         return mRequestQueue;
     }
-    
+
     public <T> void addToRequestQueue(Request<T> request) {
         getRequestQueue().add(request);
     }
@@ -204,4 +221,3 @@ public class NetworkSingleton {
 
 使用类似 Java Bean 的单例模型，我们在整个应用程序的生命周期中就只需要维护一个队列实例。
 同时，还可以利用单例模型来进行请求的**添加和删除**
-

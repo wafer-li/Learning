@@ -4,9 +4,23 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
---- 
+[Kotlin Null Safety](#kotlin-null-safety)  
+&emsp;[1. 概述](#1-概述)  
+&emsp;[2. 产生 NPE 的原因](#2-产生-npe-的原因)  
+&emsp;[3. Kotlin 类型系统](#3-kotlin-类型系统)  
+&emsp;[4. 访问可能为空变量的方法](#4-访问可能为空变量的方法)  
+&emsp;&emsp;[4.1 显式检查](#41-显式检查)  
+&emsp;&emsp;[4.2 使用安全访问](#42-使用安全访问)  
+&emsp;&emsp;[4.3 Elvis 表达式](#43-elvis-表达式)  
+&emsp;&emsp;[4.4 `!!` 操作符](#44-操作符)  
+&emsp;[5. 安全的造型](#5-安全的造型)  
+&emsp;[6. 空类型的集合](#6-空类型的集合)  
+
+<!-- /MDTOC -->
+
+---
 
 ## 1. 概述
 
@@ -164,4 +178,3 @@ val aInt: Int? = a as? Int  // return null if failure
 val nullableList: List<Int?> = listOf(1, 2, null, 4)
 val intList: List<Int> = nullableList.filterNotNull() // non-null
 ```
-

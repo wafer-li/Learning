@@ -4,7 +4,16 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin Objects](#kotlin-objects)  
+&emsp;[1. 概述](#1-概述)  
+&emsp;[2. Object Expression](#2-object-expression)  
+&emsp;[3. Object Declaration](#3-object-declaration)  
+&emsp;[4. 伴生对象(companion object)](#4-伴生对象companion-object)  
+&emsp;[5. object expression 和 object declaration 的不同点](#5-object-expression-和-object-declaration-的不同点)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -166,4 +175,3 @@ class MyClass {
 - 当 object expression 被声明时，它将会被立即执行。
 - 而 object declaration 会被延迟初始化，它将会在第一次调用它的时候进行初始化，而不是声明它的时候。
 - 伴生对象会在对应的类第一次被加载之后使用 java 的静态初始化器生成
-

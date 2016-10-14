@@ -5,7 +5,16 @@ Tags: Java
 ※Base on *Core Java Volume Ⅰ——Fundamentals*
 ※The Simple Contents Only Compare To C++
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Java Basic](#java-basic)  
+&emsp;[1. 变量和数据类型](#1-变量和数据类型)  
+&emsp;[2. 作用域](#2-作用域)  
+&emsp;[3. 控制流程](#3-控制流程)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -24,15 +33,15 @@ Tags: Java
 
     - 数组和对象名都是对于真正的数组或者对象的引用，而不是其自身
     - 【这里的“引用”类似于指针，而不是对象的别名】
- 
+
 5. **数组和对象都要使用new来声明构建，Java会自动进行垃圾处理，因而不需要显式delete**
 
     > ※数组的声明：int[] a = new int[100];
     ※类的构建：Class a = new Class(...);
-    
+
     > ※注意只有使用了new才会分配空间和构建对象，单纯的声明int[] a 类似于声明一个指向数组的指针
     ※Java对于大型数据类型只有通过new来构建，int a [100] 这种语法将不被接受，对于数组还可以使用列表初始化的语法int[] a = {1,2,3,4,6};
-    
+
 6. Java允许数组长度为0 **（注意这里和null并不同）**
 
 ## 2. 作用域

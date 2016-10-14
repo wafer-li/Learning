@@ -4,6 +4,26 @@ Tags: Linux
 
 -------------------------------------------------
 
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[My Linux Experiences](#my-linux-experiences)  
+&emsp;[Linux Mint Installation Notes](#linux-mint-installation-notes)  
+&emsp;&emsp;[1. Using the USB boot](#1-using-the-usb-boot)  
+&emsp;&emsp;[2. Partition](#2-partition)  
+&emsp;&emsp;[3. Dual Boot](#3-dual-boot)  
+&emsp;&emsp;&emsp;[1) Single Hard Disk](#1-single-hard-disk)  
+&emsp;&emsp;&emsp;[2) Dual or Multiple Hard Disks](#2-dual-or-multiple-hard-disks)  
+&emsp;&emsp;[4. Proxy](#4-proxy)  
+&emsp;&emsp;[5. Enviroment Variables](#5-enviroment-variables)  
+&emsp;&emsp;[6. About the `unable to run "mate-settings deamon"`](#6-about-the-unable-to-run-mate-settings-deamon)  
+&emsp;&emsp;[7. About my battery problems](#7-about-my-battery-problems)  
+&emsp;&emsp;[8. Zsh](#8-zsh)  
+&emsp;&emsp;[9. Vim](#9-vim)  
+
+<!-- /MDTOC -->
+
+----
+
 ## Linux Mint Installation Notes
 
 ### 1. Using the USB boot
@@ -21,7 +41,7 @@ the package manager.(such as `apt-get`)
 
 ### 3. Dual Boot
 
-> This is extremely important, 
+> This is extremely important,
 (for me ,because I still can not leave the big game which is only can be run in Windows)
 If you want to have the bennifits from each of these OS
 
@@ -37,7 +57,7 @@ because the first installed boot loader will be covered by the secound.
 because if you install them into the same disk, the latter will cover the former**
 
 > I recomend to use the **Win to load the Linux**, because the linux is actually a bit annoying,
-you need to **reinstall the system for many times at the very first time**. If you use the grup to 
+you need to **reinstall the system for many times at the very first time**. If you use the grup to
 boot the Win, when you need to **reinstall** the linux, it will be difficult to do it.
 
 <div style="font-size:25px;font-weight:bold;color:red;">
@@ -48,14 +68,14 @@ Use the USB driver to install the Linux, do not just use the hard driver to inst
 Keep the USB driver, it will be more convient to REINSTALL the system
 </div>
 
-- The install position of the boot loader 
+- The install position of the boot loader
     > The position must contain the name of the hard disk.
     That is, you need to install it into `/dev/sda` or the `/dev/sdb`
     not the hard driver which has number with it.
-    
+
     - If you want to let the **Win to boot the linux**, just place the boot loader into
     where the Windows C driver is not in it.
-        > I have two hard disks, and my Windows C driver place in the SSD, if I want to 
+        > I have two hard disks, and my Windows C driver place in the SSD, if I want to
         use win to load the linux, I just place it into the HDD
 
     - If you want to do the oppsite, just let the Linux to boot the Windows, you need to install
@@ -72,20 +92,20 @@ if so, the two systems will not be able to start neither.
 ### 4. Proxy
 
 > Normally, I only use the socks proxy, but also the http proxy,
-so, what I am using is the `Shadowsocks + Privoxy` to build up the 
+so, what I am using is the `Shadowsocks + Privoxy` to build up the
 `socks` proxy and the `http` proxy
 
 1. Down `Shadowsocks-qt5` or install it by ppa
 
 2. Using the `apt-get` to install `Privoxy`
     > Edit the `/etc/privoxy/config` for the configuration.
-    
-    > To enable the socks config, just edit the 
+
+    > To enable the socks config, just edit the
 
     ```
      forward-socks5     /       host:port .
     ```
-    Usually, it will be 
+    Usually, it will be
 
     ```
      forward-socks5     /       127.0.0.1:1080 .
@@ -158,7 +178,7 @@ for supporting my vim usage and do the notes.
     > The status line is using the ariline, the instruction is place at
     https://github.com/bling/vim-airline/wiki/FAQ,
     click the Screenshot, it will list its themes and the theme name.
-    
+
     > What I like is the `badwolf`.
 
 - Add **MathJax** support for the `vim-instant-markdown`
@@ -168,4 +188,3 @@ See this [issue](https://github.com/suan/vim-instant-markdown/issues/67)
 **Known Issue:**
 
 - The `vim-instant-markdown` will remain the chrome tab when the vim is leave.
-

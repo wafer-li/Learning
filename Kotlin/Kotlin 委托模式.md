@@ -4,7 +4,14 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin 委托模式](#kotlin-委托模式)  
+&emsp;[1. 委托模式](#1-委托模式)  
+&emsp;[2. Java 例子](#2-java-例子)  
+&emsp;[3. Kotlin 的委托模式](#3-kotlin-的委托模式)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -22,30 +29,30 @@ interface I {
      void f();
      void g();
  }
- 
+
  class A implements I {
      public void f() { System.out.println("A: doing f()"); }
      public void g() { System.out.println("A: doing g()"); }
  }
- 
+
  class B implements I {
      public void f() { System.out.println("B: doing f()"); }
      public void g() { System.out.println("B: doing g()"); }
  }
- 
+
  class C implements I {
      // delegation
      I i = new A();
- 
+
      public void f() { i.f(); }
      public void g() { i.g(); }
- 
+
      // normal attributes
      public void toA() { i = new A(); }
      public void toB() { i = new B(); }
  }
- 
- 
+
+
  public class Main {
      public static void main(String[] args) {
          C c = new C();
@@ -86,5 +93,4 @@ fun main(args: Array<String>) {
 ```
 
 在这里 `by` 表达式表示，变量 `b` 会储存在类 `Derived` 中，
-编译器会在 `Derived` 生成所有的 `Base` 的方法，并将它们都用 `b` 来执行。 
-
+编译器会在 `Derived` 生成所有的 `Base` 的方法，并将它们都用 `b` 来执行。

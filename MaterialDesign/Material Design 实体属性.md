@@ -4,7 +4,17 @@ Tags: MaterialDesign
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Material Design 实体属性](#material-design-实体属性)  
+&emsp;[1. 概述](#1-概述)  
+&emsp;[2. Material 的特点](#2-material-的特点)  
+&emsp;[3. 物理特性](#3-物理特性)  
+&emsp;&emsp;[3.1 厚度](#31-厚度)  
+&emsp;&emsp;[3.2 投射阴影](#32-投射阴影)  
+&emsp;&emsp;[3.3 内容](#33-内容)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -62,6 +72,3 @@ Tags: MaterialDesign
 
 <center><img src="http://im2.ezgif.com/tmp/ezgif-3203165216.gif" width="500"/></center>
 <center><div style="color:#4CAF50;"> Do，内容被实体大小所限制</div></center>
-
-
-

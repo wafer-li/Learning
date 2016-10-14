@@ -4,7 +4,16 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin 数据类](#kotlin-数据类)  
+&emsp;[1. 介绍](#1-介绍)  
+&emsp;[2. 创建](#2-创建)  
+&emsp;[3. 需要满足的条件](#3-需要满足的条件)  
+&emsp;[4. 复制](#4-复制)  
+&emsp;[5. 数据类的解构](#5-数据类的解构)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -62,7 +71,7 @@ fun copy(name: String = this.name, age: Int = this.age) = User(name, age)
 > 解构指的是类似 Python 中的返回元组，将数据类中的数据拆分开，用不同的变量来承接的特性。
 
 ```
-val jane = User("Jane", 35) 
+val jane = User("Jane", 35)
 val (name, age) = jane
 println("$name, $age years of age") // prints "Jane, 35 years of age"
 ```
@@ -99,4 +108,3 @@ for ((key, value) in map) {
    // do something with the key and the value
 }
 > ```
-

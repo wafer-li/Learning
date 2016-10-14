@@ -4,7 +4,14 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin 相等性](#kotlin-相等性)  
+&emsp;[1. 概述](#1-概述)  
+&emsp;[2. 引用相等性](#2-引用相等性)  
+&emsp;[3. 结构相等性](#3-结构相等性)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -35,5 +42,3 @@ a?.equals(b) ?: (b === null)
 也就是说，当 `a` 非空时，它会调用 `equal(Any?)`，当 `a` 为空时，它会检查 `b` 是否也为空。
 
 注意，在空检查时，没有必要转换你的代码，编译器会自动将 `a == null` 优化为 `a === null`
-
-

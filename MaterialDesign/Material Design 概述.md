@@ -4,7 +4,16 @@ Tags: MaterialDesign
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Material Design 概述](#material-design-概述)  
+&emsp;[1. 介绍](#1-介绍)  
+&emsp;[2. 设计原则](#2-设计原则)  
+&emsp;&emsp;[2.1 Material is the metaphor](#21-material-is-the-metaphor)  
+&emsp;&emsp;[2.2 鲜明、形象、深思熟虑](#22-鲜明、形象、深思熟虑)  
+&emsp;&emsp;[2.3 有意义的动画效果](#23-有意义的动画效果)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -38,5 +47,3 @@ Material Design 设计语言强调根据用户行为凸显核心功能，进而�
 动效应当在独立的场景呈现。通过动效，让物体的变化以更连续、更平滑的方式呈现给用户，让用户能够充分知晓所发生的变化。
 
 动效应该是有意义的、合理的，动效的目的是为了吸引用户的注意力，以及维持整个系统的连续性体验。动效反馈需细腻、清爽。转场动效需高效、明晰。
-
-

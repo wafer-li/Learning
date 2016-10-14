@@ -4,7 +4,16 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin 集合](#kotlin-集合)  
+&emsp;[1. 概述](#1-概述)  
+&emsp;[2. 与 Java 的区别](#2-与-java-的区别)  
+&emsp;[3. 创建](#3-创建)  
+&emsp;[4. 返回一个只读列表的快照](#4-返回一个只读列表的快照)  
+&emsp;[5. 其他有用的方法](#5-其他有用的方法)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -90,11 +99,3 @@ val readWriteMap = hashMapOf("foo" to 1, "bar" to 2)
 println(readWriteMap["foo"])  // prints "1"
 val snapshot: Map<String, Int> = HashMap(readWriteMap)
 ```
-
-
-
-
-
-
-
-

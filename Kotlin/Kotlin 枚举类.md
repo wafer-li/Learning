@@ -4,7 +4,16 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin 枚举类](#kotlin-枚举类)  
+&emsp;[1. 概述](#1-概述)  
+&emsp;[2. 声明](#2-声明)  
+&emsp;[3. 初始化](#3-初始化)  
+&emsp;[4. 匿名类](#4-匿名类)  
+&emsp;[5. 创建枚举](#5-创建枚举)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -61,4 +70,3 @@ enum class ProtocolState {
 而且，此方法在参数不符合枚举值时，会抛出异常。
 
 同时 Kotlin 也提供了 `values()` 方法来遍历所有的枚举值。
-

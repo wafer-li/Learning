@@ -4,7 +4,17 @@ Tags: Kotlin Android
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin Android Extension](#kotlin-android-extension)  
+&emsp;[0. 概述](#0-概述)  
+&emsp;[1. findViewById](#1-findviewbyid)  
+&emsp;[2. 如何使用](#2-如何使用)  
+&emsp;[3. 使用场景](#3-使用场景)  
+&emsp;[4. Android Flavors](#4-android-flavors)  
+&emsp;[5. 实现原理](#5-实现原理)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -96,8 +106,3 @@ import kotlinx.android.synthetic.free.activity_free.*
 
 通过扩展方法，来给每个类提供相应的扩展属性和扩展方法；
 然后通过不同的包来引入这些扩展。
-
-
-
-
-

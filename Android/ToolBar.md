@@ -5,10 +5,26 @@ Tags: Android
 
 The widget of the Android Material Design.
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[ToolBar](#toolbar)  
+&emsp;[1.  使用](#1-使用)  
+&emsp;&emsp;[1. 1 定义风格](#1-1-定义风格)  
+&emsp;&emsp;[1.2 添加组件到界面](#12-添加组件到界面)  
+&emsp;&emsp;[1.3 自定义颜色等其他属性](#13-自定义颜色等其他属性)  
+&emsp;&emsp;[1.4 设置控件](#14-设置控件)  
+&emsp;[2. 动态加载](#2-动态加载)  
+&emsp;&emsp;[2.1 动态更改标题](#21-动态更改标题)  
+&emsp;&emsp;[2.2 动态加载 MenuItem](#22-动态加载-menuitem)  
+
+<!-- /MDTOC -->
+
+---
 
 
-## 1.  使用 
+## 1.  使用
 
 ###  1. 1 定义风格
 
@@ -16,19 +32,19 @@ The widget of the Android Material Design.
 
 1. 使用 `AppTheme.Base` 进行一些方便的全局设定
 
-	> 5.0(API 21) 之后，Google 发表了 Material Design，由于和之前的风格有很大的不同， Google 采用了两个文件—— `res/values/style.xml` 和 `res/values-v21/style.xml` 
+	> 5.0(API 21) 之后，Google 发表了 Material Design，由于和之前的风格有很大的不同， Google 采用了两个文件—— `res/values/style.xml` 和 `res/values-v21/style.xml`
 
 ```
 <resources>
- 
+
   <!-- Base application theme. -->
   <style name="AppTheme" parent="AppTheme.Base">
   </style>
-   
+
   <style name="AppTheme.Base" parent="Theme.AppCompat">
     <!-- 取消 ActionBar，使用 ToolBar 来代替 ActionBar -->
     <item name="windowActionBar">false</item>
-    
+
 	<!--
 		用这条语句来防止复制粘贴时把 ToolBar 挤下去的问题；
 		两句只能选一句来使用
@@ -38,7 +54,7 @@ The widget of the Android Material Design.
     <!-- 使用 API Level 22 编译的话，使用下面这条 -->
     <item name="windowNoTitle">true</item>
   </style>
- 
+
 </resources>
 ```
 
@@ -51,7 +67,7 @@ The widget of the Android Material Design.
   android:id="@+id/toolbar"
   android:layout_height="?attr/actionBarSize"
   android:layout_width="match_parent" >
- 
+
 </android.support.v7.widget.Toolbar>
 ```
 
@@ -96,16 +112,16 @@ The widget of the Android Material Design.
 
 ```java
 Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
- 
+
 // App Logo
 toolbar.setLogo(R.drawable.ic_launcher);
 // Title
 toolbar.setTitle("My Title");
 // Sub Title
 toolbar.setSubtitle("Sub title");
- 
+
 setSupportActionBar(toolbar);
- 
+
 // Navigation Icon 要设定在 setSupoortActionBar 之后才有作用
 // 否則會出現 back button
 toolbar.setNavigationIcon(R.drawable.ab_android);
@@ -120,19 +136,19 @@ toolbar.setNavigationIcon(R.drawable.ab_android);
 	      xmlns:app="http://schemas.android.com/apk/res-auto"
 	      xmlns:tools="http://schemas.android.com/tools"
 	      tools:context=".MainActivity">
- 
+
 	  <item android:id="@+id/action_edit"
 	        android:title="@string/action_edit"
 	        android:orderInCategory="80"
 	        android:icon="@drawable/ab_edit"
 	        app:showAsAction="ifRoom" />
- 
+
 	  <item android:id="@+id/action_share"
 	        android:title="@string/action_edit"
 	        android:orderInCategory="90"
 	        android:icon="@drawable/ab_share"
 	        app:showAsAction="ifRoom" />
- 
+
 	  <item android:id="@+id/action_settings"
 	        android:title="@string/action_settings"
 	        android:orderInCategory="100"
@@ -170,7 +186,7 @@ toolbar.setNavigationIcon(R.drawable.ab_android);
 	// 其实也可以使用匿名类构造
 	toolbar.setOnMenuItemClickListener(onMenuItemClick)
 	```
-	
+
 	> 需要注意的是，`setOnMenuItemClickListener()` 需要在 `setActionBar()` 或 `setSupportActionBar()` 之后才能生效
 
 ## 2. 动态加载
@@ -182,8 +198,8 @@ toolbar.setNavigationIcon(R.drawable.ab_android);
 
 当 `Title` 需要根据 `Fragment` 的内容进行动态加载，**不要直接使用 Toolbar 的** `setTitle()`，而应该使用 `getActionBar()` 来进行标题更改。
 
-> 由于 Android Studio 会自动产生 Warning，认为 `getActionBar()` 有可能返回一个空值，可以使用 `assert` 来进行断言，说明其不会返回 `null` 
-	
+> 由于 Android Studio 会自动产生 Warning，认为 `getActionBar()` 有可能返回一个空值，可以使用 `assert` 来进行断言，说明其不会返回 `null`
+
 ```java
 // 此处断言用于取消 Warnning，
 // 但必须保证已经 setActionBar(toolbar);

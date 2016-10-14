@@ -4,9 +4,30 @@ Tags: Android
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-----
+[Retrofit2 使用简明手册](#retrofit2-使用简明手册)  
+&emsp;[0. 介绍](#0-介绍)  
+&emsp;[1. 初始化设置](#1-初始化设置)  
+&emsp;&emsp;[1.1 添加依赖](#11-添加依赖)  
+&emsp;&emsp;[1.2 配置 Proguard](#12-配置-proguard)  
+&emsp;[2. 基本使用](#2-基本使用)  
+&emsp;&emsp;[2.1 创建 ApiService interface](#21-创建-apiservice-interface)  
+&emsp;&emsp;[2.2 构建 Retrofit 类，获取 ApiService 实例](#22-构建-retrofit-类，获取-apiservice-实例)  
+&emsp;&emsp;[2.3 通过 ApiService 实例发起请求](#23-通过-apiservice-实例发起请求)  
+&emsp;&emsp;[2.4 取消请求](#24-取消请求)  
+&emsp;[3. 可变 URL 和 GET 请求参数](#3-可变-url-和-get-请求参数)  
+&emsp;&emsp;[3.1 可变 URL](#31-可变-url)  
+&emsp;&emsp;[3.2 Query 参数](#32-query-参数)  
+&emsp;[4. 通过 Body 请求](#4-通过-body-请求)  
+&emsp;[5. Form URL encode 数据](#5-form-url-encode-数据)  
+&emsp;[6. 上传文件](#6-上传文件)  
+&emsp;[7. 指定 Header](#7-指定-header)  
+&emsp;[8. 指定转换器](#8-指定转换器)  
+
+<!-- /MDTOC -->
+
+---
 
 
 ## 0. 介绍
@@ -45,7 +66,7 @@ compile 'com.squareup.retrofit2:retrofit:2.1.0'
 
 ### 2.1 创建 ApiService interface
 
-创建一个 `interface`，用于储存需要进行的网络操作 API 
+创建一个 `interface`，用于储存需要进行的网络操作 API
 
 ```
 public interface GitHubService {
@@ -72,19 +93,19 @@ GitHubService service = retrofit.create(GitHubService.class);
 ### 2.3 通过 ApiService 实例发起请求
 
 1. 发起同步请求
-    
+
     ```
     Call<List<Repo>> repos = service.listRepos;
     repos.execute();
     ```
-    
+
 2. 发起异步请求
 
     ```
     Call<List<Repo>> repos = service.listRepos;
     repos.enqueue(new CallBack());
     ```
-    
+
 ### 2.4 取消请求
 
 ```

@@ -4,7 +4,47 @@ Tags: Java
 
 Base on *Core Java Volume Ⅰ——Fundamentals**
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Java Class](#java-class)  
+&emsp;[1. 类](#1-类)  
+&emsp;&emsp;[1.0 注意](#10-注意)  
+&emsp;&emsp;[1.1 自定义类](#11-自定义类)  
+&emsp;&emsp;[1.2 方法参数](#12-方法参数)  
+&emsp;&emsp;[1.3 包（`package`）](#13-包（package）)  
+&emsp;&emsp;[1.4 类设计技巧](#14-类设计技巧)  
+&emsp;[2. 继承](#2-继承)  
+&emsp;&emsp;[2.1 Java 只允许一重继承](#21-java-只允许一重继承)  
+&emsp;&emsp;[2.2 使用 `extends` 来表明继承关系](#22-使用-extends-来表明继承关系)  
+&emsp;&emsp;[2.3 使用 `super` 来调用超类方法](#23-使用-super-来调用超类方法)  
+&emsp;&emsp;[2.4 构造器](#24-构造器)  
+&emsp;&emsp;[2.5 多态](#25-多态)  
+&emsp;&emsp;[2.6 `final` 阻止继承](#26-final-阻止继承)  
+&emsp;&emsp;[2.7 强制类型转换](#27-强制类型转换)  
+&emsp;&emsp;[2.8 抽象类](#28-抽象类)  
+&emsp;&emsp;[2.9 谨慎的使用protected](#29-谨慎的使用protected)  
+&emsp;&emsp;[2.10 Object类](#210-object类)  
+&emsp;&emsp;&emsp;[2.10.1 `equals()`方法](#2101-equals方法)  
+&emsp;&emsp;&emsp;&emsp;[2.10.2 `hashCode()` 方法](#2102-hashcode-方法)  
+&emsp;&emsp;&emsp;[2.10.3 `toString()` 方法](#2103-tostring-方法)  
+&emsp;&emsp;[2.11 泛型数组列表（`ArrayList<>`）](#211-泛型数组列表（arraylist）)  
+&emsp;&emsp;[2.12 对象包装器和自动装箱](#212-对象包装器和自动装箱)  
+&emsp;&emsp;[2.13 不定参数](#213-不定参数)  
+&emsp;&emsp;[2.14 枚举类](#214-枚举类)  
+&emsp;&emsp;[2.15 继承设计的技巧](#215-继承设计的技巧)  
+&emsp;[3. 接口](#3-接口)  
+&emsp;&emsp;[3.1 接口](#31-接口)  
+&emsp;&emsp;[3.2 对象克隆](#32-对象克隆)  
+&emsp;[4. 内部类](#4-内部类)  
+&emsp;&emsp;[4.1 概述](#41-概述)  
+&emsp;&emsp;[4.2 普通内部类](#42-普通内部类)  
+&emsp;&emsp;[4.3 局部内部类](#43-局部内部类)  
+&emsp;&emsp;[4.4 匿名内部类](#44-匿名内部类)  
+&emsp;&emsp;[4.5 静态内部类](#45-静态内部类)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -16,7 +56,7 @@ C++      |       Java
 ---|---
 函数          |      方法
 构造函数       |     构造器
-析构函数        |    析构器 
+析构函数        |    析构器
 类中的数据   |     实例域
 静态数据     |  静态域
 
@@ -47,7 +87,7 @@ Java 称 `String` 为类，`a` 为引用，而当使用 `new` 请求，分配了
     >※这是由于变量都是一个指向对象的“类似指针的”引用，有可能会使得数据封装性遭到破坏
 
 5. `final` 修饰符在使用时大多应用于不可修改的类，当应用在可变的类的时候，并不意味着类的内容不可修改
- 
+
     ```
     class Employee
     {
@@ -61,7 +101,7 @@ Java 称 `String` 为类，`a` 为引用，而当使用 `new` 请求，分配了
     * 这里的hiredate类似于一个“指针常量”，即“指针所指向的位置不可改变，但是该内存块上所储存的数据却是可以改变的”
     */
     ```
-    
+
 6. 通过static声明静态域和静态方法
 
 - 静态域和C++类中的静态变量没有什么区别
@@ -95,12 +135,12 @@ Java 称 `String` 为类，`a` 为引用，而当使用 `new` 请求，分配了
         ```
 
     3. 默认将所有数值初始化为0，布尔值初始化为false，引用初始化为null
-    
+
         > 如果没有提供显式构造器，则系统自动生成隐式（无参）构造器完成上述工作
         如果提供了显式构造器，则系统将不再自动生成无参构造器，上述操作将被视为非法
 
     4. 初始化块
-    
+
         ※这个不常用，通常使用构造器完成工作
         可以使用一个代码块对实例域进行初始化操作
         ```
@@ -108,14 +148,14 @@ Java 称 `String` 为类，`a` 为引用，而当使用 `new` 请求，分配了
         {
 	        private int id;
 	        ....
-	
+
 	        {
 		        id  = 1;
 	        }
 
         }
         ```
-    
+
         初始化块在所有构造器执行之前执行。
         通过标记关键字static可以对静态域进行初始化块操作
         ```
@@ -124,13 +164,13 @@ Java 称 `String` 为类，`a` 为引用，而当使用 `new` 请求，分配了
 	        id = 1;
         }
         ```
-    
+
 8. 类的基本结构
 - 数据域
  - 构造器（constructor）
     - 访问器（getter）
     - 更改器（setter）
-    
+
 
 ### 1.2 方法参数
 
@@ -166,7 +206,7 @@ Java 称 `String` 为类，`a` 为引用，而当使用 `new` 请求，分配了
     > 注意包名的命名要与目录树相匹配，即上述类文件必须位于com/myApp/corejava中，否则，最终的程序将无法运行
 
 - 包作用域
-    
+
     - 如果实例域没有指定访问控制符，则这一个部分可以被同一个包的所有方法访问
 
         > ※在编写类的时候，必须为实例域添加上访问控制符
@@ -184,7 +224,7 @@ Java 称 `String` 为类，`a` 为引用，而当使用 `new` 请求，分配了
 2. 一定要对数据初始化，可以直接提供默认值，也可以在构造器中提供
 
 3. 不要在类中使用过多的基本类型，可以通过一个封装类来减少使用
-    
+
     ```
     private String street;
     private String city;
@@ -192,7 +232,7 @@ Java 称 `String` 为类，`a` 为引用，而当使用 `new` 请求，分配了
     ```
 
     > 这个可以通过一个Address类来解决
-    
+
 4. 并不是所有的数据都需要访问器和更改器
 
 5. 将职责过多的类进行分解
@@ -250,28 +290,28 @@ class Derived extends Base
 4. 子类方法覆盖超类方法时，其访问权限不能严格于超类方法
 
     > ※注意不要遗漏public关键字，否则将会被解释成为更严格的访问权限
-    
+
 5. 覆盖允许返回类型协变（超类可以协变为子类）
 
 ### 2.6 `final` 阻止继承
 
 1. `final` 类
-    
+
     ```
     final class Excutive extends Manager
     ```
-    
+
     > 这种类型被称为final类，不允许定义子类，即无法继承
 
 2. `final` 方法
-    
+
     ```
     public final String getName() {...}
     ```
     > 这种方法称为final方法，这种方法不允许子类覆盖它，确保其不会在子类中改变语义
 
 **注意 `final` 的位置不同**
- 
+
 ### 2.7 强制类型转换
 
 在继承链上不允许进行由上到下的转换（超类不能转换成子类）
@@ -346,7 +386,7 @@ class Derived extends Base
     ```
     ArrayList<ClassName> staff = new ArrayList<>();
     ```
-    
+
 2. 优点：可以实现动态更改数组大小
 
 3. 使用 `add()` 方法添加元素，`remove()` 方法删除元素
@@ -383,7 +423,7 @@ public static double max(double... values)
 4. 覆盖方法时，不要改变预期的行为
 
     > 这里说的是不要偏离设计，并不是不能改变基类方法的操作
-    
+
 5. 能使用多态就使用多态
 6. 不要过多的使用反射
 
@@ -396,43 +436,43 @@ public static double max(double... values)
 ```
 public interface Comparable {...}
 ```
-    
+
 - 接口不是类，而是对类的一组需求描述
 - 接口中的所有方法自动为public
 - 实现接口
     - 将类声明为实现给定的接口
-    
-        ```    
+
+        ```
         class Employee implements Comparable {....}
         ```
-    
+
     - 对接口中的所有方法进行定义
-    
+
         > **接口实现必须声明为public**
-        
+
 - 特性
     - 不是类，不能使用new来实例化
     - 不能包含实例域和静态方法
     - 可以包含常量，接口中的域被自动设为public static final
     - 可以声明接口的变量
-        
+
         ```
         Comparable x;
         ```
     - 必须引用实现了接口的类对象
-    
+
         ```
         x = new Employee();
         ```
 
 - 可以使用instanceof来检查一个对象是否实现了某个特定接口
-    
+
     ```
     if(anObject instanceof Comparable)
     ```
-    
+
 - 可以扩展（**继承**）
-    
+
     ```
     public interface Powered extends Moveable
     ```
@@ -442,7 +482,7 @@ public interface Comparable {...}
     ```
     class Employee extends Persons implements Comparable
     ```
-    
+
 ### 3.2 对象克隆
 
 - 默认克隆（`Object.clone()`）
@@ -500,14 +540,14 @@ class TalkingClock
 ```java
 new SuperType(cosntruction parameters)
 	{
-		...	
+		...
 	}
 如果只创建局部类的一个对象的时候才使用
 ```
 
 - SuperType可以是类或者接口
 - 如果用于实现接口时，不能有任何构造参数
- 
+
 ```java
 new InterfaceType()
 	{
@@ -520,5 +560,3 @@ new InterfaceType()
 - 用于将一个类隐藏在另一个类之中，通常用于防止名称的冲突
 - 只有内部类可以声明为static
 - 特别的，通过静态方法构造的内部类必须声明为static
-
-

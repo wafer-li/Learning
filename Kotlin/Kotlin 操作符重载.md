@@ -4,7 +4,23 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin 操作符重载](#kotlin-操作符重载)  
+&emsp;[1. 概述](#1-概述)  
+&emsp;[2. 公约](#2-公约)  
+&emsp;&emsp;[2.1 一元操作符](#21-一元操作符)  
+&emsp;[2.2 二元操作符](#22-二元操作符)  
+&emsp;&emsp;[2.2.1 数学运算与范围](#221-数学运算与范围)  
+&emsp;&emsp;[2.2.2 `in` 操作符](#222-in-操作符)  
+&emsp;&emsp;[2.2.3 方括号操作符](#223-方括号操作符)  
+&emsp;&emsp;[2.2.4 圆括号操作符](#224-圆括号操作符)  
+&emsp;&emsp;[2.2.5 复合赋值操作](#225-复合赋值操作)  
+&emsp;&emsp;[2.2.6 相等性检查](#226-相等性检查)  
+&emsp;&emsp;[2.7 比较运算符](#27-比较运算符)  
+&emsp;[3. 中缀函数](#3-中缀函数)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -141,11 +157,11 @@ Expression | Translated to
 
 > 不允许 `plus()` 和 `plusAssign()` 同时存在的原因：
 这是因为编译器会默认转为 `a = a + b` 进行处理，所以当存在 `plus()` 时，就没必要编写重复代码。
-        
+
 需要注意的是，复合赋值是赋值语句的一种，而在 Kotlin 中，
 **赋值不是一个表达式**
 
-这主要是为了避免赋值语句和单行函数的冲突 
+这主要是为了避免赋值语句和单行函数的冲突
 
 ```
 fun attachView(view: View) = this.view = view
@@ -153,7 +169,7 @@ fun attachView(view: View) = this.view = view
 
 上面的代码出现了二义性。
 
-但是在 Java 中，赋值是一种表达式，也就是说 Java 允许 
+但是在 Java 中，赋值是一种表达式，也就是说 Java 允许
 
 ```
 int a = 1, b = 1, c = 1;
@@ -189,7 +205,7 @@ Symbol | Translated to
 `a <= b` | `a.compareTo(b) <= 0`
 
 所有的比较运算符都会被转换成 `compareTo()` 方法；
-`compareTo()` 方法必须返回一个 `Int` 值。 
+`compareTo()` 方法必须返回一个 `Int` 值。
 
 
 ## 3. 中缀函数
@@ -197,5 +213,3 @@ Symbol | Translated to
 除此之外，我们还可以通过定义中缀函数来定义新的**“运算符”**
 
 比如数字类型的位运算就是通过中缀函数实现的。
-
-

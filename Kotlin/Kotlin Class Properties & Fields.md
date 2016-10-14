@@ -4,7 +4,17 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin Class Properties & Fields](#kotlin-class-properties-fields)  
+&emsp;[1. 声明和调用](#1-声明和调用)  
+&emsp;[2. Getter 和 Setter](#2-getter-和-setter)  
+&emsp;&emsp;[2.1 改变 Getter 和 Setter 的可见性](#21-改变-getter-和-setter-的可见性)  
+&emsp;&emsp;[2.2 自定义 Getter 和 Setter](#22-自定义-getter-和-setter)  
+&emsp;[3. 编译时常量](#3-编译时常量)  
+&emsp;[4. 延迟初始化](#4-延迟初始化)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -13,7 +23,7 @@ Tags: Kotlin
 声明类中的属性和值很简单，类似 Java，使用 `var` 声明变量，使用 `val` 声明常量。
 
 ```
-public class Address { 
+public class Address {
   public var name: String = ...
   public var street: String = ...
   public var city: String = ...
@@ -50,11 +60,11 @@ class Foo {
 ```
 class Foo {
     private int bar = 1;
-    
+
     public int getBar() {
         return bar;
     }
-    
+
     public void setBar(int value) {
         this.bar = value;
     }
@@ -196,4 +206,3 @@ public class MyTest {
 
 延迟初始化只能应用在 `var` 中（而不能在 primary constructor 中）。
 延迟初始化的变量不能拥有自定义的 getter 和 setter，同时，它的类型也不能是原始类型。
-

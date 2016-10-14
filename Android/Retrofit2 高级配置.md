@@ -4,7 +4,21 @@ Tags: Android
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Retrofit2 高级配置](#retrofit2-高级配置)  
+&emsp;[0. 介绍](#0-介绍)  
+&emsp;[1. 初始化操作](#1-初始化操作)  
+&emsp;[2. 设置缓存](#2-设置缓存)  
+&emsp;&emsp;[2.1 构建自己的缓存处理策略](#21-构建自己的缓存处理策略)  
+&emsp;[3. 头信息](#3-头信息)  
+&emsp;[4. 日志](#4-日志)  
+&emsp;&emsp;[4.1 添加依赖](#41-添加依赖)  
+&emsp;&emsp;[4.2 配置拦截器](#42-配置拦截器)  
+&emsp;[5. 构建 client](#5-构建-client)  
+&emsp;[6. 将 client 加入 retrofit builder](#6-将-client-加入-retrofit-builder)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -97,12 +111,12 @@ Interceptor interceptor = new Interceptor() {
     @Override
     public Response intercept(Chain chain) throws IOException {
         // 直接使用旧请求新建
-        Request originalRequest = chain.request(); 
-        
+        Request originalRequest = chain.request();
+
         Request request = originalRequest.newBuilder()
                         .header("Accept", "application/json");
                         .header("Content-Type", "application/json");
-        
+
        return chain.proceed(request);
     }
 };

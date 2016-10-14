@@ -4,6 +4,18 @@ Tags： MdzzProject
 
 Database part is base on **Sugar ORM**
 
+----
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Storage API](#storage-api)  
+&emsp;[1. 概述](#1-概述)  
+&emsp;[2. SharedPreferences 部分](#2-sharedpreferences-部分)  
+&emsp;&emsp;[2.1 储存的数据](#21-储存的数据)  
+&emsp;[3. 数据库部分](#3-数据库部分)  
+
+<!-- /MDTOC -->
+
 ---
 
 ## 1. 概述
@@ -31,7 +43,7 @@ Database part is base on **Sugar ORM**
 
 通过相应的 find 方法来获取相应的实体，对实体进行数据操作之后，使用 save() 方法对其进行更新。
 
-此库已经极其简单，具体的使用说明请参照 
+此库已经极其简单，具体的使用说明请参照
 
 https://github.com/satyan/sugar#examples
 http://satyan.github.io/sugar/

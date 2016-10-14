@@ -2,7 +2,27 @@
 
 Tags: COA
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Computer Organization and Architecture](#computer-organization-and-architecture)  
+&emsp;[Introduction](#introduction)  
+&emsp;&emsp;[1.Basic Concepts](#1basic-concepts)  
+&emsp;[Computer Performance design and assessment](#computer-performance-design-and-assessment)  
+&emsp;&emsp;[1. Designing for performance](#1-designing-for-performance)  
+&emsp;&emsp;&emsp;[1) The Microprocessor Speed](#1-the-microprocessor-speed)  
+&emsp;&emsp;&emsp;[2) The balance (Balance is the key)](#2-the-balance-balance-is-the-key)  
+&emsp;&emsp;&emsp;[3) Imporve the chip O&A](#3-imporve-the-chip-oa)  
+&emsp;&emsp;[2. Performance Assessment](#2-performance-assessment)  
+&emsp;&emsp;&emsp;[1) Clock Speed](#1-clock-speed)  
+&emsp;&emsp;&emsp;[2) Instruction Execution Rate](#2-instruction-execution-rate)  
+&emsp;&emsp;&emsp;[3) Amdahl's Law](#3-amdahls-law)  
+&emsp;&emsp;&emsp;[4) Supplement](#4-supplement)  
+&emsp;[Computer System](#computer-system)  
+&emsp;&emsp;[1. Computer Components](#1-computer-components)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -13,7 +33,7 @@ Tags: COA
 - Architecture: such as **Instruction set**, **I/O mechanisms** (Visiable to programmer)
 - Organization: such as the **Control singals**, **interfaces**, **memory technology** (NOT visiable to the programmer)
 - Family of computer models(系列机): All with the same architecture but with differences in organization. Such as **Intel 286** and **Intel 386**
-- Organization is the high-level aspect of computer design, Hardware is the specific mechine. 
+- Organization is the high-level aspect of computer design, Hardware is the specific mechine.
 - The computer system include:
     - Hardware
     - Software
@@ -62,7 +82,7 @@ Increase number of bits retrieved at one time
 - Increase interconnection bandwith
     - High speed buese
     - Hierarchy of buses
-    
+
 > The I/O devices are much more slow than the memory access
 
 Solutions for I/O devices:
@@ -86,7 +106,7 @@ Solutions for I/O devices:
     - Enable parallel execution of instructions
     - Pipeline works like assembly line
     - Superscalar allows **multiple pipelines within single processor**
-        - Instructions that do not depend on the other can be executed in parallel 
+        - Instructions that do not depend on the other can be executed in parallel
 
 > Supplement: Using the **multiple cores** can be more efficiency
 
@@ -102,7 +122,7 @@ Solutions for I/O devices:
 > There are three index of the rate, CPI, MIPS and MFLOPS
 
 > - CPI: The time cycle with one instruction needed (Cycle Per Instruction)
-- MIPS: The number(million) of the instructions within in one second being executed. 
+- MIPS: The number(million) of the instructions within in one second being executed.
 - MFLOPS: Like the MIPS, it is the floating point calculate instruction.
 
 $$CPI = {{\sum_{i = 1}^n(CPI_i \times I_i)} \over I_c}$$
@@ -150,20 +170,8 @@ Some important terminology:
 
 - CPU
     - PC: programming counter, store the next instruction's address.
-    - IR: instruction register, store the instruction 
+    - IR: instruction register, store the instruction
     - MAR: the memory address register, exchange data with the main memory
     - I/O AR: input and output address register
     - I/O BR: input and output buffer register
 - Mian Memory
-    
-
-
-
-
-
-
-
-
-
-
-

@@ -4,7 +4,16 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin 可见性修饰符](#kotlin-可见性修饰符)  
+&emsp;[1. 概述](#1-概述)  
+&emsp;[2. 包级别](#2-包级别)  
+&emsp;[3. 类级别](#3-类级别)  
+&emsp;[4. 构造器](#4-构造器)  
+&emsp;[5. 关于模块](#5-关于模块)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -46,7 +55,7 @@ private fun foo() {} // visible inside example.kt
 
 public var bar: Int = 5 // property is visible everywhere
     private set         // setter is visible only in example.kt
-    
+
 internal val baz = 6    // visible inside the same module
 ```
 
@@ -57,7 +66,7 @@ internal val baz = 6    // visible inside the same module
 
 - 如果没有显式指定，那么默认为 `public`，此时，内容对**所有能看见这个类的对象**都是可见的
 - 如果指定了 `private`，那么只有在类的内部才可见
-- 如果指定了 `protected`，那么只在类内部和其子类可见，如果 override 了一个 `protected` 变量，那么 override 后的变量自动具有 `protected` 属性 
+- 如果指定了 `protected`，那么只在类内部和其子类可见，如果 override 了一个 `protected` 变量，那么 override 后的变量自动具有 `protected` 属性
 - 如果指定了 `internal`，那么在模块内可见
 
 > 需要注意的是，不像 Java，
@@ -69,7 +78,7 @@ open class Outer {
     protected open val b = 2
     internal val c = 3
     val d = 4  // public by default
-    
+
     protected class Nested {
         public val e: Int = 5
     }
@@ -86,7 +95,7 @@ class Subclass : Outer() {
 class Unrelated(o: Outer) {
     // o.a, o.b are not visible
     // o.c and o.d are visible (same module)
-    // Outer.Nested is not visible, and Nested::e is not visible either 
+    // Outer.Nested is not visible, and Nested::e is not visible either
 }
 ```
 
@@ -109,6 +118,3 @@ class C private constructor(a: Int) { ... }
 - 一个 IntelliJ IDEA module
 - 一个 Maven 或者 Gradle 工程
 - 一个使用同一个 Ant Task 调用的文件集合
-
-
-

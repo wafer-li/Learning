@@ -4,7 +4,15 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin Interface](#kotlin-interface)  
+&emsp;[1. 基本形式](#1-基本形式)  
+&emsp;[2. 实现接口](#2-实现接口)  
+&emsp;[3. 声明属性](#3-声明属性)  
+&emsp;[4. 解决冲突](#4-解决冲突)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -87,4 +95,3 @@ class D : A, B {
 在这里，D 不需要 override `bar()`，
 这是因为 D 同时实现了 A，B，
 而 B 中对 `bar()` 方法进行了实现，同时 `bar()` 的实现中没有冲突。
-

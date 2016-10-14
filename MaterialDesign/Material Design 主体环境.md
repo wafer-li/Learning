@@ -4,7 +4,14 @@ Tags: MaterialDesign
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Material Design 主体环境](#material-design-主体环境)  
+&emsp;[1. 概述](#1-概述)  
+&emsp;[2. 3D 世界](#2-3d-世界)  
+&emsp;[3. 灯光和阴影](#3-灯光和阴影)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -57,4 +64,3 @@ z 轴垂直对齐于屏幕，正轴指向屏幕外侧。
 
 <center><img src="https://material-design.storage.googleapis.com/publish/material_v_9/0B6Okdz75tqQsNnVmbTNMUF9DR0U/whatismaterial_environment_shadow3.png" width="300"></center>
 <center>两种光源的混合投影</center>
-

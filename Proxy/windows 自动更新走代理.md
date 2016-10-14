@@ -23,4 +23,3 @@ netsh winhttp set proxy proxy-server="proxyserver:8080"
 ```
 netsh winhttp reset proxy
 ```
-

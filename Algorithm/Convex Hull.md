@@ -4,6 +4,17 @@ Tags: Algorithm
 
 ---
 
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Convex Hull](#convex-hull)  
+&emsp;[1. Graham scan 实现](#1-graham-scan-实现)  
+&emsp;&emsp;[1.1 要点](#11-要点)  
+&emsp;&emsp;[1.2 确定逆时针转角（CCW）](#12-确定逆时针转角（ccw）)  
+
+<!-- /MDTOC -->
+
+---
+
 输入一个点集，输出一个构成**能容纳所有点的最小多边形的顶点集合**
 
 ## 1. Graham scan 实现
@@ -17,7 +28,7 @@ Tags: Algorithm
 1. 如何寻找具有最小 y 坐标的点
 
     > 将点按照 y 坐标进行排序
-    
+
 2. 如何将点**按照极坐标**进行排序
 
     > 1. 计算出极坐标，然后进行排序
@@ -26,25 +37,25 @@ Tags: Algorithm
         2. 如果 $q_1$ 在 $p$ 下方，$q_2$ 在 $p$ 上方，则 $q_1$ 极坐标较大
         3. 否则，根据 $p \to q_1 \to q_2$ 的逆时针转角(`ccw(p, q1, q2)`) 确定极坐标大小
         >> 上述函数中，`ccw(p, q1, q2)` 返回 1，则 $q_2$ 较大，返回 -1 则 $q_1$ 较大
-    
+
 3. 如何确定各个点之间是逆时针转角
 
     > 几何问题，进行图形计算即可
-    
+
 4. 如何更有效的排序
 
     > 使用归并排序或者快速排序
-    
+
 5. 如何处理边界点（几个点在同一条直线上，**并不是顶点**）
 
     > 细心点
-    
+
 ### 1.2 确定逆时针转角（CCW）
 
 **使用三角形有向面积进行判定**
 
 $$
-2 \times Area(a, b, c) =  
+2 \times Area(a, b, c) =
 \begin{vmatrix}
 a_x & a_y & 1\\
 b_x & b_y & 1\\
@@ -66,7 +77,7 @@ $$
 由向量叉乘的物理含义可知，**向量的叉乘就是两个向量所在的平行四边形的面积**
 在三维条件下，叉乘为
 $$
-|a \times b| = 
+|a \times b| =
 \begin{vmatrix}
 i & j & k\\
 a_x & a_y & a_z\\
@@ -75,7 +86,7 @@ b_x & b_y & b_z
 $$
 取 $z = 0$ 这一平面，则
 $$
-|a \times b| = 
+|a \times b| =
 \begin{vmatrix}
 a_x & a_y\\
 b_x & b_y\\

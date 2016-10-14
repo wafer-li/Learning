@@ -4,7 +4,29 @@ Tags: Java
 
 Base on *Core Java Volume Ⅰ——Fundamentals**
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Java Exception](#java-exception)  
+&emsp;[5. 异常处理](#5-异常处理)  
+&emsp;&emsp;[5.1  异常分类](#51-异常分类)  
+&emsp;&emsp;[5.2  声明异常](#52-声明异常)  
+&emsp;&emsp;[5.3 抛出异常](#53-抛出异常)  
+&emsp;&emsp;[5.4 捕获异常](#54-捕获异常)  
+&emsp;&emsp;&emsp;[5.4.1 使用try/catch语句块来捕获异常](#541-使用trycatch语句块来捕获异常)  
+&emsp;&emsp;&emsp;[5.4.2 `finally` 子句](#542-finally-子句)  
+&emsp;&emsp;&emsp;&emsp;[5.4.2.1 概述](#5421-概述)  
+&emsp;&emsp;&emsp;&emsp;[5.4.2.2 带资源的try语句](#5422-带资源的try语句)  
+&emsp;&emsp;[5.5  使用异常的技巧](#55-使用异常的技巧)  
+&emsp;&emsp;&emsp;[5.5.1 异常处理不能代替简单的测试](#551-异常处理不能代替简单的测试)  
+&emsp;&emsp;&emsp;[5.5.2 不要过分细化异常](#552-不要过分细化异常)  
+&emsp;&emsp;&emsp;[5.5.3 利用异常层次结构](#553-利用异常层次结构)  
+&emsp;&emsp;&emsp;[5.5.4 应该关闭不重要的异常](#554-应该关闭不重要的异常)  
+&emsp;&emsp;&emsp;[5.5.5 早抛出，晚捕获](#555-早抛出，晚捕获)  
+&emsp;&emsp;[5.6  断言](#56-断言)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -23,19 +45,19 @@ Base on *Core Java Volume Ⅰ——Fundamentals**
 
     - Exception
         - IOException 及其他
-        
+
             > ※包含
         	试图在文件尾部后面读取数据（IO）
         	试图打开一个不存在的文件（IO）
         	试图根据给定的字符串查找Class，而这个类并不存在
 
         - Runtime Exception
-            
+
             > ※包含
 	        错误的类型转换
 	        数组访问越界
 	        访问空指针
-	
+
 - 注意要点
     - 如果出现 `RuntimeException`，那么就一定是你的问题，需要从程序设计方面进行改进
     - 所有派生于 `Error` 和 `RuntimeException` 的异常称为未检查异常
@@ -46,7 +68,7 @@ Base on *Core Java Volume Ⅰ——Fundamentals**
 ※类似于C++98的异常规范
 
 - 在方法的首部声明
-    
+
     ```
     public FileInputStream(String name) throws FileNotFoundException
     ```
@@ -69,7 +91,7 @@ Base on *Core Java Volume Ⅰ——Fundamentals**
     > ※注意与声明异常的关键字（`throws`）区分开
     只能抛出 `Throwable` 子类的对象
     ※而 C++ 能抛出任何类型的值
-    
+
 - 抛出异常与捕获异常不同，如果没有异常处理器（`try` `catch`）捕获异常，则程序将会终止
 - 自定义异常
     - 通常包含一个默认构造器和一个带有详细描述信息的构造器
@@ -81,7 +103,7 @@ Base on *Core Java Volume Ⅰ——Fundamentals**
 
 如果调用一个抛出已检查异常的方法，则必须对其处理（`try/catch`），或继续将其传递（`throws`）
 一个catch语句里面可以捕获多个异常类型，使用 `|` 间隔开
-※此时，异常变量为 `final` 
+※此时，异常变量为 `final`
 可以在 `catch` 语句中再次抛出异常
 ※与 C++ 不同的是，不能只写 `throw` 关键字，而需要将整个抛出异常都写上
 
@@ -111,10 +133,10 @@ finally
     > try可以只有finally，而没有catch
 
 - **当finally语句抛出异常时，会覆盖掉原有异常（此时建议使用带资源的try语句）**
-  
+
   - ※如果此异常必须返回给调用者的话，则需要进行一些处理才能返回给调用者
   - ※如果原异常具有异常处理器（被捕获）则不需要这种解决办法
-    
+
     - 常规解决办法
 
        ```java
@@ -144,7 +166,7 @@ finally
 	        }
         }
         ```
-        
+
 ##### 5.4.2.2 带资源的try语句
 
 - **只要需要关闭资源，就要尽可能使用带资源的try语句**
@@ -156,11 +178,11 @@ finally
     	....
     }
     ```
-    
+
 - 资源：特指文件和输入输出流等，和**申请的内存无关**
 
     > 当try块退出时，将会自动调用res.close()
-    
+
 - 可以指定多个资源
 当出现异常时，`close` 异常会被自动捕获（抑制），原有异常将会重新抛出
 ※ `close` 的异常将会被增加到原有异常中，可以使用 `getSuppressed` 方法获取到被抑制的异常列表
@@ -190,9 +212,6 @@ finally
 
 #### 5.5.5 早抛出，晚捕获
 
-### 5.6  断言 
+### 5.6  断言
 
 TODO
-
-
-

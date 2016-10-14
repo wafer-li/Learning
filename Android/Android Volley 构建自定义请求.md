@@ -2,7 +2,24 @@
 
 Tags: Android
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Android Volley 构建自定义请求](#android-volley-构建自定义请求)  
+&emsp;[1. 介绍](#1-介绍)  
+&emsp;[2. 基本步骤](#2-基本步骤)  
+&emsp;&emsp;[2.1 继承 `Request<T>` 类](#21-继承-requestt-类)  
+&emsp;&emsp;[2.2 实现构造器](#22-实现构造器)  
+&emsp;&emsp;[2.3 重载必要方法](#23-重载必要方法)  
+&emsp;&emsp;[2.4 完整示例](#24-完整示例)  
+&emsp;[3. 关于 POST 方法](#3-关于-post-方法)  
+&emsp;&emsp;[3.1 重载 `getParams()` 或 `getBody()` 方法](#31-重载-getparams-或-getbody-方法)  
+&emsp;&emsp;&emsp;[3.1.1 重载 `getParams()` 方法](#311-重载-getparams-方法)  
+&emsp;&emsp;&emsp;[3.1.2 重载 `getBody()` 方法](#312-重载-getbody-方法)  
+&emsp;&emsp;[3.2 重载 `getBodyContentType()` 方法](#32-重载-getbodycontenttype-方法)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -24,7 +41,7 @@ Volley 提供了基本的 `StringRequest`，`JsonObjectRequest` 和 `JsonArrayRe
 ```
 public class GsonRequst<T> extends Requst<T> {
     // class body
-}  
+}
 ```
 
 ### 2.2 实现构造器
@@ -35,10 +52,10 @@ public class GsonRequst<T> extends Requst<T> {
 public GsonRequest(String url, Class<T> clazz,
                     Response.Listener<T> listener,
                     Response.ErrorListener errorListener) {
-    
+
     // Fulfill the super constructor
     super(Method.GET, url, errorListener);
-    
+
     this.clazz = clazz;
     this.listener = listenr;
 }
@@ -48,13 +65,13 @@ public GsonRequest(String url, Class<T> clazz,
 
 ### 2.3 重载必要方法
 
-为了实现 `GsonRequest` 我们要重载必要的方法 
+为了实现 `GsonRequest` 我们要重载必要的方法
 `parseNetworkResponse()` 和 `deliverNetworkResponse()`
 
 1. 重载 `parseNetworkResponse(Response response)`
 
     顾名思义，这个方法是用来解析网络的回复的，对于我们的 `GsonRequest`，我们首先要将网络的回复（**二进制流**）转换成 JSON，然后由 Gson 解析成相应的类。
-    
+
     ```
     @Override
     protected Response<T> parseNetworkResponse(
@@ -74,7 +91,7 @@ public GsonRequest(String url, Class<T> clazz,
 
     这个方法是将 `parseNetworkResponse()` 的**解析结果**发送给我们的 Response listener 的。
     所以，代码较为简单，直接把解析出来的 `response` 传给 `listener` 的回调方法即可。
-    
+
     ```
     @Override
     protected void deliverResponse(T response) {
@@ -167,7 +184,7 @@ public class GsonRequest<T> extends Request<T> {
 ```
 @Override Map<String, String> getParmas() {
     String json = gson.toJson(mPostObject);
-    
+
     // Use TypeToken to avoid the unchecked cast
     // and the floating number converted from primitive integer
     return gson.fromJson(
@@ -215,5 +232,3 @@ public String getBodyContentType() {
     return PROTOCOL_CONTENT_TYPE;
 }
 ```
-
-

@@ -4,7 +4,24 @@ Tags: Android
 
 API 21 新增的用于替代 ListView 的组件
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[RecyclerView](#recyclerview)  
+&emsp;[1. 一般的使用](#1-一般的使用)  
+&emsp;&emsp;[1.1 添加编译依赖](#11-添加编译依赖)  
+&emsp;&emsp;[1.2 界面的基本设置](#12-界面的基本设置)  
+&emsp;&emsp;[1.3 设置 **LayoutManager** 和 **Adapter**](#13-设置-layoutmanager-和-adapter)  
+&emsp;&emsp;[1.4 定义 Adapter 和重载方法](#14-定义-adapter-和重载方法)  
+&emsp;[2. 多 Item 布局实现](#2-多-item-布局实现)  
+&emsp;[3. 设置 OnItemClickListener](#3-设置-onitemclicklistener)  
+&emsp;&emsp;[2.1 定义一个 Listener 接口](#21-定义一个-listener-接口)  
+&emsp;&emsp;[2.2 为 Adapter 添加接口成员](#22-为-adapter-添加接口成员)  
+&emsp;&emsp;[2.3 设置点击响应并将其回调](#23-设置点击响应并将其回调)  
+&emsp;&emsp;[2.4 在 Acitivity 或者 Fragment 中响应回调](#24-在-acitivity-或者-fragment-中响应回调)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -18,7 +35,7 @@ compile 'com.android.support:recyclerview-v7:+'
 
 ### 1.2 界面的基本设置
 
-1. 将 RecyclerView 加入到 `layout.xml` 
+1. 将 RecyclerView 加入到 `layout.xml`
 
     > `layout.xml` 指的是 `Activity` 或者 `Fragment` 的布局
 
@@ -28,7 +45,7 @@ compile 'com.android.support:recyclerview-v7:+'
     android:layout_height="match_parent"
     android:id="@+id/recycler"
     android:scrollbars="vertical"/>
-    
+
     <!-- Must define the scrollbars attr -->
     ```
 
@@ -62,13 +79,13 @@ public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle saved
 
     //set the Recycler
     mRecyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
-    
+
     //set LayoutManager
     mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-    
+
     //DataSet
     mCrimes = CrimeLab.get(getActivity()).getCrimes();
-    
+
     //set the Adapter
     mRecyclerView.setAdapter(new CrimeAdapter());
 
@@ -82,19 +99,19 @@ public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle saved
 注意以下几点：
 
 1. Adapter 储存着数据的集合，还有一个作为内部类的 `ViewHolder`
-    
+
     ```java
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    
+
     //The DataSet
     private List<Object> mDatas;
     //...other stuff
-    
+
     //The inner ViewHolder
     class MyViewHolder extends Recycler.ViewHolder {
         //The views
         public TextView textView;
-        
+
         //The Ctor is Auto-Generate
         public MyViewHolder (View itemView) {
             super(itemView);
@@ -110,7 +127,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int ViewType) {
         // Build a ViewHolder which is the inner class, and return it
-    
+
         /**
         * Notice: The ViewType is use to build the diffirent ViewHolder
         * to display diffirent ViewHolder
@@ -121,9 +138,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // Bind the view with the DataSet
-        // Just like the getView() method in ListView 
+        // Just like the getView() method in ListView
         // But it's more easier
-        
+
         holder.mTextView.setText(mData[position]);
 
     }
@@ -132,10 +149,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // Return the amount of item
     }
     ```
-    
+
 ## 2. 多 Item 布局实现
 
-使用 `getItemViewType(int position)` 方法来获取每个 `position` 的 `ViewType` 
+使用 `getItemViewType(int position)` 方法来获取每个 `position` 的 `ViewType`
 
 > RecyclerView 中取消了 `getItemViewTypeCount()` 方法
 
@@ -180,7 +197,7 @@ public interface OnItemClickListener {
 ```java
 class MyAdapter ... {
     private OnItemClickListener mOnItemClickListener;
-    
+
     public void setOnItemClickListener(OnItemClickListener mOnItemClickListener) {
         this.mOnItemClickListener = mOnItemClickListener;
     }
@@ -195,7 +212,7 @@ class MyAdapter ... {
 public void onBindViewHolder (final MyViewHolder holder, final int position) {
     // Bind the View with Data
     holder.textView.setText(mDatas.get(position));
-    
+
     // Set the Listener
     // Notice: if the callback was set,
     // then set the Click Event for the ViewHolder
@@ -227,6 +244,3 @@ public void onCreateView(...) {
     })
 }
 ```
-
-
-

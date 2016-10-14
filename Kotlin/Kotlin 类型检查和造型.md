@@ -4,7 +4,15 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin 类型检查和造型](#kotlin-类型检查和造型)  
+&emsp;[1. 类型检查](#1-类型检查)  
+&emsp;[2. 智能造型(Smart Cast)](#2-智能造型smart-cast)  
+&emsp;[3. 不安全的造型](#3-不安全的造型)  
+&emsp;[4. 安全的造型](#4-安全的造型)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -108,5 +116,3 @@ val x: String? = y as? String
 ```
 
 注意，虽然 `as?` 右边是一个非空类型，但是造型返回的结果也可以为空。
-
-

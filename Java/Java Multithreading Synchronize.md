@@ -7,7 +7,54 @@ Base on *Core Java Volume Ⅰ——Fundamentals* and many Posts
 8.11 以后为高级并发工具
 应用层面优先选择并发工具和并发库
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Java Multithreading Synchronize](#java-multithreading-synchronize)  
+&emsp;[8.5 线程同步](#85-线程同步)  
+&emsp;&emsp;[8.5.0 Intro](#850-intro)  
+&emsp;&emsp;[8.5.1 使用 ReentrantLock 实现同步](#851-使用-reentrantlock-实现同步)  
+&emsp;&emsp;&emsp;[8.5.1.1 锁的初级使用](#8511-锁的初级使用)  
+&emsp;&emsp;&emsp;[8.5.1.2 公平锁](#8512-公平锁)  
+&emsp;&emsp;&emsp;[8.5.1.3 条件对象](#8513-条件对象)  
+&emsp;&emsp;&emsp;&emsp;[8.5.1.3.1 使用条件对象的原因](#85131-使用条件对象的原因)  
+&emsp;&emsp;&emsp;&emsp;[8.5.1.3.2 使用条件对象](#85132-使用条件对象)  
+&emsp;&emsp;[8.5.2 `synchronized` 关键字](#852-synchronized-关键字)  
+&emsp;&emsp;&emsp;[8.5.2.1 内部锁](#8521-内部锁)  
+&emsp;&emsp;&emsp;[8.5.2.2 唯一的条件对象](#8522-唯一的条件对象)  
+&emsp;&emsp;&emsp;[8.5.2.3 例子](#8523-例子)  
+&emsp;&emsp;&emsp;[8.5.2.4 局限性](#8524-局限性)  
+&emsp;&emsp;&emsp;[8.5.2.5 总结](#8525-总结)  
+&emsp;&emsp;[8.5.3 同步阻塞](#853-同步阻塞)  
+&emsp;&emsp;[8.5.4 监视器](#854-监视器)  
+&emsp;&emsp;[8.5.5 Volatile 域](#855-volatile-域)  
+&emsp;&emsp;&emsp;[8.5.5.1 正确使用 `volatile` 变量的条件](#8551-正确使用-volatile-变量的条件)  
+&emsp;&emsp;&emsp;[8.5.5.2 性能考虑](#8552-性能考虑)  
+&emsp;&emsp;&emsp;[8.5.5.3 正确使用的情形](#8553-正确使用的情形)  
+&emsp;&emsp;[8.5.6 `final` 变量](#856-final-变量)  
+&emsp;&emsp;[8.5.7 死锁](#857-死锁)  
+&emsp;&emsp;[8.5.8 线程局部变量](#858-线程局部变量)  
+&emsp;&emsp;[8.5.9 锁测试与超时](#859-锁测试与超时)  
+&emsp;&emsp;[8.5.10 读/写锁](#8510-读写锁)  
+&emsp;&emsp;&emsp;[8.5.10.1 使用步骤](#85101-使用步骤)  
+&emsp;&emsp;[8.5.11 并发工具](#8511-并发工具)  
+&emsp;&emsp;&emsp;[8.5.11.1 阻塞队列](#85111-阻塞队列)  
+&emsp;&emsp;&emsp;&emsp;&emsp;[8.5.11.1.1 API](#851111-api)  
+&emsp;&emsp;&emsp;&emsp;[8.5.11.1.2 例子](#851112-例子)  
+&emsp;&emsp;&emsp;[8.5.11.2 线程安全的集合](#85112-线程安全的集合)  
+&emsp;&emsp;[8.5.12 `Callable` 和  `Future`](#8512-callable-和-future)  
+&emsp;&emsp;&emsp;[8.5.12.1 `Callable`](#85121-callable)  
+&emsp;&emsp;&emsp;[8.5.12.2 `Future`](#85122-future)  
+&emsp;&emsp;&emsp;[8.5.12.3 `FutureTask`](#85123-futuretask)  
+&emsp;&emsp;[8.5.13 执行器(Executor)](#8513-执行器executor)  
+&emsp;&emsp;&emsp;[8.5.13.1 基本使用](#85131-基本使用)  
+&emsp;&emsp;&emsp;[8.5.13.2 `ScheduledExecutorService` 预定执行](#85132-scheduledexecutorservice-预定执行)  
+&emsp;&emsp;&emsp;[8.5.13.3 控制任务组](#85133-控制任务组)  
+&emsp;&emsp;&emsp;[8.5.13.4 Fork-Join 框架](#85134-fork-join-框架)  
+&emsp;&emsp;[8.5.14 同步器（Synchronizer）](#8514-同步器（synchronizer）)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -84,7 +131,7 @@ public class Bank {
 1. 不能使用一般的 `if` 语句进行检查
 
     > 因为 `if` 是非原子性的，线程可能在通过检查之后被剥夺，再次进入时却又不满足执行条件。
-    
+
     ```java
     // DON'T DO THAT!!
     if (bank.getBalance(form) >= amount) {
@@ -92,7 +139,7 @@ public class Bank {
         bank.transfer(from, to, amount)
     }
     ```
-    
+
 2. 不能在临界区内检查条件
 
     > 有可能在条件不满足的情况下，需要其他线程的协助才能满足条件。
@@ -105,16 +152,16 @@ public class Bank {
 2. 当条件不满足时， 调用**条件对象的** `await()` 方法
 
     > 该方法会使当前线程阻塞，加入条件对象等待队列，并**放弃锁**
-    
+
 3. 当**条件有可能满足时**，调用**条件对象的** `singalAll()` 方法
 
     > 这一方法会激活**所有的**等待该条件对象的线程，并尝试重新获取锁，从被阻塞的地方**继续执行**
     此时，线程应**再次测试条件**，因为此时无法确保条件是否被满足。
-    
+
     > 之所以不能确保，是因为线程在 `await()` 之后，**不具备将自己唤醒的能力**，必须由另一线程执行 `singalAll()` 方法。
     如果没有一个线程能够调用 `singnal`，那么此时系统就**死锁**了。
     所以就应在**对象的状态有利于等待线程的改变时**调用 `singalAll()` 方法。
-    
+
     > 另外，也有一个 `singal()` 方法，这个方法会随机选择一个等待线程进行唤醒。
 
 综上，以下是使用条件对象的基本框架：
@@ -126,13 +173,13 @@ class Bank {
     ....
     public Bank() {
         ...
-        // Using the Lock object to 
+        // Using the Lock object to
         // get the condition object reference
         sufficientFunds = bankLock.newCondition();
     }
-    
+
     ...
-    
+
     public void transfer(int from, int to, int amount) {
         // Lock the code
         bankLock.lock();
@@ -205,7 +252,7 @@ notify()All == intrinsicCondition.singnalAll();
 ```java
 class Bank {
     private double[] accounts;
-    
+
     public synchronized void transfer(int form, int to, int amount) throws InterruptedException {
         while (accounts[from] < amount) {
             // Do not have suffient funds
@@ -216,12 +263,12 @@ class Bank {
         // Transfering..
         accounts[from] -= amount;
         accounts[to] += amount;
-        
+
         // Transfer done
         // Using notifyAll() method instead of singnalAll()
         notifyAll();
     }
-    
+
     public synchronized double getTotalBalance() {...}
 }
 ```
@@ -234,7 +281,7 @@ class Bank {
 1. 不能中断一个正在试图获得锁的进程
 
     > 因为锁在对象内部，开发者无法操作，2 同
-    
+
 2. 试图获得锁时，不能设定超时
 3. 每个锁仅有单一的条件，可能是不够的
 
@@ -245,15 +292,15 @@ class Bank {
 1. **最好两者都不使用**，使用 Java 自带或一些第三方的并发工具来处理同步问题。
 
     > *Effective Java* 中提到 “并发工具优先” 的概念，即，成套的并发库和并发工具，要优先于使用 `wait()`, `notify()` 方法
-    
+
 2. 如果不想采用并发库，并且 `synchronized` 的缺点并没有对程序造成影响，那么**尽量使用它**
 
     > 这样可以减少编写的代码，减少出错的几率
-    
+
 3. 如果特别需要 `Lock/Condition` 的独有特性时，那么才使用 `Lock/Condition`
 
     > 比如说即时中断，特定的等待超时等。
-    
+
 ### 8.5.3 同步阻塞
 
 同步阻塞允许客户使用
@@ -312,7 +359,7 @@ synchronized(lock) {
 1. 状态标志
 
     > 这是 `volatile` 的最常使用情形，作为一个布尔状态标志，用于指示发生了一个重要的一次性事件，或监视线程状态（是否被终止）
-    
+
     ```java
     volatile boolean shutdownRequested;
 
@@ -320,21 +367,21 @@ synchronized(lock) {
 
     public void shutdown() { shutdownRequested = true; }
 
-    public void doWork() { 
-        while (!shutdownRequested) { 
+    public void doWork() {
+        while (!shutdownRequested) {
             // do stuff
         }
     }
     ```
-    
+
     > 此时，很可能需要从外部（另一线程）调用 `shutdown()` 方法，那么就需要保证 `shutdownRequested` 的可见性。
     此时，显然使用 `volatile` 关键字会更好
-    
+
 2. 一次性安全发布
 
     > 当缺乏同步可见性时，可能会出现一个线程获取到了一个**不完全构建的对象**，从而出现**更新值**和**旧值**同时存在。
     此时，可以将该对象的引用定义为 `volatile` 类型，然后在使用前通过检查该引用就可以知道对象是否安全发布了。
-    
+
     ```java
     public class BackgroundFloobleLoader {
         public volatile Flooble theFlooble;
@@ -347,23 +394,23 @@ synchronized(lock) {
 
     public class SomeOtherClass {
         public void doWork() {
-            while (true) { 
+            while (true) {
                 // do some stuff...
                 // use the Flooble, but only if it is ready
-                if (floobleLoader.theFlooble != null) 
+                if (floobleLoader.theFlooble != null)
                     doSomething(floobleLoader.theFlooble);
             }
         }
     }
     ```
-    
+
     > 注意使用的条件在于，**该对象一经发布就不可修改，或者是线程安全对象**
     如果需要对该对象进行异步更改，那么就需要 `synchronized` 等进行额外的同步操作。
-    
+
 3. 独立观察
 
     > `volatile` 变量可以定期的发布一些观察结果供程序内部使用，或者收集必要的统计信息
-    
+
     ```java
     // Record the last login user's account
     public class UserManager {
@@ -380,15 +427,15 @@ synchronized(lock) {
         }
     }
     ```
-    
+
     > 这个模式和上述的模式稍有不同，使用该值的代码需要清除该值可能会随时变化。
-    
+
 4. volatile bean 模式
 
     > 这是 Java Bean 模式的一种。
     它要求，所有的数据成员都是 `volatile` 的，同时， getter & setter 必须非常简单，不包含其他复杂代码
     该模式为一些易变数据提供了容器，但是要求**放入这些容器的对象必须是线程安全的**
-    
+
     ```java
     @ThreadSafe
     public class Person {
@@ -400,24 +447,24 @@ synchronized(lock) {
         public String getLastName() { return lastName; }
         public int getAge() { return age; }
 
-        public void setFirstName(String firstName) { 
+        public void setFirstName(String firstName) {
             this.firstName = firstName;
         }
 
-        public void setLastName(String lastName) { 
+        public void setLastName(String lastName) {
             this.lastName = lastName;
         }
 
-        public void setAge(int age) { 
+        public void setAge(int age) {
             this.age = age;
        }
 }
     ```
-    
+
 5. 高级应用——开销较低的读——写锁策略
 
     > 当对于一个变量的读操作远远超过写操作时，我们就可以使用 `volatile` 关键字修饰该变量，用于保证可见性，同时对 setter 方法采取 `synchronized` 修饰保证同步性，实现较低开销的读和写锁
-    
+
     ```java
     @ThreadSafe
     public class CheesyCounter {
@@ -432,7 +479,7 @@ synchronized(lock) {
         }
     }
     ```
-    
+
 ### 8.5.6 `final` 变量
 
 如果一个域被声明为 `final`，那么对于该**变量**将不会出现线程安全问题。
@@ -448,10 +495,10 @@ Java 并不能在语言层次上避免或打破死锁的发生，这是程序设
 
 如果要避免线程间共享变量，那么可以使用 ThreadLocal 辅助类为各个线程提供各自的实例。
 
-例如，如果要让每个线程都拥有自己的 `SimpleDateFormat` 变量，那么只需要 
+例如，如果要让每个线程都拥有自己的 `SimpleDateFormat` 变量，那么只需要
 
 ```java
-public static final ThreadLocal<SimpleDateFormat> dateFormat = 
+public static final ThreadLocal<SimpleDateFormat> dateFormat =
     new ThreadLocal<SimpleDateFormat>() {
         protected SimpleDateFormat initalValue() {
             return new SimpleDateFormat("yyyy-MM-dd");
@@ -527,14 +574,14 @@ if (myLock.tryLock(100, TimeUnit.MILLSECONDS));
     ```java
     private ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
     ```
-    
+
 2. 抽取读锁和写锁
 
     ```java
     private Lock readLock = rwl.readLock();
     private Lock writeLock = rwl.writeLock();1
     ```
-    
+
 3. 对所有的 getter 加读锁
 
     ```java
@@ -546,7 +593,7 @@ if (myLock.tryLock(100, TimeUnit.MILLSECONDS));
         }
     }
     ```
-    
+
 4. 对所有 setter 加写锁
 
     ```java
@@ -607,10 +654,10 @@ public class BlockingQueueExample {
         BlockingQueue bq = new ArrayBlockingQueue(1000);
         Producer producer = new Producer(bq);
         Consumer consumer = new Consumer(bq);
-        
+
         new Thread(producer).start();
         new Thread(consumer).start();
-        
+
         Thread.sleep(4000);
     }
 }
@@ -622,11 +669,11 @@ public class BlockingQueueExample {
 */
 public class Producer implements Runnable {
     private BlockingQueue bq = null;
-    
+
     public Producer(BlockingQueue queue) {
         this.setBlockingQueue(queue);
     }
-    
+
     // The blocking queue has a internal synchronize
     // The delay of each end of the addition will show this
     public void run() {
@@ -637,12 +684,12 @@ public class Producer implements Runnable {
             System.out.println("Produced: " + res);
             bq.put(res);
             Thread.sleep(1000);
-            
+
             res = Addition(rand.nextInt(100), rand.nextInt(50));
             System.out.println("Produced: " + res);
             bq.put(res);
             Thread.sleep(1000);
-            
+
             res = Addition(rand.nextInt(100), rand.nextInt(50));
             System.out.println("Produced: " + res);
             bq.put(res);
@@ -650,11 +697,11 @@ public class Producer implements Runnable {
             e.printStackTrace();
         }
     }
-    
+
     public void setBlockingQueue(BlockingQueue bq) {
         this.bq = bq;
     }
-    
+
     public int Addition(int x, int y) {
         int result = 0;
         result = x + y;
@@ -668,11 +715,11 @@ public class Producer implements Runnable {
 */
 public class Consumer implements Runnable {
     protected BlockingQueue queue = null;
-    
+
     public Consumer(BlockingQueue queue) {
         this.queue = queue;
     }
- 
+
     public void run() {
         try {
             System.out.println("Consumed: " + queue.take());
@@ -941,7 +988,7 @@ public static long time(Executor executor, int concurrency, final Runnalbe actio
     final CountDownLatch ready = new CounDownLatch(concurrency);
     final CountDownLatch start = new CounDownLatch(1);
     final CountDownLatch done = new CounDownLatch(concurrency);
-    
+
     for (int i = 0; i < concurrency; i++) {
         executor.execute(new Runnable() {
             // This is the worker thread
@@ -949,7 +996,7 @@ public static long time(Executor executor, int concurrency, final Runnalbe actio
                 ready.countDown(); // Tell the timer worker is ready
                 try {
                     start.await(); // Worker stuck at start point
-                    
+
                     // Because of blocking,
                     // this statement will not run
                     // until the start count down reach 0
@@ -962,7 +1009,7 @@ public static long time(Executor executor, int concurrency, final Runnalbe actio
             }
         });
     }
-    
+
     // This is the timer thread
     ready.await();  // Wait for all the workers are done
     long startNanos = System.nanoTime();

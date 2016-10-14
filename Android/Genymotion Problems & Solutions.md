@@ -4,7 +4,17 @@ Tags: Android
 
 这里是 Genemotion 的一些问题解答和 小 Tips
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Genymotion Problems & Solutions](#genymotion-problems-solutions)  
+&emsp;[0. 简介](#0-简介)  
+&emsp;[1. Unable connect to virtual_device](#1-unable-connect-to-virtual_device)  
+&emsp;&emsp;[1.1 Virtual Host Error](#11-virtual-host-error)  
+&emsp;[2. 虚拟机链接不上网络](#2-虚拟机链接不上网络)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -26,7 +36,7 @@ Tags: Android
 
     Failed to open/create the internal network 'HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adapter' (VERR_INTNET_FLT_IF_NOT_FOUND).
     Failed to attach the network LUN (VERR_INTNET_FLT_IF_NOT_FOUND).
-    
+
 解决办法：
 
 解决办法很简单，根据这个 [stackoverflow](http://stackoverflow.com/questions/33725779/failed-to-open-create-the-internal-network-vagrant-on-windows10) :
@@ -37,14 +47,14 @@ Tags: Android
 
     > 这个通常可以在 VirtualBox 的你的虚拟机选项中的网络选项查看。
     也可以从 VirtualBox 的设置 -> 网络中查看
-    
+
 4. 点击**属性**
 5. 勾选 "VirtualBox NDIS6 Bridged Networking driver"
 6. 禁用并重新启用这个适配器
 
 ![Solution for Virtual Host Error](http://i.stack.imgur.com/Tkkws.png)
 
-> When this error occurs, genymotion will ask you to start the virtual device on VirtualBox, plase follow the instruction, and then you will get a ERROR message. 
+> When this error occurs, genymotion will ask you to start the virtual device on VirtualBox, plase follow the instruction, and then you will get a ERROR message.
 
 
 ## 2. 虚拟机链接不上网络

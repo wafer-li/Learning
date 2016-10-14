@@ -4,7 +4,28 @@ Tags: Java
 
 Base on *Core Java Volume Ⅰ——Fundamentals* and many Posts
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Java Multithreading Basic](#java-multithreading-basic)  
+&emsp;[8. 多线程](#8-多线程)  
+&emsp;&emsp;[8.1  创建线程](#81-创建线程)  
+&emsp;&emsp;&emsp;[8.1.1 通过 `Runnable` 接口创建](#811-通过-runnable-接口创建)  
+&emsp;&emsp;&emsp;[8.1.2 通过继承 `Thread` 类实现](#812-通过继承-thread-类实现)  
+&emsp;&emsp;[8.2 中断线程](#82-中断线程)  
+&emsp;&emsp;&emsp;[8.2.1 中断置位和检测](#821-中断置位和检测)  
+&emsp;&emsp;&emsp;[8.2.2 关于 `InterruptedException` 异常](#822-关于-interruptedexception-异常)  
+&emsp;&emsp;&emsp;&emsp;[8.2.2.1 抛出时机](#8221-抛出时机)  
+&emsp;&emsp;&emsp;&emsp;[8.2.2.2 `InterruptedException` 的处理](#8222-interruptedexception-的处理)  
+&emsp;&emsp;[8.3 线程的生命周期](#83-线程的生命周期)  
+&emsp;&emsp;&emsp;[附： Java 如何终止一个线程](#附：-java-如何终止一个线程)  
+&emsp;&emsp;[8.4 线程属性](#84-线程属性)  
+&emsp;&emsp;&emsp;[8.4.1 优先级](#841-优先级)  
+&emsp;&emsp;&emsp;[8.4.2 守护线程](#842-守护线程)  
+&emsp;&emsp;&emsp;[8.4.3 `uncaughtExceptionHandler`](#843-uncaughtexceptionhandler)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -29,11 +50,11 @@ Runnable r = new Myrunnable();
     ```
 
 3. 由 Runnable 对象创建 Thread 对象
-    
+
     ```
 Thread t = new Thread(r);
     ```
-    
+
 4. 启动线程
 
     ```
@@ -69,7 +90,7 @@ t.start();
     t.start();
     ```
 
-### 8.2 中断线程 
+### 8.2 中断线程
 
 Java 使用**中断**来执行**终止线程**的作用；
 但是，当一个线程接收到终止信号时，它可以选择对于中断信号的响应方式，这就带来了很好的扩展性。
@@ -84,27 +105,27 @@ Java 使用**中断**来执行**终止线程**的作用；
     所谓的**当前线程**指的是：**运行当前代码段的线程**，由于**一段代码只能在一个线程中运行**，如果使用多个线程同时执行同一段代码时，那么这个方法获取到的就是**执行当前代码段的线程**，叫做当前线程。
     注意，这个方法如果**不在子线程中**（即 `run()` 方法中），那么获取到的**就一直是主线程（main）**
     需要特别注意的是，不同线程不允许访问同一个变量，否则会引起**竞争冒险**
-    
+
 2. 使用 `interrupt()` 将中断布尔值置为 `true`
 
     > Java 的中断线程实际上是将线程内置的一个 `boolean` 值置为 `true`，以此来表示该线程已被中断。
     当我们需要中断一个线程时，就调用该方法将线程内部的中断布尔值置为 `true`。
     线程会在适当时候轮询这个布尔值，同时响应中断操作。注意这个动作是 `Thread` 官方类库中自带的。
-    
+
 3. 使用 `isInterrupted()` 来查询当前线程的中断布尔值
 
     > 一个好的 `run()` 方法应该包含对中断的检测，如果检测到中断，那么就应该进行响应。
     一般来说，应该放弃当前正在进行的工作，进行清理后将线程终止。
-    
+
     > 但是如果需要在 `run()` 中执行 `sleep()` 方法，那么就没有必要检测中断状态，因为 `sleep()` 方法在被中断时，会抛出 `InterruptedException`，那么只需捕获这个异常进行处理即可。
-    
+
 4. 关于 `interrupted()` 和 `isInterrupted()`
 
     > `isInterrupted()` 方法检测中断状态，但是不会影响中断状态的值。
     `interrupted()` 方法检测中断状态，同时将中断状态清除。
     需要注意的是，`sleep()` `wait()` 方法在抛出 `InterruptedException` 之后，**都会将中断状态清除**。
     对于这种状况，我们就需要对其进行一些处理。
-    
+
 #### 8.2.2 关于 `InterruptedException` 异常
 
 ##### 8.2.2.1 抛出时机
@@ -121,19 +142,19 @@ Java 使用**中断**来执行**终止线程**的作用；
 
     > 这在很多基础类库的方法中很常见，比如 `sleep()`.
     通过将这个方法传送给更高级的调用者，让高层面的调用方法对其进行处理。
-    
+
     ```java
-    public void putTask(Task r) throws InterruptedException { 
+    public void putTask(Task r) throws InterruptedException {
         queue.put(r);
     }
     ```
-    
+
 2. 执行清理后，将该异常抛出。
 
     > 这种逻辑常常在一些第三方的并发库中，为了避免由于异常导致的数据缺失，进行一些必要的清理、保存操作后，将异常传给调用者。
-    
+
     ```java
-    public void matchPlayers() throws InterruptedException { 
+    public void matchPlayers() throws InterruptedException {
         try {
              Player playerOne, playerTwo;
              while (true) {
@@ -144,7 +165,7 @@ Java 使用**中断**来执行**终止线程**的作用；
                  startNewGame(playerOne, playerTwo);
              }
          }
-         catch (InterruptedException e) {  
+         catch (InterruptedException e) {
              // If we got one player and were interrupted, put that player back
              if (playerOne != null)
                  players.addFirst(playerOne);
@@ -158,35 +179,35 @@ Java 使用**中断**来执行**终止线程**的作用；
 
     > 当不便抛出中断时，比如通过实现 `Runnable` 接口定义的任务。
     此时，就要**重新将中断置位**，以便高层代码能了解到中断的发生。
-    
+
     ```java
     public class TaskRunner implements Runnable {
         private BlockingQueue<Task> queue;
 
-        public TaskRunner(BlockingQueue<Task> queue) { 
-            this.queue = queue; 
+        public TaskRunner(BlockingQueue<Task> queue) {
+            this.queue = queue;
         }
 
-        public void run() { 
+        public void run() {
             try {
                  while (true) {
                     Task task = queue.take(10, TimeUnit.SECONDS);
                      task.execute();
                  }
             }
-            catch (InterruptedException e) { 
+            catch (InterruptedException e) {
                  // Restore the interrupted status
                  Thread.currentThread().interrupt();
              }
         }
     }
     ```
-    
+
 4. 当且仅当已知线程即将退出时，才能**生吞**线程
 
     > 这种线程首先必须是由继承 `Thread` 实现的，而不是 `Runnable` 实现的，或者其他通用代码库中的方法。
     应在两处轮询中断状态，确保其一定会退出
-    
+
     ```
     public class PrimeProducer extends Thread {
         private final BlockingQueue<BigInteger> queue;
@@ -209,7 +230,7 @@ Java 使用**中断**来执行**终止线程**的作用；
         public void cancel() { interrupt(); }
     }
     ```
-    
+
 ### 8.3 线程的生命周期
 
 ![Thread Life Cycle](http://ww2.sinaimg.cn/large/8c1fca6bjw1f0lm5o2cp2j20fx0csdgk.jpg)
@@ -217,27 +238,27 @@ Java 使用**中断**来执行**终止线程**的作用；
 1. 新建
 
     > 当线程被 `new` 的时候
-    
+
 2. 可运行
 
     > 当调用 `start()` 方法后，进入可运行状态
-    
+
 3. 运行
 
     > 当线程经调度器获得资源时，进入运行状态
-    
+
 4. 阻塞状态
 
     > 当 `sleep()` `wait()` `join()` 方法调用，和**等待锁**或者等待 **IO 输入** 时，进入阻塞状态。
     注意，`join()` 方法会导致**调用这个方法的线程**阻塞，如果线程 `t1` 调用 `t2.join()`，那么 `t1` 将进入阻塞状态，直到 `t2` 执行完毕。
     使用 `yeild()` 方法不会使线程被阻塞，它只是让当前运行的线程放弃资源，重新进入**可运行**状态，接受调度器的重新调度。
-    
+
 5. 终止状态
 
     > 仅有两种情况会使得线程终止。
     一是 `run()` 方法执行完毕。
     一是由于未捕获的异常造成的线程终止。
-    
+
 #### 附： Java 如何终止一个线程
 
 1. 对于会引起 `InterruptedException` 的方法
@@ -245,13 +266,13 @@ Java 使用**中断**来执行**终止线程**的作用；
     > 对于这种方法，直接对 `InterruptedException` 进行捕获即可。
     注意如果产生异常的方法在一个循环之中，那么就要 `break` 出来。
     注意要将中断状态再次置位，否则如果在一个嵌套循环里面发生中断的话，那么将得不到正确处理。
-    
+
 2. 对于不会引起 `InterruptedException` 的方法
 
     > 对于这种方法，我们可以通过在执行真正的工作前，先轮询中断状态的布尔变量。如果中断状态已经被置位了，那么就执行退出。
     但是这样会造成一定程度的延时性，所以最好还是通过异常进行处理。
     例如：
-    
+
     ```java
     public void run() {
         try {
@@ -265,14 +286,14 @@ Java 使用**中断**来执行**终止线程**的作用；
 
     public void cancel() { interrupt(); }
     ```
-    
+
 3. 对于被 `IO` 阻塞的方法
 
     > 对于这种方法，当中断发生时，它会产生 `InterruptedIOException`。
     通过类似捕获 `InterruptedException` 的方法来捕获 `InterruptedIOException`。
     但是要注意，由于中断的发生，我们需要同时关闭这个线程所占有的 IO 流，此时，我们要重载 `interrupt()` 方法，使其能够关闭 IO 流，同时引起 `IOException` 的发生。
     所以对于 `IOException`，我们就需要判断是否是由于中断引起的 `IOException`
-    
+
     ```
     import java.io.IOException;
     import java.io.InputStream;
@@ -283,7 +304,7 @@ Java 使用**中断**来执行**终止线程**的作用；
         public BlockedOnIO(InputStream in) {
             this.in = in;
         }
-        
+
         @Override
         public void interrupt() {
             super.interrupt();
@@ -291,11 +312,11 @@ Java 使用**中断**来执行**终止线程**的作用；
                 in.close();
             } catch (IOException e) {} // quietly close
         }
-  
+
         public void run() {
             try {
                 System.out.println("Reading from input stream");
-                in.read();      
+                in.read();
                 System.out.println("Finished reading");
             } catch (InterruptedIOException e) {
                 Thread.currentThread().interrupt();
@@ -311,7 +332,7 @@ Java 使用**中断**来执行**终止线程**的作用；
         }
 }
     ```
-    
+
 ### 8.4 线程属性
 
 #### 8.4.1 优先级
@@ -339,6 +360,5 @@ Java 使用**中断**来执行**终止线程**的作用；
     2. 否则，如果 `getDefaultExceptionHandler()` 方法部位空，那么则调用该处理器。
     3. 否则，如果线程已经死亡，则什么都不做
     4. 否则，将线程的名字和对应的栈轨迹输出到 `System.err` 上。
-    
+
         > 这也是我们通常见到的情景。
-        

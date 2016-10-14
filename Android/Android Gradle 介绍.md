@@ -4,7 +4,14 @@ Tags: Android
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Android Gradle 介绍](#android-gradle-介绍)  
+&emsp;[0. 简介](#0-简介)  
+&emsp;[1. 顶层文件（Top-Level）](#1-顶层文件（top-level）)  
+&emsp;[2. 模块级别文件](#2-模块级别文件)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -68,5 +75,3 @@ allprojects {
 ```
 apply plugin: 'com.android.application'
 ```
-
-

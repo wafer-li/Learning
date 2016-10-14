@@ -2,19 +2,27 @@
 
 Tags: PHP
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[PHP](#php)  
+&emsp;[1. Basic](#1-basic)  
+&emsp;[2. Variable](#2-variable)  
+
+<!-- /MDTOC -->
 
 ---
 
 ## 1. Basic
 
-1. Begins with `<?php` and ends with `?>` 
+1. Begins with `<?php` and ends with `?>`
     ```php
     <?php
     echo strlen("Hello, World!");
     ?>
     ```
-    
+
 2. Comments
 > `//` and `#` for a single line.
 `/*  */ ` for block.
@@ -25,13 +33,13 @@ Tags: PHP
     # Also single line.
     /*
     And comment block,
-    Cross 
-    multiple 
+    Cross
+    multiple
     lines.
     */
     ?>
     ```
-    
+
 3. Case Sensitivity
 - All the `function()` `class` and the `key word` is **NOt cAse SenSiTivE**
     ```php
@@ -72,10 +80,10 @@ As the above, `$x` is an **int**, `$txt` is an **string** and `$y` is an **float
 
 3. Scope
 - Local
-        - The variable can only be konwn inside the function or the current statement 
+        - The variable can only be konwn inside the function or the current statement
 - Global
-        - The variable can be konwn at any where 
+        - The variable can be konwn at any where
 - Static
         - The variable whose value can be maintain
-        
-4. 
+
+4.

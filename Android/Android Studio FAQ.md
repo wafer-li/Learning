@@ -4,7 +4,16 @@ Tags: Android
 
 这是一个有关 Anroid Studio 一些使用问题的总结和小 Tips.
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Android Studio FAQ](#android-studio-faq)  
+&emsp;[1. .gitignore 文件](#1-gitignore-文件)  
+&emsp;[2. 当出现 cannot resolve symbols 时](#2-当出现-cannot-resolve-symbols-时)  
+&emsp;[3. 当不能识别出 Android 框架时](#3-当不能识别出-android-框架时)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -38,7 +47,7 @@ Tags: Android
 综上所述，这里是我的 `.gitignore` 例子。
 
 ```.gitignore
-*.iml 
+*.iml
 /.idea/
 /gradle.properties
 .gradle/
@@ -54,7 +63,7 @@ Tags: Android
 那么请依照以下流程来尝试进行修复
 
 1. 检查使用的 gradle 是否正确
-    
+
     > 在 `Settings` 中检查 `gradle` 的选项，一般推荐使用 Anroid Studio 内置的 gradle。
 
 2. 删除本地的代码库，重新克隆一份

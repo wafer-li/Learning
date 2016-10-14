@@ -4,7 +4,18 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin 委托属性](#kotlin-委托属性)  
+&emsp;[1. 使用场景](#1-使用场景)  
+&emsp;[2. 声明](#2-声明)  
+&emsp;[3. 需要满足的条件](#3-需要满足的条件)  
+&emsp;[4. 一般的委托场景](#4-一般的委托场景)  
+&emsp;&emsp;[4.1 lazy 变量](#41-lazy-变量)  
+&emsp;&emsp;[4.2 Observable](#42-observable)  
+&emsp;&emsp;[4.3 在 Map 中储存属性](#43-在-map-中储存属性)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -39,7 +50,7 @@ class Delegate {
   operator fun getValue(thisRef: Any?, property: KProperty<*>): String {
     return "$thisRef, thank you for delegating '${property.name}' to me!"
   }
- 
+
   operator fun setValue(thisRef: Any?, property: KProperty<*>, value: String) {
     println("$value has been assigned to '${property.name} in $thisRef.'")
   }
@@ -200,5 +211,3 @@ println(user.age)  // Prints 25
 `User` 类会通过 Map 将数据取出。
 
 这个方法同样适用于 `var` 变量，只要把 `Map` 改成 `MutableMap` 即可。
-
-

@@ -4,7 +4,21 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin 泛型](#kotlin-泛型)  
+&emsp;[1. 声明和实例化](#1-声明和实例化)  
+&emsp;[2. Java 中的泛型可变性](#2-java-中的泛型可变性)  
+&emsp;&emsp;[2.1.1 `<? extends T>` 和 `<? super T>` 的区别](#211-extends-t-和-super-t-的区别)  
+&emsp;&emsp;&emsp;[2.1.1.1 `<? extends T>`](#2111-extends-t)  
+&emsp;&emsp;&emsp;[2.1.1.2 `<? super T>`](#2112-super-t)  
+&emsp;[3. Kotlin 的改进： Declaration-site variance](#3-kotlin-的改进：-declaration-site-variance)  
+&emsp;[4. 类型预测](#4-类型预测)  
+&emsp;[5. 星号](#5-星号)  
+&emsp;[6. 泛型方法](#6-泛型方法)  
+&emsp;[7. 泛型约束](#7-泛型约束)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -316,4 +330,3 @@ fun <T> cloneWhenGreater(list: List<T>, threshold: T): List<T>
 ```
 
 注意 `Comparable` 和 `Cloneable` 都是接口。
-

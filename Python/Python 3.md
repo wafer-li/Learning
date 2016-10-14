@@ -4,7 +4,82 @@ Tags: Python
 
 Basic on *A byte of Python 3rd edition*
 
-[TOC]
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Python 3](#python-3)  
+&emsp;[1. 基本概念](#1-基本概念)  
+&emsp;&emsp;[1.1 注释](#11-注释)  
+&emsp;&emsp;[1.2 字面意义的常量](#12-字面意义的常量)  
+&emsp;&emsp;&emsp;[1.2.1 数](#121-数)  
+&emsp;&emsp;&emsp;[1.2.2 字符串](#122-字符串)  
+&emsp;&emsp;[1.3 变量](#13-变量)  
+&emsp;&emsp;&emsp;[1.3.1 命名](#131-命名)  
+&emsp;&emsp;&emsp;[1.3.2 类型](#132-类型)  
+&emsp;&emsp;[1.4 逻辑行和物理行](#14-逻辑行和物理行)  
+&emsp;&emsp;[1.5 缩进](#15-缩进)  
+&emsp;&emsp;[1.6 操作符](#16-操作符)  
+&emsp;[2. 控制流程](#2-控制流程)  
+&emsp;&emsp;[2.1 if 语句](#21-if-语句)  
+&emsp;&emsp;[2.2 while 语句](#22-while-语句)  
+&emsp;&emsp;[2.3 for 语句](#23-for-语句)  
+&emsp;&emsp;[2.4 其他流程控制](#24-其他流程控制)  
+&emsp;[3. 函数](#3-函数)  
+&emsp;&emsp;[3.1 函数的定义](#31-函数的定义)  
+&emsp;&emsp;[3.2 函数参数](#32-函数参数)  
+&emsp;&emsp;[3.3 变量作用域](#33-变量作用域)  
+&emsp;&emsp;[3.4 默认参数](#34-默认参数)  
+&emsp;&emsp;[3.5 关键参数](#35-关键参数)  
+&emsp;&emsp;[3.6 不定参数](#36-不定参数)  
+&emsp;&emsp;[3.7 Keyword-only 参数](#37-keyword-only-参数)  
+&emsp;&emsp;[3.8 return 语句](#38-return-语句)  
+&emsp;&emsp;[3.9 DocStrings](#39-docstrings)  
+&emsp;&emsp;[3.10 注解(Annotations)](#310-注解annotations)  
+&emsp;&emsp;&emsp;[3.10.1 参数注解](#3101-参数注解)  
+&emsp;&emsp;&emsp;[3.10.2 返回值注解](#3102-返回值注解)  
+&emsp;&emsp;&emsp;[3.10.3 Lambda 表达式](#3103-lambda-表达式)  
+&emsp;[4. 模块(Module)](#4-模块module)  
+&emsp;&emsp;[4.1 导入模块](#41-导入模块)  
+&emsp;&emsp;[4.2 创建模块](#42-创建模块)  
+&emsp;&emsp;[4.3 模块的默认变量](#43-模块的默认变量)  
+&emsp;&emsp;[4.4 `dir()` 函数](#44-dir-函数)  
+&emsp;&emsp;[4.5 包(Package)](#45-包package)  
+&emsp;&emsp;&emsp;[4.5.1 导入包](#451-导入包)  
+&emsp;[5. 数据结构](#5-数据结构)  
+&emsp;&emsp;[5.1 列表(list)](#51-列表list)  
+&emsp;&emsp;[5.2 元组(tupple)](#52-元组tupple)  
+&emsp;&emsp;[5.3 字典(dict)](#53-字典dict)  
+&emsp;&emsp;[5.4 序列](#54-序列)  
+&emsp;&emsp;[5.5 集合](#55-集合)  
+&emsp;&emsp;[5.6 引用](#56-引用)  
+&emsp;[6. 类](#6-类)  
+&emsp;&emsp;[6.1 创建类](#61-创建类)  
+&emsp;&emsp;[6.2 self 参数](#62-self-参数)  
+&emsp;&emsp;[6.3 类域](#63-类域)  
+&emsp;&emsp;[6.4 类方法](#64-类方法)  
+&emsp;&emsp;[6.5 构造函数和析构函数](#65-构造函数和析构函数)  
+&emsp;&emsp;[6.6 继承](#66-继承)  
+&emsp;[7. 输入输出与文件](#7-输入输出与文件)  
+&emsp;&emsp;[7.1 使用 `input()` 进行输入](#71-使用-input-进行输入)  
+&emsp;&emsp;[7.2 文件输入输出](#72-文件输入输出)  
+&emsp;&emsp;[7.3 pickle 模块](#73-pickle-模块)  
+&emsp;[8. 异常](#8-异常)  
+&emsp;&emsp;[8.1 处理异常](#81-处理异常)  
+&emsp;&emsp;[8.2 引发异常](#82-引发异常)  
+&emsp;&emsp;[8.3 Try...Finally 语句](#83-tryfinally-语句)  
+&emsp;&emsp;[8.4 with 语句](#84-with-语句)  
+&emsp;[9. 高级技巧](#9-高级技巧)  
+&emsp;&emsp;[9.1 函数返回多个值](#91-函数返回多个值)  
+&emsp;&emsp;[9.2 特殊方法](#92-特殊方法)  
+&emsp;&emsp;[9.3 单行语句块](#93-单行语句块)  
+&emsp;&emsp;[9.4 Lambda 表达式](#94-lambda-表达式)  
+&emsp;&emsp;[9.5 列表综合](#95-列表综合)  
+&emsp;&emsp;[9.6 `exec` 和 `eval`](#96-exec-和-eval)  
+&emsp;&emsp;[9.7 `assert` 语句](#97-assert-语句)  
+&emsp;&emsp;[9.8 repr 函数](#98-repr-函数)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -50,7 +125,7 @@ And this is the second line.
 He said "Bond, James Bond."
 '''
     ```
-    
+
     > 在三引号中，可以自由使用单引号和双引号
 
 4. 使用**转义**来表示原有字符
@@ -59,25 +134,25 @@ He said "Bond, James Bond."
     正确的应该是 `'What\'s your name?'`。
     但是，**可以在用双引号界定的字符串中使用单引号。**
     这个也是正确的 `"What's your name?"`
-    
+
     > 另外，在一行的末尾的反斜杠 `\` 仅仅表示下一行的字符串是上一行的**继续**，**并不增加新的行**
-    
+
     ```python
     # 以下字符串是等价的
     "This is the first line.\
     This is also the first line."
-    
+
     "This is the firstline. This is also the first line."
     ```
-    
+
 5. 原始字符串
 
     > 当需要指定一些字符不被特殊处理时，可以使用 `r` 或者 `R` 附加在字符串前面指定**原始字符串**。
-    例如： `r"Newlines are indicated by \n"` 
+    例如： `r"Newlines are indicated by \n"`
     此时，**字符串中的所有字符都不会被转义**
-    
+
     > **在正则表达式使用的时候，请尽量使用原始字符串**
-    
+
 6. 字符串是**不可变**的
 7. 字符串按字面意义连接
 
@@ -86,8 +161,8 @@ He said "Bond, James Bond."
 8. `format()` 方法
 
     > 可以使用 `format()` 方法来通过使用其他信息构建字符串
-    
-    
+
+
     ```
     #!/usr/bin/python
     age = 25
@@ -97,14 +172,14 @@ He said "Bond, James Bond."
     # 输出为
     # Swaroop is 25 years old.
     ```
-    
+
     > 也可以使用 `format()` 进行格式化输出
-    
+
     ```python
     >>> '{0:.3}'.format(1/3)
     '0.333'
     ```
-    
+
 ### 1.3 变量
 
 #### 1.3.1 命名
@@ -135,7 +210,7 @@ Python 有着严格的缩进区分，不能随意缩进，**缩进用来标明�
 ### 1.6 操作符
 
 1. Python 中的 `//` 符号表示**向下取整相除**，而不是单行注释。注释使用 `#` 来开头。
-    
+
     > 注意这里是**向下取整**，而不是**趋零取整**
 
 2. 布尔操作
@@ -148,7 +223,7 @@ Python 有着严格的缩进区分，不能随意缩进，**缩进用来标明�
 3. 优先级
 
     > 在 Python 中，`lambda` 表达式处在最高优先级，而并非布尔运算
-    
+
 ## 2. 控制流程
 
 控制流程包括 `if` `for` 和 `while`
@@ -180,7 +255,7 @@ print('Done')
 ```
 
 > 几个注意要点：
-1. Python 中为了减少缩进，使用 `elif` 来代替 `if...else if...else` 
+1. Python 中为了减少缩进，使用 `elif` 来代替 `if...else if...else`
 2. 注意缩进，同样的缩进等级表示了同一个代码块
 3. **Python 中没有 `switch` 语句，使用相应的 `if..eles` 结构来替代**
 4. **注意不要漏掉冒号**
@@ -233,7 +308,7 @@ for(word : wordList) {
 1. `range()` 函数的指示区间为**左闭右开**
 
 2. `print()` 函数会**默认打印换行符**
-    
+
     > 通过指示 `end` 来进行单行打印
     `print(word, end='')`
     如果缓冲区中有字符，那么指定 `flush` 为 `True` 来清除缓冲区
@@ -294,24 +369,24 @@ def printMax(a:int, b:int):
 
     > 但是，**不建议使用** `global` 语句。
     应通过其他方式实现。
-    
+
 3. 非局部变量
 
     > 在嵌套定义函数的情况下会遇到。
     通过 `nonlocal` 来调用外部函数定义的变量
-    
+
     ```python
     def funcOuter():
         x = 2
         print('x is ', x)
-        
+
         def funcInner():
             nonlocal x
             x = 5
     ```
-    
+
     > 有毒性，最好不要这么搞
-    
+
 ### 3.4 默认参数
 
 通过在**函数定义**的时候对**形参进行指定**，可以指定默认参数
@@ -335,7 +410,7 @@ def func(a = 5, b) # Wrong
 ```python
 def func(a, b = 5, c = 10):
     print('a is ', a, 'and b is ', b, 'and c is ', c)
-    
+
 func(3, 7)
 func(25, c = 24)
 func(c = 50, a = 100)
@@ -403,7 +478,7 @@ Python 的函数**默认为没有返回值**
 ```python
 def foo(a, b):
     '''This is the foo function
-    
+
     It is just a foo function
     :parma a: This is the parma a
     :type a: int
@@ -518,12 +593,12 @@ import sys
 print ('The conmmand line arguments are:')
 for i in sys.argv:
     print(i)
-    
+
 print('\n\nThe PYTHONPATH is', sys.path, '\n')
 ```
-    
+
 > 在上面的例子中，通过使用 `import sys` 就可以通过 `sys.function` 的形式来调用 sys 模块中的函数和变量。
-    
+
 > 用户自定义模块在第一次导入时，会编译成**字节码**文件，这是 Python 处理的，可以提高模块导入的效率。
 这些文件以 `.pyc` 为扩展名，如果 Python 没有当前目录的访问权限，那么就不会创建 `.pyc` 文件
 
@@ -663,26 +738,26 @@ sound/                          Top-level package
 
     > 例如 `import sound.effects.echo`, 将 `sound/effects/echo` 模块导入；
     使用方法为 `sound.effects.echo.echofilter(input, output, delay = 0.7, atten = 4`
-    
+
 2. 使用 `from package import item`
 
     > 在包(Package)层面，**Python 推荐这么导入**，主要的优点在于能够减少没有必要的前缀修饰。
     例如： `from sound.effects import echo` 将 `echo` 模块导入
     使用方法为：`echo.echofilter(input, output, delay = 0.7, atten = 4)`
-    
+
 3. 补充：关于 `from package import *` 和 `__all__` 变量
 
     > `__all__` 变量通常在 `__init__.py` 文件中定义，用于指定**允许 `import *` 识别的标识符**，即允许导出的标识符；
     如果没有指定这个变量，那么在使用 `import *` 时便会自动**忽略以下划线开头的标识符**
-    
+
 4. 内包导入
 
     > 对于**包中的模块**，在可能需要到另一个兄弟包模块的时候，由于它们处在同一个目录结构中，所以可以简单地省略一些前缀。
     Python 在导入包时，首先会搜寻**当前目录**，如果搜索不到，则再到系统 PATH 中进行搜索
     例如 `srround` 想要利用 `echo` 模块，则直接简单地 `import echo` 即可。
-    
+
     > 在 Python 2.5 之后，可以使用**相对路径**进行包导入，例如：
-    
+
     ```python
     # 一个点代表当前目录
     # 两个点代表父目录
@@ -756,8 +831,8 @@ ab = {
         'Swaroop'   :   'swaroop@swaroopch.com'
         'Larry'     :   'larry@wall.org'
      }
-     
-     
+
+
 print("Swaroop's address is", ab['Swaroop'])
 
 for name, adderss in ab:
@@ -783,9 +858,9 @@ for name, adderss in ab:
     切片操作通过冒号完成，例如下面的 `shoplist[1:3]`。
     切片操作的区间是**左闭右开**，上面返回的是 `shoplist[1]` 和 `shoplist[2]` 组成的子列表
     假如前一个为空，切片从**序列头**开始，后一个为空，切片在**序列尾**停止。（后一个为空，最后结果**包括最后一个元素**，`shoplist[:]` 返回整个列表）
-    
+
     > 也可以使用**负数**作切片，此时的负数只作为一个定位元素的**索引**，例如 `shoplist[:-1]` 会在**倒数第一个停止**，也就是**不包括最后一个元素的子列表**
-    
+
     > 也可以给切片定义第三个参数——切片的**步长**。其实就是切片操作在遍历数组时的步长。
     步长通过两个冒号的最后一个参数定义
     `shoplist[::3]` ==> `shoplist[0], shoplist[3], shoplist[6]...`
@@ -801,7 +876,7 @@ print('Item -2 is', shoplist[-2])
 print('Character 0 is', name[0])
 
 # Slicing on a list
-print('Item 1 to 3 is', shoplist[1:3]) 
+print('Item 1 to 3 is', shoplist[1:3])
 print('Item 2 to end is', shoplist[2:])
 print('Item 1 to -1 is', shoplist[1:-1])
 print('Item start to end is', shoplist[:])
@@ -821,9 +896,9 @@ print('characters start to end is', name[:])
 
 ```python
 >>> bri = set(['brazil', 'russia', 'india'])
->>> 'india' in bri 
+>>> 'india' in bri
 True
->>> 'usa' in bri 
+>>> 'usa' in bri
 False
 >>> bric = bri.copy() >>> bric.add('china')
 >>> bric.issuperset(bri)
@@ -864,7 +939,7 @@ Python 类的域与 Java 不同
 2. 只有带 `self` 修饰的才是对象变量
 
     > 例如 `self.name` 是对象变量，`name` 是静态变量
-    
+
 3. **成员都是公有的，包括数据成员**
 
     > 但是以双下划线 `__` 开头的成员会被 Python 的名称管理体系作为**私有变量**，这是 Python 的名称管理体系做出的，而不是类的特性
@@ -879,17 +954,17 @@ Python 的类方法和 Java 稍有不同
     ```python
     class Robot:
         '''Represent a robot, with a name'''
-    
+
         def sayHi(self):
             print("hehe")
-        
+
         def howMany():
             print('We have {0:d} robot'.format(Robot.population) )
         howMany = staticmethod(howMany)
     ```
-    
+
     > 静态方法也可以用以下语句修饰
-    
+
     ```python
     @staticmethod
     def howMany():
@@ -903,11 +978,11 @@ Python 拥有构造函数和析构函数。工作原理和 C++ 的构造函数�
 ```python
 class Person:
     def __init__(self, name):
-        self.name = name 
-        
+        self.name = name
+
     def sayHi(self):
         print('Hello, my name is', self.name)
-    
+
     def __del__(self):
         print("I am dying.")
 ```
@@ -919,21 +994,21 @@ Python 的继承通过在类名称后面添加括号实现。
 
 ```python
 class SchoolMember:
-    def __init__(self,name,age): 
+    def __init__(self,name,age):
         self.name = name
         self.age = age
         print('(Initialize SchoolMember:{0})'.format(self.name))
     def tell(self):
         '''Tell my details.'''
         print('Name:"{0}" Age:"{1}"'.format(self.name,self.age),end ='')
-        
+
 class Teacher(SchoolMember):
     '''Repressent a teacher.'''
     def __init__(self,name,age,salary):
         SchoolMember.__init__(self,name,age)
         self.salary = salary
         print('(Initialized Teacher:{0})'.format(self.name))
-    
+
     def tell(self):
         SchoolMember.tell(self)
         print('Salary:"{0:d}"'.format(self.salary))
@@ -982,7 +1057,7 @@ if you wanna make your work also fun:
     use Python!
 '''
 
-f = open('poem.txt', 'w') # open for 'w'riting 
+f = open('poem.txt', 'w') # open for 'w'riting
 f.write(poem) # write text to file
 f.close() # close the file
 f = open('poem.txt') # if no mode is specified, 'r'ead mode is assumed by default
@@ -1022,7 +1097,7 @@ del shoplist # detroy the shoplist variable
 
 # Read back from the storage
 f = open(shoplistfile,'rb')
-storedlist = pickle.load(f) # load the object from the file 
+storedlist = pickle.load(f) # load the object from the file
 print(storedlist)
 ```
 
@@ -1087,7 +1162,7 @@ else:
 #!/usr/bin/python
 # Filename: finally.py
 
-import time 
+import time
 
 try:
     f = open('poem.txt')

@@ -4,7 +4,16 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin 内联函数](#kotlin-内联函数)  
+&emsp;[1. 概述](#1-概述)  
+&emsp;[2. Kotlin 内联语法](#2-kotlin-内联语法)  
+&emsp;[3. Noinline](#3-noinline)  
+&emsp;[4. 非局部返回](#4-非局部返回)  
+&emsp;[5. 类型参数](#5-类型参数)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -204,8 +213,3 @@ println(parent) //  node1
 
 非内联的函数不能使用 `reified` 标识符。
 一个不具备运行时表示类型的类型（比如一个没有 reified 的类型参数，或者是一个虚拟的类型，如 `Nothing`），不能当做 `reified` 函数参数使用。
-
-
-
-
-

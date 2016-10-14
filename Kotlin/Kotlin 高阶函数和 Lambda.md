@@ -4,7 +4,22 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin 高阶函数和 Lambda](#kotlin-高阶函数和-lambda)  
+&emsp;[1. 高阶函数](#1-高阶函数)  
+&emsp;&emsp;[1.1 声明](#11-声明)  
+&emsp;&emsp;[1.2 调用](#12-调用)  
+&emsp;&emsp;[1.3 `it` 参数](#13-it-参数)  
+&emsp;[2. Lambda 表达式](#2-lambda-表达式)  
+&emsp;&emsp;[2.1 函数类型](#21-函数类型)  
+&emsp;&emsp;[2.2 Lambda 表达式的语法](#22-lambda-表达式的语法)  
+&emsp;&emsp;[2.3 匿名函数](#23-匿名函数)  
+&emsp;&emsp;[2.4 闭包](#24-闭包)  
+&emsp;&emsp;[2.5 带接收者的函数](#25-带接收者的函数)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -53,7 +68,7 @@ val result = lock(lock, { sharedResource.operation() })
 ```
 
 > Lambda 会在接下来的章节介绍，但是为了更好地理解高阶函数，先来几点简单的概述：
-> 
+>
 - Lambda 表达式无论何时都使用 `{}` 和其他表达式分隔
 - `->` 之前的是 Lambda 表达式的参数
 - `->` 之后的是 Lambda 表达式的主体
@@ -253,4 +268,3 @@ html {       // lambda with receiver begins here
     body()   // calling a method on the receiver object
 }
 ```
-

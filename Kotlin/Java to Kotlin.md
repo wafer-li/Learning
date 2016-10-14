@@ -4,7 +4,15 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Java to Kotlin](#java-to-kotlin)  
+&emsp;[0. 概述](#0-概述)  
+&emsp;[1. if null then initialize else return](#1-if-null-then-initialize-else-return)  
+&emsp;[2. App.getContext()](#2-appgetcontext)  
+&emsp;[3. `it` in lambda](#3-it-in-lambda)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -23,7 +31,7 @@ public A getA() {
     if (a == null) {
         a = initA();
     }
-    
+
     return a;
 }
 
@@ -49,14 +57,14 @@ private fun initA(): A {
 
 class App extends Application {
     private Context context = null;
-    
+
     @Override
     public void onCreate() {
         super.onCreate();
-        
+
         context = getAppContext();
     }
-    
+
     public Context getContext() {
         retrun context;
     }
@@ -64,14 +72,14 @@ class App extends Application {
 ```
 
 ```
-// Kotlin 
+// Kotlin
 
 class App : Application() {
     conpanion object {
         lateinit var context: Context
         private set
     }
-    
+
     override fun onCreate() {
         context = applicationContext
     }

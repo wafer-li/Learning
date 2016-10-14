@@ -4,7 +4,24 @@ Tags: Kotlin
 
 ---
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Kotlin Class Basic](#kotlin-class-basic)  
+&emsp;[1. 声明](#1-声明)  
+&emsp;[2. 创建](#2-创建)  
+&emsp;&emsp;[2.1 primary constructor](#21-primary-constructor)  
+&emsp;&emsp;[2.2 secondary constructor](#22-secondary-constructor)  
+&emsp;&emsp;[2.3 默认参数](#23-默认参数)  
+&emsp;[3. 实例化](#3-实例化)  
+&emsp;[4. 继承](#4-继承)  
+&emsp;&emsp;[4.1 声明超类](#41-声明超类)  
+&emsp;&emsp;[4.2 Override 成员](#42-override-成员)  
+&emsp;&emsp;[4.3 关于 override 的规则](#43-关于-override-的规则)  
+&emsp;[5. 抽象类](#5-抽象类)  
+&emsp;[6. 伴生对象(Companion Objects)](#6-伴生对象companion-objects)  
+&emsp;[7. 封闭类(Sealed Class)](#7-封闭类sealed-class)  
+
+<!-- /MDTOC -->
 
 ---
 
@@ -83,9 +100,9 @@ class Customer public @Inject constructor(name: String) { ... }
 类也可以声明一个次要的构造器，相当于 Java 的重载构造函数。
 
 ```
-class Person { 
+class Person {
     constructor(parent: Person) {
-        parent.children.add(this) 
+        parent.children.add(this)
     }
 }
 ```
@@ -304,9 +321,3 @@ fun eval(expr: Expr): Double = when(expr) {
     // 不需要 `else` 分支, 因为我们已经覆盖了所有的可能情况
 }
 ```
-
-
-
-
-
-

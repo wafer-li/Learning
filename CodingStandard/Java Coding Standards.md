@@ -9,7 +9,27 @@ Tags: CodingStandard
 Almost based on the *Google Java Style*
 Used in our own group
 
-[TOC]
+----
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[Java Coding Standards](#java-coding-standards)  
+&emsp;[1. Naming](#1-naming)  
+&emsp;&emsp;[1.1 Common](#11-common)  
+&emsp;&emsp;[1.2 Special for identifiers](#12-special-for-identifiers)  
+&emsp;&emsp;&emsp;[1.2.1 Class](#121-class)  
+&emsp;&emsp;&emsp;[1.2.2 Variable](#122-variable)  
+&emsp;&emsp;&emsp;[1.2.3 Method](#123-method)  
+&emsp;&emsp;&emsp;[1.2.4 Paramater](#124-paramater)  
+&emsp;&emsp;&emsp;[1.2.5 Constant](#125-constant)  
+&emsp;&emsp;&emsp;[1.2.6 Camel case: defined](#126-camel-case-defined)  
+&emsp;[2. Formatting](#2-formatting)  
+&emsp;&emsp;[2.1 Braces](#21-braces)  
+&emsp;&emsp;&emsp;[2.1.1 Braces is used as much as possible](#211-braces-is-used-as-much-as-possible)  
+&emsp;&emsp;&emsp;[2.1.2 Non-Empty braces:use the K & R style](#212-non-empty-bracesuse-the-k-r-style)  
+&emsp;&emsp;[2.2 Blank](#22-blank)  
+
+<!-- /MDTOC -->
 
 ----------------------
 ## 1. Naming
@@ -35,12 +55,12 @@ ClassName use the **UpperCamelCase**
 
 #### 1.2.2 Variable
 
-1. variableName use the **lowCamelCase**  
+1. variableName use the **lowCamelCase**
 2. Single character name should **only** appears in the **Iterator**
     ```java
     // They are okay
-    for(int i : int[])          
-    for(int i = 0;i<50;i++) {} 
+    for(int i : int[])
+    for(int i = 0;i<50;i++) {}
 
     // They are bad
     int k;
@@ -60,18 +80,18 @@ int red_color;
 #### 1.2.3 Method
 
 1. methodName() use the **lowCamelCase**
-2. Do **NOT** allow single chracter 
+2. Do **NOT** allow single chracter
     ```java
     // That's not allow
     public void a() {}
     ```
-    
-3. Do **NOT** allow underscores 
+
+3. Do **NOT** allow underscores
     ```java
     // They are not allow
     public void ini_Data() {}
     ```
- 
+
 #### 1.2.4 Paramater
 
 1. Do **NOT** allow 1 character paramater
@@ -82,7 +102,7 @@ public void resetPosition(int a) {}
 
 #### 1.2.5 Constant
 
-Constant name use `CONSTANT_NAME` style. All UPPERCASE character and sperated by underscores.  
+Constant name use `CONSTANT_NAME` style. All UPPERCASE character and sperated by underscores.
 Every constant is in **static** **final** field, but not all static final field is constant
 
 ```java
@@ -151,7 +171,7 @@ Blank should appear:
 1. Between methods
     ```java
     public void doSomeThing() {}
-    
+
     public void doOtherThing() {}
     ```
 2. Between Set of attrs
@@ -168,10 +188,3 @@ Blank should appear:
     // That's attrs set of data
     private UserBean userBean = UserBean.getInstance();
     ```
-
-
-
-
-
-
-
