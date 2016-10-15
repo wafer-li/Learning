@@ -4,21 +4,21 @@ Tags: MaterialDesign
 
 ---
 
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+<!-- MDTOC maxdepth:6 firsth1:0 numbering:1 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Material Design 实体属性](#material-design-实体属性)
-&emsp;[1. 概述](#1-概述)
-&emsp;[2. Material 的特点](#2-material-的特点)
-&emsp;[3. 物理特性](#3-物理特性)
-&emsp;&emsp;[3.1 厚度](#31-厚度)
-&emsp;&emsp;[3.2 投射阴影](#32-投射阴影)
-&emsp;&emsp;[3.3 内容](#33-内容)
+1. [概述](#概述)   
+2. [Material 的特点](#material-的特点)   
+3. [物理特性](#物理特性)   
+&emsp;3.1. [厚度](#厚度)   
+&emsp;3.2. [投射阴影](#投射阴影)   
+&emsp;3.3. [内容](#内容)   
+&emsp;3.4. [点击事件](#点击事件)   
 
 <!-- /MDTOC -->
 
 ---
 
-## 1. 概述
+## 概述
 
 **Material 具有某些不可变的特点和固有的行为模式**
 
@@ -26,7 +26,7 @@ Tags: MaterialDesign
 
 了解关于 Material 的特点能有助于你更好的利用 Material，以期与 Material Design 具有一致性。
 
-## 2. Material 的特点
+## Material 的特点
 
 1. 固体
 2. 占用空间中唯一的位置
@@ -39,9 +39,9 @@ Tags: MaterialDesign
 9. 可以被创建和摧毁
 10. 可以在任何轴进行移动
 
-## 3. 物理特性
+## 物理特性
 
-### 3.1 厚度
+### 厚度
 
 实体具有可变化的长宽尺寸，和 1 dp 的厚度。
 
@@ -51,7 +51,7 @@ Tags: MaterialDesign
 <center><img src="https://material-design.storage.googleapis.com/publish/material_v_9/0B8v7jImPsDi-Sno0Qy1FY3UtaFk/whatismaterial_materialproperties_physicalproperties_thickness_02_no.png" width="300"/></center>
 <center><div style="color:#D32F2F;">Don't，材料的厚度为 1 dp</div></center>
 
-### 3.2 投射阴影
+### 投射阴影
 
 投射阴影是用来表示两个实体之间的相对距离。
 
@@ -61,7 +61,7 @@ Tags: MaterialDesign
 <center><img src="http://i.imgur.com/nlKqF3f.gif" width="500"/></center>
 <center><div style="color:#D32F2F;">Don't，阴影不能用来描边</div></center>
 
-### 3.3 内容
+### 内容
 
 内容能以任意的形状和颜色在实体上显示，内容不给实体增加厚度。
 <center><img src="http://i.imgur.com/iMyNv9h.gif" width="500"/></center>
@@ -70,3 +70,18 @@ Tags: MaterialDesign
 内容的行为可以独立于实体，但是被实体的大小所限制。
 <center><img src="http://i.imgur.com/gRC6fhQ.gif" width="500"/></center>
 <center><div style="color:#4CAF50;"> Do，内容被实体大小所限制</div></center>
+
+### 点击事件
+
+实体是**固体**。
+
+点击事件不能穿过实体。
+<center>
+<img src="https://material-design.storage.googleapis.com/publish/material_v_9/0Bx4BSt6jniD7bDZac2JGV2RUNk0/whatismaterial_properties_physical3.png" width=400/>
+</center>
+<center><div style="color:#4CAF50;">Do, 点击事件只能影响前台实体</div></center>
+
+<center>
+<img src="https://material-design.storage.googleapis.com/publish/material_v_9/0Bx4BSt6jniD7RVdsUWRKN2xlaGc/whatismaterial_properties_physical4.png" width=400/>
+</center>
+<center><div style="color:#D32F2F;">Don't，点击事件不能穿过实体</div></center>
