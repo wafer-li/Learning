@@ -2,11 +2,11 @@
 
 <!-- MDTOC maxdepth:6 firsth1:0 numbering:1 flatten:0 bullets:0 updateOnSave:1 -->
 
-1. [概述](#概述)
-2. [设置缓存路径](#设置缓存路径)
-3. [配置拦截器](#配置拦截器)
-&emsp;3.1. [通过 `CacheControl` 配置缓存](#通过-cachecontrol-配置缓存)
-&emsp;3.2. [建立拦截器](#建立拦截器)
+1. [概述](#概述)  
+2. [设置缓存路径](#设置缓存路径)  
+3. [配置拦截器](#配置拦截器)  
+&emsp;3.1. [通过 `CacheControl` 配置缓存](#通过-cachecontrol-配置缓存)  
+&emsp;3.2. [建立拦截器](#建立拦截器)  
 
 <!-- /MDTOC -->
 
