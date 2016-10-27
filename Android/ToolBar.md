@@ -9,15 +9,15 @@ The widget of the Android Material Design.
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[ToolBar](#toolbar)  
-&emsp;[1.  使用](#1-使用)  
-&emsp;&emsp;[1. 1 定义风格](#1-1-定义风格)  
-&emsp;&emsp;[1.2 添加组件到界面](#12-添加组件到界面)  
-&emsp;&emsp;[1.3 自定义颜色等其他属性](#13-自定义颜色等其他属性)  
-&emsp;&emsp;[1.4 设置控件](#14-设置控件)  
-&emsp;[2. 动态加载](#2-动态加载)  
-&emsp;&emsp;[2.1 动态更改标题](#21-动态更改标题)  
-&emsp;&emsp;[2.2 动态加载 MenuItem](#22-动态加载-menuitem)  
+[ToolBar](#toolbar)
+&emsp;[1.  使用](#1-使用)
+&emsp;&emsp;[1. 1 定义风格](#1-1-定义风格)
+&emsp;&emsp;[1.2 添加组件到界面](#12-添加组件到界面)
+&emsp;&emsp;[1.3 自定义颜色等其他属性](#13-自定义颜色等其他属性)
+&emsp;&emsp;[1.4 设置控件](#14-设置控件)
+&emsp;[2. 动态加载](#2-动态加载)
+&emsp;&emsp;[2.1 动态更改标题](#21-动态更改标题)
+&emsp;&emsp;[2.2 动态加载 MenuItem](#22-动态加载-menuitem)
 
 <!-- /MDTOC -->
 
@@ -34,7 +34,8 @@ The widget of the Android Material Design.
 
 	> 5.0(API 21) 之后，Google 发表了 Material Design，由于和之前的风格有很大的不同， Google 采用了两个文件—— `res/values/style.xml` 和 `res/values-v21/style.xml`
 
-```
+
+```xml
 <resources>
 
   <!-- Base application theme. -->
@@ -80,7 +81,7 @@ The widget of the Android Material Design.
 
 例如：
 
-```
+```xml
 <style name="AppTheme.Base" parent="Theme.AppCompat">
   <item name="windowActionBar">false</item>
   <item name="android:windowNoTitle">true</item>
@@ -131,7 +132,7 @@ toolbar.setNavigationIcon(R.drawable.ab_android);
 
 1. 先在相应的`menu` 文件设置`MenuItem` `res/menu/menu_main.xml`
 
-	```
+	```xml
 	<menu xmlns:android="http://schemas.android.com/apk/res/android"
 	      xmlns:app="http://schemas.android.com/apk/res-auto"
 	      xmlns:tools="http://schemas.android.com/tools"
