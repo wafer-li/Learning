@@ -2,13 +2,13 @@
 
 <!-- MDTOC maxdepth:6 firsth1:0 numbering:1 flatten:0 bullets:0 updateOnSave:1 -->
 
-1. [概述](#概述)   
-2. [添加依赖](#添加依赖)   
-3. [设计 `layout/activity_main.xml`](#设计-layoutactivity_mainxml)   
-4. [构建 `layout/drawer_header.xml`](#构建-layoutdrawer_headerxml)   
-5. [定义 `menu/drawer_item.xml`](#定义-menudrawer_itemxml)   
-6. [显示汉堡包图标](#显示汉堡包图标)   
-7. [总结](#总结)   
+1. [概述](#概述)
+2. [添加依赖](#添加依赖)
+3. [设计 `layout/activity_main.xml`](#设计-layoutactivity_mainxml)
+4. [构建 `layout/drawer_header.xml`](#构建-layoutdrawer_headerxml)
+5. [定义 `menu/drawer_item.xml`](#定义-menudrawer_itemxml)
+6. [显示汉堡包图标](#显示汉堡包图标)
+7. [总结](#总结)
 
 <!-- /MDTOC -->
 
@@ -109,6 +109,8 @@ header 的布局注意满足 [Material Design](https://material.google.com/patte
 ```
 
 注意，项目的分界通过内嵌的 `<menu>` 来实现。
+
+需要注意的是，官方的 nav drawer 中的 item 没有 ripple，只有长按才能显示。
 
 最后我们再将这个 `menu` 赋到 `NavgationView`的 `app:menu="@menu/drawer_item"`上
 
