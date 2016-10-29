@@ -162,7 +162,7 @@ class MainActivity : BaseActivity() {
 
 这样构造出来的 Nav Drawer 和 MaterialDrawer 不同的一个地方在于，Nav Drawer 的汉堡包图标具有动画效果。
 
-而且，Nav Drawer 是在设计层面上进行修改，而 MaterialDrawer 是在代码层面上进行修改，侵入性较强。
+而且，Nav Drawer 是在设计层面上进行修改，而 MaterialDrawer 是在代码层面上进行修改，侵入性不强。
 
 总的来说，如果要快速搭建，则选择 MaterialDrawer；
 但是要选择使用清真的写法，那么 Nav Drawer 则会更好。
