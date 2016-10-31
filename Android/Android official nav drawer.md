@@ -2,13 +2,18 @@
 
 <!-- MDTOC maxdepth:6 firsth1:0 numbering:1 flatten:0 bullets:0 updateOnSave:1 -->
 
-1. [概述](#概述)
-2. [添加依赖](#添加依赖)
-3. [设计 `layout/activity_main.xml`](#设计-layoutactivity_mainxml)
-4. [构建 `layout/drawer_header.xml`](#构建-layoutdrawer_headerxml)
-5. [定义 `menu/drawer_item.xml`](#定义-menudrawer_itemxml)
-6. [显示汉堡包图标](#显示汉堡包图标)
-7. [总结](#总结)
+1. [概述](#概述)   
+2. [添加依赖](#添加依赖)   
+3. [设计 `layout/activity_main.xml`](#设计-layoutactivity_mainxml)   
+4. [构建 `layout/drawer_header.xml`](#构建-layoutdrawer_headerxml)   
+5. [定义 `menu/drawer_item.xml`](#定义-menudrawer_itemxml)   
+6. [显示汉堡包图标](#显示汉堡包图标)   
+7. [使状态栏透明](#使状态栏透明)   
+&emsp;7.1. [去除 Actionbar](#去除-actionbar)   
+&emsp;7.2. [v21 增加关于状态栏的属性](#v21-增加关于状态栏的属性)   
+&emsp;7.3. [设置 DrawerLayout 使用 `fitsSystemWindow`](#设置-drawerlayout-使用-fitssystemwindow)   
+&emsp;7.4. [补充：动态改变 status bar 颜色](#补充：动态改变-status-bar-颜色)   
+8. [总结](#总结)   
 
 <!-- /MDTOC -->
 
@@ -160,11 +165,65 @@ class MainActivity : BaseActivity() {
 
 最后设置 `actionBarDrawerToggle.syncState()` 即可。
 
+## 使状态栏透明
+
+我们已经成功的构建出了一个 Navigation Drawer，但是，其显示出来的效果是这样的
+
+![](https://img.readitlater.com/i/matthewwear.xyz/content/images/2016/05/Screenshot-2016-05-31-09-57-54/RS/w1408.png)
+
+而官方的 MD 规范上，状态栏的效果是半透明的。
+
+所以，我们还要做一些额外的步骤来让我们的 Nav Drawer 更符合规范。
+
+### 去除 Actionbar
+
+这个步骤通常已经在初步搭建构架的时候就完成了。也就是说为 `style.xml` 增加如下两项：
+
+```xml
+<item name="windowActionBar">false</item>
+<item name="windowNoTitle">true</item>
+```
+
+并且继承 `Theme.AppCompact.Light.DarkActionBar`
+
+### v21 增加关于状态栏的属性
+
+在 `value-21/style.xml` 中，增加另外的两项：
+
+```xml
+<item name="windowActionBar">false</item>
+<item name="windowNoTitle">true</item>
+<item name="android:windowDrawsSystemBarBackgrounds">true</item>
+<item name="android:statusBarColor">@android:color/transparent</item>
+```
+
+### 设置 DrawerLayout 使用 `fitsSystemWindow`
+
+```xml
+<android.support.v4.widget.DrawerLayout
+    ...
+    android:fitsSystemWindows="true"
+    app:insetForeground="@color/inset_color"
+    >
+```
+
+OK，到这里就大功告成了！
+
+![](https://img.readitlater.com/i/matthewwear.xyz/content/images/2016/05/Screenshot-2016-05-31-10-24-05/RS/w1408.png)
+
+### 补充：动态改变 status bar 颜色
+
+如果你想动态改变状态栏颜色的话，也有相应的 Java 接口。
+
+```java
+drawerLayout.setStatusBarBackgroundColor(ContextCompat.getColor(this, R.color.wierd_green));
+
+drawerLayout.setScrimColor(ContextCompat.getColor(this, R.color.wierd_transparent_orange));
+```
+
 ## 总结
 
-这样构造出来的 Nav Drawer 和 MaterialDrawer 不同的一个地方在于，Nav Drawer 的汉堡包图标具有动画效果。
-
-而且，Nav Drawer 是在设计层面上进行修改，而 MaterialDrawer 是在代码层面上进行修改，侵入性不强。
+这样构造出来的 Nav Drawer 和 MaterialDrawer 不同的一个地方在于，Nav Drawer 是在设计层面上进行修改，而 MaterialDrawer 是在代码层面上进行修改，侵入性不强，不过也较为麻烦。
 
 总的来说，如果要快速搭建，则选择 MaterialDrawer；
 但是要选择使用清真的写法，那么 Nav Drawer 则会更好。
