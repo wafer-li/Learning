@@ -9,15 +9,15 @@ The widget of the Android Material Design.
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[ToolBar](#toolbar)
-&emsp;[1.  使用](#1-使用)
-&emsp;&emsp;[1. 1 定义风格](#1-1-定义风格)
-&emsp;&emsp;[1.2 添加组件到界面](#12-添加组件到界面)
-&emsp;&emsp;[1.3 自定义颜色等其他属性](#13-自定义颜色等其他属性)
-&emsp;&emsp;[1.4 设置控件](#14-设置控件)
-&emsp;[2. 动态加载](#2-动态加载)
-&emsp;&emsp;[2.1 动态更改标题](#21-动态更改标题)
-&emsp;&emsp;[2.2 动态加载 MenuItem](#22-动态加载-menuitem)
+[ToolBar](#toolbar)  
+&emsp;[1.  使用](#1-使用)  
+&emsp;&emsp;[1. 1 定义风格](#1-1-定义风格)  
+&emsp;&emsp;[1.2 添加组件到界面](#12-添加组件到界面)  
+&emsp;&emsp;[1.3 自定义颜色等其他属性](#13-自定义颜色等其他属性)  
+&emsp;&emsp;[1.4 设置控件](#14-设置控件)  
+&emsp;[2. 动态加载](#2-动态加载)  
+&emsp;&emsp;[2.1 动态更改标题](#21-动态更改标题)  
+&emsp;&emsp;[2.2 动态加载 MenuItem](#22-动态加载-menuitem)  
 
 <!-- /MDTOC -->
 
