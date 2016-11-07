@@ -1,4 +1,4 @@
-# Android Getting Screen Size
+# Android 获取屏幕尺寸
 
 有时候为了实现 Respnsive 或者一些其他的需求，我们就需要拿到当前屏幕的尺寸。
 
