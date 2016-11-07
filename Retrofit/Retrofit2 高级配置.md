@@ -31,7 +31,7 @@ Tags: Android
 
 为了定制我们自己的 Okhttp client，需要先获取 `Okhttp.Builder` 对象，通过对 builder 的不断处理，从而构建出我们所需要的 client。
 
-```
+```java
 OkHttpClient.Builder builder = new OkHttpClient.Builder();
 ```
 
@@ -48,7 +48,7 @@ Retrofit 在很长的一段时间内，都没有内置的缓存处理框架，�
 
 不过，我们还是需要通过 builder 的 `cache()` 方法来**设置缓存的路径**
 
-```
+```java
 File cacheDir = getCacheDir();
 Cache cache = new Cache(cacheDir);
 builder.cache(cache);
@@ -61,7 +61,7 @@ builder.cache(cache);
 
 通过拦截器设置 `Cache-Control` 头，可以构建自己的缓存处理策略。
 
-```
+```java
 File cacheFile = new File(DemoApplication.getContext().getExternalCacheDir(), "WuXiaolongCache");
 Cache cache = new Cache(cacheFile, 1024 * 1024 * 50);
 Interceptor cacheInterceptor = new Interceptor() {
@@ -106,7 +106,7 @@ builder.cache(cache).addInterceptor(cacheInterceptor);
 
 此时，我们使用 OkHttp 的 `Interceptor` 来进行。
 
-```
+```java
 Interceptor interceptor = new Interceptor() {
     @Override
     public Response intercept(Chain chain) throws IOException {
@@ -137,13 +137,13 @@ builder.addInterceptor(interceptor);
 
 ### 4.1 添加依赖
 
-```
+```groovy
 compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
 ```
 
 ### 4.2 配置拦截器
 
-```
+```java
 HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
 logging.setLevel(Level.BASIC);
 
@@ -154,7 +154,7 @@ builder.addIntercetor(logging);
 
 当配置完毕后，就可以用我们的 Builder 生成 client 了。
 
-```
+```java
 client = builder.build();
 ```
 
@@ -162,6 +162,6 @@ client = builder.build();
 
 最后，要让我们的 retrofit 使用 client 才能达到效果。
 
-```
+```java
 retrofitBuilder.client(client);
 ```
