@@ -1,4 +1,4 @@
-# Learnning
+# Learning
 
 Some of my learning notes.
 
