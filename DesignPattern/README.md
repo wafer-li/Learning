@@ -2,6 +2,8 @@
 
 本目录内容基于 *Head First 设计模式*。
 
+代码实例点[这里](https://github.com/wafer-li/DesignPatternExample)
+
 ## 为什么要学习设计模式
 
 1. 设计模式是程序员的共通语言，减少沟通成本
