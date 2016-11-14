@@ -16,6 +16,10 @@
 >
 > 实际上就是一个典型的观察者模式。
 
+> 事实上，观察者模式是 JDK 乃至实际程序和库中使用得最多的设计模式。
+>
+> 基本上所有的 Java GUI 均实现了观察者模式。（也就是 `Listener`）
+
 ## 2. 实现方式
 
 ### 2.1 实现思路
@@ -62,3 +66,89 @@
 
 ## 5. 推和拉
 
+实际上，主题向观察者发送通知并不只有**主题向观察者推送**这一个方法；
+
+我们还可以**让观察者主动从主题拉取数据**。
+
+它们的主要区别在于：推的通知方法包含数据，而拉的不包含，只负责传输主题的引用。
+
+```java
+// Push
+public void notifyObservers() {
+  for (observer : list) {
+    observer.update(Data data);
+  }
+}
+
+// Pull
+public void notifyObservers() {
+  for (observer : list) {
+    observer.update(this);
+  }
+}
+```
+
+拉的方法实现起来也很方便：
+
+1. 首先主题提供 getter
+2. 随后将**主题本身**作为参数传递给观察者即可。
+
+采用拉的好处在于，观察者种类繁多，需要的数据不尽相同，这样一来，观察者只需要获取自己感兴趣的数据即可，而不需要同时拿到一大堆自己不想要的数据。
+
+书中提到
+
+> 如果采用拉，当扩展功能的时候，就不必要更新和修改观察者的调用，而只需改变自己来允许更多的 getter 方法来取得新增的状态。
+
+这个观点固然不错，但是实际上，我们可以通过将数据**封装成一个类**来解决调用的问题。
+
+事实上，根据 OO 设计的原则，应该 **Tell, Don't Ask** ，所以使用**推的方法会更好。**
+
+## 6. Java 内置的观察者模式
+
+Java API 中内置了一个观察者模式，包含一个基本的 `Observer` 接口和一个 `Observable` **类**。
+
+我们可以使用 Java 的内置 API 来快速的实现观察者模式，而不需要自己再造轮子。
+
+基本的类图如下：
+
+![](https://raw.githubusercontent.com/wafer-li/UMLStorage/master/image/observer_java_built_in.png)
+
+其中，`setChanged()` 方法是用来**指示状态改变的**。在调用 `notifyObservers()` 之前，需要先调用这个方法。
+
+同时，Java 也实现了推和拉的方式。
+
+不带参数的 `notifyObservers()` 使用的是**拉的方法**，而带参数的使用的是推。
+
+```java
+public notifyObservers(Objecgt arg) {
+  if (changed) {
+    for (observer : list) {
+      observer.update(this, arg);
+    }
+  }
+}
+
+public notifyObservers() {
+  notifyObservers(null);
+}
+```
+
+
+
+## 7. Java 内置观察者模式的缺陷
+
+1. 违反面对接口编程原则
+
+   > 由于 `Observable` 是一个**类**，并且实现了**自己的通知方法**，我们的通知途径就被绑定在了 `Observable` 的具体实现上，无法轻易改变。这也导致了对观察者的通知次序被绑定而无法改变。
+   >
+   > 同时，由于 Java 禁止多重继承，所以无法对 `Observable` 进行复用。
+
+2. 违反多用组合，少用继承
+
+   > `Observable`  中的 `setChanged()` 方法是 `protected` 的，
+   >
+   > 这意味着如果不继承 `Observable` 就无法修改 `setChanged()` 方法。
+
+所以，如果应用要求弹性高，那么更好的方法应该是：
+
+**自己重新造轮子！**
