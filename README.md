@@ -6,4 +6,4 @@ Some of my learning notes.
 Markdown + MathJax
 
 ## Base on
-[Typora](http://www.typora.io/)
+[Atom](https://atom.io/)
