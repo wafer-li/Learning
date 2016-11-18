@@ -3,40 +3,40 @@
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
 [Java Class Inheritance](#java-class-inheritance)   
-&emsp;[2. 继承](#2-继承)   
-&emsp;&emsp;[2.1 Java 只允许一重继承](#21-java-只允许一重继承)   
-&emsp;&emsp;[2.2 使用 `extends` 来表明继承关系](#22-使用-extends-来表明继承关系)   
-&emsp;&emsp;[2.3 使用 `super` 来调用超类方法](#23-使用-super-来调用超类方法)   
-&emsp;&emsp;[2.4 构造器](#24-构造器)   
-&emsp;&emsp;[2.5 多态](#25-多态)   
-&emsp;&emsp;[2.6 `final` 阻止继承](#26-final-阻止继承)   
-&emsp;&emsp;[2.7 强制类型转换](#27-强制类型转换)   
-&emsp;&emsp;[2.8 抽象类](#28-抽象类)   
-&emsp;&emsp;[2.9 谨慎的使用protected](#29-谨慎的使用protected)   
-&emsp;&emsp;[2.10 Object类](#210-object类)   
-&emsp;&emsp;&emsp;[2.10.1 `equals()`方法](#2101-equals方法)   
-&emsp;&emsp;&emsp;&emsp;[2.10.2 `hashCode()` 方法](#2102-hashcode-方法)   
-&emsp;&emsp;&emsp;[2.10.3 `toString()` 方法](#2103-tostring-方法)   
-&emsp;&emsp;[2.11 泛型数组列表（`ArrayList<>`）](#211-泛型数组列表（arraylist）)   
-&emsp;&emsp;[2.12 对象包装器和自动装箱](#212-对象包装器和自动装箱)   
-&emsp;&emsp;[2.13 不定参数](#213-不定参数)   
-&emsp;&emsp;[2.14 枚举类](#214-枚举类)   
-&emsp;&emsp;[2.15 继承设计的技巧](#215-继承设计的技巧)   
+&emsp;[0. 概述](#0-概述)   
+&emsp;[1. Java 只允许一重继承](#1-java-只允许一重继承)   
+&emsp;[2. 使用 `extends` 来表明继承关系](#2-使用-extends-来表明继承关系)   
+&emsp;[3. 使用 `super` 来调用超类方法](#3-使用-super-来调用超类方法)   
+&emsp;[4. 构造器](#4-构造器)   
+&emsp;[5. 多态](#5-多态)   
+&emsp;[6. `final` 阻止继承](#6-final-阻止继承)   
+&emsp;[7. 强制类型转换](#7-强制类型转换)   
+&emsp;[8. 抽象类](#8-抽象类)   
+&emsp;[9. 谨慎的使用protected](#9-谨慎的使用protected)   
+&emsp;[10. Object类](#10-object类)   
+&emsp;&emsp;[10.1 `equals()`方法](#101-equals方法)   
+&emsp;&emsp;[10.2 `hashCode()` 方法](#102-hashcode-方法)   
+&emsp;&emsp;[10.3 `toString()` 方法](#103-tostring-方法)   
+&emsp;[11. 泛型数组列表（`ArrayList<>`）](#11-泛型数组列表（arraylist）)   
+&emsp;[12. 对象包装器和自动装箱](#12-对象包装器和自动装箱)   
+&emsp;[13. 不定参数](#13-不定参数)   
+&emsp;[14. 枚举类](#14-枚举类)   
+&emsp;[15. 继承设计的技巧](#15-继承设计的技巧)   
 
 <!-- /MDTOC -->
 
-## 2. 继承
+## 0. 概述
 
 C++ | Java
 ---|---
 基类|父类、超类
 派生类|子类
 
-### 2.1 Java 只允许一重继承
+## 1. Java 只允许一重继承
 
  ※可以有多个继承链，但是不能有多个基类
 
-### 2.2 使用 `extends` 来表明继承关系
+## 2. 使用 `extends` 来表明继承关系
 
 ```
 class Derived extends Base
@@ -45,15 +45,15 @@ class Derived extends Base
 };
 ```
 
-### 2.3 使用 `super` 来调用超类方法
+## 3. 使用 `super` 来调用超类方法
 
-### 2.4 构造器
+## 4. 构造器
 
 可以使用 `super` 实现对超类构造器的调用
 如果没有显式调用超类构造器，将自动调用超类构造器的隐式版本;
 如果没有隐式版本（即超类构造器只定义了显示版本）则报错
 
-### 2.5 多态
+## 5. 多态
 
 1. 可以将超类引用指向子类对象，但不能反过来
 
@@ -72,7 +72,7 @@ class Derived extends Base
 
 5. 覆盖允许返回类型协变（超类可以协变为子类）
 
-### 2.6 `final` 阻止继承
+## 6. `final` 阻止继承
 
 1. `final` 类
 
@@ -91,14 +91,14 @@ class Derived extends Base
 
 **注意 `final` 的位置不同**
 
-### 2.7 强制类型转换
+## 7. 强制类型转换
 
 在继承链上不允许进行由上到下的转换（超类不能转换成子类）
 使用 `instanceof` 进行转换检查，返回布尔值，表示是否能够成功转换
 语法：(要转换的对象) `instanceof` (转换目标)
 强制转换语法类似 C 语言，执行过程类似 `dynamic_cast` 操作，不成功则抛出一个异常，而不是生成 `null` 对象
 
-### 2.8 抽象类
+## 8. 抽象类
 
 ```
     abstract class Person {...}   // 抽象类
@@ -109,11 +109,11 @@ class Derived extends Base
 抽象类可以包含具体数据和具体方法
 抽象类不能被实例化（即不能创建对象）
 
-### 2.9 谨慎的使用protected
+## 9. 谨慎的使用protected
 
-### 2.10 Object类
+## 10. Object类
 
-#### 2.10.1 `equals()`方法
+### 10.1 `equals()`方法
 
 - 特性
     - 自反：`x.equals(x) return true`
@@ -147,18 +147,18 @@ class Derived extends Base
 
     > △如果在子类中重新定义equals，则先调用超类的equals
 
-##### 2.10.2 `hashCode()` 方法
+### 10.2 `hashCode()` 方法
 
 如果重新定义了 `equals()` 方法，则必须重新定义 `hashCode()` 方法
 `equals()` 与 `hashCode()` 的定义必须一致，如果 `x.equals(y) return true`, 则，`x.hashCode()` 就必须与 `y.hashCode()` 返回一样的值
 
-#### 2.10.3 `toString()` 方法
+### 10.3 `toString()` 方法
 
 一般形式：类名 + 方括号括起来的阈值
 调用 `x.toString()` 可以用 `""+x` 代替
 应该为每一个自定义类提供 `toString()` 方法。
 
-### 2.11 泛型数组列表（`ArrayList<>`）
+## 11. 泛型数组列表（`ArrayList<>`）
 
 1. 构造
 
@@ -171,7 +171,7 @@ class Derived extends Base
 3. 使用 `add()` 方法添加元素，`remove()` 方法删除元素
 4. 使用 `get()` 方法访问元素，`set()` 方法设置元素【而不是使用[]语法】
 
-### 2.12 对象包装器和自动装箱
+## 12. 对象包装器和自动装箱
 
 一般用于将基本类型转换成类对象
 
@@ -181,7 +181,7 @@ class Derived extends Base
 包装器为 `final` 类，不可以用来修改基本数据类型的数值
 应使用 `holder` 类型来修改基本数据类型的值
 
-### 2.13 不定参数
+## 13. 不定参数
 
 ```
 public static double max(double... values)
@@ -190,11 +190,11 @@ public static double max(double... values)
 其中的 `double...` 相同于`double[]`，其实就是接受了一个 `double` 数组
 可以将数组传递给可变参数方法的最后一个参数。
 
-### 2.14 枚举类
+## 14. 枚举类
 这里的枚举类是一个类对象，而不是一种类型
 
 
-### 2.15 继承设计的技巧
+## 15. 继承设计的技巧
 
 1. 将公共操作和域放在超类
 2. 不要使用受保护的域

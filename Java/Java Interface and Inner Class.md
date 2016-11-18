@@ -3,22 +3,23 @@
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
 [Java Interface and Inner Class](#java-interface-and-inner-class)   
-&emsp;[3. 接口](#3-接口)   
-&emsp;&emsp;[3.1 接口](#31-接口)   
-&emsp;&emsp;[3.2 对象克隆](#32-对象克隆)   
-&emsp;[4. 内部类](#4-内部类)   
-&emsp;&emsp;[4.1 概述](#41-概述)   
-&emsp;&emsp;[4.2 普通内部类](#42-普通内部类)   
-&emsp;&emsp;[4.3 局部内部类](#43-局部内部类)   
-&emsp;&emsp;[4.4 匿名内部类](#44-匿名内部类)   
-&emsp;&emsp;[4.5 静态内部类](#45-静态内部类)   
+&emsp;[1. 接口](#1-接口)   
+&emsp;&emsp;[1.1 接口](#11-接口)   
+&emsp;&emsp;[1.2 对象克隆](#12-对象克隆)   
+&emsp;[2. 内部类](#2-内部类)   
+&emsp;&emsp;[2.1 概述](#21-概述)   
+&emsp;&emsp;[2.2 普通内部类](#22-普通内部类)   
+&emsp;&emsp;[2.3 局部内部类](#23-局部内部类)   
+&emsp;&emsp;[2.4 匿名内部类](#24-匿名内部类)   
+&emsp;&emsp;[2.5 静态内部类](#25-静态内部类)   
 
 <!-- /MDTOC -->
-## 3. 接口
+
+## 1. 接口
 
 这是 Java 中的专有名词，指代的是 **interface** 关键字
 
-### 3.1 接口
+### 1.1 接口
 
 ```
 public interface Comparable {...}
@@ -70,7 +71,7 @@ public interface Comparable {...}
     class Employee extends Persons implements Comparable
     ```
 
-### 3.2 对象克隆
+### 1.2 对象克隆
 
 - 默认克隆（`Object.clone()`）
 - 浅拷贝
@@ -81,7 +82,7 @@ public interface Comparable {...}
     - 即使浅拷贝能满足要求，也要进行上述两条操作
     - 需要声明 `CloneNotSupportedException` 异常
 
-## 4. 内部类
+## 2. 内部类
 
 ```java
 class TalkingClock
@@ -93,20 +94,20 @@ class TalkingClock
 }
 ```
 
-### 4.1 概述
+### 2.1 概述
 
 - 在类的内部直接定义，类似于C++的嵌套类
 - 可以访问作用域内的数据，包括私有的
 - 可以隐藏内部类
 - 可以便捷实现回调
 
-### 4.2 普通内部类
+### 2.2 普通内部类
 
 - 可以访问外围类对象数据（包括私有的）
 - 通过OuterClass.this访问外围类
 - 在外围类的作用域之外，使用OuterClass.InnerClass引用内部类
 
-### 4.3 局部内部类
+### 2.3 局部内部类
 
 - 简称局部类，在一个方法内进行定义
 
@@ -122,7 +123,7 @@ class TalkingClock
 - 局部类可以访问局部变量（必须声明为 `final`）
 - 更新封闭作用域内的计数器时，使用 `final` 的长度为 $1$ 的数组
 
-### 4.4 匿名内部类
+### 2.4 匿名内部类
 
 ```java
 new SuperType(cosntruction parameters)
@@ -142,7 +143,7 @@ new InterfaceType()
 	}
 ```
 
-### 4.5 静态内部类
+### 2.5 静态内部类
 
 - 用于将一个类隐藏在另一个类之中，通常用于防止名称的冲突
 - 只有内部类可以声明为static
