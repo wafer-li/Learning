@@ -130,7 +130,7 @@ new SuperType(cosntruction parameters)
 	{
 		...
 	}
-如果只创建局部类的一个对象的时候才使用
+// 如果只创建局部类的一个对象的时候才使用
 ```
 
 - SuperType可以是类或者接口
