@@ -1,6 +1,19 @@
 # 观察者模式(Observer Pattern)
 
-[TOC]
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
+
+[观察者模式(Observer Pattern)](#观察者模式observer-pattern)   
+&emsp;[1. 概述](#1-概述)   
+&emsp;[2. 实现方式](#2-实现方式)   
+&emsp;&emsp;[2.1 实现思路](#21-实现思路)   
+&emsp;&emsp;[2.2 图解](#22-图解)   
+&emsp;[3. 新设计原则——松耦合](#3-新设计原则——松耦合)   
+&emsp;[4. 气象站例子的 UML 图解](#4-气象站例子的-uml-图解)   
+&emsp;[5. 推和拉](#5-推和拉)   
+&emsp;[6. Java 内置的观察者模式](#6-java-内置的观察者模式)   
+&emsp;[7. Java 内置观察者模式的缺陷](#7-java-内置观察者模式的缺陷)   
+
+<!-- /MDTOC -->
 
 ## 1. 概述
 
