@@ -8,7 +8,7 @@ Tags: WinUpdate Proxy
 
 其实只需要一条命令
 
-```
+```cmd
 netsh winhttp set proxy proxy-server="proxyserver:8080"
 ```
 
@@ -20,7 +20,6 @@ netsh winhttp set proxy proxy-server="proxyserver:8080"
 
 当然，也有想要直连的时候，使用如下命令即可恢复直连
 
-```
+```cmd
 netsh winhttp reset proxy
 ```
-

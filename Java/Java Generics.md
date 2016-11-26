@@ -8,16 +8,16 @@ Base on *Core Java Volume Ⅰ——Fundamentals**
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Generics](#java-generics)  
-&emsp;[6. 泛型](#6-泛型)  
-&emsp;&emsp;[6.1 泛型类](#61-泛型类)  
-&emsp;&emsp;[6.2 泛型方法](#62-泛型方法)  
-&emsp;&emsp;[6.3 类型变量的限定](#63-类型变量的限定)  
-&emsp;&emsp;[6.4 泛型类的实例化](#64-泛型类的实例化)  
-&emsp;&emsp;&emsp;[6.4.1 类型擦除](#641-类型擦除)  
-&emsp;&emsp;&emsp;[6.4.2 翻译泛型表达式](#642-翻译泛型表达式)  
-&emsp;&emsp;&emsp;[6.4.3 泛型方法的实例化和桥方法](#643-泛型方法的实例化和桥方法)  
-&emsp;&emsp;&emsp;[6.4.4 约束和局限性](#644-约束和局限性)  
+[Java Generics](#java-generics)
+&emsp;[6. 泛型](#6-泛型)
+&emsp;&emsp;[6.1 泛型类](#61-泛型类)
+&emsp;&emsp;[6.2 泛型方法](#62-泛型方法)
+&emsp;&emsp;[6.3 类型变量的限定](#63-类型变量的限定)
+&emsp;&emsp;[6.4 泛型类的实例化](#64-泛型类的实例化)
+&emsp;&emsp;&emsp;[6.4.1 类型擦除](#641-类型擦除)
+&emsp;&emsp;&emsp;[6.4.2 翻译泛型表达式](#642-翻译泛型表达式)
+&emsp;&emsp;&emsp;[6.4.3 泛型方法的实例化和桥方法](#643-泛型方法的实例化和桥方法)
+&emsp;&emsp;&emsp;[6.4.4 约束和局限性](#644-约束和局限性)
 
 <!-- /MDTOC -->
 
@@ -175,7 +175,7 @@ Employee buddy = buddies.getFirst();
 
 例如：
 
-```
+```java
 class DateInterval extends Pair<Date> {
     public void setSecond(Date second) { ... }
 }
@@ -188,14 +188,14 @@ class DateInterval extends Pair {
 
 当使用基类指针实现多态性的时候
 
-```
+```java
 Pair<Date> pair = interval;
 pair.setSecond(aDate);
 ```
 
 此时，存在一个从 `Pair` 继承而来的方法
 
-```
+```java
 public void setSecond(Object second)
 ```
 
@@ -203,7 +203,7 @@ public void setSecond(Object second)
 但是我们对 `pair` 的多态性描述显然是要调用 `setSecond(Date second)` 方法；
 此时，编译器就会自动生成一个桥方法，用来保证多态的正确使用。
 
-```
+```java
 // 桥方法
 public void setSecond(Objedt second) {
     setSecond((Date) second);

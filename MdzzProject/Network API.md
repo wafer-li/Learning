@@ -10,11 +10,11 @@ Base on **Volley**
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Network API](#network-api)  
-&emsp;[1. 说明](#1-说明)  
-&emsp;[2. API 列表](#2-api-列表)  
-&emsp;&emsp;[2.1 注册](#21-注册)  
-&emsp;&emsp;[2.2 获取验证码](#22-获取验证码)  
+[Network API](#network-api)
+&emsp;[1. 说明](#1-说明)
+&emsp;[2. API 列表](#2-api-列表)
+&emsp;&emsp;[2.1 注册](#21-注册)
+&emsp;&emsp;[2.2 获取验证码](#22-获取验证码)
 
 <!-- /MDTOC -->
 
@@ -29,7 +29,8 @@ Base on **Volley**
 2. API 方法包括**三个参数**——发起请求的必要信息，一个结果回调监听器和一个错误回调监听器，并返回一个 `Request` 对象用于**取消请求**
 
     > 如下，`registerInfo` 是存储注册信息的对象，`listener` 是结果监听器， `errorListener` 是错误监听器。
-    ```
+
+    ```java
     public static Request register(RegisterInfo registerInfo,
                                    Response.Listener listener,
                         Response.ErrorListener errorListener)
@@ -40,7 +41,8 @@ Base on **Volley**
 3. API 方法中的两个监听器需要**调用者自行实现**对结果和错误的处理
 
     如下是一个匿名类的监听器实现：
-    ```
+
+    ```java
     register(registerInfo,
         // 这个是结果监听器
         new Response.Listener<BaseResponse>() {
@@ -87,7 +89,7 @@ Base on **Volley**
 
 ### 2.1 注册
 
-```
+```java
 register(RegisterInfo registerInfo)
 ```
 
@@ -95,7 +97,7 @@ register(RegisterInfo registerInfo)
 
 ### 2.2 获取验证码
 
-```
+```java
 getAuthCode(String phoneNumber)
 ```
 

@@ -8,11 +8,11 @@ Database part is base on **Sugar ORM**
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Storage API](#storage-api)  
-&emsp;[1. 概述](#1-概述)  
-&emsp;[2. SharedPreferences 部分](#2-sharedpreferences-部分)  
-&emsp;&emsp;[2.1 储存的数据](#21-储存的数据)  
-&emsp;[3. 数据库部分](#3-数据库部分)  
+[Storage API](#storage-api)
+&emsp;[1. 概述](#1-概述)
+&emsp;[2. SharedPreferences 部分](#2-sharedpreferences-部分)
+&emsp;&emsp;[2.1 储存的数据](#21-储存的数据)
+&emsp;[3. 数据库部分](#3-数据库部分)
 
 <!-- /MDTOC -->
 

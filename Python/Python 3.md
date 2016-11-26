@@ -8,76 +8,76 @@ Basic on *A byte of Python 3rd edition*
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Python 3](#python-3)  
-&emsp;[1. 基本概念](#1-基本概念)  
-&emsp;&emsp;[1.1 注释](#11-注释)  
-&emsp;&emsp;[1.2 字面意义的常量](#12-字面意义的常量)  
-&emsp;&emsp;&emsp;[1.2.1 数](#121-数)  
-&emsp;&emsp;&emsp;[1.2.2 字符串](#122-字符串)  
-&emsp;&emsp;[1.3 变量](#13-变量)  
-&emsp;&emsp;&emsp;[1.3.1 命名](#131-命名)  
-&emsp;&emsp;&emsp;[1.3.2 类型](#132-类型)  
-&emsp;&emsp;[1.4 逻辑行和物理行](#14-逻辑行和物理行)  
-&emsp;&emsp;[1.5 缩进](#15-缩进)  
-&emsp;&emsp;[1.6 操作符](#16-操作符)  
-&emsp;[2. 控制流程](#2-控制流程)  
-&emsp;&emsp;[2.1 if 语句](#21-if-语句)  
-&emsp;&emsp;[2.2 while 语句](#22-while-语句)  
-&emsp;&emsp;[2.3 for 语句](#23-for-语句)  
-&emsp;&emsp;[2.4 其他流程控制](#24-其他流程控制)  
-&emsp;[3. 函数](#3-函数)  
-&emsp;&emsp;[3.1 函数的定义](#31-函数的定义)  
-&emsp;&emsp;[3.2 函数参数](#32-函数参数)  
-&emsp;&emsp;[3.3 变量作用域](#33-变量作用域)  
-&emsp;&emsp;[3.4 默认参数](#34-默认参数)  
-&emsp;&emsp;[3.5 关键参数](#35-关键参数)  
-&emsp;&emsp;[3.6 不定参数](#36-不定参数)  
-&emsp;&emsp;[3.7 Keyword-only 参数](#37-keyword-only-参数)  
-&emsp;&emsp;[3.8 return 语句](#38-return-语句)  
-&emsp;&emsp;[3.9 DocStrings](#39-docstrings)  
-&emsp;&emsp;[3.10 注解(Annotations)](#310-注解annotations)  
-&emsp;&emsp;&emsp;[3.10.1 参数注解](#3101-参数注解)  
-&emsp;&emsp;&emsp;[3.10.2 返回值注解](#3102-返回值注解)  
-&emsp;&emsp;&emsp;[3.10.3 Lambda 表达式](#3103-lambda-表达式)  
-&emsp;[4. 模块(Module)](#4-模块module)  
-&emsp;&emsp;[4.1 导入模块](#41-导入模块)  
-&emsp;&emsp;[4.2 创建模块](#42-创建模块)  
-&emsp;&emsp;[4.3 模块的默认变量](#43-模块的默认变量)  
-&emsp;&emsp;[4.4 `dir()` 函数](#44-dir-函数)  
-&emsp;&emsp;[4.5 包(Package)](#45-包package)  
-&emsp;&emsp;&emsp;[4.5.1 导入包](#451-导入包)  
-&emsp;[5. 数据结构](#5-数据结构)  
-&emsp;&emsp;[5.1 列表(list)](#51-列表list)  
-&emsp;&emsp;[5.2 元组(tupple)](#52-元组tupple)  
-&emsp;&emsp;[5.3 字典(dict)](#53-字典dict)  
-&emsp;&emsp;[5.4 序列](#54-序列)  
-&emsp;&emsp;[5.5 集合](#55-集合)  
-&emsp;&emsp;[5.6 引用](#56-引用)  
-&emsp;[6. 类](#6-类)  
-&emsp;&emsp;[6.1 创建类](#61-创建类)  
-&emsp;&emsp;[6.2 self 参数](#62-self-参数)  
-&emsp;&emsp;[6.3 类域](#63-类域)  
-&emsp;&emsp;[6.4 类方法](#64-类方法)  
-&emsp;&emsp;[6.5 构造函数和析构函数](#65-构造函数和析构函数)  
-&emsp;&emsp;[6.6 继承](#66-继承)  
-&emsp;[7. 输入输出与文件](#7-输入输出与文件)  
-&emsp;&emsp;[7.1 使用 `input()` 进行输入](#71-使用-input-进行输入)  
-&emsp;&emsp;[7.2 文件输入输出](#72-文件输入输出)  
-&emsp;&emsp;[7.3 pickle 模块](#73-pickle-模块)  
-&emsp;[8. 异常](#8-异常)  
-&emsp;&emsp;[8.1 处理异常](#81-处理异常)  
-&emsp;&emsp;[8.2 引发异常](#82-引发异常)  
-&emsp;&emsp;[8.3 Try...Finally 语句](#83-tryfinally-语句)  
-&emsp;&emsp;[8.4 with 语句](#84-with-语句)  
-&emsp;[9. 高级技巧](#9-高级技巧)  
-&emsp;&emsp;[9.1 函数返回多个值](#91-函数返回多个值)  
-&emsp;&emsp;[9.2 特殊方法](#92-特殊方法)  
-&emsp;&emsp;[9.3 单行语句块](#93-单行语句块)  
-&emsp;&emsp;[9.4 Lambda 表达式](#94-lambda-表达式)  
-&emsp;&emsp;[9.5 列表综合](#95-列表综合)  
-&emsp;&emsp;[9.6 `exec` 和 `eval`](#96-exec-和-eval)  
-&emsp;&emsp;[9.7 `assert` 语句](#97-assert-语句)  
-&emsp;&emsp;[9.8 repr 函数](#98-repr-函数)  
+[Python 3](#python-3)
+&emsp;[1. 基本概念](#1-基本概念)
+&emsp;&emsp;[1.1 注释](#11-注释)
+&emsp;&emsp;[1.2 字面意义的常量](#12-字面意义的常量)
+&emsp;&emsp;&emsp;[1.2.1 数](#121-数)
+&emsp;&emsp;&emsp;[1.2.2 字符串](#122-字符串)
+&emsp;&emsp;[1.3 变量](#13-变量)
+&emsp;&emsp;&emsp;[1.3.1 命名](#131-命名)
+&emsp;&emsp;&emsp;[1.3.2 类型](#132-类型)
+&emsp;&emsp;[1.4 逻辑行和物理行](#14-逻辑行和物理行)
+&emsp;&emsp;[1.5 缩进](#15-缩进)
+&emsp;&emsp;[1.6 操作符](#16-操作符)
+&emsp;[2. 控制流程](#2-控制流程)
+&emsp;&emsp;[2.1 if 语句](#21-if-语句)
+&emsp;&emsp;[2.2 while 语句](#22-while-语句)
+&emsp;&emsp;[2.3 for 语句](#23-for-语句)
+&emsp;&emsp;[2.4 其他流程控制](#24-其他流程控制)
+&emsp;[3. 函数](#3-函数)
+&emsp;&emsp;[3.1 函数的定义](#31-函数的定义)
+&emsp;&emsp;[3.2 函数参数](#32-函数参数)
+&emsp;&emsp;[3.3 变量作用域](#33-变量作用域)
+&emsp;&emsp;[3.4 默认参数](#34-默认参数)
+&emsp;&emsp;[3.5 关键参数](#35-关键参数)
+&emsp;&emsp;[3.6 不定参数](#36-不定参数)
+&emsp;&emsp;[3.7 Keyword-only 参数](#37-keyword-only-参数)
+&emsp;&emsp;[3.8 return 语句](#38-return-语句)
+&emsp;&emsp;[3.9 DocStrings](#39-docstrings)
+&emsp;&emsp;[3.10 注解(Annotations)](#310-注解annotations)
+&emsp;&emsp;&emsp;[3.10.1 参数注解](#3101-参数注解)
+&emsp;&emsp;&emsp;[3.10.2 返回值注解](#3102-返回值注解)
+&emsp;&emsp;&emsp;[3.10.3 Lambda 表达式](#3103-lambda-表达式)
+&emsp;[4. 模块(Module)](#4-模块module)
+&emsp;&emsp;[4.1 导入模块](#41-导入模块)
+&emsp;&emsp;[4.2 创建模块](#42-创建模块)
+&emsp;&emsp;[4.3 模块的默认变量](#43-模块的默认变量)
+&emsp;&emsp;[4.4 `dir()` 函数](#44-dir-函数)
+&emsp;&emsp;[4.5 包(Package)](#45-包package)
+&emsp;&emsp;&emsp;[4.5.1 导入包](#451-导入包)
+&emsp;[5. 数据结构](#5-数据结构)
+&emsp;&emsp;[5.1 列表(list)](#51-列表list)
+&emsp;&emsp;[5.2 元组(tupple)](#52-元组tupple)
+&emsp;&emsp;[5.3 字典(dict)](#53-字典dict)
+&emsp;&emsp;[5.4 序列](#54-序列)
+&emsp;&emsp;[5.5 集合](#55-集合)
+&emsp;&emsp;[5.6 引用](#56-引用)
+&emsp;[6. 类](#6-类)
+&emsp;&emsp;[6.1 创建类](#61-创建类)
+&emsp;&emsp;[6.2 self 参数](#62-self-参数)
+&emsp;&emsp;[6.3 类域](#63-类域)
+&emsp;&emsp;[6.4 类方法](#64-类方法)
+&emsp;&emsp;[6.5 构造函数和析构函数](#65-构造函数和析构函数)
+&emsp;&emsp;[6.6 继承](#66-继承)
+&emsp;[7. 输入输出与文件](#7-输入输出与文件)
+&emsp;&emsp;[7.1 使用 `input()` 进行输入](#71-使用-input-进行输入)
+&emsp;&emsp;[7.2 文件输入输出](#72-文件输入输出)
+&emsp;&emsp;[7.3 pickle 模块](#73-pickle-模块)
+&emsp;[8. 异常](#8-异常)
+&emsp;&emsp;[8.1 处理异常](#81-处理异常)
+&emsp;&emsp;[8.2 引发异常](#82-引发异常)
+&emsp;&emsp;[8.3 Try...Finally 语句](#83-tryfinally-语句)
+&emsp;&emsp;[8.4 with 语句](#84-with-语句)
+&emsp;[9. 高级技巧](#9-高级技巧)
+&emsp;&emsp;[9.1 函数返回多个值](#91-函数返回多个值)
+&emsp;&emsp;[9.2 特殊方法](#92-特殊方法)
+&emsp;&emsp;[9.3 单行语句块](#93-单行语句块)
+&emsp;&emsp;[9.4 Lambda 表达式](#94-lambda-表达式)
+&emsp;&emsp;[9.5 列表综合](#95-列表综合)
+&emsp;&emsp;[9.6 `exec` 和 `eval`](#96-exec-和-eval)
+&emsp;&emsp;[9.7 `assert` 语句](#97-assert-语句)
+&emsp;&emsp;[9.8 repr 函数](#98-repr-函数)
 
 <!-- /MDTOC -->
 
@@ -162,8 +162,7 @@ He said "Bond, James Bond."
 
     > 可以使用 `format()` 方法来通过使用其他信息构建字符串
 
-
-    ```
+    ```python
     #!/usr/bin/python
     age = 25
     name = 'Swaroop'
@@ -358,7 +357,7 @@ def printMax(a, b):
 
 > 这里由于形参类型不确定，一般的 IDE 无法进行提示。所以可以使用冒号指明其类型
 
-```python3
+```python
 def printMax(a:int, b:int):
 ```
 
@@ -489,7 +488,7 @@ def foo(a, b):
 
 也可以使用 Google 的规范
 
-```pyothon
+```python
 def module_level_function(param1, param2=None, *args, **kwargs):
     """This is an example of a module level function.
 
@@ -699,7 +698,7 @@ else:
 
 例如：
 
-```
+```python
 sound/                          Top-level package
       __init__.py               Initialize the sound package
       formats/                  Subpackage for file format conversions

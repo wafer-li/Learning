@@ -6,10 +6,10 @@ Tags: Algorithm
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Convex Hull](#convex-hull)   
-&emsp;[1. Graham scan 实现](#1-graham-scan-实现)   
-&emsp;&emsp;[1.1 要点](#11-要点)   
-&emsp;&emsp;[1.2 确定逆时针转角(CCW)](#12-确定逆时针转角ccw)   
+[Convex Hull](#convex-hull)
+&emsp;[1. Graham scan 实现](#1-graham-scan-实现)
+&emsp;&emsp;[1.1 要点](#11-要点)
+&emsp;&emsp;[1.2 确定逆时针转角(CCW)](#12-确定逆时针转角ccw)
 
 <!-- /MDTOC -->
 

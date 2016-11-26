@@ -6,9 +6,9 @@ Tags: PHP
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[PHP](#php)  
+[PHP](#php)
 &emsp;[1. Basic](#1-basic)  
-&emsp;[2. Variable](#2-variable)  
+&emsp;[2. Variable](#2-variable)
 
 <!-- /MDTOC -->
 
@@ -42,6 +42,7 @@ Tags: PHP
 
 3. Case Sensitivity
 - All the `function()` `class` and the `key word` is **NOt cAse SenSiTivE**
+
     ```php
     <?php
     // They all do the same things.
@@ -52,6 +53,7 @@ Tags: PHP
     ```
 
 - But the `$variable` is **CASE SENSITIVE**
+
     ```php
     <?php
     // Only the FIRST statement can do the right output.

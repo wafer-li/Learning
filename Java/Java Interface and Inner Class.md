@@ -2,16 +2,16 @@
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Interface and Inner Class](#java-interface-and-inner-class)   
-&emsp;[1. 接口](#1-接口)   
-&emsp;&emsp;[1.1 接口](#11-接口)   
-&emsp;&emsp;[1.2 对象克隆](#12-对象克隆)   
-&emsp;[2. 内部类](#2-内部类)   
-&emsp;&emsp;[2.1 概述](#21-概述)   
-&emsp;&emsp;[2.2 普通内部类](#22-普通内部类)   
-&emsp;&emsp;[2.3 局部内部类](#23-局部内部类)   
-&emsp;&emsp;[2.4 匿名内部类](#24-匿名内部类)   
-&emsp;&emsp;[2.5 静态内部类](#25-静态内部类)   
+[Java Interface and Inner Class](#java-interface-and-inner-class)
+&emsp;[1. 接口](#1-接口)
+&emsp;&emsp;[1.1 接口](#11-接口)
+&emsp;&emsp;[1.2 对象克隆](#12-对象克隆)
+&emsp;[2. 内部类](#2-内部类)
+&emsp;&emsp;[2.1 概述](#21-概述)
+&emsp;&emsp;[2.2 普通内部类](#22-普通内部类)
+&emsp;&emsp;[2.3 局部内部类](#23-局部内部类)
+&emsp;&emsp;[2.4 匿名内部类](#24-匿名内部类)
+&emsp;&emsp;[2.5 静态内部类](#25-静态内部类)
 
 <!-- /MDTOC -->
 
@@ -21,7 +21,7 @@
 
 ### 1.1 接口
 
-```
+```java
 public interface Comparable {...}
 ```
 
@@ -30,7 +30,7 @@ public interface Comparable {...}
 - 实现接口
     - 将类声明为实现给定的接口
 
-        ```
+        ```java
         class Employee implements Comparable {....}
         ```
 
@@ -44,30 +44,30 @@ public interface Comparable {...}
     - 可以包含常量，接口中的域被自动设为public static final
     - 可以声明接口的变量
 
-        ```
+        ```java
         Comparable x;
         ```
     - 必须引用实现了接口的类对象
 
-        ```
+        ```java
         x = new Employee();
         ```
 
 - 可以使用instanceof来检查一个对象是否实现了某个特定接口
 
-    ```
+    ```java
     if(anObject instanceof Comparable)
     ```
 
 - 可以扩展（**继承**）
 
-    ```
+    ```java
     public interface Powered extends Moveable
     ```
 
 - 每个类只能拥有一个超类，但是可以实现多个接口
 
-    ```
+    ```java
     class Employee extends Persons implements Comparable
     ```
 

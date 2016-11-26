@@ -8,22 +8,22 @@ Base on *Core Java Volume Ⅰ——Fundamentals* and many Posts
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Multithreading Basic](#java-multithreading-basic)  
-&emsp;[8. 多线程](#8-多线程)  
-&emsp;&emsp;[8.1  创建线程](#81-创建线程)  
-&emsp;&emsp;&emsp;[8.1.1 通过 `Runnable` 接口创建](#811-通过-runnable-接口创建)  
-&emsp;&emsp;&emsp;[8.1.2 通过继承 `Thread` 类实现](#812-通过继承-thread-类实现)  
-&emsp;&emsp;[8.2 中断线程](#82-中断线程)  
-&emsp;&emsp;&emsp;[8.2.1 中断置位和检测](#821-中断置位和检测)  
-&emsp;&emsp;&emsp;[8.2.2 关于 `InterruptedException` 异常](#822-关于-interruptedexception-异常)  
-&emsp;&emsp;&emsp;&emsp;[8.2.2.1 抛出时机](#8221-抛出时机)  
-&emsp;&emsp;&emsp;&emsp;[8.2.2.2 `InterruptedException` 的处理](#8222-interruptedexception-的处理)  
-&emsp;&emsp;[8.3 线程的生命周期](#83-线程的生命周期)  
-&emsp;&emsp;&emsp;[附： Java 如何终止一个线程](#附：-java-如何终止一个线程)  
-&emsp;&emsp;[8.4 线程属性](#84-线程属性)  
-&emsp;&emsp;&emsp;[8.4.1 优先级](#841-优先级)  
-&emsp;&emsp;&emsp;[8.4.2 守护线程](#842-守护线程)  
-&emsp;&emsp;&emsp;[8.4.3 `uncaughtExceptionHandler`](#843-uncaughtexceptionhandler)  
+[Java Multithreading Basic](#java-multithreading-basic)
+&emsp;[8. 多线程](#8-多线程)
+&emsp;&emsp;[8.1  创建线程](#81-创建线程)
+&emsp;&emsp;&emsp;[8.1.1 通过 `Runnable` 接口创建](#811-通过-runnable-接口创建)
+&emsp;&emsp;&emsp;[8.1.2 通过继承 `Thread` 类实现](#812-通过继承-thread-类实现)
+&emsp;&emsp;[8.2 中断线程](#82-中断线程)
+&emsp;&emsp;&emsp;[8.2.1 中断置位和检测](#821-中断置位和检测)
+&emsp;&emsp;&emsp;[8.2.2 关于 `InterruptedException` 异常](#822-关于-interruptedexception-异常)
+&emsp;&emsp;&emsp;&emsp;[8.2.2.1 抛出时机](#8221-抛出时机)
+&emsp;&emsp;&emsp;&emsp;[8.2.2.2 `InterruptedException` 的处理](#8222-interruptedexception-的处理)
+&emsp;&emsp;[8.3 线程的生命周期](#83-线程的生命周期)
+&emsp;&emsp;&emsp;[附： Java 如何终止一个线程](#附：-java-如何终止一个线程)
+&emsp;&emsp;[8.4 线程属性](#84-线程属性)
+&emsp;&emsp;&emsp;[8.4.1 优先级](#841-优先级)
+&emsp;&emsp;&emsp;[8.4.2 守护线程](#842-守护线程)
+&emsp;&emsp;&emsp;[8.4.3 `uncaughtExceptionHandler`](#843-uncaughtexceptionhandler)
 
 <!-- /MDTOC -->
 
@@ -45,19 +45,19 @@ class Myrunnable implement Runnable {
 
 2. 创建 `Runnable` 对象
 
-    ```
+    ```java
 Runnable r = new Myrunnable();
     ```
 
 3. 由 Runnable 对象创建 Thread 对象
 
-    ```
+    ```java
 Thread t = new Thread(r);
     ```
 
 4. 启动线程
 
-    ```
+    ```java
 t.start();
     ```
 
@@ -86,7 +86,7 @@ t.start();
 
 3. 通过 `start()` 方法开启线程
 
-    ```
+    ```java
     t.start();
     ```
 
@@ -208,7 +208,7 @@ Java 使用**中断**来执行**终止线程**的作用；
     > 这种线程首先必须是由继承 `Thread` 实现的，而不是 `Runnable` 实现的，或者其他通用代码库中的方法。
     应在两处轮询中断状态，确保其一定会退出
 
-    ```
+    ```java
     public class PrimeProducer extends Thread {
         private final BlockingQueue<BigInteger> queue;
 
@@ -294,7 +294,7 @@ Java 使用**中断**来执行**终止线程**的作用；
     但是要注意，由于中断的发生，我们需要同时关闭这个线程所占有的 IO 流，此时，我们要重载 `interrupt()` 方法，使其能够关闭 IO 流，同时引起 `IOException` 的发生。
     所以对于 `IOException`，我们就需要判断是否是由于中断引起的 `IOException`
 
-    ```
+    ```java
     import java.io.IOException;
     import java.io.InputStream;
     import java.io.InterruptedIOException;
