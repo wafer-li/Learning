@@ -7,7 +7,7 @@ Tags: Kotlin
 
 Kotlin 提供了一个 `this` 表达式，主要就是一个带标签的 `this`，用于在内部类、扩展中获取正确的类对象实例。
 
-```
+```kotlin
 class A { // implicit label @A
   inner class B { // implicit label @B
     fun Int.foo() { // implicit label @foo

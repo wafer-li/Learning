@@ -6,23 +6,23 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 函数](#kotlin-函数)  
-&emsp;[1. 声明](#1-声明)  
-&emsp;[2. 调用](#2-调用)  
-&emsp;&emsp;[2.1 类成员函数调用](#21-类成员函数调用)  
-&emsp;&emsp;[2.2 中继调用](#22-中继调用)  
-&emsp;&emsp;&emsp;[2.2.1 条件](#221-条件)  
-&emsp;&emsp;&emsp;[2.2.2 例子](#222-例子)  
-&emsp;[3. 参数](#3-参数)  
-&emsp;&emsp;[3.1 默认参数](#31-默认参数)  
-&emsp;&emsp;[3.2 参数指定](#32-参数指定)  
-&emsp;&emsp;[3.3 不定参数](#33-不定参数)  
-&emsp;[4. 返回值](#4-返回值)  
-&emsp;&emsp;[4.1 单一表达式函数](#41-单一表达式函数)  
-&emsp;&emsp;[4.2 非单一表达式函数](#42-非单一表达式函数)  
-&emsp;[5. 函数作用域](#5-函数作用域)  
-&emsp;&emsp;[5.1 局部函数](#51-局部函数)  
-&emsp;[6. 尾调用](#6-尾调用)  
+[Kotlin 函数](#kotlin-函数)
+&emsp;[1. 声明](#1-声明)
+&emsp;[2. 调用](#2-调用)
+&emsp;&emsp;[2.1 类成员函数调用](#21-类成员函数调用)
+&emsp;&emsp;[2.2 中继调用](#22-中继调用)
+&emsp;&emsp;&emsp;[2.2.1 条件](#221-条件)
+&emsp;&emsp;&emsp;[2.2.2 例子](#222-例子)
+&emsp;[3. 参数](#3-参数)
+&emsp;&emsp;[3.1 默认参数](#31-默认参数)
+&emsp;&emsp;[3.2 参数指定](#32-参数指定)
+&emsp;&emsp;[3.3 不定参数](#33-不定参数)
+&emsp;[4. 返回值](#4-返回值)
+&emsp;&emsp;[4.1 单一表达式函数](#41-单一表达式函数)
+&emsp;&emsp;[4.2 非单一表达式函数](#42-非单一表达式函数)
+&emsp;[5. 函数作用域](#5-函数作用域)
+&emsp;&emsp;[5.1 局部函数](#51-局部函数)
+&emsp;[6. 尾调用](#6-尾调用)
 
 <!-- /MDTOC -->
 
@@ -32,7 +32,7 @@ Tags: Kotlin
 
 函数使用 `fun` 关键字进行声明。
 
-```
+```kotlin
 fun double(x: Int): Int {
 }
 ```
@@ -41,7 +41,7 @@ fun double(x: Int): Int {
 
 函数的调用和其他语言一样
 
-```
+```kotlin
 val result = double(2)
 ```
 
@@ -49,7 +49,7 @@ val result = double(2)
 
 类成员函数使用 `.` 进行调用。
 
-```
+```kotlin
 Sample().foo() // create instance of class Sample and calls foo
 ```
 
@@ -65,7 +65,7 @@ Sample().foo() // create instance of class Sample and calls foo
 
 #### 2.2.2 例子
 
-```
+```kotlin
 // Define extension to Int
 infix fun Int.shl(x: Int): Int {
 ...
@@ -88,7 +88,7 @@ infix fun Int.shl(x: Int): Int {
 
 每个参数都**必须显式指明类型**
 
-```
+```kotlin
 fun powerOf(number: Int, exponent: Int) {
 ...
 }
@@ -103,7 +103,7 @@ Kotlin 中允许使用默认参数，这样相比 Java 就减少了函数重载�
 
 使用 `=` 来指定参数的默认值，而且 Kotlin 不对默认参数的位置进行要求。
 
-```
+```kotlin
 fun read(b: Array<Byte>, off: Int = 0, len: Int = b.size()) {
 ...
 }
@@ -111,7 +111,7 @@ fun read(b: Array<Byte>, off: Int = 0, len: Int = b.size()) {
 
 通过类重载的方法**不允许拥有默认参数**
 
-```
+```kotlin
 open class A {
     open fun foo(i: Int = 10) { ... }
 }
@@ -127,7 +127,7 @@ class B : A() {
 
 例如，对如下函数：
 
-```
+```kotlin
 fun reformat(str: String,
              normalizeCase: Boolean = true,
              upperCaseFirstLetter: Boolean = true,
@@ -139,7 +139,7 @@ fun reformat(str: String,
 
 在**调用时**使用 `=` 来指定参数。
 
-```
+```kotlin
 reformat(str,
     normalizeCase = true,
     upperCaseFirstLetter = true,
@@ -151,7 +151,7 @@ reformat(str,
 当然我们也可以不指定所有的参数，如果参数有默认值的话。
 此时，没有被指定的实参按照顺序赋予形参。
 
-```
+```kotlin
 reformat(str, wordSeparator = '_')
 ```
 
@@ -163,7 +163,7 @@ Kotlin 同样支持不定参数，只需要给参数标识上 `vararg` 即可。
 
 例如：
 
-```
+```kotlin
 fun <T> asList(vararg ts: T): List<T> {
   val result = ArrayList<T>()
   for (t in ts) // ts is an Array
@@ -180,7 +180,7 @@ fun <T> asList(vararg ts: T): List<T> {
 
 此外，Kotlin 中可以将一个 `Array` 对象传给不定参数，通过使用 spread operator (`*`) 来实现。
 
-```
+```kotlin
 val a = arrayOf(1, 2, 3)
 val list = asList(-1, 0, *a, 4)
 ```
@@ -195,7 +195,7 @@ val list = asList(-1, 0, *a, 4)
 > 不使用 `Void` 的原因：因为已经存在了一个 `Nothing` 类，为了防止意思冲突，所以使用 `Unit` 来指代 Java 中的 `void`
 
 
-```
+```kotlin
 fun printHello(name: String?): Unit {
     if (name != null)
         println("Hello ${name}")
@@ -209,7 +209,7 @@ fun printHello(name: String?): Unit {
 
 > 实际上，在编码规范中，要求对其省略。
 
-```
+```kotlin
 fun printHello(name: String?) {
     ...
 }
@@ -219,13 +219,13 @@ fun printHello(name: String?) {
 
 当一个函数只具有一条表达式时，花括号可以被省略。
 
-```
+```kotlin
 fun double(x: Int): Int = x * 2
 ```
 
 此时，如果编译器能推断出表达式的值，那么返回类型的声明也是可以省略的。
 
-```
+```kotlin
 fun double(x: Int) = x * 2
 ```
 
@@ -243,7 +243,7 @@ fun double(x: Int) = x * 2
 
 Kotlin 支持局部函数，例如**嵌套函数**
 
-```
+```kotlin
 fun dfs(graph: Graph) {
   fun dfs(current: Vertex, visited: Set<Vertex>) {
     if (!visited.add(current)) return
@@ -259,7 +259,7 @@ fun dfs(graph: Graph) {
 
 所以对于上面的例子，`visited` 可以作为一个局部变量。
 
-```
+```kotlin
 fun dfs(graph: Graph) {
   val visited = HashSet<Vertex>()
   fun dfs(current: Vertex) {
@@ -283,11 +283,11 @@ fun dfs(graph: Graph) {
 但是 `tailrec` 会指示编译器将其优化为相应的循环形式，
 从而避免了因递归调用过多造成的 `StackOverflow`。
 
-```
+```kotlin
 tailrec fun findFixPoint(x: Double = 1.0): Double
         = if (x == Math.cos(x)) x else findFixPoint(Math.cos(x))
 ```
 
 使用 `tailrec` 的函数必须满足尾调用形式，即**函数的最后一个操作就是调用其自身。**
 
-当你的递归调用操作之后还存在更多代码时，不能对函数使用 `tailrec` xiu'shi'f
+当你的递归调用操作之后还存在更多代码时，不能对函数使用 `tailrec`

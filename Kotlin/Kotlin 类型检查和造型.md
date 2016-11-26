@@ -6,11 +6,11 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 类型检查和造型](#kotlin-类型检查和造型)  
-&emsp;[1. 类型检查](#1-类型检查)  
-&emsp;[2. 智能造型(Smart Cast)](#2-智能造型smart-cast)  
-&emsp;[3. 不安全的造型](#3-不安全的造型)  
-&emsp;[4. 安全的造型](#4-安全的造型)  
+[Kotlin 类型检查和造型](#kotlin-类型检查和造型)
+&emsp;[1. 类型检查](#1-类型检查)
+&emsp;[2. 智能造型(Smart Cast)](#2-智能造型smart-cast)
+&emsp;[3. 不安全的造型](#3-不安全的造型)
+&emsp;[4. 安全的造型](#4-安全的造型)
 
 <!-- /MDTOC -->
 
@@ -20,7 +20,7 @@ Tags: Kotlin
 
 使用 `is` 和 `!is` 来检查一个变量的类型
 
-```
+```kotlin
 if (obj is String) {
   print(obj.length)
 }
@@ -37,7 +37,7 @@ else {
 
 智能造型指的是，当一个对象满足一个 `is` 表达式时，它就会被自动转换成这个类型。
 
-```
+```kotlin
 fun demo(x: Any) {
   if (x is String) {
     print(x.length) // x is automatically cast to String
@@ -47,14 +47,14 @@ fun demo(x: Any) {
 
 同样的，它也支持**否定**检查
 
-```
+```kotlin
 if (x !is String) return
 print(x.length) // x is automatically cast to String
 ```
 
 也支持 `&&` 和 `||` 表达式
 
-```
+```kotlin
   // x is automatically cast to string on the right-hand side of `||`
   if (x !is String || x.length == 0) return
 
@@ -65,7 +65,7 @@ print(x.length) // x is automatically cast to String
 
 同样，在 `when` 和 `while` 语句中也支持这个特性
 
-```
+```kotlin
 when (x) {
   is Int -> print(x + 1)
   is String -> print(x.length + 1)
@@ -93,7 +93,7 @@ when (x) {
 
 对于这种造型操作，Kotlin 使用 `as` 关键字。
 
-```
+```kotlin
 val x: String = y as String
 ```
 
@@ -101,7 +101,7 @@ val x: String = y as String
 
 我们可以使用一个 `nullable` 对象来进行造型
 
-```
+```kotlin
 val x: String? = y as String?
 ```
 
@@ -111,7 +111,7 @@ val x: String? = y as String?
 
 它会在造型失败时返回 `null`
 
-```
+```kotlin
 val x: String? = y as? String
 ```
 

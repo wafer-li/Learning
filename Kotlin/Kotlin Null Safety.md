@@ -6,17 +6,17 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin Null Safety](#kotlin-null-safety)  
-&emsp;[1. 概述](#1-概述)  
-&emsp;[2. 产生 NPE 的原因](#2-产生-npe-的原因)  
-&emsp;[3. Kotlin 类型系统](#3-kotlin-类型系统)  
-&emsp;[4. 访问可能为空变量的方法](#4-访问可能为空变量的方法)  
-&emsp;&emsp;[4.1 显式检查](#41-显式检查)  
-&emsp;&emsp;[4.2 使用安全访问](#42-使用安全访问)  
-&emsp;&emsp;[4.3 Elvis 表达式](#43-elvis-表达式)  
-&emsp;&emsp;[4.4 `!!` 操作符](#44-操作符)  
-&emsp;[5. 安全的造型](#5-安全的造型)  
-&emsp;[6. 空类型的集合](#6-空类型的集合)  
+[Kotlin Null Safety](#kotlin-null-safety)
+&emsp;[1. 概述](#1-概述)
+&emsp;[2. 产生 NPE 的原因](#2-产生-npe-的原因)
+&emsp;[3. Kotlin 类型系统](#3-kotlin-类型系统)
+&emsp;[4. 访问可能为空变量的方法](#4-访问可能为空变量的方法)
+&emsp;&emsp;[4.1 显式检查](#41-显式检查)
+&emsp;&emsp;[4.2 使用安全访问](#42-使用安全访问)
+&emsp;&emsp;[4.3 Elvis 表达式](#43-elvis-表达式)
+&emsp;&emsp;[4.4 `!!` 操作符](#44-操作符)
+&emsp;[5. 安全的造型](#5-安全的造型)
+&emsp;[6. 空类型的集合](#6-空类型的集合)
 
 <!-- /MDTOC -->
 
@@ -41,27 +41,27 @@ Kotlin 对于 Java 的一个很大的改进在于，Kotlin 的类型系统目标
 
 在 Kotlin 中，类型系统将变量引用分成了**两种类型**：可以为 `null` 的类型（nullable），和不能为 `null` 的类型（non-null）
 
-```
+```kotlin
 var a: String = "abc"
 a = null // compilation error
 ```
 
 在类型后添加一个问号(`?`)来表明它是可以为空的。
 
-```
+```kotlin
 var b: String? = "abc"
 b = null // ok
 ```
 
 此时，对于 `a`，由于它不会产生 NPE，你可以安全的访问它的成员。
 
-```
+```kotlin
 val l = a.length
 ```
 
 但是对于 `b`，由于它可能为空，所以直接访问它，编译器会报错
 
-```
+```kotlin
 val l = b.length // error: variable 'b' can be null
 ```
 
@@ -76,13 +76,13 @@ val l = b.length // error: variable 'b' can be null
 
 首先你可以直接对 `b` 进行空检查
 
-```
+```kotlin
 val l = if (b != null) b.length else -1
 ```
 
 由于 Kotlin 具有智能造型特性，还可以直接在 `if` 语句中访问 `b` 的成员。
 
-```
+```kotlin
 if (b != null && b.length > 0)
   print("String of length ${b.length}")
 else
@@ -95,7 +95,7 @@ else
 
 第二个方法是采用安全访问操作符(`?.`)，即在点号(`.`)前加一个问号(`?`)
 
-```
+```kotlin
 b?.length
 ```
 
@@ -108,7 +108,7 @@ b?.length
 比如说，`bob` 是一个 `Employee`，他有可能被派往一个 `Department`，这个部门也许会存在一个主管。
 那么我们通过以下调用链来获取 `bob` 所在部门主管的名字。
 
-```
+```kotlin
 bob?.department?.head?.name
 ```
 
@@ -116,7 +116,7 @@ bob?.department?.head?.name
 
 如果你想对集合中的非空元素进行某种操作，可以结合安全访问和 `let()`
 
-```
+```kotlin
 val listWithNulls: List<String?> = listOf("A", null)
 for (item in listWithNulls) {
      item?.let { println(it) } // prints A and ignores null
@@ -133,13 +133,13 @@ for (item in listWithNulls) {
 
 我们可以使用如下的语句：
 
-```
+```kotlin
 val l: Int = if (b != null) b.length else -1
 ```
 
 一个更为简单的方法是使用 Elvis 表达式(`?:`)
 
-```
+```kotlin
 val l = b?.length ?: -1
 ```
 
@@ -154,7 +154,7 @@ val l = b?.length ?: -1
 
 第三个方法是给 NPE 爱好者们使用的，我们可以使用 `b!!`，使用它来进行调用，结果就会和 Java 一样，会抛出 NPE。
 
-```
+```kotlin
 val l = b!!.length
 ```
 
@@ -166,7 +166,7 @@ val l = b!!.length
 
 一个更好的选择是使用 `as?`，一种更为安全的造型，当造型失败时，将会返回 `null`
 
-```
+```kotlin
 val aInt: Int? = a as? Int  // return null if failure
 ```
 
@@ -174,7 +174,7 @@ val aInt: Int? = a as? Int  // return null if failure
 
 如果你拥有一个可空类型的集合，想要过滤出非空类型。只需要写如下语句：
 
-```
+```kotlin
 val nullableList: List<Int?> = listOf(1, 2, null, 4)
 val intList: List<Int> = nullableList.filterNotNull() // non-null
 ```

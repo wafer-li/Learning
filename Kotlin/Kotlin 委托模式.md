@@ -6,10 +6,10 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 委托模式](#kotlin-委托模式)  
-&emsp;[1. 委托模式](#1-委托模式)  
-&emsp;[2. Java 例子](#2-java-例子)  
- [3. Kotlin 的委托模式](#3-kotlin-的委托模式)  
+[Kotlin 委托模式](#kotlin-委托模式)
+&emsp;[1. 委托模式](#1-委托模式)
+&emsp;[2. Java 例子](#2-java-例子)
+ [3. Kotlin 的委托模式](#3-kotlin-的委托模式)
 
 <!-- /MDTOC -->
 
@@ -24,7 +24,7 @@ Tags: Kotlin
 
 ## 2. Java 例子
 
-```
+```kotlin
 interface I {
      void f();
      void g();
@@ -75,7 +75,7 @@ interface I {
 
 只需要一个 `by` 表达式就能实现委托模式
 
-```
+```kotlin
 interface Base {
   fun print()
 }

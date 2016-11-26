@@ -7,11 +7,11 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 内部类](#kotlin-内部类)  
-&emsp;[1. 声明](#1-声明)  
-&emsp;[2. `inner` 关键字](#2-inner-关键字)  
-&emsp;[3. 获取外部类实例](#3-获取外部类实例)  
-&emsp;[4. 匿名内部类](#4-匿名内部类)  
+[Kotlin 内部类](#kotlin-内部类)
+&emsp;[1. 声明](#1-声明)
+&emsp;[2. `inner` 关键字](#2-inner-关键字)
+&emsp;[3. 获取外部类实例](#3-获取外部类实例)
+&emsp;[4. 匿名内部类](#4-匿名内部类)
 
 <!-- /MDTOC -->
 
@@ -19,7 +19,7 @@ Tags: Kotlin
 
 ## 1. 声明
 
-```
+```kotlin
 class Outer {
   private val bar: Int = 1
   class Nested {
@@ -34,7 +34,7 @@ val demo = Outer.Nested().foo() // == 2
 
 需要使用 `inner` 关键字来指明一个内部类**允许访问外部类属性。**
 
-```
+```kotlin
 class Outer {
   private val bar: Int = 1
   inner class Inner {
@@ -53,7 +53,7 @@ val demo = Outer().Inner().foo() // == 1
 
 Kotlin 没有 Java 中的匿名类，反之，Kotlin 使用**对象表达式(object expression)**来实现这一功能。
 
-```
+```kotlin
 window.addMouseListener(object: MouseAdapter() {
   override fun mouseClicked(e: MouseEvent) {
     // ...
@@ -67,6 +67,6 @@ window.addMouseListener(object: MouseAdapter() {
 
 如果内部类对应的接口只有一个方法，那么也可以使用 lambda 表达式来创建这个内部类。
 
-```
+```kotlin
 val listener = ActionListener { println("clicked") }
 ```

@@ -6,11 +6,11 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java to Kotlin](#java-to-kotlin)  
-&emsp;[0. 概述](#0-概述)  
-&emsp;[1. if null then initialize else return](#1-if-null-then-initialize-else-return)  
-&emsp;[2. App.getContext()](#2-appgetcontext)  
-&emsp;[3. `it` in lambda](#3-it-in-lambda)  
+[Java to Kotlin](#java-to-kotlin)
+&emsp;[0. 概述](#0-概述)
+&emsp;[1. if null then initialize else return](#1-if-null-then-initialize-else-return)
+&emsp;[2. App.getContext()](#2-appgetcontext)
+&emsp;[3. `it` in lambda](#3-it-in-lambda)
 
 <!-- /MDTOC -->
 
@@ -22,7 +22,7 @@ Tags: Kotlin
 
 ## 1. if null then initialize else return
 
-```
+```java
 // Java
 
 private A a = null;
@@ -40,7 +40,7 @@ private A initA() {
 }
 ```
 
-```
+```kotlin
 // Kotlin
 
 val a: A by lazy { initA() }
@@ -52,7 +52,7 @@ private fun initA(): A {
 
 ## 2. App.getContext()
 
-```
+```java
 // Java
 
 class App extends Application {
@@ -71,7 +71,7 @@ class App extends Application {
 }
 ```
 
-```
+```kotlin
 // Kotlin
 
 class App : Application() {
@@ -88,7 +88,7 @@ class App : Application() {
 
 或者也可以直接扩展 `Context` 类
 
-```
+```kotlin
 val Context.myApp: MyApp
         get() = applicationContext as MyApp
 ```
@@ -100,7 +100,7 @@ val Context.myApp: MyApp
 
 此时，放心大胆的用 `it` 这个内置的 lambda 表达式参数。
 
-```
+```java
 // Java
 
 button.setOnClickListener(new OnClickListener() {
@@ -111,7 +111,7 @@ button.setOnClickListener(new OnClickListener() {
 });
 ```
 
-```
+```kotlin
 // Kotlin
 
 button.setOnClickListener { it -> // it is a view

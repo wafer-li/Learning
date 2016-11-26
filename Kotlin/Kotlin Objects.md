@@ -6,12 +6,12 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin Objects](#kotlin-objects)  
-&emsp;[1. 概述](#1-概述)  
-&emsp;[2. Object Expression](#2-object-expression)  
-&emsp;[3. Object Declaration](#3-object-declaration)  
-&emsp;[4. 伴生对象(companion object)](#4-伴生对象companion-object)  
-&emsp;[5. object expression 和 object declaration 的不同点](#5-object-expression-和-object-declaration-的不同点)  
+[Kotlin Objects](#kotlin-objects)
+&emsp;[1. 概述](#1-概述)
+&emsp;[2. Object Expression](#2-object-expression)
+&emsp;[3. Object Declaration](#3-object-declaration)
+&emsp;[4. 伴生对象(companion object)](#4-伴生对象companion-object)
+&emsp;[5. object expression 和 object declaration 的不同点](#5-object-expression-和-object-declaration-的不同点)
 
 <!-- /MDTOC -->
 
@@ -31,7 +31,7 @@ Kotlin 提供了一个 Object 属性用来实现在 Java 中很常见的三个�
 
 Kotlin 使用 object expression 来实现 Java 中常用的匿名类对象功能。
 
-```
+```kotlin
 window.addMouseListener(object : MouseAdapter() {
   override fun mouseClicked(e: MouseEvent) {
     // ...
@@ -45,7 +45,7 @@ window.addMouseListener(object : MouseAdapter() {
 
 如果类拥有一个构造器，那么就必须传入相应的参数
 
-```
+```kotlin
 open class A(x: Int) {
   public open val y: Int = x
 }
@@ -59,7 +59,7 @@ val ab: A = object : A(1), B {
 
 当然，我们也可以**只声明一个 object**
 
-```
+```kotlin
 val adHoc = object {
   var x: Int = 0
   var y: Int = 0
@@ -69,7 +69,7 @@ print(adHoc.x + adHoc.y)
 
 和 Java 的匿名类一样，object expression 也可以访问外部的变量，但和 Java 不同的是，变量**并没有要求必须是 `final`**
 
-```
+```kotlin
 fun countClicks(window: JComponent) {
   var clickCount = 0
   var enterCount = 0
@@ -91,7 +91,7 @@ fun countClicks(window: JComponent) {
 
 Kotlin 使用 object declaration 来实现 Java 中常用的**单例模式**
 
-```
+```kotlin
 object DataProviderManager {
   fun registerDataProvider(provider: DataProvider) {
     // ...
@@ -106,13 +106,13 @@ object DataProviderManager {
 
 调用 object
 
-```
+```kotlin
 DataProviderManager.registerDataProvider(...)
 ```
 
 object declaration 可以拥有超类。
 
-```
+```kotlin
 object DefaultListener : MouseAdapter() {
   override fun mouseClicked(e: MouseEvent) {
     // ...
@@ -131,7 +131,7 @@ object DefaultListener : MouseAdapter() {
 这个在类的章节中也有所介绍，用于实现 Java 的静态成员功能。
 
 使用 `companion` 关键字来声明一个伴生对象
-```
+```kotlin
 class MyClass {
   companion object Factory {
     fun create(): MyClass = MyClass()
@@ -141,13 +141,13 @@ class MyClass {
 
 伴生对象的成员可以直接使用其名字来调用
 
-```
+```kotlin
 val instance = MyClass.create()
 ```
 
 我们也可以调用伴生对象本身，通过使用 `Companion`
 
-```
+```kotlin
 val x = MyClass.Companion
 ```
 
@@ -155,7 +155,7 @@ val x = MyClass.Companion
 
 虽然说伴生对象看起来是静态的，但是在实际执行过程中，它依旧会实例化，所以它也可以拥有超类和重载方法。
 
-```
+```kotlin
 interface Factory<T> {
   fun create(): T
 }

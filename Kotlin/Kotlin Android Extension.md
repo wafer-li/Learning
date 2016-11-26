@@ -6,13 +6,13 @@ Tags: Kotlin Android
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin Android Extension](#kotlin-android-extension)  
-&emsp;[0. 概述](#0-概述)  
-&emsp;[1. findViewById](#1-findviewbyid)  
-&emsp;[2. 如何使用](#2-如何使用)  
-&emsp;[3. 使用场景](#3-使用场景)  
-&emsp;[4. Android Flavors](#4-android-flavors)  
-&emsp;[5. 实现原理](#5-实现原理)  
+[Kotlin Android Extension](#kotlin-android-extension)
+&emsp;[0. 概述](#0-概述)
+&emsp;[1. findViewById](#1-findviewbyid)
+&emsp;[2. 如何使用](#2-如何使用)
+&emsp;[3. 使用场景](#3-使用场景)
+&emsp;[4. Android Flavors](#4-android-flavors)
+&emsp;[5. 实现原理](#5-实现原理)
 
 <!-- /MDTOC -->
 
@@ -30,7 +30,7 @@ Kotlin 对于 Android 开发，还提供了一些扩展特性，有助于提高 
 
 Kotlin 则将简化一步到位，只需要 `import` 视图对应的包，你就可以简单轻松的获取到对象的实例。
 
-```
+```kotlin
 // Using R.layout.activity_main from the main source set
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -49,7 +49,7 @@ class MyActivity : Activity() {
 
 很简单，只需要在 `app/build.gradle` 文件添加上下面这一行即可：
 
-```
+```kotlin
 apply plugin: 'kotlin-android-extensions'
 ```
 
@@ -57,7 +57,7 @@ apply plugin: 'kotlin-android-extensions'
 
 配置好 Kotlin Android Extension 之后，就可以使用 `import` 语句来导入对应的 xml 视图组件了。
 
-```
+```kotlin
 kotlinx.android.synthetic.main.activity_main.*
 ```
 
@@ -68,14 +68,14 @@ Fragment 不像 Activity 拥有自带的 `findViewById()` 方法，它通常要�
 
 很简单，只需要在上面的基础上加一个 `view` 即可。
 
-```
+```kotlin
 kotlinx.android.synthetic.main.activity_main.view.*
 ```
 
 这个功能也可以用在 Adapter 上；
 如果引入了这个语句，那么我们可以使用如下语法来进行组件获取和调用：
 
-```
+```kotlin
     <TextView
             android:id="@+id/hello"
             android:layout_width="fill_parent"
@@ -84,7 +84,7 @@ kotlinx.android.synthetic.main.activity_main.view.*
             />
 ```
 
-```
+```kotlin
 activity.hello.setText("Hi!")
 ```
 
@@ -98,7 +98,7 @@ activity.hello.setText("Hi!")
 很简单，只需要把上面的 `main` 改成相应的包名就行了；
 对于 `free/res/layout/activity_free.xml`，我们可以写如下语句
 
-```
+```kotlin
 import kotlinx.android.synthetic.free.activity_free.*
 ```
 

@@ -6,14 +6,14 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 委托属性](#kotlin-委托属性)  
-&emsp;[1. 使用场景](#1-使用场景)  
-&emsp;[2. 声明](#2-声明)  
-&emsp;[3. 需要满足的条件](#3-需要满足的条件)  
-&emsp;[4. 一般的委托场景](#4-一般的委托场景)  
-&emsp;&emsp;[4.1 lazy 变量](#41-lazy-变量)  
-&emsp;&emsp;[4.2 Observable](#42-observable)  
-&emsp;&emsp;[4.3 在 Map 中储存属性](#43-在-map-中储存属性)  
+[Kotlin 委托属性](#kotlin-委托属性)
+&emsp;[1. 使用场景](#1-使用场景)
+&emsp;[2. 声明](#2-声明)
+&emsp;[3. 需要满足的条件](#3-需要满足的条件)
+&emsp;[4. 一般的委托场景](#4-一般的委托场景)
+&emsp;&emsp;[4.1 lazy 变量](#41-lazy-变量)
+&emsp;&emsp;[4.2 Observable](#42-observable)
+&emsp;&emsp;[4.3 在 Map 中储存属性](#43-在-map-中储存属性)
 
 <!-- /MDTOC -->
 
@@ -31,7 +31,7 @@ Tags: Kotlin
 
 ## 2. 声明
 
-```
+```kotlin
 class Example {
   var p: String by Delegate()
 }
@@ -45,7 +45,7 @@ class Example {
 
 为了替代 `p` 的 getter 和 setter，`Delegate` 类必须提供 `getValue()` 和 `setValue()` 方法，委托之后，对 `p` 的调用操作**将会由这两个方法来完成**。
 
-```
+```kotlin
 class Delegate {
   operator fun getValue(thisRef: Any?, property: KProperty<*>): String {
     return "$thisRef, thank you for delegating '${property.name}' to me!"
@@ -59,26 +59,26 @@ class Delegate {
 
 那么当我们进行如下调用：
 
-```
+```kotlin
 val e = Example()
 println(e.p)
 ```
 
 打印结果为
 
-```
+```kotlin
 Example@33a17727, thank you for delegating ‘p’ to me!
 ```
 
 同理，进行如下操作
 
-```
+```kotlin
 e.p = "NEW"
 ```
 
 将会打印如下结果：
 
-```
+```kotlin
 NEW has been assigned to ‘p’ in Example@33a17727.
 ```
 
@@ -112,7 +112,7 @@ Kotlin 提供了一个 `lazy()` 方法用于 lazy 变量的生成。
 
 `lazy()` 方法接受一个 lambda 表达式，返回一个 `Lazy<T>` 实例，用于委托属性。
 
-```
+```kotlin
 val lazyValue: String by lazy {
     println("computed!")
     "Hello"
@@ -128,7 +128,7 @@ fun main(args: Array<String>) {
 
 结果为
 
-```
+```kotlin
 computed!
 Hello
 Hello
@@ -144,7 +144,7 @@ Hello
 
 Kotlin 标准库用 `Delegates.observable()` 来实现可观察属性(observable property)。
 
-```
+```kotlin
 import kotlin.properties.Delegates
 
 class User {
@@ -172,7 +172,7 @@ Handler 会在每次我们对变量进行**赋值操作后**被调用。
 
 上面的例子的打印结果为：
 
-```
+```kotlin
 <no name> -> first
 first -> second
 ```
@@ -187,7 +187,7 @@ first -> second
 
 对于 JSON 数据，我们通常将其解析为一个 Map，所以，我们可以通过对 Map 进行委派，从而实现反序列化操作。
 
-```
+```kotlin
 class User(val map: Map<String, Any?>) {
     val name: String by map
     val age: Int     by map
@@ -196,14 +196,14 @@ class User(val map: Map<String, Any?>) {
 
 一个调用的例子：
 
-```
+```kotlin
 val user = User(mapOf(
     "name" to "John Doe",
     "age"  to 25
 ))
 ```
 
-```
+```kotlin
 println(user.name) // Prints "John Doe"
 println(user.age)  // Prints 25
 ```

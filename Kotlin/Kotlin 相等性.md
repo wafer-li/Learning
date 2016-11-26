@@ -6,10 +6,10 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 相等性](#kotlin-相等性)  
-&emsp;[1. 概述](#1-概述)  
-&emsp;[2. 引用相等性](#2-引用相等性)  
-&emsp;[3. 结构相等性](#3-结构相等性)  
+[Kotlin 相等性](#kotlin-相等性)
+&emsp;[1. 概述](#1-概述)
+&emsp;[2. 引用相等性](#2-引用相等性)
+&emsp;[3. 结构相等性](#3-结构相等性)
 
 <!-- /MDTOC -->
 
@@ -35,7 +35,7 @@ Kotlin 中拥有两种相等性类型
 
 一个 `==` 操作符会被转换成以下的相应代码
 
-```
+```kotlin
 a?.equals(b) ?: (b === null)
 ```
 

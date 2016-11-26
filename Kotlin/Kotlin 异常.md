@@ -6,12 +6,12 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 异常](#kotlin-异常)  
-&emsp;[1. 概述](#1-概述)  
-&emsp;[2. 抛出异常](#2-抛出异常)  
-&emsp;[3. 捕获异常](#3-捕获异常)  
-&emsp;[4. `try` 表达式](#4-try-表达式)  
-&emsp;[5. 已检查异常](#5-已检查异常)  
+[Kotlin 异常](#kotlin-异常)
+&emsp;[1. 概述](#1-概述)
+&emsp;[2. 抛出异常](#2-抛出异常)
+&emsp;[3. 捕获异常](#3-捕获异常)
+&emsp;[4. `try` 表达式](#4-try-表达式)
+&emsp;[5. 已检查异常](#5-已检查异常)
 
 <!-- /MDTOC -->
 
@@ -27,7 +27,7 @@ Tags: Kotlin
 
 使用 `throw` 抛出一个异常
 
-```
+```kotlin
 throw MyException("Hi There!")
 ```
 
@@ -37,7 +37,7 @@ throw MyException("Hi There!")
 
 使用 `try-catch-finally` 来进行异常捕获和处理。
 
-```
+```kotlin
 try {
   // some code
 }
@@ -56,7 +56,7 @@ finally {
 
 `try` 也可以是一个表达式，也就是说它可以拥有**返回值**
 
-```
+```kotlin
 val a: Int? = try { parseInt(input) } catch (e: NumberFormatException) { null }
 ```
 
@@ -70,13 +70,13 @@ val a: Int? = try { parseInt(input) } catch (e: NumberFormatException) { null }
 
 原因在于，如果类似 Java 拥有已检查异常，那么：
 
-```
+```kotlin
 Appendable append(CharSequence csq) throws IOException;
 ```
 
 当我在调用这个方法时，我就必须进行异常捕获（有很多方法内部不允许再次抛出异常）。
 
-```
+```kotlin
 try {
   log.append(message)
 }

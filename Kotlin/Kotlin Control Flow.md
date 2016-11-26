@@ -2,13 +2,13 @@
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin Control Flow](#kotlin-control-flow)   
-&emsp;[1. If](#1-if)   
-&emsp;[2. When](#2-when)   
-&emsp;[3. For](#3-for)   
-&emsp;[4. While 和 do-while](#4-while-和-do-while)   
-&emsp;[5. 跳转](#5-跳转)   
-&emsp;[6. 带标签的 return](#6-带标签的-return)   
+[Kotlin Control Flow](#kotlin-control-flow)
+&emsp;[1. If](#1-if)
+&emsp;[2. When](#2-when)
+&emsp;[3. For](#3-for)
+&emsp;[4. While 和 do-while](#4-while-和-do-while)
+&emsp;[5. 跳转](#5-跳转)
+&emsp;[6. 带标签的 return](#6-带标签的-return)
 
 <!-- /MDTOC -->
 
@@ -18,7 +18,7 @@ Kotlin 中 `if` 语句是一个表达式，**有返回值**，功能和 C++ 和 
 
 所以，Kotlin 中不支持条件表达式，因为 `if` 语句已经具备了这个功能。
 
-```
+```kotlin
 // Traditional usage
 var max = a if (a < b)
 max = b
@@ -33,7 +33,7 @@ val max = if (a > b) a else b
 
 同时，`if` 表达式也支持**语句块**，语句块中的**最后一个**变量或常量的值就是语句块的返回值。
 
-```
+```kotlin
 val max = if (a > b) { print("Choose a") a
 }
 else {
@@ -49,7 +49,7 @@ Kotlin 用 `when` 表达式替代了 Java 和 C++ 中的 `switch` 语句的功�
 
 一个简单的 `when` 语句如下：
 
-```
+```kotlin
 when (x) {
 1 -> print("x == 1")
 2 -> print("x == 2")
@@ -65,7 +65,7 @@ else -> { // Note the block
 
 与 Java 不同的是，`when` 语句可以对于一些不同的 case 进行一些相同的相应，而使用较少的代码量。
 
-```
+```kotlin
 when (x) {
     0, 1 -> print("x == 0 or x == 1")
     else -> print("otherwise")
@@ -74,7 +74,7 @@ when (x) {
 
 同时， `when` 语句的 case 可以使用**随意的表达式**，而不是 Java 中的仅能使用常量。
 
-```
+```kotlin
 when (x) {
     parseInt(s) -> print("s encodes x")
     else -> print("s does not encode x")
@@ -83,7 +83,7 @@ when (x) {
 
 此外，也可以使用 `in`、`!in`、`is`、`!is` 进行**范围**和**类型**检测。
 
-```
+```kotlin
 when (x) {
     in 1..10 -> print("x is in the range")
     in validNumbers -> print("x is valid")
@@ -92,7 +92,7 @@ when (x) {
 }
 ```
 
-```
+```kotlin
 val hasPrefix = when(x) {
     is String -> x.startsWith("prefix")
     else -> false
@@ -104,7 +104,7 @@ Kotlin 在这里拥有一个非常好的特性叫 **smart casts**，
 
 最后，`when` 也可以不接受参数使用，此时，`when` 的各个分支条件就变成了简单的**布尔表达式**，可以用于替代 `if-else-if` 结构。
 
-```
+```kotlin
 when {
     x.isOdd() -> print("x is odd")
     x.isEven() -> print("x is even")
@@ -116,7 +116,7 @@ when {
 
 Kotlin 中的 `for` 类似 Python 和 Java 中的 `for-each` 结构，使用 `in` 标识符来分隔 `item` 和 `collection`。
 
-```
+```kotlin
 for (item in collection) [}
     print(item)
 }
@@ -124,14 +124,14 @@ for (item in collection) [}
 
 如果需要使用一个索引值，则可以使用 `indices`，它内置在 Kotlin 中的所有 `collection` 中。
 
-```
+```kotlin
 for (i in array.indices)
     print(array[i]);
 ```
 
 同时也可以使用 `withIndex()` 方法。
 
-```
+```kotlin
 for ((index, value) in array.withIndex())
     print("$index, $value")
 ```
@@ -150,7 +150,7 @@ Kotlin 支持三种形式的跳转：
 
 与 Java 一样，Kotlin 也支持**带标签的跳转**，标签使用 `@` 符号来指定。
 
-```
+```kotlin
 loop@ for (i in 1..100) {
     for (j in 1..100) {
         if (...) break@loop
@@ -166,7 +166,7 @@ loop@ for (i in 1..100) {
 
 一个比较普遍的使用场景是在 Lamda 表达式上。
 
-```
+```kotlin
 fun foo() {
     ints.forEach {
         if (it == 0) return
@@ -179,7 +179,7 @@ fun foo() {
 
 但是如果我们要只从 Lambda 函数中返回(`forEach`)，则需要指定一个标签。
 
-```
+```kotlin
 fun foo() {
     ints.forEach lit@ {
         if (it == 0) re turn@lit
@@ -190,7 +190,7 @@ fun foo() {
 
 一个更为常用的形式是**直接使用 Lambda 表达式的名字**。
 
-```
+```kotlin
 fun foo() {
     ints.forEach {
         if (it == 0) return@forEach
@@ -201,7 +201,7 @@ fun foo() {
 
 另外的，我们也可以使用传统的匿名函数，来实现这个功能。
 
-```
+```kotlin
 fun foo() {
     ints.forEach(fun(value: Int) {
         if (value == 0) return
@@ -214,7 +214,7 @@ fun foo() {
 
 例如：
 
-```
+```kotlin
 return@a 1
 ```
 

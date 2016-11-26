@@ -6,12 +6,12 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 枚举类](#kotlin-枚举类)  
-&emsp;[1. 概述](#1-概述)  
-&emsp;[2. 声明](#2-声明)  
-&emsp;[3. 初始化](#3-初始化)  
-&emsp;[4. 匿名类](#4-匿名类)  
-&emsp;[5. 创建枚举](#5-创建枚举)  
+[Kotlin 枚举类](#kotlin-枚举类)
+&emsp;[1. 概述](#1-概述)
+&emsp;[2. 声明](#2-声明)
+&emsp;[3. 初始化](#3-初始化)
+&emsp;[4. 匿名类](#4-匿名类)
+&emsp;[5. 创建枚举](#5-创建枚举)
 
 <!-- /MDTOC -->
 
@@ -28,7 +28,7 @@ Tags: Kotlin
 
 ## 2. 声明
 
-```
+```kotlin
 enum class Direction {
   NORTH, SOUTH, WEST, EAST
 }
@@ -38,7 +38,7 @@ enum class Direction {
 
 与 Java 一样，枚举类也可以被初始化
 
-```
+```kotlin
 enum class Color(val rgb: Int) {
     RED(0xFF0000),
     GREEN(0x00FF00),
@@ -50,7 +50,7 @@ enum class Color(val rgb: Int) {
 
 每一个枚举项都能拥有它自己的匿名类和重载方法。
 
-```
+```kotlin
 enum class ProtocolState {
   WAITING {
     override fun signal() = TALKING

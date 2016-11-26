@@ -6,31 +6,31 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 调用 Java 代码](#kotlin-调用-java-代码)  
-&emsp;[1. 概述](#1-概述)  
-&emsp;[2. 调用 getter 和 setter](#2-调用-getter-和-setter)  
-&emsp;[3. 返回 `void` 的方法](#3-返回-void-的方法)  
-&emsp;[4. 转义 Java 方法](#4-转义-java-方法)  
-&emsp;[5. Null Safety 和 Platform Type](#5-null-safety-和-platform-type)  
-&emsp;[6. Platform Type 的符号](#6-platform-type-的符号)  
-&emsp;[7. Nullability 注解](#7-nullability-注解)  
-&emsp;[8. 类型的对应关系](#8-类型的对应关系)  
-&emsp;[9. Java 泛型](#9-java-泛型)  
-&emsp;[10. Java 数组](#10-java-数组)  
-&emsp;[11. Java 不定参数](#11-java-不定参数)  
-&emsp;[12. 操作符](#12-操作符)  
-&emsp;[13. 已检查异常](#13-已检查异常)  
-&emsp;[14. Java Object 类方法](#14-java-object-类方法)  
-&emsp;&emsp;[14.1 `wait()` 和 `notify()`](#141-wait-和-notify)  
-&emsp;&emsp;[14.2 `getClass()` 方法](#142-getclass-方法)  
-&emsp;&emsp;[14.3 `clone()` 方法](#143-clone-方法)  
-&emsp;&emsp;[14.4 `finalize()` 方法](#144-finalize-方法)  
-&emsp;[15. 继承 Java 类](#15-继承-java-类)  
-&emsp;[16. 访问静态成员](#16-访问静态成员)  
-&emsp;[17. Java 反射](#17-java-反射)  
-&emsp;[18. SAM 方法](#18-sam-方法)  
-&emsp;[19. 使用 JNI](#19-使用-jni)  
-&emsp;[20. 其他方面](#20-其他方面)  
+[Kotlin 调用 Java 代码](#kotlin-调用-java-代码)
+&emsp;[1. 概述](#1-概述)
+&emsp;[2. 调用 getter 和 setter](#2-调用-getter-和-setter)
+&emsp;[3. 返回 `void` 的方法](#3-返回-void-的方法)
+&emsp;[4. 转义 Java 方法](#4-转义-java-方法)
+&emsp;[5. Null Safety 和 Platform Type](#5-null-safety-和-platform-type)
+&emsp;[6. Platform Type 的符号](#6-platform-type-的符号)
+&emsp;[7. Nullability 注解](#7-nullability-注解)
+&emsp;[8. 类型的对应关系](#8-类型的对应关系)
+&emsp;[9. Java 泛型](#9-java-泛型)
+&emsp;[10. Java 数组](#10-java-数组)
+&emsp;[11. Java 不定参数](#11-java-不定参数)
+&emsp;[12. 操作符](#12-操作符)
+&emsp;[13. 已检查异常](#13-已检查异常)
+&emsp;[14. Java Object 类方法](#14-java-object-类方法)
+&emsp;&emsp;[14.1 `wait()` 和 `notify()`](#141-wait-和-notify)
+&emsp;&emsp;[14.2 `getClass()` 方法](#142-getclass-方法)
+&emsp;&emsp;[14.3 `clone()` 方法](#143-clone-方法)
+&emsp;&emsp;[14.4 `finalize()` 方法](#144-finalize-方法)
+&emsp;[15. 继承 Java 类](#15-继承-java-类)
+&emsp;[16. 访问静态成员](#16-访问静态成员)
+&emsp;[17. Java 反射](#17-java-反射)
+&emsp;[18. SAM 方法](#18-sam-方法)
+&emsp;[19. 使用 JNI](#19-使用-jni)
+&emsp;[20. 其他方面](#20-其他方面)
 
 <!-- /MDTOC -->
 
@@ -58,7 +58,7 @@ fun demo(source: List<Int>) {
 
 Java 中的 getter 和 setter 在 Kotlin 中都会被转换为 Kotlin 的格式，即只需要直接引用属性值即可。
 
-```
+```kotlin
 import java.util.Calendar
 
 fun calendarDemo() {
@@ -80,7 +80,7 @@ Kotlin 中拥有一些 Java 没有的关键字（比如 `is` `in` `object` 等�
 
 使用 ` `` ` 来进行转义工作。
 
-```
+```kotlin
 foo.`is`(bar)
 ```
 
@@ -202,7 +202,7 @@ Kotlin 中的泛型系统和 Java 有些不同，所以当使用的 Java 代码�
 
 这限制了 `is` 语句的使用，对于泛型，`is` 只能用于星形预测类型的检查，而不能应用于其他普通泛型类型的检查。
 
-```
+```kotlin
 if (a is List<Int>) // Error: cannot check if it is really a List of Ints
 // but
 if (a is List<*>) // OK: no guarantees about the contents of the list
@@ -231,7 +231,7 @@ Kotlin 对此为每个原始类型都提供了一个对应的数组类型，例�
 
 所以对于一个接受 `int[]` 的 Java 方法
 
-```
+```java
 public class JavaArrayExample {
 
     public void removeIndices(int[] indices) {
@@ -242,7 +242,7 @@ public class JavaArrayExample {
 
 我们可以使用 `IntArray` 将参数传入：
 
-```
+```kotlin
 val javaObj = JavaArrayExample()
 val array = intArrayOf(0, 1, 2, 3)
 javaObj.removeIndices(array)  // passes int[] to method
@@ -250,7 +250,7 @@ javaObj.removeIndices(array)  // passes int[] to method
 
 当代码被编译为 JVM 字节码时，编译器会对以上类型进行优化，取消 getter 和 setter 的使用，而是**直接取值赋值**。
 
-```
+```kotlin
 val array = arrayOf(1, 2, 3, 4)
 array[x] = array[x] * 2 // no actual calls to get() and set() generated
 for (x in array) // no iterator created
@@ -259,14 +259,14 @@ for (x in array) // no iterator created
 
 同样，在遍历这样的一个数组时，不会创建 `iterator`。
 
-```
+```kotlin
 for (i in array.indices) // no iterator created
   array[i] += 2
 ```
 
 最后，在 `in` 语句中，对于这样的数组也不会调用 `contains()` 方法。
 
-```
+```kotlin
 if (i in array.indices) { // same as (i >= 0 && i < array.size)
   print(array[i])
 }
@@ -276,7 +276,7 @@ if (i in array.indices) { // same as (i >= 0 && i < array.size)
 
 对于 Java 的不定参数，你需要像 Kotlin 中一样，使用 spread operator(`*`) 来传入一个数组。
 
-```
+```java
 public class JavaArrayExample {
 
     public void removeIndices(int... indices) {
@@ -285,7 +285,7 @@ public class JavaArrayExample {
 }
 ```
 
-```
+```kotlin
 val javaObj = JavaArray()
 val array = intArrayOf(0, 1, 2, 3)
 javaObj.removeIndicesVarArg(*array)
@@ -315,7 +315,7 @@ javaObj.removeIndicesVarArg(*array)
 
 但是如果你真的需要使用这两个方法，可以把 `Any` 造型为 `Object` 来使用。
 
-```
+```kotlin
 (foo as java.lang.Object).wait()
 ```
 
@@ -323,13 +323,13 @@ javaObj.removeIndicesVarArg(*array)
 
 在 Kotlin 中，我们使用 `javaClass` 变量来获取对应的 `Class` 变量。
 
-```
+```kotlin
 val fooClass = foo.javaClass
 ```
 
 对于 Java 中的 `Foo.class`，Kotlin 中使用 `Foo::class.java`
 
-```
+```kotlin
 val fooClass = Foo::class.java
 ```
 
@@ -337,7 +337,7 @@ val fooClass = Foo::class.java
 
 要重载 `clone()` 方法，你的类必须实现 `kotlin.Cloneable`：
 
-```
+```kotlin
 class Example : Cloneable {
   override fun clone(): Any { ... }
 }
@@ -349,7 +349,7 @@ class Example : Cloneable {
 
 要重载 `finalize()` 方法，你只需要声明它即可，而不需要使用 `override` 。
 
-```
+```kotlin
 class C {
   protected fun finalize() {
     // finalization logic
@@ -371,7 +371,7 @@ Java 类的静态成员会被自动转换成这个类的伴生对象。
 我们不能直接将这个伴生对象作为参数或者变量；
 但是我们依旧可以显式的调用它的静态成员。
 
-```
+```java
 if (Character.isLetter(a)) {
   // ...
 }
@@ -389,13 +389,13 @@ Java 的反射机制可以应用于 Kotlin 上，反之亦然。
 
 和 Java 8 一样，Kotlin 也支持 SAM 类型，这意味着 Kotlin 的直接函数定义（lambda 函数主体）可以被转换为一个只有单个方法的接口实现，只要函数接口能够对应的上的话，转换就能成功。
 
-```
+```kotlin
 val runnable = Runnable { println("This runs in a runnable") }
 ```
 
 也可以应用于方法调用中：
 
-```
+```kotlin
 val executor = ThreadPoolExecutor()
 // Java signature: void execute(Runnable command)
 executor.execute { println("This runs in a thread pool") }
@@ -403,7 +403,7 @@ executor.execute { println("This runs in a thread pool") }
 
 如果一个 Java 类有多个这种方法的重载，那么我们可以通过对 SAM 类型指定对应的转换器。
 
-```
+```kotlin
 executor.execute(Runnable { println("This runs in a thread pool") })
 ```
 
@@ -416,7 +416,7 @@ Kotlin 拥有相应的函数类型，所以将其转换为 Kotlin 接口的实�
 
 通过 `external` 关键字来指明一个方法会调用 native 的 C 或者 C++ 代码。
 
-```
+```kotlin
 external fun foo(x: Int): Double
 ```
 

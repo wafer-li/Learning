@@ -6,11 +6,11 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin Interface](#kotlin-interface)  
-&emsp;[1. 基本形式](#1-基本形式)  
-&emsp;[2. 实现接口](#2-实现接口)  
-&emsp;[3. 声明属性](#3-声明属性)  
-&emsp;[4. 解决冲突](#4-解决冲突)  
+[Kotlin Interface](#kotlin-interface)
+&emsp;[1. 基本形式](#1-基本形式)
+&emsp;[2. 实现接口](#2-实现接口)
+&emsp;[3. 声明属性](#3-声明属性)
+&emsp;[4. 解决冲突](#4-解决冲突)
 
 <!-- /MDTOC -->
 
@@ -20,7 +20,7 @@ Tags: Kotlin
 
 Kotlin 的接口和 Java 8 中很相似。
 
-```
+```kotlin
 interface MyInterface {
     fun bar()
     fun foo() {
@@ -33,7 +33,7 @@ interface MyInterface {
 
 和类继承一样，使用同样的语法进行接口的实现
 
-```
+```kotlin
 class Child : MyInterface {
    override fun bar() {
       // body
@@ -48,7 +48,7 @@ class Child : MyInterface {
 
 接口中的属性可以是 `abstract` 的，或者提供一个自定义 getter。
 
-```
+```kotlin
 interface MyInterface {
     val property: Int // abstract
 
@@ -69,7 +69,7 @@ class Child : MyInterface {
 
 和类继承一样，如果实现的多个接口方法出现冲突，就必须赋予 `override` 属性进行重载。
 
-```
+```kotlin
 interface A {
   fun foo() { print("A") }
   fun bar()

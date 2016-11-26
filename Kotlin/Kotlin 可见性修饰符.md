@@ -6,12 +6,12 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 可见性修饰符](#kotlin-可见性修饰符)  
-&emsp;[1. 概述](#1-概述)  
-&emsp;[2. 包级别](#2-包级别)  
-&emsp;[3. 类级别](#3-类级别)  
-&emsp;[4. 构造器](#4-构造器)  
-&emsp;[5. 关于模块](#5-关于模块)  
+[Kotlin 可见性修饰符](#kotlin-可见性修饰符)
+&emsp;[1. 概述](#1-概述)
+&emsp;[2. 包级别](#2-包级别)
+&emsp;[3. 类级别](#3-类级别)
+&emsp;[4. 构造器](#4-构造器)
+&emsp;[5. 关于模块](#5-关于模块)
 
 <!-- /MDTOC -->
 
@@ -30,7 +30,7 @@ Kotlin 的可见性修饰符和 Java 及 C++ 有比较大的区别。
 
 函数，变量，类都可以在 "top-level" 级别声明，即**直接在包内声明**。
 
-```
+```kotlin
 // file name: example.kt
 package foo
 
@@ -47,7 +47,7 @@ class Bar {}
 
 例如：
 
-```
+```kotlin
 // file name: example.kt
 package foo
 
@@ -72,7 +72,7 @@ internal val baz = 6    // visible inside the same module
 > 需要注意的是，不像 Java，
 外部类**不能**看见内部类的 `private` 变量。
 
-```
+```kotlin
 open class Outer {
     private val a = 1
     protected open val b = 2
@@ -103,7 +103,7 @@ class Unrelated(o: Outer) {
 
 同样的，构造器也可以指定可见性，但是如果可见性被指定了，那么 `constructor` 关键字就必须存在。
 
-```
+```kotlin
 class C private constructor(a: Int) { ... }
 ```
 

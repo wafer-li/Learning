@@ -6,17 +6,17 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 泛型](#kotlin-泛型)  
-&emsp;[1. 声明和实例化](#1-声明和实例化)  
-&emsp;[2. Java 中的泛型可变性](#2-java-中的泛型可变性)  
-&emsp;&emsp;[2.1.1 `<? extends T>` 和 `<? super T>` 的区别](#211-extends-t-和-super-t-的区别)  
-&emsp;&emsp;&emsp;[2.1.1.1 `<? extends T>`](#2111-extends-t)  
-&emsp;&emsp;&emsp;[2.1.1.2 `<? super T>`](#2112-super-t)  
-&emsp;[3. Kotlin 的改进： Declaration-site variance](#3-kotlin-的改进：-declaration-site-variance)  
-&emsp;[4. 类型预测](#4-类型预测)  
-&emsp;[5. 星号](#5-星号)  
-&emsp;[6. 泛型方法](#6-泛型方法)  
-&emsp;[7. 泛型约束](#7-泛型约束)  
+[Kotlin 泛型](#kotlin-泛型)
+&emsp;[1. 声明和实例化](#1-声明和实例化)
+&emsp;[2. Java 中的泛型可变性](#2-java-中的泛型可变性)
+&emsp;&emsp;[2.1.1 `<? extends T>` 和 `<? super T>` 的区别](#211-extends-t-和-super-t-的区别)
+&emsp;&emsp;&emsp;[2.1.1.1 `<? extends T>`](#2111-extends-t)
+&emsp;&emsp;&emsp;[2.1.1.2 `<? super T>`](#2112-super-t)
+&emsp;[3. Kotlin 的改进： Declaration-site variance](#3-kotlin-的改进：-declaration-site-variance)
+&emsp;[4. 类型预测](#4-类型预测)
+&emsp;[5. 星号](#5-星号)
+&emsp;[6. 泛型方法](#6-泛型方法)
+&emsp;[7. 泛型约束](#7-泛型约束)
 
 <!-- /MDTOC -->
 
@@ -26,7 +26,7 @@ Tags: Kotlin
 
 和 Java 一样，Kotlin 使用类型参数来声明一个泛型类
 
-```
+```kotlin
 class Box<T>(t: T) {
   var value = t
 }
@@ -34,13 +34,13 @@ class Box<T>(t: T) {
 
 而在实例化时，我们需要显式给出类型参数
 
-```
+```kotlin
 val box: Box<Int> = Box<Int>(1)
 ```
 
 但是，如果类型能够被推断出，那么类型参数可以被省略
 
-```
+```kotlin
 val box = Box(1) // 1 has type Int, so the compiler figures out that we are talking about Box<Int>
 ```
 
@@ -50,7 +50,7 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
 在 Java 中，泛型是不可变的。
 也就是说 `List<Object>` 不能接受一个 `String` 对象。
 
-```
+```java
 // Java
 List<String> strs = new ArrayList<String>();
 List<Object> objs = strs; // !!! The cause of the upcoming problem sits here. Java prohibits this!
@@ -62,7 +62,7 @@ String s = strs.get(0); // !!! ClassCastException: Cannot cast Integer to String
 
 但是我们又需要实现一个接受泛型对象的方法，例如 `addAll()`
 
-```
+```java
 // Java
 // Wrong implementation
 interface Collection<E> ... {
@@ -74,7 +74,7 @@ interface Collection<E> ... {
 
 所以 Java 引入了**通配符**(`?`)，使用 `extends` 和 `super` 来对通配符进行限制。
 
-```
+```java
 // Java
 // Correct implementation
 interface Collection<E> ... {
@@ -100,7 +100,7 @@ PECS 的意思是 <b>P</b>roducer <b>E</b>xtends, <b>C</b>onsumer <b>S</b>uper�
 
 例如：
 
-```
+```java
 List<Apple> apples = new ArrayList<Apple>();
 List<? extends Fruit> fruits = apples; //works, apple is a subclass of Fruit.
 fruits.add(new Strawberry());        //compile error
@@ -118,7 +118,7 @@ fruits.add(new Strawberry());        //compile error
 但是由于编译器知道 `fruits` 中的元素总是 `Fruit` 的子类，
 所以可以安全的将其取出。
 
-```
+```java
 Fruit fruit = fruits.get(0);
 ```
 
@@ -142,7 +142,7 @@ Fruit fruit = fruits.get(0);
 
 在 Java 中，如果一个接口**只返回泛型，而不对泛型进行操作**，那么将其赋给超类泛型就是安全的。
 
-```
+```java
 // Java
 interface Source<T> {
   T nextT();
@@ -161,7 +161,7 @@ void demo(Source<String> strs) {
 
 在 Kotlin 中，对于这样的情形，定义了 `out` 标识符，使用 `out` 标识符来说明，类、接口**只会返回泛型，而不会接受泛型作为参数。**
 
-```
+```kotlin
 abstract class Source<out T> {
   abstract fun nextT(): T
 }
@@ -174,7 +174,7 @@ fun demo(strs: Source<String>) {
 
 同样的，定义了 `in` 标识符，用于表明类、接口**只会接受 `T` 作为参数，而不会返回它。**
 
-```
+```kotlin
 abstract class Comparable<in T> {
   abstract fun compareTo(other: T): Int
 }
@@ -197,7 +197,7 @@ fun demo(x: Comparable<Number>) {
 
 对于一个既能生产又能消费的类，我们就不能在声明阶段限定它的泛型类型。例如：
 
-```
+```kotlin
 class Array<T>(val size: Int) {
   fun get(index: Int): T { /* ... */ }
   fun set(index: Int, value: T) { /* ... */ }
@@ -206,7 +206,7 @@ class Array<T>(val size: Int) {
 
 但是对于如下方法
 
-```
+```kotlin
 fun copy(from: Array<Any>, to: Array<Any>) {
   assert(from.size == to.size)
   for (i in from.indices)
@@ -216,7 +216,7 @@ fun copy(from: Array<Any>, to: Array<Any>) {
 
 这个方法的目的是将一个类的元素复制到另一个类中去，如果进行如下的调用：
 
-```
+```kotlin
 val ints: Array<Int> = arrayOf(1, 2, 3)
 val any = Array<Any>(3)
 copy(ints, any) // Error: expects (Array<Any>, Array<Any>)
@@ -237,7 +237,7 @@ copy(ints, any) // Error: expects (Array<Any>, Array<Any>)
 
 在 `copy()` 方法中，如果我们限制 `from` 只会生产，而不会消费，那么上面的调用就是安全的了。
 
-```
+```kotlin
 fun copy(from: Array<out Any>, to: Array<Any>) {
  // ...
 }
@@ -247,7 +247,7 @@ Kotlin 的这种特性，我们称之为**类型预测**：`from` 不仅仅只�
 
 同样，我们也可以使用 `in` 来指明一个变量只会消费，而不会生产。
 
-```
+```kotlin
 fun fill(dest: Array<in String>, value: String) {
   // ...
 }
@@ -279,7 +279,7 @@ fun fill(dest: Array<in String>, value: String) {
 
 与 Java 一样，Kotlin 中的方法也可以有泛型。
 
-```
+```kotlin
 fun <T> singletonList(item: T): List<T> {
   // ...
 }
@@ -291,9 +291,8 @@ fun <T> T.basicToString() : String {  // extension function
 
 调用方法：
 
-```
+```kotlin
 val l = singletonList<Int>(1)
-
 ```
 
 ## 7. 泛型约束
@@ -304,7 +303,7 @@ val l = singletonList<Int>(1)
 
 Kotlin 使用 冒号(`:`) 来指明上界。
 
-```
+```kotlin
 fun <T : Comparable<T>> sort(list: List<T>) {
   // ...
 }
@@ -312,7 +311,7 @@ fun <T : Comparable<T>> sort(list: List<T>) {
 
 用法举例：
 
-```
+```kotlin
 sort(listOf(1, 2, 3)) // OK. Int is a subtype of Comparable<Int>
 sort(listOf(HashMap<Int, String>())) // Error: HashMap<Int, String> is not a subtype of Comparable<HashMap<Int, String>>
 ```
@@ -321,7 +320,7 @@ sort(listOf(HashMap<Int, String>())) // Error: HashMap<Int, String> is not a sub
 
 只有**一个**上界可以在尖括号中被指定，如果需要对同一个泛型参数指定多个上界，则需要使用 `where` 语句。
 
-```
+```kotlin
 fun <T> cloneWhenGreater(list: List<T>, threshold: T): List<T>
     where T : Comparable,
           T : Cloneable {

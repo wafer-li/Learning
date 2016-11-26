@@ -6,20 +6,20 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin Class Basic](#kotlin-class-basic)  
-&emsp;[1. 声明](#1-声明)  
-&emsp;[2. 创建](#2-创建)  
-&emsp;&emsp;[2.1 primary constructor](#21-primary-constructor)  
-&emsp;&emsp;[2.2 secondary constructor](#22-secondary-constructor)  
-&emsp;&emsp;[2.3 默认参数](#23-默认参数)  
-&emsp;[3. 实例化](#3-实例化)  
-&emsp;[4. 继承](#4-继承)  
-&emsp;&emsp;[4.1 声明超类](#41-声明超类)  
-&emsp;&emsp;[4.2 Override 成员](#42-override-成员)  
-&emsp;&emsp;[4.3 关于 override 的规则](#43-关于-override-的规则)  
-&emsp;[5. 抽象类](#5-抽象类)  
-&emsp;[6. 伴生对象(Companion Objects)](#6-伴生对象companion-objects)  
-&emsp;[7. 封闭类(Sealed Class)](#7-封闭类sealed-class)  
+[Kotlin Class Basic](#kotlin-class-basic)
+&emsp;[1. 声明](#1-声明)
+&emsp;[2. 创建](#2-创建)
+&emsp;&emsp;[2.1 primary constructor](#21-primary-constructor)
+&emsp;&emsp;[2.2 secondary constructor](#22-secondary-constructor)
+&emsp;&emsp;[2.3 默认参数](#23-默认参数)
+&emsp;[3. 实例化](#3-实例化)
+&emsp;[4. 继承](#4-继承)
+&emsp;&emsp;[4.1 声明超类](#41-声明超类)
+&emsp;&emsp;[4.2 Override 成员](#42-override-成员)
+&emsp;&emsp;[4.3 关于 override 的规则](#43-关于-override-的规则)
+&emsp;[5. 抽象类](#5-抽象类)
+&emsp;[6. 伴生对象(Companion Objects)](#6-伴生对象companion-objects)
+&emsp;[7. 封闭类(Sealed Class)](#7-封闭类sealed-class)
 
 <!-- /MDTOC -->
 
@@ -29,14 +29,14 @@ Tags: Kotlin
 
 使用 `class` 来声明一个类。
 
-```
+```kotlin
 class Invoice {
 }
 ```
 
 如果一个类是空的，那么大括号可以省略。
 
-```
+```kotlin
 class Empty
 ```
 
@@ -49,21 +49,21 @@ Kotlin 类使用 `constructor` 来指定构建方法。
 **一个类必须拥有一个 primary constructor。**
 **primary constructor 是类头的一部分。**
 
-```
+```kotlin
 class Person constructor(name: String) {
 }
 ```
 
 如果一个 primary constructor 没有任何的可见性或者注解来修饰，则 `constructor` 可以省略。
 
-```
+```kotlin
 class Person(name: String) {
 }
 ```
 
 一个 primary constructor 不能包含任何代码，对应的，使用 `init` 块来进行初始化构建。
 
-```
+```kotlin
 class Person(name: String) {
     init {
         logger.info("Person construction.")
@@ -73,7 +73,7 @@ class Person(name: String) {
 
 类头的参数可以在 `init` 块中使用，而且，也可以在声明类域时使用。
 
-```
+```kotlin
 class Customer(name: String) {
     val customerKey = name.toUpperCase()
 }
@@ -81,7 +81,7 @@ class Customer(name: String) {
 
 实际上，也可以直接在 primary constructor 中进行类域的初始化。
 
-```
+```kotlin
 class Person(val firstName: String, val lastName: String, var age: Int) {
 // ...
 }
@@ -91,7 +91,7 @@ class Person(val firstName: String, val lastName: String, var age: Int) {
 
 当如果 primary constructor 中存在**可见性修饰符**或者**注解**时，`constructor` 标识符**必须存在**。
 
-```
+```kotlin
 class Customer public @Inject constructor(name: String) { ... }
 ```
 
@@ -99,7 +99,7 @@ class Customer public @Inject constructor(name: String) { ... }
 
 类也可以声明一个次要的构造器，相当于 Java 的重载构造函数。
 
-```
+```kotlin
 class Person {
     constructor(parent: Person) {
         parent.children.add(this)
@@ -111,7 +111,7 @@ class Person {
 
 语法类似于 C++ 的 `super` 继承，使用 `this`，通过参数来表示不同的所继承的 constructor。
 
-```
+```kotlin
 class Person(firstName: String) {
     constructor(firstName: String,lastName: String) : this(firstName) {
 
@@ -129,7 +129,7 @@ class Person(firstName: String) {
 
 一个类的构造器可以拥有默认参数，默认参数使用 `=` 来指定。
 
-```
+```kotlin
 class Customer(name: String = "") {
 }
 ```
@@ -140,7 +140,7 @@ class Customer(name: String = "") {
 
 将一个类实例化很简单，只需要像一个方法去调用即可。
 
-```
+```kotlin
 val customer = Customer("hehe")
 ```
 
@@ -156,7 +156,7 @@ val customer = Customer("hehe")
 
 Kotlin 中使用冒号用于声明超类
 
-```
+```kotlin
 open class Base(p: Int)
 
 class Derived(p: Int) : Base(p)
@@ -168,7 +168,7 @@ class Derived(p: Int) : Base(p)
 
 如果子类中没有 primary constructor，那么需要在其他 constructor 中使用 `super` 关键字进行基类构建。
 
-```
+```kotlin
 class MyView : View {
     constructor(ctx: Context) : super(ctx) {
     }
@@ -192,7 +192,7 @@ class MyView : View {
 Kotlin 的一个主要原则是尽量将操作显式化。
 所以，如果一个成员是 override 基类成员而来的，则需要显式指明 `override` 。
 
-```
+```kotlin
 open class Base {
   open fun v() {}
   fun nv() {}
@@ -207,7 +207,7 @@ class Derived() : Base() {
 
 如果一个成员被指定了 `override`，那么它**默认不再带有 final 属性。**如果不允许再次 override，那么就需要给它指定 `final`
 
-```
+```kotlin
 open class AnotherDerived() : Base() {
   final override fun v() {}
 }
@@ -215,7 +215,7 @@ open class AnotherDerived() : Base() {
 
 Override 一个变量和 override 方法一样，不过比较有趣的是，你可以在 primary constructor 中使用 `override` 关键字。
 
-```
+```kotlin
 open class Foo {
     open val x: Int get { ... }
 }
@@ -235,7 +235,7 @@ class Bar1(override val x: Int) : Foo() {
 
 > 域指的是变量、常量、方法等类成员
 
-```
+```kotlin
 open class A {
   open fun f() { print("A") }
   fun a() { print("a") }
@@ -265,7 +265,7 @@ class C() : A(), B {
 
 声明了 `abstract` 的方法不能存在于没有声明 `abstract` 的类中。
 
-```
+```kotlin
 open class Base {
   open fun f() {}
 }
@@ -285,7 +285,7 @@ Kotlin 不像 Java，没有静态成员对象。
 
 为了实现这一特性，Kotlin 通过所谓的伴生对象(Companion Objects)来实现。
 
-```
+```kotlin
 class MyClass {
   companion object Factory {
     fun create(): MyClass = MyClass()
@@ -301,7 +301,7 @@ class MyClass {
 
 要声明一个封闭类, 需要将 sealed 修饰符放在类名之前. 封闭类可以有子类, 但所有的子类声明都必须嵌套在封闭类的声明部分之内.
 
-```
+```kotlin
 sealed class Expr {
     class Const(val number: Double) : Expr()
     class Sum(val e1: Expr, val e2: Expr) : Expr()
@@ -313,7 +313,7 @@ sealed class Expr {
 
 使用封闭类的主要好处在于, 当使用 when expression 时, 可以验证分支语句覆盖了所有的可能情况, 因此就不必通过 else 分支来处理例外情况.
 
-```
+```kotlin
 fun eval(expr: Expr): Double = when(expr) {
     is Expr.Const -> expr.number
     is Expr.Sum -> eval(expr.e1) + eval(expr.e2)

@@ -6,12 +6,12 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 集合](#kotlin-集合)  
-&emsp;[1. 概述](#1-概述)  
-&emsp;[2. 与 Java 的区别](#2-与-java-的区别)  
-&emsp;[3. 创建](#3-创建)  
-&emsp;[4. 返回一个只读列表的快照](#4-返回一个只读列表的快照)  
-&emsp;[5. 其他有用的方法](#5-其他有用的方法)  
+[Kotlin 集合](#kotlin-集合)
+&emsp;[1. 概述](#1-概述)
+&emsp;[2. 与 Java 的区别](#2-与-java-的区别)
+&emsp;[3. 创建](#3-创建)
+&emsp;[4. 返回一个只读列表的快照](#4-返回一个只读列表的快照)
+&emsp;[5. 其他有用的方法](#5-其他有用的方法)
 
 <!-- /MDTOC -->
 
@@ -29,7 +29,7 @@ Tags: Kotlin
 
 其他的集合类型如 `Set`、`Map` 同样继承了这个特点。
 
-```
+```kotlin
 val numbers: MutableList<Int> = mutableListOf(1, 2, 3)
 val readOnlyView: List<Int> = numbers
 println(numbers)        // prints "[1, 2, 3]"
@@ -52,7 +52,7 @@ Kotlin 没有专门的语法或者构造器来构建一个集合类型；反之�
 
 生成这样的一个列表的简易方法是：
 
-```
+```kotlin
 val items = listOf(1, 2, 3)
 ```
 
@@ -67,7 +67,7 @@ val items = listOf(1, 2, 3)
 
 有时候，虽然类中的列表在不断变动，但是你只想给调用者呈现一个**某时刻的只读列表**，可以使用如下方法
 
-```
+```kotlin
 class Controller {
     private val _items = mutableListOf<String>()
     val items: List<String> get() = _items.toList()
@@ -80,7 +80,7 @@ class Controller {
 
 列表类中还拥有其他十分有用的扩展方法。
 
-```
+```kotlin
 val items = listOf(1, 2, 3, 4)
 items.first() == 1
 items.last() == 4
@@ -94,7 +94,7 @@ val item = rwList.firstOrNull()
 
 同样，`Map` 也继承了这个特点
 
-```
+```kotlin
 val readWriteMap = hashMapOf("foo" to 1, "bar" to 2)
 println(readWriteMap["foo"])  // prints "1"
 val snapshot: Map<String, Int> = HashMap(readWriteMap)

@@ -7,13 +7,13 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 范围](#kotlin-范围)  
-&emsp;[1. 概述](#1-概述)  
-&emsp;[2. 判定](#2-判定)  
-&emsp;[3. 遍历](#3-遍历)  
-&emsp;[4. 原理](#4-原理)  
-&emsp;[5. 其他有用的方法](#5-其他有用的方法)  
-&emsp;&emsp;[5.1 `reversed()`](#51-reversed)  
+[Kotlin 范围](#kotlin-范围)
+&emsp;[1. 概述](#1-概述)
+&emsp;[2. 判定](#2-判定)
+&emsp;[3. 遍历](#3-遍历)
+&emsp;[4. 原理](#4-原理)
+&emsp;[5. 其他有用的方法](#5-其他有用的方法)
+&emsp;&emsp;[5.1 `reversed()`](#51-reversed)
 
 <!-- /MDTOC -->
 
@@ -27,7 +27,7 @@ Kotlin 对此支持 Range 语法，它就是简单的使用 `..` 来表示范围
 
 ## 2. 判定
 
-```
+```kotlin
 if (i in 1..10) { // equivalent of 1 <= i && i <= 10
   println(i)
 }
@@ -37,7 +37,7 @@ if (i in 1..10) { // equivalent of 1 <= i && i <= 10
 
 对于标准库中的范围（`IntRange` `LongRange` `CharRange`），Kotlin 支持遍历操作。
 
-```
+```kotlin
 for (i in 1..4) print(i) // prints "1234"
 
 for (i in 4..1) print(i) // prints nothing
@@ -45,13 +45,13 @@ for (i in 4..1) print(i) // prints nothing
 
 上面的第二种写法不会打印出值，但是，如果你需要逆序遍历也很简单，只需要使用 `downTo()` 方法即可。
 
-```
+```kotlin
 for (i in 4 downTo 1) print(i) // prints "4321"
 ```
 
 如果需要定义步长，使用 `step()` 方法
 
-```
+```kotlin
 for (i in 1..4 step 2) print(i) // prints "13"
 
 for (i in 4 downTo 1 step 2) print(i) // prints "42"
@@ -72,7 +72,7 @@ for (i in 4 downTo 1 step 2) print(i) // prints "42"
 
 `Progression` 主要实现了 `Iterable<N>` 接口，进行遍历的操作和以下的 Java 代码类似
 
-```
+```kotlin
 for (int i = first; i != last; i += increment) {
   // ...
 }
@@ -80,13 +80,13 @@ for (int i = first; i != last; i += increment) {
 
 `Progression` 类主要通过以下方法进行构建
 
-```
+```kotlin
 IntProgression.fromClosedRange(start, end, increment)
 ```
 
 注意 `increment` 不能是**负的**，也就是说不允许出现
 
-```
+```kotlin
 (last - first) % increment == 0
 ```
 
@@ -98,7 +98,7 @@ IntProgression.fromClosedRange(start, end, increment)
 
 很简单，用于反转整个流程。
 
-```
+```kotlin
 fun IntProgression.reversed(): IntProgression {
   return IntProgression.fromClosedRange(last, first, -increment)
 }

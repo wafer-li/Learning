@@ -6,12 +6,12 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 内联函数](#kotlin-内联函数)  
-&emsp;[1. 概述](#1-概述)  
-&emsp;[2. Kotlin 内联语法](#2-kotlin-内联语法)  
-&emsp;[3. Noinline](#3-noinline)  
-&emsp;[4. 非局部返回](#4-非局部返回)  
-&emsp;[5. 类型参数](#5-类型参数)  
+[Kotlin 内联函数](#kotlin-内联函数)
+&emsp;[1. 概述](#1-概述)
+&emsp;[2. Kotlin 内联语法](#2-kotlin-内联语法)
+&emsp;[3. Noinline](#3-noinline)
+&emsp;[4. 非局部返回](#4-非局部返回)
+&emsp;[5. 类型参数](#5-类型参数)
 
 <!-- /MDTOC -->
 
@@ -29,13 +29,13 @@ Tags: Kotlin
 
 例如 `lock()` 函数，它可以很方便的在调用点进行内联化操作：
 
-```
+```kotlin
 lock(l) { foo() }
 ```
 
 通过这种写法，编译器并没有为 lambda 表达式创建一个函数对象，而是生成了如下代码：
 
-```
+```kotlin
 l.lock()
 try {
   foo()
@@ -47,7 +47,7 @@ finally {
 
 为了让编译器进行这种操作，我们可以给函数使用 `inline` 修饰符。
 
-```
+```kotlin
 inline fun lock<T>(lock: Lock, body: () -> T): T {
   // ...
 }
@@ -55,7 +55,7 @@ inline fun lock<T>(lock: Lock, body: () -> T): T {
 
 注意，`inline` 修饰符会对整个函数和其 lambda 表达式都有效，即整个函数和 lambda 都被替换成实际代码。
 
-```
+```kotlin
 //  内联函数
 inline fun <T> inlineLock(lock: Lock, body: () -> T): T {
     lock.lock()
@@ -72,14 +72,14 @@ fun echo() = println("foo")
 
 调用该内联函数：
 
-```
+```kotlin
 val lock = ReentrantLock()
 inlineLock(lock, { echo() })
 ```
 
 以上代码会被编译为如下代码：
 
-```
+```kotlin
 val lock = ReentrantLock()
 lock.lock()
 try {
@@ -97,7 +97,7 @@ try {
 
 此时我们可以对参数使用 `noinline` 标识符
 
-```
+```kotlin
 inline fun foo(inlined: () -> Unit, noinline notInlined: () -> Unit) {
   // ...
 }
@@ -112,7 +112,7 @@ inline fun foo(inlined: () -> Unit, noinline notInlined: () -> Unit) {
 
 所以，由于在 lambda 表达式内部不能让外部函数返回，所以在 lambda 表达式中使用 `return` 是被禁止的。
 
-```
+```kotlin
 fun foo() {
   ordinaryFunction {
      return // ERROR: can not make `foo` return here
@@ -122,7 +122,7 @@ fun foo() {
 
 但是内联函数由于使用定义替代了调用，所以在其中使用 `return` 是可以的。
 
-```
+```kotlin
 fun foo() {
   inlineFunction {
     return // OK: the lambda is inlined
@@ -135,7 +135,7 @@ fun foo() {
 这种返回方式被称作非局部返回。
 这种特性十分有效，所以被内建在标准的循环中
 
-```
+```kotlin
 fun hasZeros(ints: List<Int>): Boolean {
   ints.forEach {
     if (it == 0) return true // returns from hasZeros
@@ -148,7 +148,7 @@ fun hasZeros(ints: List<Int>): Boolean {
 
 为了提示编译器，我们使用 `crossinline` 标识符来指明当前的函数对象会在一个内嵌的函数或者对象，或是在另一个线程中执行。
 
-```
+```kotlin
 inline fun f(crossinline body: () -> Unit) {
     val f = object: Runnable {
         override fun run() = body()
@@ -163,7 +163,7 @@ inline fun f(crossinline body: () -> Unit) {
 
 有时候我们希望访问一个对象的类型参数，例如 `Class`，在 Java 中，这通常是通过**反射机制**来实现的。
 
-```
+```kotlin
 fun <T> TreeNode.findParentOfType(clazz: Class<T>): T? {
     var p = parent
     while (p != null && !clazz.isInstance(p)) {
@@ -176,7 +176,7 @@ fun <T> TreeNode.findParentOfType(clazz: Class<T>): T? {
 
 调用这个函数：
 
-```
+```kotlin
 val root = DefaultMutableTreeNode("root")
 val node1 = DefaultMutableTreeNode("node1")
 val node1_1 = DefaultMutableTreeNode("node1_1")
@@ -194,7 +194,7 @@ println(parent) //  node1
 而内联函数由于是复制到调用处，所以实际在运行时无需依赖反射，可以直接得到真实类型。
 要开启此功能，只需在泛型参数前加上 `reified` 关键字。
 
-```
+```kotlin
 inline fun <reified T> TreeNode.inlineFindParentOfType(): T? {
     var p = parent
     while (p != null && p !is T) {
@@ -206,7 +206,7 @@ inline fun <reified T> TreeNode.inlineFindParentOfType(): T? {
 
 调用该函数
 
-```
+```kotlin
 val parent = node1_1.inlineFindParentOfType<DefaultMutableTreeNode>()
 println(parent) //  node1
 ```

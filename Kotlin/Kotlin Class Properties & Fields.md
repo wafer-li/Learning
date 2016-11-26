@@ -6,13 +6,13 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin Class Properties & Fields](#kotlin-class-properties-fields)  
-&emsp;[1. 声明和调用](#1-声明和调用)  
-&emsp;[2. Getter 和 Setter](#2-getter-和-setter)  
-&emsp;&emsp;[2.1 改变 Getter 和 Setter 的可见性](#21-改变-getter-和-setter-的可见性)  
-&emsp;&emsp;[2.2 自定义 Getter 和 Setter](#22-自定义-getter-和-setter)  
-&emsp;[3. 编译时常量](#3-编译时常量)  
-&emsp;[4. 延迟初始化](#4-延迟初始化)  
+[Kotlin Class Properties & Fields](#kotlin-class-properties-fields)
+&emsp;[1. 声明和调用](#1-声明和调用)
+&emsp;[2. Getter 和 Setter](#2-getter-和-setter)
+&emsp;&emsp;[2.1 改变 Getter 和 Setter 的可见性](#21-改变-getter-和-setter-的可见性)
+&emsp;&emsp;[2.2 自定义 Getter 和 Setter](#22-自定义-getter-和-setter)
+&emsp;[3. 编译时常量](#3-编译时常量)
+&emsp;[4. 延迟初始化](#4-延迟初始化)
 
 <!-- /MDTOC -->
 
@@ -22,7 +22,7 @@ Tags: Kotlin
 
 声明类中的属性和值很简单，类似 Java，使用 `var` 声明变量，使用 `val` 声明常量。
 
-```
+```kotlin
 public class Address {
   public var name: String = ...
   public var street: String = ...
@@ -36,7 +36,7 @@ public class Address {
 
 由于变量默认为 `public`，所以直接使用类成员运算符(`.`)，即可调用其属性和方法。
 
-```
+```kotlin
 fun copyAddress(address: Address): Address {
   val result = Address() // there's no 'new' keyword in Kotlin
   result.name = address.name // accessors are called
@@ -49,7 +49,7 @@ fun copyAddress(address: Address): Address {
 需要说明的是，在编译时，系统会**自动生成默认的 Getter 和 Setter**。
 
 下面的写法
-```
+```kotlin
 class Foo {
     var bar: Int = 1;
 }
@@ -57,7 +57,7 @@ class Foo {
 
 和以下 Java 代码是**等同的。**
 
-```
+```kotlin
 class Foo {
     private int bar = 1;
 
@@ -80,7 +80,7 @@ class Foo {
 
 定义一个类属性的完整语法如下：
 
-```
+```kotlin
 var <propertyName>: <PropertyType> [= <property_initializer>]
   [<getter>]
   [<setter>]
@@ -96,7 +96,7 @@ var <propertyName>: <PropertyType> [= <property_initializer>]
 > 这实际上是 Kotlin 的主旨之一，即，尽量使得过程显式化。
 
 
-```
+```kotlin
 var allByDefault: Int? // error: explicit initializer required, default getter and setter implied
 var initialized = 1 // has type Int, default getter and setter
 ```
@@ -107,7 +107,7 @@ var initialized = 1 // has type Int, default getter and setter
 而不需要定义其主体。
 
 
-```
+```kotlin
 var setterVisibility: String = "abc"
   private set // the setter is private and has the default implementation
 
@@ -120,7 +120,7 @@ var setterWithAnnotation: Any? = null
 
 自定义 getter 和 setter 很简单，只需要在变量下方使用 `get` 和 `set` 即可。
 
-```
+```kotlin
 var stringRepresentation: String
   get() = this.toString()
   set(value) {
@@ -139,7 +139,7 @@ backing field 会在如下条件下生成：
 - 变量进行了初始化
 - 使用了 `field` 变量
 
-```
+```kotlin
 var counter = 0 // the initializer value is written directly to the backing field
   set(value) {
     if (value >= 0)
@@ -149,7 +149,7 @@ var counter = 0 // the initializer value is written directly to the backing fiel
 
 如果 backing field 不能满足需求，Kotlin 还提供了 **backing property** 特性。
 
-```
+```kotlin
 private var _table: Map<String, Int>? = null
 public val table: Map<String, Int>
   get() {
@@ -178,7 +178,7 @@ Kotlin 中使用 `const` 标识符来指定编译时常量，JVM 将对这些变
 
 编译时常量可以使用在注解中。
 
-```
+```kotlin
 const val SUBSYSTEM_DEPRECATED: String = "This subsystem is deprecated"
 
 @Deprecated(SUBSYSTEM_DEPRECATED) fun foo() { ... }
@@ -190,7 +190,7 @@ const val SUBSYSTEM_DEPRECATED: String = "This subsystem is deprecated"
 
 对此 Kotlin 提供一种特性称作**延迟初始化**，使用 `lateinit` 标识符可以指明一个变量需要延迟初始化。
 
-```
+```kotlin
 public class MyTest {
     lateinit var subject: TestSubject
 

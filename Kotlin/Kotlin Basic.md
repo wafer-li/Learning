@@ -6,33 +6,33 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin Basic](#kotlin-basic)  
-&emsp;[1. 基本语法](#1-基本语法)  
-&emsp;&emsp;[1.1 变量定义](#11-变量定义)  
-&emsp;&emsp;[1.2 注释](#12-注释)  
-&emsp;[2. 编码规范](#2-编码规范)  
-&emsp;&emsp;[2.1 命名风格](#21-命名风格)  
-&emsp;&emsp;[2.2 关于冒号](#22-关于冒号)  
-&emsp;&emsp;[2.3 Lambda 表达式](#23-lambda-表达式)  
-&emsp;&emsp;[2.4 关于 Unit](#24-关于-unit)  
-&emsp;[3. 基本类型](#3-基本类型)  
-&emsp;&emsp;[3.1 数字类型](#31-数字类型)  
-&emsp;&emsp;&emsp;[3.1.1 位宽](#311-位宽)  
-&emsp;&emsp;&emsp;[3.1.2 字面常量](#312-字面常量)  
-&emsp;&emsp;&emsp;[3.1.3 表示法](#313-表示法)  
-&emsp;&emsp;&emsp;[3.1.4 转换](#314-转换)  
-&emsp;&emsp;&emsp;[3.1.5 位运算符](#315-位运算符)  
-&emsp;&emsp;[3.2 字符类型](#32-字符类型)  
-&emsp;&emsp;[3.3 布尔类型](#33-布尔类型)  
-&emsp;&emsp;[3.4 数组](#34-数组)  
-&emsp;&emsp;&emsp;[3.4.1 创建数组](#341-创建数组)  
-&emsp;&emsp;&emsp;[3.4.2 访问数组](#342-访问数组)  
-&emsp;&emsp;&emsp;[3.4.3 多维数组](#343-多维数组)  
-&emsp;&emsp;[3.5 字符串](#35-字符串)  
-&emsp;&emsp;&emsp;[3.5.1 相对 Java 增加的新特性](#351-相对-java-增加的新特性)  
-&emsp;&emsp;&emsp;[3.5.2 raw string](#352-raw-string)  
-&emsp;&emsp;&emsp;[3.5.3 字符串模板](#353-字符串模板)  
-&emsp;[4. 包和导入](#4-包和导入)  
+[Kotlin Basic](#kotlin-basic)
+&emsp;[1. 基本语法](#1-基本语法)
+&emsp;&emsp;[1.1 变量定义](#11-变量定义)
+&emsp;&emsp;[1.2 注释](#12-注释)
+&emsp;[2. 编码规范](#2-编码规范)
+&emsp;&emsp;[2.1 命名风格](#21-命名风格)
+&emsp;&emsp;[2.2 关于冒号](#22-关于冒号)
+&emsp;&emsp;[2.3 Lambda 表达式](#23-lambda-表达式)
+&emsp;&emsp;[2.4 关于 Unit](#24-关于-unit)
+&emsp;[3. 基本类型](#3-基本类型)
+&emsp;&emsp;[3.1 数字类型](#31-数字类型)
+&emsp;&emsp;&emsp;[3.1.1 位宽](#311-位宽)
+&emsp;&emsp;&emsp;[3.1.2 字面常量](#312-字面常量)
+&emsp;&emsp;&emsp;[3.1.3 表示法](#313-表示法)
+&emsp;&emsp;&emsp;[3.1.4 转换](#314-转换)
+&emsp;&emsp;&emsp;[3.1.5 位运算符](#315-位运算符)
+&emsp;&emsp;[3.2 字符类型](#32-字符类型)
+&emsp;&emsp;[3.3 布尔类型](#33-布尔类型)
+&emsp;&emsp;[3.4 数组](#34-数组)
+&emsp;&emsp;&emsp;[3.4.1 创建数组](#341-创建数组)
+&emsp;&emsp;&emsp;[3.4.2 访问数组](#342-访问数组)
+&emsp;&emsp;&emsp;[3.4.3 多维数组](#343-多维数组)
+&emsp;&emsp;[3.5 字符串](#35-字符串)
+&emsp;&emsp;&emsp;[3.5.1 相对 Java 增加的新特性](#351-相对-java-增加的新特性)
+&emsp;&emsp;&emsp;[3.5.2 raw string](#352-raw-string)
+&emsp;&emsp;&emsp;[3.5.3 字符串模板](#353-字符串模板)
+&emsp;[4. 包和导入](#4-包和导入)
 
 
 <!-- /MDTOC -->
@@ -45,7 +45,7 @@ Tags: Kotlin
 
 1.  使用 `val` 定义**常量**（只读）
 
-     ```
+     ```kotlin
      val a: Int = 1
      val b = 1   // 类型可以被自动推断
      val c: Int  // 如果没有进行变量初始化，则需要指定变量类型
@@ -56,7 +56,7 @@ Tags: Kotlin
 
 2.  使用 `var` 定义变量
 
-     ```
+     ```kotlin
      var x = 5
      x += 1
      ```
@@ -84,7 +84,7 @@ Tags: Kotlin
 
 其余情况，只需后有空格即可。
 
-```
+```kotlin
 interface Foo<out T : Any> : Bar {
     fun foo(a: Int): T
 }
@@ -96,7 +96,7 @@ interface Foo<out T : Any> : Bar {
 
 lambda 表达式应尽量的短。
 
-```
+```kotlin
 list.filter { it > 10 }.map { element -> element * 2 }
 ```
 
@@ -145,7 +145,7 @@ Kotlin 中的数字类型有 `Double`、`Float`、`Long`、`Int`、`Short`、`By
 
 Kotlin 中，任何数字都会被**自动装箱**
 
-```
+```kotlin
 val a: Int = 10000
 print(a === a) // true
 val boxedA: Int? = a // 在类型后加 ? 表示一个 Nullable 对象
@@ -164,7 +164,7 @@ print(boxedA == anotherBoxedA) // true
 Kotlin 的原则之一就是尽量让事务明显化。
 所以，Kotlin **禁止隐式转换**，就算是隐式向上转换也是不允许的。
 
-```
+```kotlin
 val a: Int? = 1
 val b: Long? = a
 print(a == b) // false
@@ -172,7 +172,7 @@ print(a == b) // false
 
 > 由于 `Int` 不是 `Long` 的子类，而且禁止隐式转换，所以即使 `b` 指向了 `a`，它们也不相等。
 
-```
+```kotlin
 val b: Byte = 1 // OK
 val i: Int = b // ERROR
 ```
@@ -209,7 +209,7 @@ Kotlin 支持全套 Java 的普通数字运算符。
 
 字符类型使用 `Char` 来表示，**字符不是数字**。
 
-```
+```kotlin
 fun check(c: Char) {
     if (c == 1) // ERROR
 }
@@ -240,7 +240,7 @@ fun check(c: Char) {
 
 使用 `arrayOf()` 创建数组。
 
-```
+```kotlin
 val array = arrayOf(1, 2, 3)
 val nullArray = arrayOfNulls(5) // Array with 5 null elements
 ```
@@ -249,7 +249,7 @@ val nullArray = arrayOfNulls(5) // Array with 5 null elements
 
 也可以使用 `Array()` 创建数组。
 
-```
+```kotlin
 // Crates an Array<String> with values
 // ["0", "1", "4", "9", "16"]
 val asc = Array(5, {i -> (i * i).toString()})
@@ -257,7 +257,7 @@ val asc = Array(5, {i -> (i * i).toString()})
 
 Kotlin 内置了一些特定的数组类型，如 `IntArray`, `ByteArray` 等。
 
-```
+```kotlin
 val x: IntArray = intArrayOf(1, 2, 3)
 ```
 
@@ -268,7 +268,7 @@ val x: IntArray = intArrayOf(1, 2, 3)
 
 #### 3.4.3 多维数组
 
-```
+```kotlin
 val int2d: Array<IntArray>
 int2d = arrayOf(intArrayOf(1, 2, 3), intArrayOf(4, 5, 6), intArrayOf(7, 8, 9))
 ```
@@ -282,7 +282,7 @@ int2d = arrayOf(intArrayOf(1, 2, 3), intArrayOf(4, 5, 6), intArrayOf(7, 8, 9))
 
 与 Java 不同的是，Kotlin 支持使用方括号 `[]` 来获取字符串中的字符，同时也支持对字符串字符进行遍历。
 
-```
+```kotlin
 for (c in str) {
     println(c)
 }
@@ -292,7 +292,7 @@ for (c in str) {
 
 此外，Kotlin 还吸收了 Python 的多行字符串特性，使用三个双引号来表示一个 **raw string**，raw string 不接受转义，其中任何的字符都是字面字符。
 
-```
+```kotlin
 val rawString = """
     This is a raw string.
     \n and \t will be displayed as
@@ -305,7 +305,7 @@ val rawString = """
 Kotlin 字符串具有模板功能，使用 `$` 来指定参数
 例如：
 
-```
+```kotlin
 val i = 10
 val s = "i = $i" // evaluates to "i = 10"
 ```
@@ -313,7 +313,7 @@ val s = "i = $i" // evaluates to "i = 10"
 也可以使用花括号 `{}` 来获取**对象的属性**填充到字符串中。
 例如：
 
-```
+```kotlin
 val s = "abc"
 val str = "$s.lenth is ${s.lenth}" //  evaluates to "abc.length is 3"
 ```
@@ -322,7 +322,7 @@ val str = "$s.lenth is ${s.lenth}" //  evaluates to "abc.length is 3"
 
 此时，如果需要表示 `$` 美元符号，必须使用以下表达式：
 
-```
+```kotlin
 var price = """
 ${'$'}9.99
 """
@@ -336,4 +336,3 @@ Kotlin 中的包和导入与 Java 区别不大。
 
 另外增加了 `as` 关键字用于赋予别名给类和函数，以防出现名称冲突。
 同时，Kotlin 中没有 Java 中的 `import static` 语句，所有的导入均使用 `import` 进行。
-

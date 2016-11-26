@@ -6,12 +6,12 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 数据类](#kotlin-数据类)  
-&emsp;[1. 介绍](#1-介绍)  
-&emsp;[2. 创建](#2-创建)  
-&emsp;[3. 需要满足的条件](#3-需要满足的条件)  
-&emsp;[4. 复制](#4-复制)  
-&emsp;[5. 数据类的解构](#5-数据类的解构)  
+[Kotlin 数据类](#kotlin-数据类)
+&emsp;[1. 介绍](#1-介绍)
+&emsp;[2. 创建](#2-创建)
+&emsp;[3. 需要满足的条件](#3-需要满足的条件)
+&emsp;[4. 复制](#4-复制)
+&emsp;[5. 数据类的解构](#5-数据类的解构)
 
 <!-- /MDTOC -->
 
@@ -25,7 +25,7 @@ Tags: Kotlin
 
 Kotlin 使用 `data` 定义一个数据类
 
-```
+```kotlin
 data class User(val name: String, val age: Int)
 ```
 
@@ -53,14 +53,14 @@ data class User(val name: String, val age: Int)
 
 数据类自动实现了 `copy()` 方法，可以进行数据类的深拷贝。
 
-```
+```kotlin
 val jack = User(name = "Jack", age = 1)
 val olderJack = jack.copy(age = 2)
 ```
 
 `copy()` 方法的声明如下：
 
-```
+```kotlin
 fun copy(name: String = this.name, age: Int = this.age) = User(name, age)
 ```
 
@@ -70,7 +70,7 @@ fun copy(name: String = this.name, age: Int = this.age) = User(name, age)
 
 > 解构指的是类似 Python 中的返回元组，将数据类中的数据拆分开，用不同的变量来承接的特性。
 
-```
+```kotlin
 val jane = User("Jane", 35)
 val (name, age) = jane
 println("$name, $age years of age") // prints "Jane, 35 years of age"
@@ -78,14 +78,14 @@ println("$name, $age years of age") // prints "Jane, 35 years of age"
 
 上面这个例子实际上在编译过程中会被自动转换成
 
-```
+```kotlin
 val name = jane.component1()
 val age = jane.component2()
 ```
 
 所以 `name` 和 `age` 可以直接被使用
 
-```
+```kotlin
 println(name)
 println(age)
 ```
@@ -95,7 +95,7 @@ println(age)
 > `componentN()` 方法的自定义
 实际上，为了支持上面的类似元组的操作，需要使用 `operator` 标识符来声明 `componentN()` 方法。
 
-> ```
+> ```kotlin
 operator fun <K, V> Map<K, V>.iterator(): Iterator<Map.Entry<K, V>> = entrySet().iterator()
 operator fun <K, V> Map.Entry<K, V>.component1() = getKey()
 operator fun <K, V> Map.Entry<K, V>.component2() = getValue()
@@ -103,7 +103,7 @@ operator fun <K, V> Map.Entry<K, V>.component2() = getValue()
 
 > 定义之后，就可以像这样调用
 
-> ```
+> ```kotlin
 for ((key, value) in map) {
    // do something with the key and the value
 }

@@ -7,17 +7,17 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin 高阶函数和 Lambda](#kotlin-高阶函数和-lambda)  
-&emsp;[1. 高阶函数](#1-高阶函数)  
-&emsp;&emsp;[1.1 声明](#11-声明)  
-&emsp;&emsp;[1.2 调用](#12-调用)  
-&emsp;&emsp;[1.3 `it` 参数](#13-it-参数)  
-&emsp;[2. Lambda 表达式](#2-lambda-表达式)  
-&emsp;&emsp;[2.1 函数类型](#21-函数类型)  
-&emsp;&emsp;[2.2 Lambda 表达式的语法](#22-lambda-表达式的语法)  
-&emsp;&emsp;[2.3 匿名函数](#23-匿名函数)  
-&emsp;&emsp;[2.4 闭包](#24-闭包)  
-&emsp;&emsp;[2.5 带接收者的函数](#25-带接收者的函数)  
+[Kotlin 高阶函数和 Lambda](#kotlin-高阶函数和-lambda)
+&emsp;[1. 高阶函数](#1-高阶函数)
+&emsp;&emsp;[1.1 声明](#11-声明)
+&emsp;&emsp;[1.2 调用](#12-调用)
+&emsp;&emsp;[1.3 `it` 参数](#13-it-参数)
+&emsp;[2. Lambda 表达式](#2-lambda-表达式)
+&emsp;&emsp;[2.1 函数类型](#21-函数类型)
+&emsp;&emsp;[2.2 Lambda 表达式的语法](#22-lambda-表达式的语法)
+&emsp;&emsp;[2.3 匿名函数](#23-匿名函数)
+&emsp;&emsp;[2.4 闭包](#24-闭包)
+&emsp;&emsp;[2.5 带接收者的函数](#25-带接收者的函数)
 
 <!-- /MDTOC -->
 
@@ -31,7 +31,7 @@ Kotlin 允许函数接受一个**函数引用**作为参数，这样的函数被
 
 ### 1.1 声明
 
-```
+```kotlin
 fun <T> lock(lock: Lock, body: () -> T): T {
   lock.lock()
   try {
@@ -53,7 +53,7 @@ fun <T> lock(lock: Lock, body: () -> T): T {
 
 Kotlin 使用**函数引用**来指明一个函数对象，其形式是 `::functionName`，例如：
 
-```
+```kotlin
 fun toBeSynchronized() = sharedResource.operation()
 
 val result = lock(lock, ::toBeSynchronized)
@@ -63,7 +63,7 @@ val result = lock(lock, ::toBeSynchronized)
 
 除此之外，高阶函数还可以接受一个 Lambda 表达式作为其函数参数。
 
-```
+```kotlin
 val result = lock(lock, { sharedResource.operation() })
 ```
 
@@ -75,7 +75,7 @@ val result = lock(lock, { sharedResource.operation() })
 
 特别的，如果一个高阶函数的函数引用参数在最后一位，那么该参数能在括号外被指定。
 
-```
+```kotlin
 lock (lock) {
   sharedResource.operation()
 }
@@ -83,7 +83,7 @@ lock (lock) {
 
 另一个高阶函数的例子是 `map()` 函数。
 
-```
+```kotlin
 fun <T, R> List<T>.map(transform: (T) -> R): List<R> {
   val result = arrayListOf<R>()
   for (item in this)
@@ -94,7 +94,7 @@ fun <T, R> List<T>.map(transform: (T) -> R): List<R> {
 
 它可以这样被调用：
 
-```
+```kotlin
 val doubled = ints.map { it -> it * 2 }
 ```
 
@@ -104,7 +104,7 @@ val doubled = ints.map { it -> it * 2 }
 
 如果一个 Lambda 表达式只拥有一个参数，那么其参数的声明和箭头符号(`->`)都可以省略。
 
-```
+```kotlin
 ints.map { it * 2 }
 ```
 
@@ -119,13 +119,13 @@ Lambda 表达式是一种**匿名的函数**，它只有**文字上的函数定�
 
 考虑如下的高阶函数
 
-```
+```kotlin
 max(strings, { a, b -> a.length < b.length })
 ```
 
 其中的 Lambda 表达式和 `compare()` 方法是等价的。
 
-```
+```kotlin
 fun compare(a: String, b: String): Boolean = a.length < b.length
 ```
 
@@ -135,7 +135,7 @@ fun compare(a: String, b: String): Boolean = a.length < b.length
 
 对于上面的 `max()` 方法，定义如下：
 
-```
+```kotlin
 fun <T> max(collection: Collection<T>, less: (T, T) -> Boolean): T? {
   var max: T? = null
   for (it in collection)
@@ -149,7 +149,7 @@ fun <T> max(collection: Collection<T>, less: (T, T) -> Boolean): T? {
 
 对于函数类型，除了上面的这种声明方法外，也可以给函数类型中的各个变量赋上名称。这将有助于说明该函数类型的调用方法和作用。
 
-```
+```kotlin
 val compare: (x: T, y: T) -> Int = ...
 ```
 
@@ -159,7 +159,7 @@ val compare: (x: T, y: T) -> Int = ...
 参数的定义在括号之内，`->` 之前，而且可以省略类型；
 函数的主题在 `->` 之后。
 
-```
+```kotlin
 val sum: (Int, Int) -> Int = { x, y -> x + y }
 ```
 
@@ -174,7 +174,7 @@ lambda 表达式语法中缺少对返回类型的指定，
 
 当然，如果你需要**显式地声明返回类型**，可以使用**匿名函数**
 
-```
+```kotlin
 fun(x: Int, y: Int): Int = x + y
 ```
 
@@ -182,7 +182,7 @@ fun(x: Int, y: Int): Int = x + y
 
 匿名函数除了表达式之外，也可以使用语句块作为函数主体。
 
-```
+```kotlin
 fun(x: Int, y: Int): Int {
   return x + y
 }
@@ -190,7 +190,7 @@ fun(x: Int, y: Int): Int {
 
 当匿名函数的参数类型能够被推断得出时，其参数类型可以被省略。
 
-```
+```kotlin
 ints.filter(fun(item) = item > 0)
 ```
 
@@ -214,7 +214,7 @@ ints.filter(fun(item) = item > 0)
 
 闭包指的是内部函数可以访问外部变量，Kotlin 的 lambda 表达式、匿名函数、局部函数和 object expression 都支持这一特性。
 
-```
+```kotlin
 var sum = 0
 ints.filter { it > 0 }.forEach {
   sum += it
@@ -229,7 +229,7 @@ print(sum)
 
 Kotlin 还支持定义一个带**接收者**的函数字面量，这样就可以在 lambda 表达式和匿名函数内部调用接收者的成员。
 
-```
+```kotlin
 sum : Int.(other: Int) -> Int
 ```
 
@@ -240,19 +240,19 @@ sum : Int.(other: Int) -> Int
 
 那么就可以像这样调用：
 
-```
+```kotlin
 1.sum(2)
 ```
 
 通过匿名函数，我们可以定义一个带接收者函数的变量。
 
-```
+```kotlin
 val sum = fun Int.(other: Int): Int = this + other
 ```
 
 当接收者能从上下文被推断出来时，可以使用 lambda 表达式来调用接收者成员。
 
-```
+```kotlin
 class HTML {
     fun body() { ... }
 }
