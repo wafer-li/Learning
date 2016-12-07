@@ -7,12 +7,12 @@ Base on *Core Java Volume Ⅰ——Fundamentals**
 ---
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Class Basic](#java-class-basic)
-&emsp;[1. 概述](#1-概述)
-&emsp;[2. 自定义类](#2-自定义类)
-&emsp;[3. 方法参数](#3-方法参数)
-&emsp;[4. 包（`package`）](#4-包（package）)
-&emsp;[5. 类设计技巧](#5-类设计技巧)
+[Java Class Basic](#java-class-basic)   
+&emsp;[1. 概述](#1-概述)   
+&emsp;[2. 自定义类](#2-自定义类)   
+&emsp;[3. 方法参数](#3-方法参数)   
+&emsp;[4. 包（`package`）](#4-包（package）)   
+&emsp;[5. 类设计技巧](#5-类设计技巧)   
 
 <!-- /MDTOC -->
 ---

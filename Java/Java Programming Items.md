@@ -9,10 +9,10 @@ To improve my Java skills.
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Programming Items](#java-programming-items)  
-&emsp;[1. Object construction & Destruction](#1-object-construction-destruction)
-&emsp;&emsp;[1.1 Using the static factory method primary to construct the object](#11-using-the-static-factory-method-primary-to-construct-the-object)
-&emsp;&emsp;[1.2 Using builder when meeting multiple constructor parma](#12-using-builder-when-meeting-multiple-constructor-parma)
+[Java Programming Items](#java-programming-items)   
+&emsp;[1. Object construction & Destruction](#1-object-construction-destruction)   
+&emsp;&emsp;[1.1 Using the static factory method primary to construct the object](#11-using-the-static-factory-method-primary-to-construct-the-object)   
+&emsp;&emsp;[1.2 Using builder when meeting multiple constructor parma](#12-using-builder-when-meeting-multiple-constructor-parma)   
 
 <!-- /MDTOC -->
 
