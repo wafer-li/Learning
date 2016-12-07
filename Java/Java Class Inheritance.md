@@ -15,6 +15,7 @@
 &emsp;[9. 谨慎的使用protected](#9-谨慎的使用protected)   
 &emsp;[10. Object类](#10-object类)   
 &emsp;&emsp;[10.1 `equals()`方法](#101-equals方法)   
+&emsp;&emsp;[10.2 `equals()` 方法的设计理念](#102-equals-方法的设计理念)   
 &emsp;&emsp;[10.2 `hashCode()` 方法](#102-hashcode-方法)   
 &emsp;&emsp;[10.3 `toString()` 方法](#103-tostring-方法)   
 &emsp;[11. 泛型数组列表（`ArrayList<>`）](#11-泛型数组列表（arraylist）)   
@@ -38,7 +39,7 @@ C++ | Java
 
 ## 2. 使用 `extends` 来表明继承关系
 
-```
+```java
 class Derived extends Base
 {
 	....
@@ -47,10 +48,20 @@ class Derived extends Base
 
 ## 3. 使用 `super` 来调用超类方法
 
+```java
+class Derived extends Base {
+    public Derived() {
+        super();
+    }
+}
+```
+
 ## 4. 构造器
 
 可以使用 `super` 实现对超类构造器的调用
+
 如果没有显式调用超类构造器，将自动调用超类构造器的隐式版本;
+
 如果没有隐式版本（即超类构造器只定义了显示版本）则报错
 
 ## 5. 多态
@@ -76,33 +87,40 @@ class Derived extends Base
 
 1. `final` 类
 
-    ```
-    final class Excutive extends Manager
+    ```java
+    final class Excutive extends Manager {
+        ...
+    }
     ```
 
     > 这种类型被称为final类，不允许定义子类，即无法继承
 
 2. `final` 方法
 
-    ```
+    ```java
     public final String getName() {...}
     ```
     > 这种方法称为final方法，这种方法不允许子类覆盖它，确保其不会在子类中改变语义
 
 **注意 `final` 的位置不同**
 
+值得提到的是， _Effective Java_ 中明确指示，如果不事先设计好一个良好的继承结构模型，那么就 **禁止继承**
+
 ## 7. 强制类型转换
 
 在继承链上不允许进行由上到下的转换（超类不能转换成子类）
+
 使用 `instanceof` 进行转换检查，返回布尔值，表示是否能够成功转换
+
 语法：(要转换的对象) `instanceof` (转换目标)
+
 强制转换语法类似 C 语言，执行过程类似 `dynamic_cast` 操作，不成功则抛出一个异常，而不是生成 `null` 对象
 
 ## 8. 抽象类
 
-```
-    abstract class Person {...}   // 抽象类
-    public abstract String getDescription();   // 抽象方法
+```java
+abstract class Person {...}   // 抽象类
+public abstract String getDescription();   // 抽象方法
 ```
 
 > 抽象类不一定要有抽象方法，但是包含抽象方法的类必须声明为抽象类
@@ -110,6 +128,8 @@ class Derived extends Base
 抽象类不能被实例化（即不能创建对象）
 
 ## 9. 谨慎的使用protected
+
+`protected` 的可见性是超类和子类之间
 
 ## 10. Object类
 
@@ -125,32 +145,34 @@ class Derived extends Base
 
 `Object` 类 `equals`：**判断两个对象是否具有相同的引用**
 
-- equals方法的设计理念
 
-    1. 接受一个Object类参数（为了覆盖Object类的equals方法）
-    2. 检测是否为自身
-        `this == otherObject`
-    3. 检测传参是否为null
-    4. 比较是否为同一个类
+### 10.2 `equals()` 方法的设计理念
+1. 接受一个Object类参数（为了覆盖Object类的equals方法）
+2. 检测是否为自身
+    `this == otherObject`
+3. 检测传参是否为null
+4. 比较是否为同一个类
+    > 如果子类有特有的equals概念，则使用getClass方法
+    > `if(getClass() != otherObject.getClass()) return false;`
 
-        > 如果子类有特有的equals概念，则使用getClass方法
-        `if(getClass() != otherObject.getClass()) return false;`
-        如果子类没有特有的equals概念，则使用instanceof方法
-        `if(!(otherObject instanceof ClassName)) return false;`
+    > 如果子类没有特有的equals概念，则使用instanceof方法
+    > `if(!(otherObject instanceof ClassName)) return false;`
 
-    5. 转换为相应的类变量
-
+5. 转换为相应的类变量
     > 由于接受的是一个Object变量，所以必须进行强制类型转换才能进行具体实例域的相等判定
-    此时已经判别类型相同了，可以进行转换
+    > 此时已经判别类型相同了，可以进行转换
 
 6. 判别实例域
 
-    > △如果在子类中重新定义equals，则先调用超类的equals
+    > 如果在子类中重新定义equals，则先调用超类的equals
 
 ### 10.2 `hashCode()` 方法
 
 如果重新定义了 `equals()` 方法，则必须重新定义 `hashCode()` 方法
-`equals()` 与 `hashCode()` 的定义必须一致，如果 `x.equals(y) return true`, 则，`x.hashCode()` 就必须与 `y.hashCode()` 返回一样的值
+
+`equals()` 与 `hashCode()` 的定义必须一致；
+
+如果 `x.equals(y) return true`, 则，`x.hashCode()` 就必须与 `y.hashCode()` 返回一样的值
 
 ### 10.3 `toString()` 方法
 
@@ -162,7 +184,7 @@ class Derived extends Base
 
 1. 构造
 
-    ```
+    ```java
     ArrayList<ClassName> staff = new ArrayList<>();
     ```
 
@@ -183,7 +205,7 @@ class Derived extends Base
 
 ## 13. 不定参数
 
-```
+```java
 public static double max(double... values)
 ```
 
@@ -191,6 +213,7 @@ public static double max(double... values)
 可以将数组传递给可变参数方法的最后一个参数。
 
 ## 14. 枚举类
+
 这里的枚举类是一个类对象，而不是一种类型
 
 

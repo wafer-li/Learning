@@ -8,62 +8,59 @@ Base on *Core Java Volume Ⅰ——Fundamentals* and many Posts
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Multithreading Basic](#java-multithreading-basic)
-&emsp;[8. 多线程](#8-多线程)
-&emsp;&emsp;[8.1  创建线程](#81-创建线程)
-&emsp;&emsp;&emsp;[8.1.1 通过 `Runnable` 接口创建](#811-通过-runnable-接口创建)
-&emsp;&emsp;&emsp;[8.1.2 通过继承 `Thread` 类实现](#812-通过继承-thread-类实现)
-&emsp;&emsp;[8.2 中断线程](#82-中断线程)
-&emsp;&emsp;&emsp;[8.2.1 中断置位和检测](#821-中断置位和检测)
-&emsp;&emsp;&emsp;[8.2.2 关于 `InterruptedException` 异常](#822-关于-interruptedexception-异常)
-&emsp;&emsp;&emsp;&emsp;[8.2.2.1 抛出时机](#8221-抛出时机)
-&emsp;&emsp;&emsp;&emsp;[8.2.2.2 `InterruptedException` 的处理](#8222-interruptedexception-的处理)
-&emsp;&emsp;[8.3 线程的生命周期](#83-线程的生命周期)
-&emsp;&emsp;&emsp;[附： Java 如何终止一个线程](#附：-java-如何终止一个线程)
-&emsp;&emsp;[8.4 线程属性](#84-线程属性)
-&emsp;&emsp;&emsp;[8.4.1 优先级](#841-优先级)
-&emsp;&emsp;&emsp;[8.4.2 守护线程](#842-守护线程)
-&emsp;&emsp;&emsp;[8.4.3 `uncaughtExceptionHandler`](#843-uncaughtexceptionhandler)
+[Java Multithreading Basic](#java-multithreading-basic)   
+&emsp;[1.  创建线程](#1-创建线程)   
+&emsp;&emsp;[1.1 通过 `Runnable` 接口创建](#11-通过-runnable-接口创建)   
+&emsp;&emsp;[1.2 通过继承 `Thread` 类实现](#12-通过继承-thread-类实现)   
+&emsp;[2. 中断线程](#2-中断线程)   
+&emsp;&emsp;[2.1 中断置位和检测](#21-中断置位和检测)   
+&emsp;&emsp;[2.2 关于 `InterruptedException` 异常](#22-关于-interruptedexception-异常)   
+&emsp;&emsp;&emsp;[2.2.1 抛出时机](#221-抛出时机)   
+&emsp;&emsp;&emsp;[2.2.2 `InterruptedException` 的处理](#222-interruptedexception-的处理)   
+&emsp;[3. 线程的生命周期](#3-线程的生命周期)   
+&emsp;&emsp;&emsp;[附： Java 如何终止一个线程](#附：-java-如何终止一个线程)   
+&emsp;[4. 线程属性](#4-线程属性)   
+&emsp;&emsp;[4.1 优先级](#41-优先级)   
+&emsp;&emsp;[4.2 守护线程](#42-守护线程)   
+&emsp;&emsp;[4.3 `uncaughtExceptionHandler`](#43-uncaughtexceptionhandler)   
 
 <!-- /MDTOC -->
 
 ---
 
-## 8. 多线程
+## 1.  创建线程
 
-### 8.1  创建线程
-
-#### 8.1.1 通过 `Runnable` 接口创建
+### 1.1 通过 `Runnable` 接口创建
 
 1. 实现 `Runnable` 接口
 
     ```java
-class Myrunnable implement Runnable {
-	run();
-}
+    class Myrunnable implement Runnable {
+	   run();
+    }
     ```
 
 2. 创建 `Runnable` 对象
 
     ```java
-Runnable r = new Myrunnable();
+    Runnable r = new Myrunnable();
     ```
 
 3. 由 Runnable 对象创建 Thread 对象
 
     ```java
-Thread t = new Thread(r);
+    Thread t = new Thread(r);
     ```
 
 4. 启动线程
 
     ```java
-t.start();
+    t.start();
     ```
 
-    > 不能直接调用 run 方法，应调用 Thread.start 方法来间接调用 run 方法
+    > 不能直接调用 `run()` 方法，应调用 `Thread.start()` 方法来间接调用 run 方法
 
-#### 8.1.2 通过继承 `Thread` 类实现
+### 1.2 通过继承 `Thread` 类实现
 
 1. 实现继承类
 
@@ -90,13 +87,13 @@ t.start();
     t.start();
     ```
 
-### 8.2 中断线程
+## 2. 中断线程
 
 Java 使用**中断**来执行**终止线程**的作用；
 但是，当一个线程接收到终止信号时，它可以选择对于中断信号的响应方式，这就带来了很好的扩展性。
 但同时也带来了一些疑惑的地方。
 
-#### 8.2.1 中断置位和检测
+### 2.1 中断置位和检测
 
 1. 使用 `Thread.currentThread()` 方法获取到当前运行的线程
 
@@ -126,9 +123,9 @@ Java 使用**中断**来执行**终止线程**的作用；
     需要注意的是，`sleep()` `wait()` 方法在抛出 `InterruptedException` 之后，**都会将中断状态清除**。
     对于这种状况，我们就需要对其进行一些处理。
 
-#### 8.2.2 关于 `InterruptedException` 异常
+### 2.2 关于 `InterruptedException` 异常
 
-##### 8.2.2.1 抛出时机
+#### 2.2.1 抛出时机
 
 当线程同时位于**阻塞**和**中断**状态时，抛出。
 即，当线程调用 `sleep()` `wait()` `join()` 等方法时被中断，那么抛出异常。
@@ -136,7 +133,7 @@ Java 使用**中断**来执行**终止线程**的作用；
 一般来说，如果一个方法可以抛出 `InterruptedException`，那么说明这个方法的当前线程是可以被中断（取消）的。
 
 
-##### 8.2.2.2 `InterruptedException` 的处理
+#### 2.2.2 `InterruptedException` 的处理
 
 1. 不捕捉该异常，改为向上层抛出。
 
@@ -231,7 +228,7 @@ Java 使用**中断**来执行**终止线程**的作用；
     }
     ```
 
-### 8.3 线程的生命周期
+## 3. 线程的生命周期
 
 ![Thread Life Cycle](http://ww2.sinaimg.cn/large/8c1fca6bjw1f0lm5o2cp2j20fx0csdgk.jpg)
 
@@ -333,14 +330,14 @@ Java 使用**中断**来执行**终止线程**的作用；
 }
     ```
 
-### 8.4 线程属性
+## 4. 线程属性
 
-#### 8.4.1 优先级
+### 4.1 优先级
 
 1. 系统会优先调用高优先级的线程
 2. 线程优先级高度依赖系统实现，由系统线程优先级映射到 Java 虚拟机上
 
-#### 8.4.2 守护线程
+### 4.2 守护线程
 
 1. 守护线程用于给其他线程提供服务，例如发送定时信号等。
 2. 守护线程由于很容易中断，**不应访问固有资源**（例如文件、数据库等）
@@ -348,7 +345,7 @@ Java 使用**中断**来执行**终止线程**的作用；
 4. 当程序中**只存在守护线程时**，JVM 退出，守护线程一并终止
 5. 典型应用：GC（垃圾回收），保持长连接等。
 
-#### 8.4.3 `uncaughtExceptionHandler`
+### 4.3 `uncaughtExceptionHandler`
 
 1. 线程的 `run()` 方法不能抛出任何被检测的异常
 2. 未捕获的异常会被 `uncaughtExceptionHandler` 捕获

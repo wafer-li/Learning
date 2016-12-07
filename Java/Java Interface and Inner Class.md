@@ -68,7 +68,9 @@ public interface Comparable {...}
 - 每个类只能拥有一个超类，但是可以实现多个接口
 
     ```java
-    class Employee extends Persons implements Comparable
+    class Employee extends Persons implements Comparable {
+        ...
+    }
     ```
 
 ### 1.2 对象克隆
@@ -104,8 +106,8 @@ class TalkingClock
 ### 2.2 普通内部类
 
 - 可以访问外围类对象数据（包括私有的）
-- 通过OuterClass.this访问外围类
-- 在外围类的作用域之外，使用OuterClass.InnerClass引用内部类
+- 通过 `OuterClass.this` 访问外围类
+- 在外围类的作用域之外，使用 `OuterClass.InnerClass` 引用内部类
 
 ### 2.3 局部内部类
 
@@ -146,5 +148,5 @@ new InterfaceType()
 ### 2.5 静态内部类
 
 - 用于将一个类隐藏在另一个类之中，通常用于防止名称的冲突
-- 只有内部类可以声明为static
-- 特别的，通过静态方法构造的内部类必须声明为static
+- 只有内部类可以声明为 `static`
+- 特别的，通过静态方法构造的内部类必须声明为 `static`

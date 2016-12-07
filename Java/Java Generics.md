@@ -8,22 +8,22 @@ Base on *Core Java Volume Ⅰ——Fundamentals**
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Generics](#java-generics)
-&emsp;[6. 泛型](#6-泛型)
-&emsp;&emsp;[6.1 泛型类](#61-泛型类)
-&emsp;&emsp;[6.2 泛型方法](#62-泛型方法)
-&emsp;&emsp;[6.3 类型变量的限定](#63-类型变量的限定)
-&emsp;&emsp;[6.4 泛型类的实例化](#64-泛型类的实例化)
-&emsp;&emsp;&emsp;[6.4.1 类型擦除](#641-类型擦除)
-&emsp;&emsp;&emsp;[6.4.2 翻译泛型表达式](#642-翻译泛型表达式)
-&emsp;&emsp;&emsp;[6.4.3 泛型方法的实例化和桥方法](#643-泛型方法的实例化和桥方法)
-&emsp;&emsp;&emsp;[6.4.4 约束和局限性](#644-约束和局限性)
+[Java Generics](#java-generics)   
+&emsp;[0. 概述](#0-概述)   
+&emsp;[1.泛型类](#1泛型类)   
+&emsp;[2.泛型方法](#2泛型方法)   
+&emsp;[3.类型变量的限定](#3类型变量的限定)   
+&emsp;[4.泛型类的实例化](#4泛型类的实例化)   
+&emsp;&emsp;[4.1 类型擦除](#41-类型擦除)   
+&emsp;&emsp;[4.2 翻译泛型表达式](#42-翻译泛型表达式)   
+&emsp;&emsp;[4.3 泛型方法的实例化和桥方法](#43-泛型方法的实例化和桥方法)   
+&emsp;&emsp;[4.4 约束和局限性](#44-约束和局限性)   
 
 <!-- /MDTOC -->
 
 ---
 
-## 6. 泛型
+## 0. 概述
 
 泛型类似于 C++ 中的模板，使得编写的代码可以被多种不同的对象所使用。
 
@@ -38,7 +38,7 @@ ArrayList<String> files = new ArrayList<String>();
 ArrayList<String> files = new ArrayList<>();
 ```
 
-### 6.1 泛型类
+## 1.泛型类
 
 1. 单个参数
 
@@ -72,11 +72,11 @@ ArrayList<String> files = new ArrayList<>();
     }
     ```
 
-### 6.2 泛型方法
+## 2.泛型方法
 
 泛型方法不仅只存在于泛型类中，也可以在非泛型类中定义泛型方法
 
-```
+```java
 class ArrarAlg {
 
     /**
@@ -91,13 +91,13 @@ class ArrarAlg {
 
 调用泛型方法时，通过在**方法名前**的尖括号中放入具体的类型来将其实例化
 
-```
+```java
 String middle = ArrayAlg.<String>getMiddle("John", "Q.", "Public");
 ```
 
 其实大多数情况下，编译器都能推断出正确的类型，所以方括号可以省略
 
-### 6.3 类型变量的限定
+## 3.类型变量的限定
 
 有时候我们需要对类型变量进行一定的约束:
 比如，当我们需要对变量进行比较操作时，我们需要确保变量都实现了 `Comparable` 接口。
@@ -106,7 +106,7 @@ String middle = ArrayAlg.<String>getMiddle("John", "Q.", "Public");
 
 1. 限定上界
 
-    ```
+    ```java
     public static <T extends Comarable> T min(T[] a) ...
     ```
 
@@ -115,15 +115,15 @@ String middle = ArrayAlg.<String>getMiddle("John", "Q.", "Public");
 
 2. 限定上界
 
-    ```
+    ```java
     public static <T super Child> T doSomeThings(T[] a) ...
     ```
 
     > 这里限定了 T 必须是 Child 的超类，或者它本身。
 
-### 6.4 泛型类的实例化
+## 4.泛型类的实例化
 
-#### 6.4.1 类型擦除
+### 4.1 类型擦除
 
 Java 中的泛型类采用 **类型擦除** 方式来进行实例化。
 
@@ -156,19 +156,20 @@ public class Pair {
 
 通过类型擦除的方法，Java 使得泛型类就好像一个普通的类，从而避免了 C++ 模板实例化所造成的代码膨胀。
 
-#### 6.4.2 翻译泛型表达式
+### 4.2 翻译泛型表达式
 
 当程序调用泛型方法时， Java 采用强制类型转换（Cast）来返回或调用正确的类型
 
 例如
 
-```
+```java
 Pair<Employee> buddies = ...;
 Employee buddy = buddies.getFirst();
 ```
+
 此时，编译器自动插入强制类型转换使得 `getFirst()` 方法返回 `Employee` 类型
 
-#### 6.4.3 泛型方法的实例化和桥方法
+### 4.3 泛型方法的实例化和桥方法
 
 泛型方法在实例化过程中也使用 **类型擦除**
 但是这在继承中会导致方法的冲突。
@@ -210,7 +211,7 @@ public void setSecond(Objedt second) {
 }
 ```
 
-#### 6.4.4 约束和局限性
+### 4.4 约束和局限性
 
 1. 不能用基本类型实例化类型参数
 
@@ -230,7 +231,7 @@ public void setSecond(Objedt second) {
     由于类型擦除的存在，所有的未限定泛型类都会被替换成 `Object`
     例如
 
-    ```
+    ```java
     Pair<String>[] table = new Pair<String> [10];   // ERROR
     // After erase
     Pair[] table = new Pair[10];
@@ -238,7 +239,7 @@ public void setSecond(Objedt second) {
 
     此时，如果有下面的一条语句
 
-    ```
+    ```java
     Object[] objects = table;   // OK, Pair is a type of Object
 
     // But, if edit one of the elements
