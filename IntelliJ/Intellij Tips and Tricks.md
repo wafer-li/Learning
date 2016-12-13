@@ -2,14 +2,17 @@
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[IntelliJ Tips and Tricks](#intellij-tips-and-tricks)
-&emsp;[1. 跳转](#1-跳转)
-&emsp;[2. 新建](#2-新建)
-&emsp;[3. 重构](#3-重构)
-&emsp;[4. Language  Injection](#4-language-injection)
-&emsp;[5. 补全](#5-补全)
-&emsp;[6. 模板](#6-模板)
-&emsp;[7. 代码分析](#7-代码分析)
+[IntelliJ Tips and Tricks](#intellij-tips-and-tricks)   
+&emsp;[1. 跳转](#1-跳转)   
+&emsp;[2. 新建](#2-新建)   
+&emsp;[3. 重构](#3-重构)   
+&emsp;[4. Language  Injection](#4-language-injection)   
+&emsp;[5. 补全](#5-补全)   
+&emsp;[6. 模板](#6-模板)   
+&emsp;[7. 代码分析](#7-代码分析)   
+&emsp;[8. 版本控制](#8-版本控制)   
+&emsp;[9. 调试](#9-调试)   
+&emsp;[10. 其他](#10-其他)   
 
 <!-- /MDTOC -->
 
