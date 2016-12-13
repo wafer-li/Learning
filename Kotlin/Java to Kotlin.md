@@ -128,8 +128,6 @@ button.setOnClickListener { it -> // it is a view
 fun main(args: Array<String>) {
     val reader = BufferedReader(InputStreamReader(System.`in`))
 
-    for (line in reader.lines()) {
-        println(line)
-    }
+    reader.lines().forEach(::println)
 }
 ```
