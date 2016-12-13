@@ -121,3 +121,15 @@ button.setOnClickListener { it -> // it is a view
 
 > 需要注意的是 lambda 是表达式，默认返回值为最后执行函数的返回值或者字面量；
 不需要 `return` 关键字。
+
+## 4. Functional Read From StdIn
+
+```kotlin
+fun main(args: Array<String>) {
+    val reader = BufferedReader(InputStreamReader(System.`in`))
+
+    for (line in reader.lines()) {
+        println(line)
+    }
+}
+```
