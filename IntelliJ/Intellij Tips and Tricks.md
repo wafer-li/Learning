@@ -240,3 +240,6 @@
 
 
 3. Help 菜单中的 Productive Guild 记录了使用的 IDEA 功能，包括功能的解释和使用频率
+
+
+4. Registry 内有一个选项可以减少输入延迟(editor latency)
