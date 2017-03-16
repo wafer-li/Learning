@@ -2,11 +2,11 @@
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Android 语言和本地化](#android-语言和本地化)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[2. 默认 `string.xml` 设置为英语](#2-默认-stringxml-设置为英语)   
-&emsp;[3. 地区语言-默认覆盖范围最广的语种](#3-地区语言-默认覆盖范围最广的语种)   
-&emsp;[4. Android Studio 设置语言地区](#4-android-studio-设置语言地区)   
+[Android 语言和本地化](#android-语言和本地化)
+&emsp;[1. 概述](#1-概述)
+&emsp;[2. 默认 `string.xml` 设置为英语](#2-默认-stringxml-设置为英语)
+&emsp;[3. 地区语言-默认覆盖范围最广的语种](#3-地区语言-默认覆盖范围最广的语种)
+&emsp;[4. Android Studio 设置语言地区](#4-android-studio-设置语言地区)
 
 <!-- /MDTOC -->
 
@@ -87,3 +87,49 @@ New -> Value Resource -> Choose Locale -> Select Region；
 然后，我们把默认的 `string.xml` 复制到 `string.xml(zh-rCN)`  中；
 
 这样，我们就能够在 Translation Editor 中编辑简体中文了。
+
+## 5. 获取当前使用的语言
+
+一般来说，这个需求可以通过直接取 `Preference` 的值来实现；
+
+但是，对于应用第一次安装时，则不能通过直接取 `Preference`；
+
+因为应用可能会在多个国家和地区使用，在提供了本地化资源的情况下，Android 会自动匹配到这些本地化资源；
+
+那么，我们如何能确保设置里面的语言和应用第一次启动时默认显示的语言是一致的呢？
+
+首先，不能通过 `Configuration` 取到的 `Locale`  来实现；
+
+> 应用可以通过 `Resource.getConfiguration()` 来获取到 `Configuration`；
+> 在这里就可以查看和修改应用的各项设置，包括 `Locale`
+
+原因有两个：
+
+1. 不适用于多地区，少语言的情况
+
+    > 例如大陆和新加坡使用简体中文，港澳台使用繁体中文；
+    > 使用 `getDisplayLanguageTag()` 则会得到 『中文（香港）』、『中文（台湾）』之类的内容；
+    > 但是，我们只需要提供 **两门语言选项** 就足够了
+
+2. `getDisplayLanguageTag()` 在 API 24 (6.0) 以上才被引入，不能兼容老版本
+
+真正的做法，是在每个本地化资源 `strings.xml` 里面，写上该资源的 `locale_code`，如：
+
+```xml
+<!-- filename: value-zh-rCN/strings.xml -->
+<resource>
+    <string name="locale_code">zh-CN</string>
+
+    <!-- 剩下的资源 -->
+</resource>
+```
+
+通过利用 Android 自身的适配机制，获取到 **真正显示的** 语言类型。
+
+也就是说，`locale_code` 实际上就 **对应了** 语言类型；
+
+这样，我们只要在 `zh-HK` 和 `zh-TW` 都写入同一个 `locale-code`；
+
+然后通过 `locale-code` 来进行设置页面的语言类型显示；
+
+这样就实现了显示语言和设置中的语言的同步。
