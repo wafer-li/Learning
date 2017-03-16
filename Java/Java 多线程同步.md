@@ -1,4 +1,4 @@
-# Java Multithreading Synchronize
+# Java 多线程同步
 
 Tags: Java
 
@@ -8,7 +8,7 @@ Base on *Core Java Volume Ⅰ——Fundamentals* and many Posts
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Multithreading Synchronize](#java-multithreading-synchronize)   
+[Java 多线程同步](#java-多线程同步)   
 &emsp;[0. 概述](#0-概述)   
 &emsp;[1. 使用 ReentrantLock 实现同步](#1-使用-reentrantlock-实现同步)   
 &emsp;&emsp;[1.1 锁的初级使用](#11-锁的初级使用)   

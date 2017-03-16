@@ -1,8 +1,8 @@
-# Java Class Inheritance
+# Java 类继承
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Class Inheritance](#java-class-inheritance)   
+[Java 类继承](#java-类继承)   
 &emsp;[0. 概述](#0-概述)   
 &emsp;[1. Java 只允许一重继承](#1-java-只允许一重继承)   
 &emsp;[2. 使用 `extends` 来表明继承关系](#2-使用-extends-来表明继承关系)   

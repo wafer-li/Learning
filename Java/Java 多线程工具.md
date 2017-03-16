@@ -1,8 +1,8 @@
-# Java Mutitherading Tools
+# Java 多线程工具
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Mutitherading Tools](#java-mutitherading-tools)   
+[Java 多线程工具](#java-多线程工具)   
 &emsp;[1. 并发工具](#1-并发工具)   
 &emsp;&emsp;[1.1 阻塞队列](#11-阻塞队列)   
 &emsp;&emsp;&emsp;[1.1.1 API](#111-api)   

@@ -1,4 +1,4 @@
-# Java Basic
+# Java 基础
 
 Tags: Java
 
@@ -9,7 +9,7 @@ Tags: Java
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Basic](#java-basic)   
+[Java 基础](#java-基础)   
 &emsp;[1. 变量和数据类型](#1-变量和数据类型)   
 &emsp;[2. 作用域](#2-作用域)   
 &emsp;[3. 控制流程](#3-控制流程)   

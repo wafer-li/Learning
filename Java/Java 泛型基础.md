@@ -1,4 +1,4 @@
-# Java Generics Basic
+# Java 泛型基础
 
 Tags: Java
 
@@ -8,7 +8,7 @@ Base on *Core Java Volume Ⅰ——Fundamentals**
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Generics Basic](#java-generics-basic)   
+[Java 泛型基础](#java-泛型基础)   
 &emsp;[1. 概述](#1-概述)   
 &emsp;[2. 泛型类](#2-泛型类)   
 &emsp;[3. 泛型方法](#3-泛型方法)   

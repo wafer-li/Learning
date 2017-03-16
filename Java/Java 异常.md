@@ -1,4 +1,4 @@
-# Java Exception
+# Java 异常
 
 Tags: Java
 
@@ -8,7 +8,7 @@ Base on *Core Java Volume Ⅰ——Fundamentals**
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Exception](#java-exception)   
+[Java 异常](#java-异常)   
 &emsp;[1. 异常分类](#1-异常分类)   
 &emsp;[2. 声明异常](#2-声明异常)   
 &emsp;[3.抛出异常](#3抛出异常)   

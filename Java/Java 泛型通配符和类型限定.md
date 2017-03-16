@@ -1,8 +1,8 @@
-# Java Type Wildcard and Limit
+# Java 泛型通配符和类型限定
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Type Wildcard and Limit](#java-type-wildcard-and-limit)   
+[Java 泛型通配符和类型限定](#java-泛型通配符和类型限定)   
 &emsp;[1. 概述](#1-概述)   
 &emsp;[2. 与类型参数 `T` 的不同](#2-与类型参数-t-的不同)   
 &emsp;&emsp;[2.1 使用位置不同](#21-使用位置不同)   

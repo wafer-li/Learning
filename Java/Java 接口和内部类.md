@@ -1,8 +1,8 @@
-# Java Interface and Inner Class
+# Java  接口和内部类
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java Interface and Inner Class](#java-interface-and-inner-class)   
+[Java  接口和内部类](#java-接口和内部类)   
 &emsp;[1. 接口](#1-接口)   
 &emsp;&emsp;[1.1 接口](#11-接口)   
 &emsp;&emsp;[1.2 对象克隆](#12-对象克隆)   
