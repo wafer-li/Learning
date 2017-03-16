@@ -2,11 +2,12 @@
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Android 语言和本地化](#android-语言和本地化)
-&emsp;[1. 概述](#1-概述)
-&emsp;[2. 默认 `string.xml` 设置为英语](#2-默认-stringxml-设置为英语)
-&emsp;[3. 地区语言-默认覆盖范围最广的语种](#3-地区语言-默认覆盖范围最广的语种)
-&emsp;[4. Android Studio 设置语言地区](#4-android-studio-设置语言地区)
+[Android 语言和本地化](#android-语言和本地化)   
+&emsp;[1. 概述](#1-概述)   
+&emsp;[2. 默认 `string.xml` 设置为英语](#2-默认-stringxml-设置为英语)   
+&emsp;[3. 地区语言-默认覆盖范围最广的语种](#3-地区语言-默认覆盖范围最广的语种)   
+&emsp;[4. Android Studio 设置语言地区](#4-android-studio-设置语言地区)   
+&emsp;[5. 获取当前使用的语言](#5-获取当前使用的语言)   
 
 <!-- /MDTOC -->
 
@@ -125,6 +126,10 @@ New -> Value Resource -> Choose Locale -> Select Region；
 ```
 
 通过利用 Android 自身的适配机制，获取到 **真正显示的** 语言类型。
+
+```java
+String localeCode = getString(R.string.locale_code);
+```
 
 也就是说，`locale_code` 实际上就 **对应了** 语言类型；
 
