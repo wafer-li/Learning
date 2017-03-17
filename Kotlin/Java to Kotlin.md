@@ -1,4 +1,4 @@
-# Java to Kotlin
+# Java to Kotlin Cheatsheet
 
 Tags: Kotlin
 
@@ -6,21 +6,22 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Java to Kotlin](#java-to-kotlin)
-&emsp;[0. 概述](#0-概述)
-&emsp;[1. if null then initialize else return](#1-if-null-then-initialize-else-return)
-&emsp;[2. App.getContext()](#2-appgetcontext)
-&emsp;[3. `it` in lambda](#3-it-in-lambda)
+[Java to Kotlin Cheatsheet](#java-to-kotlin-cheatsheet)   
+&emsp;[1. 概述](#1-概述)   
+&emsp;[2. Lazy Initialization](#2-lazy-initialization)   
+&emsp;[3. App.getContext()](#3-appgetcontext)   
+&emsp;[4. `it` in lambda](#4-it-in-lambda)   
+&emsp;[5. Functional Read From StdIn](#5-functional-read-from-stdin)   
 
 <!-- /MDTOC -->
 
 ---
 
-## 0. 概述
+## 1. 概述
 
 下面总结一些代码段，用于帮助从 Java 迁移到 Kotlin
 
-## 1. if null then initialize else return
+## 2. Lazy Initialization
 
 ```java
 // Java
@@ -50,7 +51,7 @@ private fun initA(): A {
 }
 ```
 
-## 2. App.getContext()
+## 3. App.getContext()
 
 ```java
 // Java
@@ -93,7 +94,7 @@ val Context.myApp: MyApp
         get() = applicationContext as MyApp
 ```
 
-## 3. `it` in lambda
+## 4. `it` in lambda
 
 当实现的接口是单方法接口时，Kotlin 会自动使用 lambda 来代替；
 这时候很容易出现不知道怎么写的问题。
@@ -122,7 +123,7 @@ button.setOnClickListener { it -> // it is a view
 > 需要注意的是 lambda 是表达式，默认返回值为最后执行函数的返回值或者字面量；
 不需要 `return` 关键字。
 
-## 4. Functional Read From StdIn
+## 5. Functional Read From StdIn
 
 ```kotlin
 fun main(args: Array<String>) {

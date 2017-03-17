@@ -1,4 +1,4 @@
-# Kotlin Objects
+# Kotlin 对象
 
 Tags: Kotlin
 
@@ -6,12 +6,12 @@ Tags: Kotlin
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin Objects](#kotlin-objects)
-&emsp;[1. 概述](#1-概述)
-&emsp;[2. Object Expression](#2-object-expression)
-&emsp;[3. Object Declaration](#3-object-declaration)
-&emsp;[4. 伴生对象(companion object)](#4-伴生对象companion-object)
-&emsp;[5. object expression 和 object declaration 的不同点](#5-object-expression-和-object-declaration-的不同点)
+[Kotlin 对象](#kotlin-对象)   
+&emsp;[1. 概述](#1-概述)   
+&emsp;[2. 对象表达式](#2-对象表达式)   
+&emsp;[3. 对象声明](#3-对象声明)   
+&emsp;[4. 伴生对象(companion object)](#4-伴生对象companion-object)   
+&emsp;[5. 对象表达式 和 对象声明 的不同点](#5-对象表达式-和-对象声明-的不同点)   
 
 <!-- /MDTOC -->
 
@@ -25,11 +25,11 @@ Kotlin 提供了一个 Object 属性用来实现在 Java 中很常见的三个�
 - 单例模式(Singleton)
 - 静态类成员
 
-它们分别被称为 **object expression**，**object declaration**，**companion object**
+它们分别被称为 **对象表达式**，**对象声明**，**companion object**
 
-## 2. Object Expression
+## 2. 对象表达式
 
-Kotlin 使用 object expression 来实现 Java 中常用的匿名类对象功能。
+Kotlin 使用 对象表达式 来实现 Java 中常用的匿名类对象功能。
 
 ```kotlin
 window.addMouseListener(object : MouseAdapter() {
@@ -67,7 +67,7 @@ val adHoc = object {
 print(adHoc.x + adHoc.y)
 ```
 
-和 Java 的匿名类一样，object expression 也可以访问外部的变量，但和 Java 不同的是，变量**并没有要求必须是 `final`**
+和 Java 的匿名类一样，对象表达式 也可以访问外部的变量，但和 Java 不同的是，变量**并没有要求必须是 `final`**
 
 ```kotlin
 fun countClicks(window: JComponent) {
@@ -87,9 +87,9 @@ fun countClicks(window: JComponent) {
 }
 ```
 
-## 3. Object Declaration
+## 3. 对象声明
 
-Kotlin 使用 object declaration 来实现 Java 中常用的**单例模式**
+Kotlin 使用 对象声明 来实现 Java 中常用的**单例模式**
 
 ```kotlin
 object DataProviderManager {
@@ -102,7 +102,7 @@ object DataProviderManager {
 }
 ```
 
-这虽然和 object expression 很相似，但是要注意的是 object 关键字后面跟一个名字后，我们不能再叫它表达式，也不能给他赋值，但是可以通过它的名字访问它。
+这虽然和 对象表达式 很相似，但是要注意的是 object 关键字后面跟一个名字后，我们不能再叫它表达式，也不能给他赋值，但是可以通过它的名字访问它。
 
 调用 object
 
@@ -110,7 +110,7 @@ object DataProviderManager {
 DataProviderManager.registerDataProvider(...)
 ```
 
-object declaration 可以拥有超类。
+对象声明 可以拥有超类。
 
 ```kotlin
 object DefaultListener : MouseAdapter() {
@@ -124,7 +124,7 @@ object DefaultListener : MouseAdapter() {
 }
 ```
 
-同时， object declaration 不能是局部变量，比如直接嵌套在一个方法里，但是可以嵌套在其他的对象声明或者非内部类里面。
+同时， 对象声明 不能是局部变量，比如直接嵌套在一个方法里，但是可以嵌套在其他的对象声明或者非内部类里面。
 
 ## 4. 伴生对象(companion object)
 
@@ -170,8 +170,8 @@ class MyClass {
 
 > 当然，你也可以让 JVM 将伴生对象真正的**静态化**，使用 `@JvmStatic` 注解即可。
 
-## 5. object expression 和 object declaration 的不同点
+## 5. 对象表达式 和 对象声明 的不同点
 
-- 当 object expression 被声明时，它将会被立即执行。
-- 而 object declaration 会被延迟初始化，它将会在第一次调用它的时候进行初始化，而不是声明它的时候。
+- 当 对象表达式 被声明时，它将会被立即执行。
+- 而 对象声明 会被延迟初始化，它将会在第一次调用它的时候进行初始化，而不是声明它的时候。
 - 伴生对象会在对应的类第一次被加载之后使用 java 的静态初始化器生成

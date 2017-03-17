@@ -6,13 +6,13 @@ Tags: Kotlin Android
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Kotlin Android Extension](#kotlin-android-extension)
-&emsp;[0. 概述](#0-概述)
-&emsp;[1. findViewById](#1-findviewbyid)
-&emsp;[2. 如何使用](#2-如何使用)
-&emsp;[3. 使用场景](#3-使用场景)
-&emsp;[4. Android Flavors](#4-android-flavors)
-&emsp;[5. 实现原理](#5-实现原理)
+[Kotlin Android Extension](#kotlin-android-extension)   
+&emsp;[0. 概述](#0-概述)   
+&emsp;[1. findViewById](#1-findviewbyid)   
+&emsp;[2. 如何使用](#2-如何使用)   
+&emsp;[3. 使用场景](#3-使用场景)   
+&emsp;[4. Android Flavors](#4-android-flavors)   
+&emsp;[5. 实现原理](#5-实现原理)   
 
 <!-- /MDTOC -->
 
@@ -75,7 +75,7 @@ kotlinx.android.synthetic.main.activity_main.view.*
 这个功能也可以用在 Adapter 上；
 如果引入了这个语句，那么我们可以使用如下语法来进行组件获取和调用：
 
-```kotlin
+```xml
     <TextView
             android:id="@+id/hello"
             android:layout_width="fill_parent"
