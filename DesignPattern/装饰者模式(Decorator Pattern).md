@@ -2,15 +2,15 @@
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[装饰者模式(Decorator Pattern)](#装饰者模式decorator-pattern)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[2. 新的设计原则](#2-新的设计原则)   
-&emsp;[3. 原理](#3-原理)   
-&emsp;[4. 特点](#4-特点)   
-&emsp;[5. UML 图解](#5-uml-图解)   
-&emsp;[6. 例子图解](#6-例子图解)   
-&emsp;[7. 真实的装饰者模式——Java IO](#7-真实的装饰者模式——java-io)   
-&emsp;[8. 缺陷](#8-缺陷)   
+[装饰者模式(Decorator Pattern)](#装饰者模式decorator-pattern)
+&emsp;[1. 概述](#1-概述)
+&emsp;[2. 新的设计原则](#2-新的设计原则)
+&emsp;[3. 原理](#3-原理)
+&emsp;[4. 特点](#4-特点)
+&emsp;[5. UML 图解](#5-uml-图解)
+&emsp;[6. 例子图解](#6-例子图解)
+&emsp;[7. 真实的装饰者模式——Java IO](#7-真实的装饰者模式——java-io)
+&emsp;[8. 缺陷](#8-缺陷)
 
 <!-- /MDTOC -->
 
@@ -79,7 +79,7 @@
 
 ## 6. 例子图解
 
-![](http://ww3.sinaimg.cn/large/65e4f1e6jw1fail4ypkf5j20pp0b3dic.jpg)
+![](https://ww1.sinaimg.cn/large/006tKfTcly1fdsfoe6vu5j30nn0amgm6.jpg)
 
 ## 7. 真实的装饰者模式——Java IO
 
