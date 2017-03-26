@@ -1,8 +1,8 @@
-# Scala Basic
+# Scala 基础
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Scala Basic](#scala-basic)   
+[Scala 基础](#scala-基础)   
 &emsp;[1. 概述](#1-概述)   
 &emsp;[2. 什么是函数式语言](#2-什么是函数式语言)   
 &emsp;[3. 没有分号](#3-没有分号)   
@@ -31,7 +31,37 @@ Scala 是高层级的，函数式，基于 JVM，完美调用 Java 的编程语�
 
 ## 3. 没有分号
 
-嗯，没有分号
+这里需要说的一个问题是，虽然 Scala 没有分号；
+
+但是当你写长表达式的时候可能会有问题：
+
+```scala
+someLongExpression
++ someOtherExpression
+```
+
+上面的语句会被隐式加上分号：
+
+```scala
+someLongExpression;
++ someOtherExpression
+```
+
+这样显然是不符合我们的实际意图的，解决办法有两个：
+
+1. 使用括号
+
+    ```scala
+    (someLongExpression
+        + someOtherLongExpression)
+    ```
+
+2. 将操作符放在行尾
+
+    ```scala
+    someLongExpression +
+    someOtherExpression
+    ```
 
 ## 4. 面向对象
 
