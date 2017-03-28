@@ -1,8 +1,8 @@
-# Scala 基础
+# Scala 简介
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
 
-[Scala 基础](#scala-基础)   
+[Scala 简介](#scala-简介)   
 &emsp;[1. 概述](#1-概述)   
 &emsp;[2. 什么是函数式语言](#2-什么是函数式语言)   
 &emsp;[3. 没有分号](#3-没有分号)   
