@@ -13,7 +13,7 @@ tags: MaterailDrawer
 
 不然的话就要自己管理 Material Drawer 的依赖了。
 
-## 建立 Drawer
+<!-- more -->## 建立 Drawer
 
 ### 最简单的版本
 

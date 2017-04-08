@@ -6,7 +6,7 @@ tags: CleanCode
 ---
 ## 1. Naming
 
-### 1.1 Common
+<!-- more -->### 1.1 Common
 
 1. Do not allow `a, an, the` appear in the name
 > `theCode`, `anException`, `getTheResult()`, are all **NOT** correct.
@@ -94,7 +94,7 @@ static final Logger logger = Logger.getLogger(MyClass.getName());
 static final String[] nonEmptyArray = {"these", "can", "change"};
 ```
 
-#### 1.2.6 Camel case: defined
+##<!-- more -->## 1.2.6 Camel case: defined
 
 With the defined name, should still obey the camelCase
 
@@ -110,7 +110,7 @@ Prose form|	Correct|	Incorrect
 
 ## 2. Formatting
 
-### 2.1 Braces
+<!-- more -->### 2.1 Braces
 
 #### 2.1.1 Braces is used as much as possible
 

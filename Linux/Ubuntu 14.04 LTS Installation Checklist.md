@@ -12,7 +12,7 @@ This is the installation checklist of the lastest Ubuntu LTS version: Ubuntu 14.
 The reason of choosing Ubuntu is that the Ubuntu has the least problems with my hardware.
 Actually, it's only the Wireless Issue exist.
 
-## 1. Before Install
+<!-- more -->## 1. Before Install
 
 1. Backup all the **proxy** settings and the other software settings which cannot be synchronized.
 
@@ -88,7 +88,7 @@ Actually, it's only the Wireless Issue exist.
     > The spf13 vim has problem of neocomplete plugin, but it's still the best _vimrc.
     Maybe the k-vim will be better.
 
-## 4. Entertainment
+<!-- more -->## 4. Entertainment
 
 The entertainment is almost the Kancolle game.
 
@@ -138,7 +138,7 @@ The entertainment is almost the Kancolle game.
     It wired, by far I have no idea how to solve it.~~
     ~~But the bulit-in manager works fine, so it's not so important at this moment.~~
 
-## 6. Desktop Entry
+<!-- more -->## 6. Desktop Entry
 
 The desktop entry of per user store in
 `~/.local/share/applications`

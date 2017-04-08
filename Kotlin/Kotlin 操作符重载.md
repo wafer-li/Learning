@@ -15,7 +15,7 @@ Kotlin 中的操作符都是由函数实现的，包括成员函数、扩展函�
 
 遗憾的是，Kotlin 不支持自定义操作符，只能对现有的操作符进行重载。
 
-## 2. 公约
+<!-- more -->## 2. 公约
 
 这里阐述的是 Kotlin 中各种操作符的对应函数和重载约定。
 
@@ -71,7 +71,7 @@ Expression | Translated to
 
 ## 2.2 二元操作符
 
-### 2.2.1 数学运算与范围
+<!-- more -->### 2.2.1 数学运算与范围
 
 Expression | Translated to
 --- | ---
@@ -93,7 +93,7 @@ Expression | Translated to
 
 对于这些方法，执行的步骤一样，但是只不过把调用关系颠倒了过来。
 
-### 2.2.3 方括号操作符
+<!-- more -->### 2.2.3 方括号操作符
 
 Symbol | Translated to
 --- | ---
@@ -117,7 +117,7 @@ Symbol | Translated to
 
 圆括号操作符会根据参数调用相应的 `invoke()` 方法
 
-### 2.2.5 复合赋值操作
+<!-- more -->### 2.2.5 复合赋值操作
 
 Expression | Translated to
 --- | ---
@@ -176,7 +176,7 @@ Expression | Translated to
 
 相等性检查被转换成如此复杂的表达式是为了筛选 `null` 值，而且保证 `null == null` 返回 `true`
 
-### 2.7 比较运算符
+<!-- more -->### 2.7 比较运算符
 
 Symbol | Translated to
 --- | ---

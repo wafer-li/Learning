@@ -55,7 +55,7 @@ tags: PHP
     ?>
     ```
 
-## 2. Variable
+<!-- more -->## 2. Variable
 
 1. The `$variable` begins with the `$` char.
 

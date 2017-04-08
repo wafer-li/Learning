@@ -7,14 +7,14 @@ tags: Automata
 
 ## 1. Automata
 
-### 1.5 The Central Concept of Automata Theory
+<!-- more -->### 1.5 The Central Concept of Automata Theory
 
 #### 1.5.1 Alphabet
 
 > - Alphabet is the **finite**, **non-empty** **Set** of the symbol
 - Using the $\sum$ symbol stand for the Alphabet
 
-#### 1.5.2 String
+##<!-- more -->## 1.5.2 String
 
 > String, sometime called **word** is a **finite** sequence of symbols, which choose from the Alphabet.
 
@@ -35,4 +35,4 @@ $\sum^+ = \sum^0\bigcup\sum^1\bigcup\sum^2\bigcup\dots$
 
 > $\sum^*=\sum^+\bigcup\{\epsilon\}$
 
-#### 1.5.3 Language
+##<!-- more -->## 1.5.3 Language

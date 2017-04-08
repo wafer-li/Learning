@@ -7,7 +7,7 @@ tags: Android
 
 ## 1. 安装与配置
 
-### 1.1 添加 Gradle 依赖
+<!-- more -->### 1.1 添加 Gradle 依赖
 
 在 `app/build.gradle` 中加入如下语句
 
@@ -51,7 +51,7 @@ lintOptions {
 
 Butter Knife 最大的好处就是使用注解式开发，从而减少大量重复冗余的代码。
 
-### 2.1 绑定视图
+<!-- more -->### 2.1 绑定视图
 
 这里需要注意的是，**重点是要调用 `ButterKnife.bind()` 方法**，否则是无法起作用的。
 
@@ -301,7 +301,7 @@ void onNothingSelected() {
 }
 ```
 
-### 2.6 简化的 findViewById()
+<!-- more -->### 2.6 简化的 findViewById()
 
 Butter Knife 同时还提供了一个简化版本的 `findViewById()` —— `findById()`；
 用这个方法可以在 `View`, `Acitivity`, `Dialog` 中找到想要的 View；

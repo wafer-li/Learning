@@ -23,7 +23,7 @@ tags: DesignPattern
 >
 > 基本上所有的 Java GUI 均实现了观察者模式。（也就是 `Listener`）
 
-## 2. 实现方式
+<!-- more -->## 2. 实现方式
 
 ### 2.1 实现思路
 
@@ -63,7 +63,7 @@ tags: DesignPattern
 
 观察者也不需要关心主题的内容，它只需要接受主题的通知就可以了。
 
-## 4. 气象站例子的 UML 图解
+<!-- more -->## 4. 气象站例子的 UML 图解
 
 ![](http://www.plantuml.com/plantuml/png/bLD1JiCm4Bpx5Jw2LD8FS44jY4j5fLRYM6sJRJ5gd6YzgOX2_ewRO9FOAL8lbkoPdPtPR9Hcf0EaA3VL_XDJbesG3UmD4wJSIiAZCfRojZT8PwIx-m3EYpDU0NN1wb0xq5Yq5KBvXWu8EbPb1emXUQbCUOBw-OGvwj1areDzJNe2O-Gx0dyWBO7XGfPojxDdd4OsIPAq7JHEue4eXKUIn1v7v2tc9H9mHHVRtTDhbQjCSUtkQq9ZUjnRN5H4DikYq9Qf2cr-CtP-tHJ6pNnGsSpdJg2rahtYXe5jFfNUBBM2hvbSAJsJe3FvP8F24Ti_hoy5OGg6RzLrTGEfxOUYR0t4zQrYNQKiBwMTdjlOnmU_IsButUtxjHc7l6Xo8I4OG0X7eGRklfDak8v2-CNleAiMnxJOuHWF3OxH2NyY-AN-DpD5ZYrDiK9ZKvp8tWy0)
 
@@ -106,7 +106,7 @@ public void notifyObservers() {
 
 事实上，根据 OO 设计的原则，应该 **Tell, Don't Ask** ，所以使用**推的方法会更好。**
 
-## 6. Java 内置的观察者模式
+<!-- more -->## 6. Java 内置的观察者模式
 
 Java API 中内置了一个观察者模式，包含一个基本的 `Observer` 接口和一个 `Observable` **类**。
 

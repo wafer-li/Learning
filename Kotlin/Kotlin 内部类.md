@@ -18,7 +18,7 @@ class Outer {
 val demo = Outer.Nested().foo() // == 2
 ```
 
-## 2. `inner` 关键字
+<!-- more -->## 2. `inner` 关键字
 
 需要使用 `inner` 关键字来指明一个内部类**允许访问外部类属性。**
 

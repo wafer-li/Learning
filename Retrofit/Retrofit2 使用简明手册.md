@@ -12,7 +12,7 @@ Retrofit 是 Square 公司出品的 Android 开源网络框架，使用注解和
 
 Retrofit2 通过与 Square 公司的另一开源库 OkHttp3 合并，由 OkHttp 进行 HTTP 操作，重定向响应，以及缓存支持。
 
-## 1. 初始化设置
+<!-- more -->## 1. 初始化设置
 
 ### 1.1 添加依赖
 
@@ -40,7 +40,7 @@ compile 'com.squareup.retrofit2:retrofit:2.1.0'
 
 ## 2. 基本使用
 
-### 2.1 创建 ApiService interface
+<!-- more -->### 2.1 创建 ApiService interface
 
 创建一个 `interface`，用于储存需要进行的网络操作 API
 
@@ -165,7 +165,7 @@ Call<User> updateUser(@Field("first_name") String first, @Field("last_name") Str
 Call<User> updateUser(@Part("photo") RequestBody photo, @Part("description") RequestBody description);
 ```
 
-## 7. 指定 Header
+<!-- more -->## 7. 指定 Header
 
 通过 **@Header** 注解来指定 HTTP Header
 

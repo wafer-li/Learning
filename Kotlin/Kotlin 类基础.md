@@ -20,7 +20,7 @@ class Invoice {
 class Empty
 ```
 
-## 2. 创建
+<!-- more -->## 2. 创建
 
 Kotlin 类使用 `constructor` 来指定构建方法。
 
@@ -235,7 +235,7 @@ class C() : A(), B {
 }
 ```
 
-## 5. 抽象类
+<!-- more -->## 5. 抽象类
 
 一个声明了 `abstract` 的类是一个抽象类。
 

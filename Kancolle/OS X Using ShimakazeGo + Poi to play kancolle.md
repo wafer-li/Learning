@@ -13,7 +13,7 @@ My current OS X version is 10.11
 
 Necessary tools: Automator
 
-## 1. Install ShimakazeGo
+<!-- more -->## 1. Install ShimakazeGo
 
 ShimakazeGo is a proxy for playing Kancolle. Because DMM has banned the IP addresses of foreigners, you need to use a proxy to connect to the game site.
 
@@ -70,7 +70,7 @@ It is very easy, **just follow these instructions**:
 4. Click the icon inside the App info window, and paste(`cmd + v`)
 5. Done!
 
-## 3. Install Poi
+<!-- more -->## 3. Install Poi
 
 Poi is a Scalable KanColle browser and tool.
 Due to using the web techology, it is **totally cross-platform**

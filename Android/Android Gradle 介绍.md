@@ -13,7 +13,7 @@ Android Studio 使用 gradle 自动化编译工具用于替代老旧的 Ant Buil
 
 Gradle 工具通过读取 `build.gradle` 文件的配置来对工程进行构建，同时，工程中的每一个分模块都有相应的 `build.gralde` 文件。
 
-## 1. 顶层文件（Top-Level）
+<!-- more -->## 1. 顶层文件（Top-Level）
 
 顶层的 `build.gradle` 存储在工程根目录，定义一些用于所有模块的属性和设置。其中包括
 

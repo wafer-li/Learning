@@ -45,7 +45,7 @@ tags: Android
 /captures
 ```
 
-## 2. 当出现 cannot resolve symbols 时
+<!-- more -->## 2. 当出现 cannot resolve symbols 时
 
 首先，你需要检查依赖是否已经被正确加载了，如果依赖项没有问题
 那么请依照以下流程来尝试进行修复

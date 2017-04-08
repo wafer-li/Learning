@@ -20,7 +20,7 @@ ArrayList<String> files = new ArrayList<String>();
 ArrayList<String> files = new ArrayList<>();
 ```
 
-## 2. 泛型类
+<!-- more -->## 2. 泛型类
 
 1. 单个参数
 

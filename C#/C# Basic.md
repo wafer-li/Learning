@@ -28,7 +28,7 @@ namespace SimpleCSharpApp
 - 命名空间、类、成员（包括方法）采用**大驼峰**
 - 大括号另起一行
 
-## 2. 基本类型
+<!-- more -->## 2. 基本类型
 
 C# 中的基本类型都是**对象**，事实上，基本类型的关键字都对应一个 `System` 命名空间中的一个**类**
 
@@ -69,7 +69,7 @@ bool b1 = true, b2 = false, b3 = true;
 
 当然也可以用全名来声明一个基本变量，不过基本没人这么干。
 
-### 2.2 默认值
+<!-- more -->### 2.2 默认值
 
 与 Java 一样，C# 的基本变量都具有一定的默认值。
 
@@ -92,7 +92,7 @@ C# 与 Java 最大的区别就是，取消了原始类型，所有的类型都�
 bool b = bool.Parse("True");
 ```
 
-### 2.4 Big Number
+<!-- more -->### 2.4 Big Number
 
 与 Java 一样，C# 也内置了 `BigNumber` 类型，它需要使用 `System.Numerics` 命名空间才能使用。
 
@@ -183,7 +183,7 @@ s1 + s2;			// 转换为 int
 (short)(s1 + s2);	// 强制转换为 short，丢失数据。
 ```
 
-### 4.1 checked 和 unchecked
+<!-- more -->### 4.1 checked 和 unchecked
 
 当我们不希望数据丢失时，可以使用 `checked`，这个关键字在数据出现溢出时会抛出异常。
 

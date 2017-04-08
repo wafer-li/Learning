@@ -14,7 +14,7 @@ Python3 使用 `input()` 函数获取用户输入。
 
 > 在 Python 3 中，`raw_input()` 被整合到 `input()` 函数中，Python 2 的 `input()` 函数的功能被抛弃了。
 
-## 2. 文件输入输出
+<!-- more -->## 2. 文件输入输出
 
 与 C++ 和 Java 读取文件流的形式一样，Python 通过使用 `file` 类的函数来对文件进行读取写入
 
