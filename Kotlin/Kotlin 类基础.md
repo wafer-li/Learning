@@ -5,8 +5,6 @@ categories: Kotlin
 tags: Kotlin
 ---
 
----
-
 ## 1. 声明
 
 使用 `class` 来声明一个类。

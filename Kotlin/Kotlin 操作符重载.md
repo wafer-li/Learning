@@ -5,8 +5,6 @@ categories: Kotlin
 tags: Kotlin
 ---
 
----
-
 ## 1. 概述
 
 Kotlin 中的操作符都是由函数实现的，包括成员函数、扩展函数和中缀函数。

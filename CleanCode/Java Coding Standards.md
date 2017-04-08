@@ -4,8 +4,6 @@ date: 2017-04-08
 categories: CleanCode
 tags: CleanCode
 ---
-
-----------------------
 ## 1. Naming
 
 ### 1.1 Common

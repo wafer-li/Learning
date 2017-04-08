@@ -5,8 +5,6 @@ categories: Kancolle
 tags: Kancolle
 ---
 
----
-
 ## 0. Intro
 
 This is the instruction of how to bulid a kancolle playing enviroment in Mac OS X.

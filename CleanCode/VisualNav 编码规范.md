@@ -5,8 +5,6 @@ categories: CleanCode
 tags: CleanCode
 ---
 
---------------------------------------
-
 ## 1. 通用规范
 
 VisualNav 项目的代码文件主要包含 Java、XML 以及 Gradle 三种。对于所有的代码文件，都需要遵守以下几条规范：

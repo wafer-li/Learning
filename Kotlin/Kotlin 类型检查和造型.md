@@ -5,8 +5,6 @@ categories: Kotlin
 tags: Kotlin
 ---
 
----
-
 ## 1. 类型检查
 
 使用 `is` 和 `!is` 来检查一个变量的类型

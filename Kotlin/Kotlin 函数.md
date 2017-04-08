@@ -5,8 +5,6 @@ categories: Kotlin
 tags: Kotlin
 ---
 
----
-
 ## 1. 声明
 
 函数使用 `fun` 关键字进行声明。

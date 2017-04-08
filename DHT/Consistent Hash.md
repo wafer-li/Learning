@@ -5,8 +5,6 @@ categories: DHT
 tags: DHT
 ---
 
----
-
 ## 概述
 
 大多数 DHT 使用稳定散列方法(consistent hash)来将关键值对应到节点。

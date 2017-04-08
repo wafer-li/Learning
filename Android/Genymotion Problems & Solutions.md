@@ -5,8 +5,6 @@ categories: Android
 tags: Android
 ---
 
----
-
 ## 0. 简介
 
 这里是一些 Genymotion 安卓模拟器的问题解答集

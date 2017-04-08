@@ -5,8 +5,6 @@ categories: Kotlin
 tags: Kotlin
 ---
 
----
-
 ## 1. 基本语法
 
 ### 1.1 变量定义

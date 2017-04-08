@@ -5,8 +5,6 @@ categories: AlgsAssignment
 tags: AlgsAssignment
 ---
 
----
-
 ## How to check full & empty?
 
 - [x] Maintain a item size

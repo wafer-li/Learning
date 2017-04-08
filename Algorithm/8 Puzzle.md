@@ -5,8 +5,6 @@ categories: Algorithm
 tags: Algorithm
 ---
 
----
-
 ## 1. Intro
 
 Give a 3-by-3 grid with 8 square blocks and 1 blank.

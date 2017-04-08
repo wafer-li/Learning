@@ -5,8 +5,6 @@ categories: PHP
 tags: PHP
 ---
 
----
-
 ## 1. Basic
 
 1. Begins with `<?php` and ends with `?>`

@@ -5,8 +5,6 @@ categories: Android
 tags: Android
 ---
 
----
-
 ## 1. 在 Activity 中实现
 
 - 将此 `Activity` 设置为 **LANCHER** `Activity`
