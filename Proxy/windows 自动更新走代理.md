@@ -1,4 +1,9 @@
-# windows 自动更新走代理
+---
+title: windows 自动更新走代理
+date: 2017-04-08
+categories: Proxy
+tags: Proxy
+---
 
 Tags: WinUpdate Proxy
 

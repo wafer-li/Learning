@@ -1,4 +1,9 @@
-# Kotlin lateinit vs lazy
+---
+title: Kotlin lateinit vs lazy
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 `lateinit` 和 `lazy` 是 Kotlin 中的两种不同的延迟初始化技术。
 

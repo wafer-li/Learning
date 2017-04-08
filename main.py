@@ -18,7 +18,7 @@ date: 2017-04-08
 categories: ''' + category+ '''
 tags: ''' + category + '''
 ---'''
-                file_content = re.sub('(?s)^#.*<!-- MDTOC.*?<!-- /MDTOC -->', repl, file_content)
+                file_content = re.sub('^#.*', repl, file_content)
 
                 f.close()
                 f = open(os.path.join(subdir, file), 'w')
