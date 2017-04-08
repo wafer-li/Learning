@@ -1,19 +1,9 @@
-# Kotlin 内联函数
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 内联函数](#kotlin-内联函数)
-&emsp;[1. 概述](#1-概述)
-&emsp;[2. Kotlin 内联语法](#2-kotlin-内联语法)
-&emsp;[3. Noinline](#3-noinline)
-&emsp;[4. 非局部返回](#4-非局部返回)
-&emsp;[5. 类型参数](#5-类型参数)
-
-<!-- /MDTOC -->
+title: Kotlin 内联函数
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

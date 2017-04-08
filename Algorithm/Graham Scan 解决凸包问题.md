@@ -1,21 +1,9 @@
-# Graham Scan 解决凸包问题
-
-Tags: Algorithm
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Graham Scan 解决凸包问题](#graham-scan-解决凸包问题)   
-&emsp;[1. Graham scan](#1-graham-scan)   
-&emsp;[2. 要点](#2-要点)   
-&emsp;&emsp;[2.1 寻找原点](#21-寻找原点)   
-&emsp;&emsp;[2.2 按照极角排序](#22-按照极角排序)   
-&emsp;[3. 确定逆时针转角(CCW)](#3-确定逆时针转角ccw)   
-&emsp;[4. Corner Case](#4-corner-case)   
-&emsp;[5. 实现流程](#5-实现流程)   
-
-<!-- /MDTOC -->
+title: Graham Scan 解决凸包问题
+date: 2017-04-08
+categories: Algorithm
+tags: Algorithm
+---
 
 ---
 

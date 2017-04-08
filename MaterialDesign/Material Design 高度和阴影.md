@@ -1,36 +1,9 @@
-# Material Design 高度和阴影
-
-<!-- MDTOC maxdepth:6 firsth1:0 numbering:1 flatten:0 bullets:0 updateOnSave:1 -->
-
-1. [概述](#概述)   
-2. [高度（Android）](#高度（android）)   
-&emsp;2.1. [说明](#说明)   
-&emsp;2.2. [默认高度](#默认高度)   
-&emsp;&emsp;2.2.1. [组件的默认高度](#组件的默认高度)   
-&emsp;2.3. [感应高度和动态的高度偏移](#感应高度和动态的高度偏移)   
-&emsp;2.4. [避免高度冲突](#避免高度冲突)   
-&emsp;2.5. [组件高度比较](#组件高度比较)   
-3. [阴影](#阴影)   
-&emsp;3.1. [组件参考高度](#组件参考高度)   
-&emsp;&emsp;3.1.1. [App Bar](#app-bar)   
-&emsp;&emsp;3.1.2. [Raised Button](#raised-button)   
-&emsp;&emsp;3.1.3. [Floating Action Button(FAB)](#floating-action-buttonfab)   
-&emsp;&emsp;3.1.4. [Card](#card)   
-&emsp;&emsp;3.1.5. [Menus and sub menus](#menus-and-sub-menus)   
-&emsp;&emsp;3.1.6. [Dialogs](#dialogs)   
-&emsp;&emsp;3.1.7. [Nav Drawer and Right Drawer](#nav-drawer-and-right-drawer)   
-&emsp;&emsp;3.1.8. [Modal Button Sheet](#modal-button-sheet)   
-&emsp;&emsp;3.1.9. [Refresh indecator](#refresh-indecator)   
-&emsp;&emsp;3.1.10. [Quick entry/Search bar](#quick-entrysearch-bar)   
-&emsp;&emsp;3.1.11. [Snackbar](#snackbar)   
-&emsp;&emsp;3.1.12. [Switch](#switch)   
-4. [对象间关系](#对象间关系)   
-&emsp;4.1. [对象的层次结构](#对象的层次结构)   
-&emsp;4.2. [例外](#例外)   
-&emsp;4.3. [交互](#交互)   
-&emsp;4.4. [高度](#高度)   
-
-<!-- /MDTOC -->
+---
+title: Material Design 高度和阴影
+date: 2017-04-08
+categories: MaterialDesign
+tags: MaterialDesign
+---
 
 ---
 

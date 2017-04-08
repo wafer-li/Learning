@@ -1,19 +1,9 @@
-# Kotlin 内部类
-
-Tags: Kotlin
-
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 内部类](#kotlin-内部类)
-&emsp;[1. 声明](#1-声明)
-&emsp;[2. `inner` 关键字](#2-inner-关键字)
-&emsp;[3. 获取外部类实例](#3-获取外部类实例)
-&emsp;[4. 匿名内部类](#4-匿名内部类)
-
-<!-- /MDTOC -->
+title: Kotlin 内部类
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

@@ -1,19 +1,9 @@
-# Android Studio FAQ
-
-Tags: Android
-
-这是一个有关 Anroid Studio 一些使用问题的总结和小 Tips.
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Android Studio FAQ](#android-studio-faq)  
-&emsp;[1. .gitignore 文件](#1-gitignore-文件)  
-&emsp;[2. 当出现 cannot resolve symbols 时](#2-当出现-cannot-resolve-symbols-时)  
-&emsp;[3. 当不能识别出 Android 框架时](#3-当不能识别出-android-框架时)  
-
-<!-- /MDTOC -->
+title: Android Studio FAQ
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 ---
 

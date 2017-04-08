@@ -1,38 +1,9 @@
-# Kotlin 调用 Java 代码
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 调用 Java 代码](#kotlin-调用-java-代码)
-&emsp;[1. 概述](#1-概述)
-&emsp;[2. 调用 getter 和 setter](#2-调用-getter-和-setter)
-&emsp;[3. 返回 `void` 的方法](#3-返回-void-的方法)
-&emsp;[4. 转义 Java 方法](#4-转义-java-方法)
-&emsp;[5. Null Safety 和 Platform Type](#5-null-safety-和-platform-type)
-&emsp;[6. Platform Type 的符号](#6-platform-type-的符号)
-&emsp;[7. Nullability 注解](#7-nullability-注解)
-&emsp;[8. 类型的对应关系](#8-类型的对应关系)
-&emsp;[9. Java 泛型](#9-java-泛型)
-&emsp;[10. Java 数组](#10-java-数组)
-&emsp;[11. Java 不定参数](#11-java-不定参数)
-&emsp;[12. 操作符](#12-操作符)
-&emsp;[13. 已检查异常](#13-已检查异常)
-&emsp;[14. Java Object 类方法](#14-java-object-类方法)
-&emsp;&emsp;[14.1 `wait()` 和 `notify()`](#141-wait-和-notify)
-&emsp;&emsp;[14.2 `getClass()` 方法](#142-getclass-方法)
-&emsp;&emsp;[14.3 `clone()` 方法](#143-clone-方法)
-&emsp;&emsp;[14.4 `finalize()` 方法](#144-finalize-方法)
-&emsp;[15. 继承 Java 类](#15-继承-java-类)
-&emsp;[16. 访问静态成员](#16-访问静态成员)
-&emsp;[17. Java 反射](#17-java-反射)
-&emsp;[18. SAM 方法](#18-sam-方法)
-&emsp;[19. 使用 JNI](#19-使用-jni)
-&emsp;[20. 其他方面](#20-其他方面)
-
-<!-- /MDTOC -->
+title: Kotlin 调用 Java 代码
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

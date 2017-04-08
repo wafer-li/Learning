@@ -1,19 +1,9 @@
-# Clean Code
-
-Tags: CodingStandard
-
-Base on *Clean Code*
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Clean Code](#clean-code)  
-&emsp;[1. 观点](#1-观点)  
-&emsp;[2. 有意义的命名](#2-有意义的命名)  
-&emsp;[3. 函数](#3-函数)  
-
-<!-- /MDTOC -->
+title: Clean Code
+date: 2017-04-08
+categories: CleanCode
+tags: CleanCode
+---
 
 ---
 

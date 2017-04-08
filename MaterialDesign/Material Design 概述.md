@@ -1,19 +1,9 @@
-# Material Design 概述
-
-Tags: MaterialDesign
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Material Design 概述](#material-design-概述)  
-&emsp;[1. 介绍](#1-介绍)  
-&emsp;[2. 设计原则](#2-设计原则)  
-&emsp;&emsp;[2.1 Material is the metaphor](#21-material-is-the-metaphor)  
-&emsp;&emsp;[2.2 鲜明、形象、深思熟虑](#22-鲜明、形象、深思熟虑)  
-&emsp;&emsp;[2.3 有意义的动画效果](#23-有意义的动画效果)  
-
-<!-- /MDTOC -->
+title: Material Design 概述
+date: 2017-04-08
+categories: MaterialDesign
+tags: MaterialDesign
+---
 
 ---
 

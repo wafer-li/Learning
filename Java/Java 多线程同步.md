@@ -1,41 +1,9 @@
-# Java 多线程同步
-
-Tags: Java
-
-Base on *Core Java Volume Ⅰ——Fundamentals* and many Posts
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Java 多线程同步](#java-多线程同步)   
-&emsp;[0. 概述](#0-概述)   
-&emsp;[1. 使用 ReentrantLock 实现同步](#1-使用-reentrantlock-实现同步)   
-&emsp;&emsp;[1.1 锁的初级使用](#11-锁的初级使用)   
-&emsp;&emsp;[1.2 公平锁](#12-公平锁)   
-&emsp;&emsp;[1.3 条件对象](#13-条件对象)   
-&emsp;&emsp;&emsp;[1.3.1 使用条件对象的原因](#131-使用条件对象的原因)   
-&emsp;&emsp;&emsp;[1.3.2 使用条件对象](#132-使用条件对象)   
-&emsp;[2. `synchronized` 关键字](#2-synchronized-关键字)   
-&emsp;&emsp;[2.1 内部锁](#21-内部锁)   
-&emsp;&emsp;[2.2 唯一的条件对象](#22-唯一的条件对象)   
-&emsp;&emsp;[2.3 例子](#23-例子)   
-&emsp;&emsp;[2.4 局限性](#24-局限性)   
-&emsp;&emsp;[2.5 总结](#25-总结)   
-&emsp;[3. 同步阻塞](#3-同步阻塞)   
-&emsp;[4. 监视器](#4-监视器)   
-&emsp;[5. Volatile 域](#5-volatile-域)   
-&emsp;&emsp;[5.1 正确使用 `volatile` 变量的条件](#51-正确使用-volatile-变量的条件)   
-&emsp;&emsp;[5.2 性能考虑](#52-性能考虑)   
-&emsp;&emsp;[5.3 正确使用的情形](#53-正确使用的情形)   
-&emsp;[6. `final` 变量](#6-final-变量)   
-&emsp;[7. 死锁](#7-死锁)   
-&emsp;[8. 线程局部变量](#8-线程局部变量)   
-&emsp;[9. 锁测试与超时](#9-锁测试与超时)   
-&emsp;[10. 读/写锁](#10-读写锁)   
-&emsp;&emsp;[10.1 使用步骤](#101-使用步骤)   
-
-<!-- /MDTOC -->
+title: Java 多线程同步
+date: 2017-04-08
+categories: Java
+tags: Java
+---
 
 ---
 

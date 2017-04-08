@@ -1,12 +1,9 @@
-# Head 标签内容
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Head 标签内容](#head-标签内容)
-&emsp;[1. 概述](#1-概述)
-&emsp;[2. &lt;title&gt; 标签](#2-lttitlegt-标签)
-
-<!-- /MDTOC -->
+---
+title: Head 标签内容
+date: 2017-04-08
+categories: HTML
+tags: HTML
+---
 
 ## 1. 概述
 

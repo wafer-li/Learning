@@ -1,20 +1,9 @@
-# Material Design 实体属性
-
-Tags: MaterialDesign
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:0 numbering:1 flatten:0 bullets:0 updateOnSave:1 -->
-
-1. [概述](#概述)   
-2. [Material 的特点](#material-的特点)   
-3. [物理特性](#物理特性)   
-&emsp;3.1. [厚度](#厚度)   
-&emsp;3.2. [投射阴影](#投射阴影)   
-&emsp;3.3. [内容](#内容)   
-&emsp;3.4. [点击事件](#点击事件)   
-
-<!-- /MDTOC -->
+title: Material Design 实体属性
+date: 2017-04-08
+categories: MaterialDesign
+tags: MaterialDesign
+---
 
 ---
 

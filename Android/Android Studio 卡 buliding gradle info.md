@@ -1,15 +1,9 @@
-# Android Studio 卡 buliding gradle info
-
-Tags: Android
-
 ---
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Android Studio 卡 buliding gradle info](#android-studio-卡-buliding-gradle-info)  
-&emsp;[1. 问题](#1-问题)  
-&emsp;[2. 解决办法](#2-解决办法)  
-
-<!-- /MDTOC -->
+title: Android Studio 卡 buliding gradle info
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 ---
 
 ## 1. 问题

@@ -1,31 +1,9 @@
-# Java 异常
-
-Tags: Java
-
-Base on *Core Java Volume Ⅰ——Fundamentals**
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Java 异常](#java-异常)   
-&emsp;[1. 异常分类](#1-异常分类)   
-&emsp;[2. 声明异常](#2-声明异常)   
-&emsp;[3.抛出异常](#3抛出异常)   
-&emsp;[4.捕获异常](#4捕获异常)   
-&emsp;&emsp;[4.1 使用try/catch语句块来捕获异常](#41-使用trycatch语句块来捕获异常)   
-&emsp;&emsp;[4.2 `finally` 子句](#42-finally-子句)   
-&emsp;&emsp;&emsp;[4.2.1 概述](#421-概述)   
-&emsp;&emsp;&emsp;[4.2.2 带资源的try语句](#422-带资源的try语句)   
-&emsp;[5. 使用异常的技巧](#5-使用异常的技巧)   
-&emsp;&emsp;[5.1 异常处理不能代替简单的测试](#51-异常处理不能代替简单的测试)   
-&emsp;&emsp;[5.2 不要过分细化异常](#52-不要过分细化异常)   
-&emsp;&emsp;[5.3 利用异常层次结构](#53-利用异常层次结构)   
-&emsp;&emsp;[5.4 应该关闭不重要的异常](#54-应该关闭不重要的异常)   
-&emsp;&emsp;[5.5 早抛出，晚捕获](#55-早抛出，晚捕获)   
-&emsp;[6. 断言](#6-断言)   
-
-<!-- /MDTOC -->
+title: Java 异常
+date: 2017-04-08
+categories: Java
+tags: Java
+---
 
 ---
 

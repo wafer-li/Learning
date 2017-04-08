@@ -1,23 +1,9 @@
-# Kotlin 基础
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 基础](#kotlin-基础)   
-&emsp;[1. 基本语法](#1-基本语法)   
-&emsp;&emsp;[1.1 变量定义](#11-变量定义)   
-&emsp;&emsp;[1.2 注释](#12-注释)   
-&emsp;[2. 编码规范](#2-编码规范)   
-&emsp;&emsp;[2.1 命名风格](#21-命名风格)   
-&emsp;&emsp;[2.2 关于冒号](#22-关于冒号)   
-&emsp;&emsp;[2.3 Lambda 表达式](#23-lambda-表达式)   
-&emsp;&emsp;[2.4 关于 Unit](#24-关于-unit)   
-&emsp;[3. 包和导入](#3-包和导入)   
-
-<!-- /MDTOC -->
+title: Kotlin 基础
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

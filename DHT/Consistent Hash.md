@@ -1,22 +1,9 @@
-# 稳定散列方法
-
-<!-- MDTOC maxdepth:6 firsth1:0 numbering:1 flatten:0 bullets:0 updateOnSave:1 -->
-
-1. [概述](#概述)   
-2. [Chord 算法](#chord-算法)   
-&emsp;2.1. [散列计算方法](#散列计算方法)   
-&emsp;2.2. [查找算法](#查找算法)   
-&emsp;2.3. [优点](#优点)   
-3. [CAN 算法](#can-算法)   
-&emsp;3.1. [哈希算法](#哈希算法)   
-&emsp;3.2. [查找算法](#查找算法)   
-&emsp;3.3. [比较](#比较)   
-4. [Pastry](#pastry)   
-&emsp;4.1. [哈希算法](#哈希算法)   
-&emsp;4.2. [查找算法](#查找算法)   
-&emsp;4.3. [比较](#比较)   
-
-<!-- /MDTOC -->
+---
+title: Consistent Hash
+date: 2017-04-08
+categories: DHT
+tags: DHT
+---
 
 ---
 

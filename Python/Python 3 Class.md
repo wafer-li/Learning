@@ -1,17 +1,9 @@
-# Python 3 Class
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Python 3 Class](#python-3-class)
-&emsp;[6. 类](#6-类)
-&emsp;&emsp;[6.1 创建类](#61-创建类)
-&emsp;&emsp;[6.2 self 参数](#62-self-参数)
-&emsp;&emsp;[6.3 类域](#63-类域)
-&emsp;&emsp;[6.4 类方法](#64-类方法)
-&emsp;&emsp;[6.5 构造函数和析构函数](#65-构造函数和析构函数)
-&emsp;&emsp;[6.6 继承](#66-继承)
-
-<!-- /MDTOC -->
+---
+title: Python 3 Class
+date: 2017-04-08
+categories: Python
+tags: Python
+---
 
 ## 0. 概述
 

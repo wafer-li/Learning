@@ -1,25 +1,9 @@
-# Kotlin 高阶函数和 Lambda
-
-Tags: Kotlin
-
 ---
-
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 高阶函数和 Lambda](#kotlin-高阶函数和-lambda)
-&emsp;[1. 高阶函数](#1-高阶函数)
-&emsp;&emsp;[1.1 声明](#11-声明)
-&emsp;&emsp;[1.2 调用](#12-调用)
-&emsp;&emsp;[1.3 `it` 参数](#13-it-参数)
-&emsp;[2. Lambda 表达式](#2-lambda-表达式)
-&emsp;&emsp;[2.1 函数类型](#21-函数类型)
-&emsp;&emsp;[2.2 Lambda 表达式的语法](#22-lambda-表达式的语法)
-&emsp;&emsp;[2.3 匿名函数](#23-匿名函数)
-&emsp;&emsp;[2.4 闭包](#24-闭包)
-&emsp;&emsp;[2.5 带接收者的函数](#25-带接收者的函数)
-
-<!-- /MDTOC -->
+title: Kotlin 高阶函数和 Lambda
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

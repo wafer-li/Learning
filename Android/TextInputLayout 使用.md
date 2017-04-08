@@ -1,23 +1,9 @@
-# TextInputLayout 使用
-
-Tags: Android
-
-**support 23.3.0 版本**
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[TextInputLayout 使用](#textinputlayout-使用)
-&emsp;[1. 介绍](#1-介绍)
-&emsp;[2. 基本使用](#2-基本使用)
-&emsp;&emsp;[2.1 添加依赖框架](#21-添加依赖框架)
-&emsp;&emsp;[2.2 XML 代码](#22-xml-代码)
-&emsp;&emsp;[2.3 相应效果的设置](#23-相应效果的设置)
-&emsp;&emsp;&emsp;[2.3.1 Hint 效果](#231-hint-效果)
-&emsp;&emsp;&emsp;[2.3.2 Error 效果](#232-error-效果)
-
-<!-- /MDTOC -->
+title: TextInputLayout 使用
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 ---
 

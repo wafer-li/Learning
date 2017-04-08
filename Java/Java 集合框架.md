@@ -1,16 +1,9 @@
-# Java 集合框架
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Java 集合框架接口简介](#java-集合框架接口简介)
-&emsp;[1. 介绍](#1-介绍)
-&emsp;[2. 接口和实现分离](#2-接口和实现分离)
-&emsp;[3. 遍历操作](#3-遍历操作)
-&emsp;[4. 迭代器的遍历](#4-迭代器的遍历)
-&emsp;[5. 迭代器的删除](#5-迭代器的删除)
-&emsp;[6. Abstract 类](#6-abstract-类)
-
-<!-- /MDTOC -->
+---
+title: Java 集合框架
+date: 2017-04-08
+categories: Java
+tags: Java
+---
 
 ## 1. 介绍
 

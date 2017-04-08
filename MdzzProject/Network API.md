@@ -1,22 +1,9 @@
-# Network API
-
-Tags: MdzzProject
-
-MDZZ Android Network API
-
-Base on **Volley**
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Network API](#network-api)
-&emsp;[1. 说明](#1-说明)
-&emsp;[2. API 列表](#2-api-列表)
-&emsp;&emsp;[2.1 注册](#21-注册)
-&emsp;&emsp;[2.2 获取验证码](#22-获取验证码)
-
-<!-- /MDTOC -->
+title: Network API
+date: 2017-04-08
+categories: MdzzProject
+tags: MdzzProject
+---
 
 ---
 

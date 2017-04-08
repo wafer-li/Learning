@@ -1,23 +1,9 @@
-# C# 复杂类型
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[C# 复杂类型](#c#-复杂类型)   
-&emsp;[1. 数组](#1-数组)   
-&emsp;&emsp;[1.1 多维数组](#11-多维数组)   
-&emsp;&emsp;&emsp;[1.1.1 矩形数组](#111-矩形数组)   
-&emsp;&emsp;&emsp;[1.1.2 交错数组](#112-交错数组)   
-&emsp;&emsp;&emsp;[1.1.3 区别](#113-区别)   
-&emsp;&emsp;[1.2 数组基类](#12-数组基类)   
-&emsp;[2. 枚举](#2-枚举)   
-&emsp;&emsp;[2.1 声明与使用](#21-声明与使用)   
-&emsp;&emsp;[2.2 获取枚举值](#22-获取枚举值)   
-&emsp;&emsp;[2.3 注意事项](#23-注意事项)   
-&emsp;[3. 结构 (struct)](#3-结构-struct)   
-&emsp;[4. 值类型和引用类型](#4-值类型和引用类型)   
-&emsp;[5. 可空类型](#5-可空类型)   
-
-<!-- /MDTOC -->
+---
+title: C# 复杂类型
+date: 2017-04-08
+categories: C#
+tags: C#
+---
 
 ## 1. 数组
 

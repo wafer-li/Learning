@@ -1,18 +1,9 @@
-# Scala 泛型和变形
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Scala 泛型和变形](#scala-泛型和变形)
-&emsp;[1. 概述](#1-概述)
-&emsp;[2. 定义](#2-定义)
-&emsp;[3. 上界和下界](#3-上界和下界)
-&emsp;[4. 逆变和协变](#4-逆变和协变)
-&emsp;&emsp;[4.1 名词解释](#41-名词解释)
-&emsp;&emsp;[4.2 定义中指明可变性](#42-定义中指明可变性)
-&emsp;&emsp;[4.3 函数](#43-函数)
-&emsp;&emsp;[4.4 协变的](#44-协变的)
-
-<!-- /MDTOC -->
+---
+title: Scala 泛型和变形
+date: 2017-04-08
+categories: Scala
+tags: Scala
+---
 
 ## 1. 概述
 

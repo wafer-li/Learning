@@ -1,25 +1,9 @@
-# Android Volley 库的基本使用
-
-Tags: Android
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Android Volley 库的基本使用](#android-volley-库的基本使用)  
-&emsp;[1. Volley 介绍与基本使用场景](#1-volley-介绍与基本使用场景)  
-&emsp;[2. Volley 的基本使用](#2-volley-的基本使用)  
-&emsp;&emsp;[2.1 添加编译依赖](#21-添加编译依赖)  
-&emsp;&emsp;[2.2 添加网络访问权限](#22-添加网络访问权限)  
-&emsp;&emsp;[2.3 发起网络请求](#23-发起网络请求)  
-&emsp;&emsp;&emsp;[2.3.1 例子](#231-例子)  
-&emsp;&emsp;&emsp;[2.3.2 基本原理](#232-基本原理)  
-&emsp;&emsp;[2.4 取消请求](#24-取消请求)  
-&emsp;[3. 构建队列单例](#3-构建队列单例)  
-&emsp;&emsp;[3.1 自定义队列](#31-自定义队列)  
-&emsp;&emsp;[3.2 构建单例模型](#32-构建单例模型)  
-
-<!-- /MDTOC -->
+title: Android Volley 库的基本使用
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 ---
 

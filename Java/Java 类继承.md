@@ -1,30 +1,9 @@
-# Java 类继承
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Java 类继承](#java-类继承)   
-&emsp;[0. 概述](#0-概述)   
-&emsp;[1. Java 只允许一重继承](#1-java-只允许一重继承)   
-&emsp;[2. 使用 `extends` 来表明继承关系](#2-使用-extends-来表明继承关系)   
-&emsp;[3. 使用 `super` 来调用超类方法](#3-使用-super-来调用超类方法)   
-&emsp;[4. 构造器](#4-构造器)   
-&emsp;[5. 多态](#5-多态)   
-&emsp;[6. `final` 阻止继承](#6-final-阻止继承)   
-&emsp;[7. 强制类型转换](#7-强制类型转换)   
-&emsp;[8. 抽象类](#8-抽象类)   
-&emsp;[9. 谨慎的使用protected](#9-谨慎的使用protected)   
-&emsp;[10. Object类](#10-object类)   
-&emsp;&emsp;[10.1 `equals()`方法](#101-equals方法)   
-&emsp;&emsp;[10.2 `equals()` 方法的设计理念](#102-equals-方法的设计理念)   
-&emsp;&emsp;[10.2 `hashCode()` 方法](#102-hashcode-方法)   
-&emsp;&emsp;[10.3 `toString()` 方法](#103-tostring-方法)   
-&emsp;[11. 泛型数组列表（`ArrayList<>`）](#11-泛型数组列表（arraylist）)   
-&emsp;[12. 对象包装器和自动装箱](#12-对象包装器和自动装箱)   
-&emsp;[13. 不定参数](#13-不定参数)   
-&emsp;[14. 枚举类](#14-枚举类)   
-&emsp;[15. 继承设计的技巧](#15-继承设计的技巧)   
-
-<!-- /MDTOC -->
+---
+title: Java 类继承
+date: 2017-04-08
+categories: Java
+tags: Java
+---
 
 ## 0. 概述
 

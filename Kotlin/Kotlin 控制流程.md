@@ -1,16 +1,9 @@
-# Kotlin 控制流程
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 控制流程](#kotlin-控制流程)   
-&emsp;[1. If](#1-if)   
-&emsp;[2. When](#2-when)   
-&emsp;[3. For](#3-for)   
-&emsp;[4. While 和 do-while](#4-while-和-do-while)   
-&emsp;[5. 跳转](#5-跳转)   
-&emsp;[6. 带标签的 return](#6-带标签的-return)   
-
-<!-- /MDTOC -->
+---
+title: Kotlin 控制流程
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ## 1. If
 

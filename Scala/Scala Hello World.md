@@ -1,13 +1,9 @@
-# Scala Hello World
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Scala Hello World](#scala-hello-world)   
-&emsp;[1. 简介](#1-简介)   
-&emsp;[2. `main()` 方法](#2-main-方法)   
-&emsp;[3. 使用 `Application` 特质](#3-使用-application-特质)   
-
-<!-- /MDTOC -->
+---
+title: Scala Hello World
+date: 2017-04-08
+categories: Scala
+tags: Scala
+---
 
 ## 1. 简介
 

@@ -1,21 +1,9 @@
-# Kotlin 范围
-
-Tags: Kotlin
-
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 范围](#kotlin-范围)
-&emsp;[1. 概述](#1-概述)
-&emsp;[2. 判定](#2-判定)
-&emsp;[3. 遍历](#3-遍历)
-&emsp;[4. 原理](#4-原理)
-&emsp;[5. 其他有用的方法](#5-其他有用的方法)
-&emsp;&emsp;[5.1 `reversed()`](#51-reversed)
-
-<!-- /MDTOC -->
+title: Kotlin 范围
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

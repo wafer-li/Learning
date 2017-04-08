@@ -1,15 +1,9 @@
-# Android 语言和本地化
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Android 语言和本地化](#android-语言和本地化)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[2. 默认 `string.xml` 设置为英语](#2-默认-stringxml-设置为英语)   
-&emsp;[3. 地区语言-默认覆盖范围最广的语种](#3-地区语言-默认覆盖范围最广的语种)   
-&emsp;[4. Android Studio 设置语言地区](#4-android-studio-设置语言地区)   
-&emsp;[5. 获取当前使用的语言](#5-获取当前使用的语言)   
-
-<!-- /MDTOC -->
+---
+title: Android 语言和本地化
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 ## 1. 概述
 

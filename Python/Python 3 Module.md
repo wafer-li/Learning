@@ -1,17 +1,9 @@
-# Python 3 Module
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Python 3 Module](#python-3-module)   
-&emsp;[0. 概述](#0-概述)   
-&emsp;[1. 导入模块](#1-导入模块)   
-&emsp;[2. 创建模块](#2-创建模块)   
-&emsp;[3. 模块的默认变量](#3-模块的默认变量)   
-&emsp;[4. `dir()` 函数](#4-dir-函数)   
-&emsp;[5. 包(Package)](#5-包package)   
-&emsp;&emsp;[5.1 导入包](#51-导入包)   
-
-<!-- /MDTOC -->
+---
+title: Python 3 Module
+date: 2017-04-08
+categories: Python
+tags: Python
+---
 
 ## 0. 概述
 

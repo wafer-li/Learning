@@ -1,19 +1,9 @@
-# Java to Kotlin Cheatsheet
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Java to Kotlin Cheatsheet](#java-to-kotlin-cheatsheet)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[2. Lazy Initialization](#2-lazy-initialization)   
-&emsp;[3. App.getContext()](#3-appgetcontext)   
-&emsp;[4. `it` in lambda](#4-it-in-lambda)   
-&emsp;[5. Functional Read From StdIn](#5-functional-read-from-stdin)   
-
-<!-- /MDTOC -->
+title: Java to Kotlin
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

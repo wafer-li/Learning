@@ -1,22 +1,9 @@
-# Automata Theory and Formal Language
-
-Base on the
-*Automata Theory, Languages, and Computation Thrid Edition*
-
-Tags: Automata
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Automata Theory and Formal Language](#automata-theory-and-formal-language)  
-&emsp;[1. Automata](#1-automata)  
-&emsp;&emsp;[1.5 The Central Concept of Automata Theory](#15-the-central-concept-of-automata-theory)  
-&emsp;&emsp;&emsp;[1.5.1 Alphabet](#151-alphabet)  
-&emsp;&emsp;&emsp;[1.5.2 String](#152-string)  
-&emsp;&emsp;&emsp;[1.5.3 Language](#153-language)  
-
-<!-- /MDTOC -->
+title: Automata Theory and Formal Language
+date: 2017-04-08
+categories: Automata
+tags: Automata
+---
 
 ---
 

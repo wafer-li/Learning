@@ -1,19 +1,9 @@
-# Randomized Queue Implemetation Idea
-
-Tags: AlgsAssignment
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Randomized Queue Implemetation Idea](#randomized-queue-implemetation-idea)  
-&emsp;[How to check full & empty?](#how-to-check-full-empty)  
-&emsp;[How to resize?](#how-to-resize)  
-&emsp;[How to iterate?](#how-to-iterate)  
-&emsp;[How to add?](#how-to-add)  
-&emsp;[How to remove?](#how-to-remove)  
-
-<!-- /MDTOC -->
+title: Randomized Queue Implemetation Idea
+date: 2017-04-08
+categories: AlgsAssignment
+tags: AlgsAssignment
+---
 
 ---
 

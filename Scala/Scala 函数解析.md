@@ -1,19 +1,9 @@
-# Scala 函数解析
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Scala 函数解析](#scala-函数解析)   
-&emsp;[1. 代换模型](#1-代换模型)   
-&emsp;[2. 代换模型的缺陷](#2-代换模型的缺陷)   
-&emsp;[3. 副作用](#3-副作用)   
-&emsp;[4. 不能终结的解析](#4-不能终结的解析)   
-&emsp;[5. 参数解析](#5-参数解析)   
-&emsp;&emsp;[5.1 传值调用(call-by-value)](#51-传值调用call-by-value)   
-&emsp;&emsp;[5.2 传名调用(call-by-name)](#52-传名调用call-by-name)   
-&emsp;&emsp;[5.3 区别](#53-区别)   
-&emsp;&emsp;[5.4 默认传值调用的原因](#54-默认传值调用的原因)   
-
-<!-- /MDTOC -->
+---
+title: Scala 函数解析
+date: 2017-04-08
+categories: Scala
+tags: Scala
+---
 
 ## 1. 代换模型
 

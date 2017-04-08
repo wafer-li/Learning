@@ -1,27 +1,9 @@
-# Kotlin 扩展类型
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 扩展类型](#kotlin-扩展类型)
-&emsp;[1. 介绍](#1-介绍)
-&emsp;[2. 方法的扩展](#2-方法的扩展)
-&emsp;[3. 方法的扩展是静态的](#3-方法的扩展是静态的)
-&emsp;[4. 方法扩展的优先级和重载](#4-方法扩展的优先级和重载)
-&emsp;&emsp;[4.1 优先级](#41-优先级)
-&emsp;&emsp;[4.2 重载](#42-重载)
-&emsp;[5. 可以为空的接收者](#5-可以为空的接收者)
-&emsp;[6. 属性的扩展](#6-属性的扩展)
-&emsp;[7. 友元对象的扩展](#7-友元对象的扩展)
-&emsp;[8. 扩展类型的作用域](#8-扩展类型的作用域)
-&emsp;[9. 将扩展作为类成员](#9-将扩展作为类成员)
-&emsp;[10. 扩展成员的继承](#10-扩展成员的继承)
-&emsp;[11. 开发扩展的动机](#11-开发扩展的动机)
-
-<!-- /MDTOC -->
+title: Kotlin 扩展类型
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

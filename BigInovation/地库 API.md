@@ -1,24 +1,9 @@
-# 地库 API
-
-Tags: BigInovation
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[地库 API](#地库-api)  
-&emsp;[Global rules](#global-rules)  
-&emsp;&emsp;[Request](#request)  
-&emsp;&emsp;[Response](#response)  
-&emsp;[Map APIs](#map-apis)  
-&emsp;&emsp;[Create a new map ID](#create-a-new-map-id)  
-&emsp;&emsp;[Update map info](#update-map-info)  
-&emsp;&emsp;[Upload map GeoJSON](#upload-map-geojson)  
-&emsp;&emsp;[Get map GeoJSON](#get-map-geojson)  
-&emsp;&emsp;[Get nearest map ID](#get-nearest-map-id)  
-&emsp;&emsp;[Delete map](#delete-map)  
-
-<!-- /MDTOC -->
+title: 地库 API
+date: 2017-04-08
+categories: BigInovation
+tags: BigInovation
+---
 
 ---
 

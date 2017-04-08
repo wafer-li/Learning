@@ -1,16 +1,9 @@
-# PHP
-
-Tags: PHP
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[PHP](#php)
-&emsp;[1. Basic](#1-basic)  
-&emsp;[2. Variable](#2-variable)
-
-<!-- /MDTOC -->
+title: PHP
+date: 2017-04-08
+categories: PHP
+tags: PHP
+---
 
 ---
 

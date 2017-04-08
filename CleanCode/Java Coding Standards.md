@@ -1,35 +1,9 @@
-# Java Coding Standards
-
-
-----------
-
-
-Tags: CodingStandard
-
-Almost based on the *Google Java Style*
-Used in our own group
-
-----
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Java Coding Standards](#java-coding-standards)  
-&emsp;[1. Naming](#1-naming)  
-&emsp;&emsp;[1.1 Common](#11-common)  
-&emsp;&emsp;[1.2 Special for identifiers](#12-special-for-identifiers)  
-&emsp;&emsp;&emsp;[1.2.1 Class](#121-class)  
-&emsp;&emsp;&emsp;[1.2.2 Variable](#122-variable)  
-&emsp;&emsp;&emsp;[1.2.3 Method](#123-method)  
-&emsp;&emsp;&emsp;[1.2.4 Paramater](#124-paramater)  
-&emsp;&emsp;&emsp;[1.2.5 Constant](#125-constant)  
-&emsp;&emsp;&emsp;[1.2.6 Camel case: defined](#126-camel-case-defined)  
-&emsp;[2. Formatting](#2-formatting)  
-&emsp;&emsp;[2.1 Braces](#21-braces)  
-&emsp;&emsp;&emsp;[2.1.1 Braces is used as much as possible](#211-braces-is-used-as-much-as-possible)  
-&emsp;&emsp;&emsp;[2.1.2 Non-Empty braces:use the K & R style](#212-non-empty-bracesuse-the-k-r-style)  
-&emsp;&emsp;[2.2 Blank](#22-blank)  
-
-<!-- /MDTOC -->
+---
+title: Java Coding Standards
+date: 2017-04-08
+categories: CleanCode
+tags: CleanCode
+---
 
 ----------------------
 ## 1. Naming

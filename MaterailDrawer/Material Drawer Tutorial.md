@@ -1,19 +1,9 @@
-# Material Drawer Tutorial
-
-<!-- MDTOC maxdepth:6 firsth1:0 numbering:1 flatten:0 bullets:0 updateOnSave:1 -->
-
-1. [添加依赖](#添加依赖)
-2. [建立 Drawer](#建立-drawer)
-&emsp;2.1. [最简单的版本](#最简单的版本)
-&emsp;2.2. [带有汉堡包的版本](#带有汉堡包的版本)
-&emsp;&emsp;2.2.1. [汉堡包会动的版本](#汉堡包会动的版本)
-&emsp;2.3. [带有 Header 的版本](#带有-header-的版本)
-&emsp;2.4. [调整宽度](#调整宽度)
-3. [建立 AccountHeader](#建立-accountheader)
-&emsp;3.1. [最简单的版本](#最简单的版本)
-&emsp;3.2. [单个账户时关闭下拉菜单](#单个账户时关闭下拉菜单)
-
-<!-- /MDTOC -->
+---
+title: Material Drawer Tutorial
+date: 2017-04-08
+categories: MaterailDrawer
+tags: MaterailDrawer
+---
 
 ## 添加依赖
 

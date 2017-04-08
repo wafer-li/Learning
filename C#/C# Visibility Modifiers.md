@@ -1,14 +1,9 @@
-# C# Visibility Modifiers
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[C# Visibility Modifiers](#c#-visibility-modifiers)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[1. Internal](#1-internal)   
-&emsp;[2. Protected Internal](#2-protected-internal)   
-&emsp;[3. 修饰限制](#3-修饰限制)   
-
-<!-- /MDTOC -->
+---
+title: C# Visibility Modifiers
+date: 2017-04-08
+categories: C#
+tags: C#
+---
 
 ## 1. 概述
 

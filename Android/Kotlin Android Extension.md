@@ -1,20 +1,9 @@
-# Kotlin Android Extension
-
-Tags: Kotlin Android
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin Android Extension](#kotlin-android-extension)  
-&emsp;[0. 概述](#0-概述)  
-&emsp;[1. findViewById](#1-findviewbyid)  
-&emsp;[2. 如何使用](#2-如何使用)  
-&emsp;[3. 使用场景](#3-使用场景)  
-&emsp;[4. Android Flavors](#4-android-flavors)  
-&emsp;[5. 实现原理](#5-实现原理)  
-
-<!-- /MDTOC -->
+title: Kotlin Android Extension
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 ---
 

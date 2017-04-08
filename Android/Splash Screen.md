@@ -1,18 +1,9 @@
-# Splash Screen
-
-Tags: Android
-
-就是一个一闪而过的画面，展示一个用户友好的界面同时进行一些后台操作
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Splash Screen](#splash-screen)  
-&emsp;[1. 在 Activity 中实现](#1-在-activity-中实现)  
-&emsp;[2. 在 Fragment 中使用](#2-在-fragment-中使用)  
-
-<!-- /MDTOC -->
+title: Splash Screen
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 ---
 

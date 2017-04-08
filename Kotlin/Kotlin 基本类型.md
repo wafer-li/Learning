@@ -1,26 +1,9 @@
-# Kotlin 基本类型
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 基本类型](#kotlin-基本类型)   
-&emsp;[1. 数字类型](#1-数字类型)   
-&emsp;&emsp;[1.1 位宽](#11-位宽)   
-&emsp;&emsp;[1.2 字面常量](#12-字面常量)   
-&emsp;&emsp;[1.3 表示法](#13-表示法)   
-&emsp;&emsp;[1.4 转换](#14-转换)   
-&emsp;&emsp;[1.5 位运算符](#15-位运算符)   
-&emsp;[2. 字符类型](#2-字符类型)   
-&emsp;[3. 布尔类型](#3-布尔类型)   
-&emsp;[4. 数组](#4-数组)   
-&emsp;&emsp;[4.1 创建数组](#41-创建数组)   
-&emsp;&emsp;[4.2 访问数组](#42-访问数组)   
-&emsp;&emsp;[4.3 多维数组](#43-多维数组)   
-&emsp;[5. 字符串](#5-字符串)   
-&emsp;&emsp;[5.1 相对 Java 增加的新特性](#51-相对-java-增加的新特性)   
-&emsp;&emsp;[5.2 raw string](#52-raw-string)   
-&emsp;&emsp;[5.3 字符串模板](#53-字符串模板)   
-
-<!-- /MDTOC -->
+---
+title: Kotlin 基本类型
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 
 **Kotlin 中，任何事物都是对象。**
