@@ -9,7 +9,7 @@ tags: Kotlin
 
 下面总结一些代码段，用于帮助从 Java 迁移到 Kotlin
 
-## 2. Lazy Initialization
+<!-- more -->## 2. Lazy Initialization
 
 ```java
 // Java

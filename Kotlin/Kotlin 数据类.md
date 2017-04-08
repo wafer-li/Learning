@@ -9,7 +9,7 @@ tags: Kotlin
 
 我们经常要使用容器类结构，所以 Kotlin 提供了一种新特性，专门用于生成容器类，称为数据类(data class)
 
-## 2. 创建
+<!-- more -->## 2. 创建
 
 Kotlin 使用 `data` 定义一个数据类
 
@@ -37,7 +37,7 @@ data class User(val name: String, val age: Int)
 
 > 如果需要在 JVM 上使得类具有一个无参数的构造器，那么所有的 primary constructor 参数都必须有默认值
 
-## 4. 复制
+<!-- more -->## 4. 复制
 
 数据类自动实现了 `copy()` 方法，可以进行数据类的深拷贝。
 

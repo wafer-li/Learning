@@ -13,7 +13,7 @@ public interface TaskListener {
 }
 ```
 
-## 2. 添加 Listener 作为 Task 的类成员
+<!-- more -->## 2. 添加 Listener 作为 Task 的类成员
 ```java
 class Task extends AsyncTask<Void,Void,Object> {
 

@@ -12,7 +12,7 @@ C++ | Java
 基类|父类、超类
 派生类|子类
 
-## 1. Java 只允许一重继承
+<!-- more -->## 1. Java 只允许一重继承
 
  ※可以有多个继承链，但是不能有多个基类
 
@@ -145,7 +145,7 @@ public abstract String getDescription();   // 抽象方法
 
     > 如果在子类中重新定义equals，则先调用超类的equals
 
-### 10.2 `hashCode()` 方法
+<!-- more -->### 10.2 `hashCode()` 方法
 
 如果重新定义了 `equals()` 方法，则必须重新定义 `hashCode()` 方法
 

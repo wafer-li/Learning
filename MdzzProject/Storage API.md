@@ -13,7 +13,7 @@ tags: MdzzProject
 4. 数据库相关的实体存放在 `models/db` 包中。
 5. **取消 Intant Run 再运行，否则程序将会报错！！！**
 
-## 2. SharedPreferences 部分
+<!-- more -->## 2. SharedPreferences 部分
 
 此部分的数据需要先获取实体 instance 之后再进行操作。
 

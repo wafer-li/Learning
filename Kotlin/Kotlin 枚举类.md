@@ -14,7 +14,7 @@ tags: Kotlin
 > 当然，在 Kotlin 中，可以使用 sealed clasdd 来方便的实现需要 switch 的情景。
 
 
-## 2. 声明
+<!-- more -->## 2. 声明
 
 ```kotlin
 enum class Direction {

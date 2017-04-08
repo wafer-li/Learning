@@ -20,7 +20,7 @@ Return the result of sequence. Like this below:
  initial        1 left          2 up          5 left          goal
 ```
 
-## 2. Best-first search
+<!-- more -->## 2. Best-first search
 
 The best-first search is that from initial broad to the goal, we do our each step at the best, or small cost move.
 

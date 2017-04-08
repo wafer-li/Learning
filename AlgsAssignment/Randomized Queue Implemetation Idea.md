@@ -10,7 +10,7 @@ tags: AlgsAssignment
 - [x] Maintain a item size
 - [ ] Calculate from pointer
 
-## How to resize?
+<!-- more -->## How to resize?
 
 1. Create a new array
 2. Iterate the item in the origin array

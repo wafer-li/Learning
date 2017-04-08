@@ -67,7 +67,7 @@ tags: MdzzProject
     > `VolleyErrorHelper` 类位于 `utils` 包中。
     其中也包含了一个展示默认 Snackbar 的 `display()` 方法
 
-## 2. API 列表
+<!-- more -->## 2. API 列表
 
 这里只列出**发起请求的必要参数**，剩下的两个监听器不予列出。
 返回的 `Request` 对象同上，不予列出。

@@ -11,7 +11,7 @@ C# 的访问修饰符比 Java 多了两个 `internal` 和 `protected internal`
 
 默认行为也不同
 
-## 1. Internal
+<!-- more -->## 1. Internal
 
 C# 新增的 `internal` 访问修饰符，指的是，该类型的可见范围为 **当前程序集**(即 `.dll` 和 `.exe` 中)
 

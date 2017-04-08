@@ -7,7 +7,7 @@ tags: Android
 
 ## 1. 步骤
 
-### 1.1 获取 `FragmentManager`
+<!-- more -->### 1.1 获取 `FragmentManager`
 
 - 当位于 `Activity` 时，调用 `getFragmentManager()` 方法即可获取到 `FragmentManager` 实例
 - 当位于 `Fragment` 时，调用 `getActivity().getFragmentManager()` 获取 `FragmentManager` 实例
@@ -36,7 +36,7 @@ FragmentTransaction transcation = fragmentManager.beginTransaction();
 
 ```
 
-### 1.3 将 `Fragment` 加入到容器里面 {#add}
+<!-- more -->### 1.3 将 `Fragment` 加入到容器里面 {#add}
 
 我们有两种添加 `Fragment` 的方法， `add()` 和 `replace()`
 注意添加的时候带上 `tag` 参数，以方便后面的弹出和返回。
@@ -92,7 +92,7 @@ fragmentManager.beginTransaction()
 > 另外，还有一个 `commitAllowingStateLoss()` 方法，关于这个方法和 `commit()` 方法的区别和注意事项，可以查看[补充部分](#commit-state-loss)。
 
 
-## 2. 补充部分
+<!-- more -->## 2. 补充部分
 
 ### 2.1 添加 Fragment 到返回栈
 
@@ -159,7 +159,7 @@ fragmentManager.beginTransaction()
         **通常不应使用这个方法，除非状态丢失无可避免，否则就不应使用此方法**
 
 
-## 3. Fragment 管理
+<!-- more -->## 3. Fragment 管理
 
 ### 3.1 返回到指定的 Fragment
 
@@ -287,7 +287,7 @@ protected void onCreate (Bundle savedInstanceState) {
 ```
 
 
-#### 3.2.2 使用 `replace()` 方法
+##<!-- more -->## 3.2.2 使用 `replace()` 方法
 
 > `FragmentStatePageAdapter` 采用这种模式
 
@@ -296,7 +296,7 @@ protected void onCreate (Bundle savedInstanceState) {
 - 但是由于此方法在切换时**每次都会重新构建 Fragment 实例**，如果需要从网络加载资源的话，会造成很多的网络流量损失和性能浪费。
 
 
-#### 3.2.3 比较和使用场景
+##<!-- more -->## 3.2.3 比较和使用场景
 
 - 如果管理 `Fragment` 的开销比网络流量的开销要大，使用 `replace()` 方法较好。
 

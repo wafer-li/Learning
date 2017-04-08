@@ -23,7 +23,7 @@ fun demo(source: List<Int>) {
 }
 ```
 
-## 2. 调用 getter 和 setter
+<!-- more -->## 2. 调用 getter 和 setter
 
 Java 中的 getter 和 setter 在 Kotlin 中都会被转换为 Kotlin 的格式，即只需要直接引用属性值即可。
 
@@ -86,7 +86,7 @@ Kotlin 也会自动在函数调用前插入断言语句。
 - `(Mutable)Collection<T>!` 表示关于 `T` 的 Java 集合，可能会被修改，也可能不会；可能为空，也可能不会
 - `Array<(out) T>!`  表示关于 `T` 或者其子类型的 Java 数组，有可能为空，也可能不为空。
 
-## 7. Nullability 注解
+<!-- more -->## 7. Nullability 注解
 
 使用了注解表明 nullability 的 Platform Type 会被当做真正的 Kotlin 变量来处理。
 
@@ -154,7 +154,7 @@ Java type | Kotlin type
 `int[]` | `kotlin.IntArray!`
 `String[]` |`kotlin.Array<(out) String>!`
 
-## 9. Java 泛型
+<!-- more -->## 9. Java 泛型
 
 Kotlin 中的泛型系统和 Java 有些不同，所以当使用的 Java 代码存在泛型时，做如下转换：
 
@@ -241,7 +241,7 @@ if (i in array.indices) { // same as (i >= 0 && i < array.size)
 }
 ```
 
-## 11. Java 不定参数
+<!-- more -->## 11. Java 不定参数
 
 对于 Java 的不定参数，你需要像 Kotlin 中一样，使用 spread operator(`*`) 来传入一个数组。
 

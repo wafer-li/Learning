@@ -13,7 +13,7 @@ tags: Android
 
 此问题的原因在于：**用于下载 gradle 本体的网站被墙了，导致下载速度缓慢。**
 
-## 2. 解决办法
+<!-- more -->## 2. 解决办法
 
 打开 gradle 的 `gradle.properties`，然后直接从里面的链接下载 gradle，放入 gradle 的文件夹中即可。
 

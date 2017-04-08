@@ -15,7 +15,7 @@ tags: Android
 
 本文就来提出一些最佳实践。
 
-## 2. 默认 `string.xml` 设置为英语
+<!-- more -->## 2. 默认 `string.xml` 设置为英语
 
 英语作为世界使用范围最广的语言，是名副其实的通用语。
 
@@ -83,7 +83,7 @@ New -> Value Resource -> Choose Locale -> Select Region；
 
 这样，我们就能够在 Translation Editor 中编辑简体中文了。
 
-## 5. 获取当前使用的语言
+<!-- more -->## 5. 获取当前使用的语言
 
 一般来说，这个需求可以通过直接取 `Preference` 的值来实现；
 

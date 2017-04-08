@@ -26,7 +26,7 @@ new Handler().postDelayed(new Runnable() {
 }
 ```
 
-## 2. 在 Fragment 中使用
+<!-- more -->## 2. 在 Fragment 中使用
 
 当在 Fragment 中时，与 Activity 并无显著区别，**记住要在视图被加载之后使用**
 所以一般在 `onCreateView()` 之后调用 delay。

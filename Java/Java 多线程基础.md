@@ -7,7 +7,7 @@ tags: Java
 
 ## 1.  创建线程
 
-### 1.1 通过 `Runnable` 接口创建
+<!-- more -->### 1.1 通过 `Runnable` 接口创建
 
 1. 实现 `Runnable` 接口
 

@@ -13,7 +13,7 @@ tags: MaterialDesign
 
 了解关于 Material 的特点能有助于你更好的利用 Material，以期与 Material Design 具有一致性。
 
-## Material 的特点
+<!-- more -->## Material 的特点
 
 1. 固体
 2. 占用空间中唯一的位置
@@ -48,7 +48,7 @@ tags: MaterialDesign
 <center><img src="http://i.imgur.com/nlKqF3f.gif" width="500"/></center>
 <center><div style="color:#D32F2F;">Don't，阴影不能用来描边</div></center>
 
-### 内容
+<!-- more -->### 内容
 
 内容能以任意的形状和颜色在实体上显示，内容不给实体增加厚度。
 <center><img src="http://i.imgur.com/iMyNv9h.gif" width="500"/></center>

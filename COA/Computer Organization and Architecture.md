@@ -7,7 +7,7 @@ tags: COA
 
 ## Introduction
 
-### 1.Basic Concepts
+<!-- more -->### 1.Basic Concepts
 
 - Architecture: such as **Instruction set**, **I/O mechanisms** (Visiable to programmer)
 - Organization: such as the **Control singals**, **interfaces**, **memory technology** (NOT visiable to the programmer)
@@ -31,14 +31,14 @@ tags: COA
 
 ## Computer Performance design and assessment
 
-### 1. Designing for performance
+<!-- more -->### 1. Designing for performance
 
 > - Three things affect the performance:
     - Microprocessor speed
     - Performance balance
     - Improvements in chip organization and architecture
 
-#### 1) The Microprocessor Speed
+##<!-- more -->## 1) The Microprocessor Speed
 
 By adding these things to improve the performance:
 
@@ -46,7 +46,7 @@ By adding these things to improve the performance:
 - Data flow analysis
 - Speculative execution
 
-#### 2) The balance (Balance is the key)
+##<!-- more -->## 2) The balance (Balance is the key)
 
 > With the microprocessor speed increasing rapily refer to the Mooore's Law, the Memory accessing sppeding is on the contrary, cannot catch the speed of the microporcessor increase.
 
@@ -72,7 +72,7 @@ Solutions for I/O devices:
 - More elaborate bus structures
 - Multiple-processor configurations
 
-#### 3) Imporve the chip O&A
+##<!-- more -->## 3) Imporve the chip O&A
 
 - Increase hardware speed of processor
     - Power
@@ -91,7 +91,7 @@ Solutions for I/O devices:
 
 ### 2. Performance Assessment
 
-#### 1) Clock Speed
+<!-- more -->#### 1) Clock Speed
 
 **The clock speed is not every thing**
 
@@ -117,7 +117,7 @@ $$MIPS = {I_c \over {T \times 10^6}} = {f \over {CPI \times 10^6}}$$
 
 $$MFLOPS = {{Number \ of\ execute\ floating-point\ operations\ in\ a\ program} \over {Execution\ time \times 10^6 }}$$
 
-#### 3) Amdahl's Law
+##<!-- more -->## 3) Amdahl's Law
 
 > The speed up rate between the single core machine and the multiple cores machine.
 
@@ -133,7 +133,7 @@ $N$ is number of processors that fully exploite parallel portions of code
 > - $f$ small, parallel processor has little effect
 - $N \sim \infty$, the speedup bound by $1/(1-f)$
 
-#### 4) Supplement
+##<!-- more -->## 4) Supplement
 Some important terminology:
 - Bit is the binary digit rather 0 or 1.
 - A byte is defined as 8 bits
@@ -145,7 +145,7 @@ Some important terminology:
 
 ## Computer System
 
-### 1. Computer Components
+<!-- more -->### 1. Computer Components
 
 - CPU
     - PC: programming counter, store the next instruction's address.

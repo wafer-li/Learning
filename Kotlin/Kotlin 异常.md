@@ -11,7 +11,7 @@ tags: Kotlin
 
 每个异常都拥有 `message` `stacktrace` 和 `cause`
 
-## 2. 抛出异常
+<!-- more -->## 2. 抛出异常
 
 使用 `throw` 抛出一个异常
 
@@ -51,7 +51,7 @@ val a: Int? = try { parseInt(input) } catch (e: NumberFormatException) { null }
 表达式的返回值不是 `try` 块的最后一个值，就是 `catch` 块的最后一个值。
 `finally` 块中的语句不会被作为返回值返回。
 
-## 5. 已检查异常
+<!-- more -->## 5. 已检查异常
 
 不像 Java，Kotlin 中**没有已检查异常**；
 也就说它不需要也不会在函数头进行 `throws` 声明。
