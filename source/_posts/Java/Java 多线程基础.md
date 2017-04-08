@@ -7,7 +7,7 @@ tags: Java
 
 ## 1.  创建线程
 
-<!-- more -->### 1.1 通过 `Runnable` 接口创建
+### 1.1 通过 `Runnable` 接口创建
 
 1. 实现 `Runnable` 接口
 
@@ -16,6 +16,8 @@ tags: Java
 	   run();
     }
     ```
+
+<!-- more -->
 
 2. 创建 `Runnable` 对象
 
@@ -233,7 +235,7 @@ Java 使用**中断**来执行**终止线程**的作用；
     一是 `run()` 方法执行完毕。
     一是由于未捕获的异常造成的线程终止。
 
-#### 附： Java 如何终止一个线程
+### 3.1 Java 如何终止一个线程
 
 1. 对于会引起 `InterruptedException` 的方法
 

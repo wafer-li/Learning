@@ -7,7 +7,7 @@ tags: Android
 
 ## 1. 步骤
 
-<!-- more -->### 1.1 获取 `FragmentManager`
+### 1.1 获取 `FragmentManager`
 
 - 当位于 `Activity` 时，调用 `getFragmentManager()` 方法即可获取到 `FragmentManager` 实例
 - 当位于 `Fragment` 时，调用 `getActivity().getFragmentManager()` 获取 `FragmentManager` 实例
@@ -15,6 +15,7 @@ tags: Android
 
 > 注意： `getChildFragmentManager()` 仅用于两层 `FragmentManager` 的时候。如果仅仅只是一层 `Fragment`，那么应该将 `Fragment` 的切换操作回调到 `Activity` 进行
 
+<!-- more -->
 
 ```java
 // when in the activity
@@ -36,8 +37,7 @@ FragmentTransaction transcation = fragmentManager.beginTransaction();
 
 ```
 
-<!-- more -->### 1.3 将 `Fragment` 加入到容器里面 {#add}
-
+### 1.3 将 `Fragment` 加入到容器里面 
 我们有两种添加 `Fragment` 的方法， `add()` 和 `replace()`
 注意添加的时候带上 `tag` 参数，以方便后面的弹出和返回。
 
@@ -53,7 +53,7 @@ FragmentTransaction transcation = fragmentManager.beginTransaction();
     注意，`R.id.container`是 `Activity` 布局中的一个 `layout` 一般不将根布局替换，而是将其内部的一个子布局替换掉。
 例如下面的 xml，一般不替换根目录，而是上面的 `<RelativeLayout>`
 
-    ```xml
+```xml
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -69,13 +69,13 @@ FragmentTransaction transcation = fragmentManager.beginTransaction();
 
 
     </LinearLayout>
-    ```
+```
 
 2. `add()` 方法
 
     另外还有另一种添加 `Fragment` 的方法 `add()`，与 `replace()` 的调用方式相同，将 `replace()` 替换成 `add()` 即可
     一般来说，`add()` 方法的效果和 `replace()` 方法相同，但在一些情况下有所区别。
-    关于 `add()` 和 `replace()` 方法的区别以及何时使用，请看[补充部分](#add-and-replace)。
+
 
 ### 1.4 使用 `commit()` 方法来提交事务
 
@@ -89,10 +89,10 @@ fragmentManager.beginTransaction()
                .commit();
 ```
 
-> 另外，还有一个 `commitAllowingStateLoss()` 方法，关于这个方法和 `commit()` 方法的区别和注意事项，可以查看[补充部分](#commit-state-loss)。
+> 另外，还有一个 `commitAllowingStateLoss()` 方法，关于这个方法和 `commit()` 方法的区别和注意事项，在下面有所介绍
 
 
-<!-- more -->## 2. 补充部分
+## 2. 补充部分
 
 ### 2.1 添加 Fragment 到返回栈
 
@@ -102,7 +102,7 @@ fragmentManager.beginTransaction()
 > `Fragment` 的状态是最后离开这个 `Fragment` 的状态，也就是说它会保留最后的 `Fragment` 状态。
 
 
-### 2.2 `add()` 和 `replace()` 的区别 {#add-and-replace}
+### 2.2 `add()` 和 `replace()` 的区别
 
 - `replace()` 方法会**删除当前的 Fragment** 然后加入一个**新的 Fragment**
     - 当前仅会存在一个 `Fragment` 在 `container` 中
@@ -116,10 +116,8 @@ fragmentManager.beginTransaction()
     - 一般来说，它们的效果都是一样的，但是为了避免 `Layout` 的冗余，我们一般使用 `replace()`
     - 但是，当你需要在 `Fragment` 的生命周期中启动一个**异步任务**或者加载一些**大量的资源文件**的时候，`replace()` 的重新实例化特性会使得**资源被大量的消耗**，所以在这种情况下，使用 `add()`
 
-有关 `add()` 方法的具体使用，请看下面的 [Fragment 管理部分](#add-show-hide)
 
-
-### 2.3 提交事务的注意事项 {#commit-state-loss}
+### 2.3 提交事务的注意事项
 
 1. `IllegalStateException` 异常
 
@@ -158,8 +156,7 @@ fragmentManager.beginTransaction()
         > 此方法和 `commit()` 的唯一区别在于，当状态丢失出现的时候，其不会抛出一个异常。
         **通常不应使用这个方法，除非状态丢失无可避免，否则就不应使用此方法**
 
-
-<!-- more -->## 3. Fragment 管理
+## 3. Fragment 管理
 
 ### 3.1 返回到指定的 Fragment
 
@@ -181,7 +178,7 @@ fragmentManager.beginTransaction()
 
 ### 3.2 在 Fragment 之间切换
 
-#### 3.2.1 使用 `add() show() hide()` 方法 {#add-show-hide}
+#### 3.2.1 使用 `add() show() hide()` 方法
 
 > `FragmentPagerAdapter` 采用这种模式，需要注意以下几种情况
 
@@ -286,8 +283,7 @@ protected void onCreate (Bundle savedInstanceState) {
 }
 ```
 
-
-##<!-- more -->## 3.2.2 使用 `replace()` 方法
+## 3.2.2 使用 `replace()` 方法
 
 > `FragmentStatePageAdapter` 采用这种模式
 
@@ -296,8 +292,7 @@ protected void onCreate (Bundle savedInstanceState) {
 - 但是由于此方法在切换时**每次都会重新构建 Fragment 实例**，如果需要从网络加载资源的话，会造成很多的网络流量损失和性能浪费。
 
 
-##<!-- more -->## 3.2.3 比较和使用场景
-
+## 3.2.3 比较和使用场景
 - 如果管理 `Fragment` 的开销比网络流量的开销要大，使用 `replace()` 方法较好。
 
     > 例如每次仅仅加载 几个k 或 几十b 的数据，就没有必要为了这点微不足道的流量节省从而进行复杂的 `Fragment` 管理，一是加大开发难度，二是容易出现错误。

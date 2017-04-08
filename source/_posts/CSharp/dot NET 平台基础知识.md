@@ -1,5 +1,5 @@
 ---
-title: \.NET 平台基础知识
+title: .NET 平台基础知识
 date: 2017-04-08
 categories: CSharp
 tags: CSharp
