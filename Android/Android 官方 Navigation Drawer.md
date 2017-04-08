@@ -1,21 +1,9 @@
-# Android 官方 Navigation Drawer
-
-<!-- MDTOC maxdepth:6 firsth1:0 numbering:1 flatten:0 bullets:0 updateOnSave:1 -->
-
-1. [概述](#概述)   
-2. [添加依赖](#添加依赖)   
-3. [设计 `layout/activity_main.xml`](#设计-layoutactivity_mainxml)   
-4. [构建 `layout/drawer_header.xml`](#构建-layoutdrawer_headerxml)   
-5. [定义 `menu/drawer_item.xml`](#定义-menudrawer_itemxml)   
-6. [显示汉堡包图标](#显示汉堡包图标)   
-7. [使状态栏透明](#使状态栏透明)   
-&emsp;7.1. [去除 Actionbar](#去除-actionbar)   
-&emsp;7.2. [v21 增加关于状态栏的属性](#v21-增加关于状态栏的属性)   
-&emsp;7.3. [设置 DrawerLayout 使用 `fitsSystemWindow`](#设置-drawerlayout-使用-fitssystemwindow)   
-&emsp;7.4. [补充：动态改变 status bar 颜色](#补充：动态改变-status-bar-颜色)   
-8. [总结](#总结)   
-
-<!-- /MDTOC -->
+---
+title: Android 官方 Navigation Drawer
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 ---
 

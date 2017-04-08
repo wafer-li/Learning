@@ -1,17 +1,9 @@
-# Java 集合框架 Collection 接口
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Java 集合框架 Collection 接口](#java-集合框架-collection-接口)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[2. 基本操作](#2-基本操作)   
-&emsp;[3. 遍历操作](#3-遍历操作)   
-&emsp;[4. 迭代器的遍历](#4-迭代器的遍历)   
-&emsp;[5. 迭代器的删除](#5-迭代器的删除)   
-&emsp;[6. 批量操作](#6-批量操作)   
-&emsp;[7. 和数组的转换操作](#7-和数组的转换操作)   
-
-<!-- /MDTOC -->
+---
+title: Java 集合框架 Collection
+date: 2017-04-08
+categories: Java
+tags: Java
+---
 
 ## 1. 概述
 

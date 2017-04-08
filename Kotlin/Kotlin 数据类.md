@@ -1,19 +1,9 @@
-# Kotlin 数据类
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 数据类](#kotlin-数据类)
-&emsp;[1. 介绍](#1-介绍)
-&emsp;[2. 创建](#2-创建)
-&emsp;[3. 需要满足的条件](#3-需要满足的条件)
-&emsp;[4. 复制](#4-复制)
-&emsp;[5. 数据类的解构](#5-数据类的解构)
-
-<!-- /MDTOC -->
+title: Kotlin 数据类
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

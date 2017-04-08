@@ -1,20 +1,9 @@
-# Python 3 Basic
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Python 3 Basic](#python-3-basic)
-&emsp;[1. 注释](#1-注释)
-&emsp;[2. 字面意义的常量](#2-字面意义的常量)
-&emsp;&emsp;[2.1 数](#21-数)
-&emsp;&emsp;[2.2 字符串](#22-字符串)
-&emsp;[3. 变量](#3-变量)
-&emsp;&emsp;[3.1 命名](#31-命名)
-&emsp;&emsp;[3.2 类型](#32-类型)
-&emsp;[4. 逻辑行和物理行](#4-逻辑行和物理行)
-&emsp;[5. 缩进](#5-缩进)
-&emsp;[6. 操作符](#6-操作符)
-
-<!-- /MDTOC -->
+---
+title: Python 3 Basic
+date: 2017-04-08
+categories: Python
+tags: Python
+---
 
 ## 1. 注释
 

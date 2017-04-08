@@ -1,20 +1,9 @@
-# Java 类基础
-
-Tags: Java
-
-Base on *Core Java Volume Ⅰ——Fundamentals**
-
 ---
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Java 类基础](#java-类基础)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[2. 自定义类](#2-自定义类)   
-&emsp;[3. 方法参数](#3-方法参数)   
-&emsp;[4. 包（`package`）](#4-包（package）)   
-&emsp;[5. 类设计技巧](#5-类设计技巧)   
-
-<!-- /MDTOC -->
+title: Java 类基础
+date: 2017-04-08
+categories: Java
+tags: Java
+---
 ---
 
 ## 1. 概述

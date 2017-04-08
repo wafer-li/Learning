@@ -1,25 +1,9 @@
-# Android Volley 构建自定义请求
-
-Tags: Android
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Android Volley 构建自定义请求](#android-volley-构建自定义请求)  
-&emsp;[1. 介绍](#1-介绍)  
-&emsp;[2. 基本步骤](#2-基本步骤)  
-&emsp;&emsp;[2.1 继承 `Request<T>` 类](#21-继承-requestt-类)  
-&emsp;&emsp;[2.2 实现构造器](#22-实现构造器)  
-&emsp;&emsp;[2.3 重载必要方法](#23-重载必要方法)  
-&emsp;&emsp;[2.4 完整示例](#24-完整示例)  
-&emsp;[3. 关于 POST 方法](#3-关于-post-方法)  
-&emsp;&emsp;[3.1 重载 `getParams()` 或 `getBody()` 方法](#31-重载-getparams-或-getbody-方法)  
-&emsp;&emsp;&emsp;[3.1.1 重载 `getParams()` 方法](#311-重载-getparams-方法)  
-&emsp;&emsp;&emsp;[3.1.2 重载 `getBody()` 方法](#312-重载-getbody-方法)  
-&emsp;&emsp;[3.2 重载 `getBodyContentType()` 方法](#32-重载-getbodycontenttype-方法)  
-
-<!-- /MDTOC -->
+title: Android Volley 构建自定义请求
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 ---
 

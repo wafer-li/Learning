@@ -1,20 +1,9 @@
-# Java 基础
-
-Tags: Java
-
-※Base on *Core Java Volume Ⅰ——Fundamentals*
-※The Simple Contents Only Compare To C++
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Java 基础](#java-基础)   
-&emsp;[1. 变量和数据类型](#1-变量和数据类型)   
-&emsp;[2. 作用域](#2-作用域)   
-&emsp;[3. 控制流程](#3-控制流程)   
-
-<!-- /MDTOC -->
+title: Java 基础
+date: 2017-04-08
+categories: Java
+tags: Java
+---
 
 ---
 

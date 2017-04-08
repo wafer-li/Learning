@@ -1,15 +1,9 @@
-# C# Properties and Fields
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[C# Properties and Fields](#c#-properties-and-fields)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[2. 定义属性](#2-定义属性)   
-&emsp;[3. 静态属性](#3-静态属性)   
-&emsp;[4. 自动属性](#4-自动属性)   
-&emsp;[5. 只读只写属性](#5-只读只写属性)   
-
-<!-- /MDTOC -->
+---
+title: C# Properties and Fields
+date: 2017-04-08
+categories: C#
+tags: C#
+---
 
 ## 1. 概述
 

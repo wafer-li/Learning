@@ -1,19 +1,9 @@
-# Kotlin 异常
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 异常](#kotlin-异常)
-&emsp;[1. 概述](#1-概述)
-&emsp;[2. 抛出异常](#2-抛出异常)
-&emsp;[3. 捕获异常](#3-捕获异常)
-&emsp;[4. `try` 表达式](#4-try-表达式)
-&emsp;[5. 已检查异常](#5-已检查异常)
-
-<!-- /MDTOC -->
+title: Kotlin 异常
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

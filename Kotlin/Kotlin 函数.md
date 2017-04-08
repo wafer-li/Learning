@@ -1,30 +1,9 @@
-# Kotlin 函数
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 函数](#kotlin-函数)
-&emsp;[1. 声明](#1-声明)
-&emsp;[2. 调用](#2-调用)
-&emsp;&emsp;[2.1 类成员函数调用](#21-类成员函数调用)
-&emsp;&emsp;[2.2 中继调用](#22-中继调用)
-&emsp;&emsp;&emsp;[2.2.1 条件](#221-条件)
-&emsp;&emsp;&emsp;[2.2.2 例子](#222-例子)
-&emsp;[3. 参数](#3-参数)
-&emsp;&emsp;[3.1 默认参数](#31-默认参数)
-&emsp;&emsp;[3.2 参数指定](#32-参数指定)
-&emsp;&emsp;[3.3 不定参数](#33-不定参数)
-&emsp;[4. 返回值](#4-返回值)
-&emsp;&emsp;[4.1 单一表达式函数](#41-单一表达式函数)
-&emsp;&emsp;[4.2 非单一表达式函数](#42-非单一表达式函数)
-&emsp;[5. 函数作用域](#5-函数作用域)
-&emsp;&emsp;[5.1 局部函数](#51-局部函数)
-&emsp;[6. 尾调用](#6-尾调用)
-
-<!-- /MDTOC -->
+title: Kotlin 函数
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

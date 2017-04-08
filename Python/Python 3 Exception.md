@@ -1,15 +1,9 @@
-# Python 3 Exception
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Python 3 Exception](#python-3-exception)
-&emsp;[8. 异常](#8-异常)
-&emsp;&emsp;[8.1 处理异常](#81-处理异常)
-&emsp;&emsp;[8.2 引发异常](#82-引发异常)
-&emsp;&emsp;[8.3 Try...Finally 语句](#83-tryfinally-语句)
-&emsp;&emsp;[8.4 with 语句](#84-with-语句)
-
-<!-- /MDTOC -->
+---
+title: Python 3 Exception
+date: 2017-04-08
+categories: Python
+tags: Python
+---
 
 ## 0. 概述
 

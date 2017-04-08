@@ -1,20 +1,9 @@
-# Scala 函数式特征
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Scala 函数式特征](#scala-函数式特征)   
-&emsp;[1. 函数类型](#1-函数类型)   
-&emsp;[2. 高阶函数](#2-高阶函数)   
-&emsp;[3. 匿名函数(函数字面量, lambda)](#3-匿名函数函数字面量-lambda)   
-&emsp;[4. 柯里化](#4-柯里化)   
-&emsp;&emsp;[4.1 定义](#41-定义)   
-&emsp;&emsp;[4.2 显式柯里化](#42-显式柯里化)   
-&emsp;&emsp;[4.3 隐式柯里化](#43-隐式柯里化)   
-&emsp;&emsp;[4.4 柯里化的目的](#44-柯里化的目的)   
-&emsp;[5. 部分应用(partially application)](#5-部分应用partially-application)   
-&emsp;[6. 柯里化和部分应用的区别](#6-柯里化和部分应用的区别)   
-
-<!-- /MDTOC -->
+---
+title: Scala 函数式特征
+date: 2017-04-08
+categories: Scala
+tags: Scala
+---
 
 ## 1. 函数类型
 

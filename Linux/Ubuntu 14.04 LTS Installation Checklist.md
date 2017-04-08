@@ -1,24 +1,9 @@
-# Ubuntu 14.04 LTS Installation Checklist
-
-Tags: Linux
-
-**Also fit with 15.10**
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Ubuntu 14.04 LTS Installation Checklist](#ubuntu-1404-lts-installation-checklist)  
-&emsp;[0. Intro](#0-intro)  
-&emsp;[1. Before Install](#1-before-install)  
-&emsp;[2. System Configuration](#2-system-configuration)  
-&emsp;[3. The necessary softwares](#3-the-necessary-softwares)  
-&emsp;[4. Entertainment](#4-entertainment)  
-&emsp;[5. Java & Jetbrains' IDEs](#5-java-jetbrains-ides)  
-&emsp;[6. Desktop Entry](#6-desktop-entry)  
-&emsp;[7. Fonts](#7-fonts)  
-
-<!-- /MDTOC -->
+title: Ubuntu 14.04 LTS Installation Checklist
+date: 2017-04-08
+categories: Linux
+tags: Linux
+---
 
 ---
 

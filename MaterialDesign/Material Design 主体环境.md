@@ -1,17 +1,9 @@
-# Material Design 主体环境
-
-Tags: MaterialDesign
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Material Design 主体环境](#material-design-主体环境)  
-&emsp;[1. 概述](#1-概述)  
-&emsp;[2. 3D 世界](#2-3d-世界)  
-&emsp;[3. 灯光和阴影](#3-灯光和阴影)  
-
-<!-- /MDTOC -->
+title: Material Design 主体环境
+date: 2017-04-08
+categories: MaterialDesign
+tags: MaterialDesign
+---
 
 ---
 

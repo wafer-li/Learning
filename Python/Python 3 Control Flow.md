@@ -1,15 +1,9 @@
-# Python 3 Control Flow
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Python 3 Control Flow](#python-3-control-flow)
-&emsp;[2. 控制流程](#2-控制流程)
-&emsp;&emsp;[2.1 if 语句](#21-if-语句)
-&emsp;&emsp;[2.2 while 语句](#22-while-语句)
-&emsp;&emsp;[2.3 for 语句](#23-for-语句)
-&emsp;&emsp;[2.4 其他流程控制](#24-其他流程控制)
-
-<!-- /MDTOC -->
+---
+title: Python 3 Control Flow
+date: 2017-04-08
+categories: Python
+tags: Python
+---
 
 ## 0. 概述
 

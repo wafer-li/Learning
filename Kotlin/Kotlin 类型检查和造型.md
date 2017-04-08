@@ -1,18 +1,9 @@
-# Kotlin 类型检查和造型
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 类型检查和造型](#kotlin-类型检查和造型)
-&emsp;[1. 类型检查](#1-类型检查)
-&emsp;[2. 智能造型(Smart Cast)](#2-智能造型smart-cast)
-&emsp;[3. 不安全的造型](#3-不安全的造型)
-&emsp;[4. 安全的造型](#4-安全的造型)
-
-<!-- /MDTOC -->
+title: Kotlin 类型检查和造型
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

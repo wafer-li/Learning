@@ -1,26 +1,9 @@
-# Kotlin 操作符重载
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 操作符重载](#kotlin-操作符重载)  
-&emsp;[1. 概述](#1-概述)  
-&emsp;[2. 公约](#2-公约)  
-&emsp;&emsp;[2.1 一元操作符](#21-一元操作符)  
-&emsp;[2.2 二元操作符](#22-二元操作符)  
-&emsp;&emsp;[2.2.1 数学运算与范围](#221-数学运算与范围)  
-&emsp;&emsp;[2.2.2 `in` 操作符](#222-in-操作符)  
-&emsp;&emsp;[2.2.3 方括号操作符](#223-方括号操作符)  
-&emsp;&emsp;[2.2.4 圆括号操作符](#224-圆括号操作符)  
-&emsp;&emsp;[2.2.5 复合赋值操作](#225-复合赋值操作)  
-&emsp;&emsp;[2.2.6 相等性检查](#226-相等性检查)  
-&emsp;&emsp;[2.7 比较运算符](#27-比较运算符)  
-&emsp;[3. 中缀函数](#3-中缀函数)  
-
-<!-- /MDTOC -->
+title: Kotlin 操作符重载
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

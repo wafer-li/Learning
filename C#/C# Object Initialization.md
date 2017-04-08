@@ -1,15 +1,9 @@
-# C# Object Initialization
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[C# Object Initialization](#c#-object-initialization)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[2. 语法](#2-语法)   
-&emsp;[3. 原理](#3-原理)   
-&emsp;[4. 调用自定义构造函数](#4-调用自定义构造函数)   
-&emsp;[5. 初始化内部引用属性](#5-初始化内部引用属性)   
-
-<!-- /MDTOC -->
+---
+title: C# Object Initialization
+date: 2017-04-08
+categories: C#
+tags: C#
+---
 
 ## 1. 概述
 

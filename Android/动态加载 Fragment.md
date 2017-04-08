@@ -1,29 +1,9 @@
-# 动态加载 Fragment
-
-Tags: Android
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[动态加载 Fragment](#动态加载-fragment)  
-&emsp;[1. 步骤](#1-步骤)  
-&emsp;&emsp;[1.1 获取 `FragmentManager`](#11-获取-fragmentmanager)  
-&emsp;&emsp;[1.2 调用 `beginTransaction()` 启动一个事务](#12-调用-begintransaction-启动一个事务)  
-&emsp;&emsp;[1.3 将 `Fragment` 加入到容器里面 {#add}](#13-将-fragment-加入到容器里面-#add)  
-&emsp;&emsp;[1.4 使用 `commit()` 方法来提交事务](#14-使用-commit-方法来提交事务)  
-&emsp;[2. 补充部分](#2-补充部分)  
-&emsp;&emsp;[2.1 添加 Fragment 到返回栈](#21-添加-fragment-到返回栈)  
-&emsp;&emsp;[2.2 `add()` 和 `replace()` 的区别 {#add-and-replace}](#22-add-和-replace-的区别-#add-and-replace)  
-&emsp;&emsp;[2.3 提交事务的注意事项 {#commit-state-loss}](#23-提交事务的注意事项-#commit-state-loss)  
-&emsp;[3. Fragment 管理](#3-fragment-管理)  
-&emsp;&emsp;[3.1 返回到指定的 Fragment](#31-返回到指定的-fragment)  
-&emsp;&emsp;[3.2 在 Fragment 之间切换](#32-在-fragment-之间切换)  
-&emsp;&emsp;&emsp;[3.2.1 使用 `add() show() hide()` 方法 {#add-show-hide}](#321-使用-add-show-hide-方法-#add-show-hide)  
-&emsp;&emsp;&emsp;[3.2.2 使用 `replace()` 方法](#322-使用-replace-方法)  
-&emsp;&emsp;&emsp;[3.2.3 比较和使用场景](#323-比较和使用场景)  
-
-<!-- /MDTOC -->
+title: 动态加载 Fragment
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 ---
 

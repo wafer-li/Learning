@@ -1,17 +1,9 @@
-# 8 Puzzle
-
-Tags: Algorithm
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[8 Puzzle](#8-puzzle)  
-&emsp;[1. Intro](#1-intro)  
-&emsp;[2. Best-first search](#2-best-first-search)  
-&emsp;&emsp;[2.1 Search node](#21-search-node)  
-
-<!-- /MDTOC -->
+title: 8 Puzzle
+date: 2017-04-08
+categories: Algorithm
+tags: Algorithm
+---
 
 ---
 

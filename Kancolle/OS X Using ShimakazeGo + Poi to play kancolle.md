@@ -1,19 +1,9 @@
-# OS X Using ShimakazeGo + Poi to play kancolle
-
-Tags: Kancolle
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[OS X Using ShimakazeGo + Poi to play kancolle](#os-x-using-shimakazego-poi-to-play-kancolle)  
-&emsp;[0. Intro](#0-intro)  
-&emsp;[1. Install ShimakazeGo](#1-install-shimakazego)  
-&emsp;[2. Pack ShimakazeGo as a OS X APP](#2-pack-shimakazego-as-a-os-x-app)  
-&emsp;[2.5 Supplement: Change App Icon](#25-supplement-change-app-icon)  
-&emsp;[3. Install Poi](#3-install-poi)  
-
-<!-- /MDTOC -->
+title: OS X Using ShimakazeGo + Poi to play kancolle
+date: 2017-04-08
+categories: Kancolle
+tags: Kancolle
+---
 
 ---
 

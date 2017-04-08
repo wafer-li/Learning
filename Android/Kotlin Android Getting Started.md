@@ -1,19 +1,9 @@
-# Kotlin Android Getting Started
-
-Tags: Kotlin Android
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin Android Getting Started](#kotlin-android-getting-started)  
-&emsp;[0. 概述](#0-概述)  
-&emsp;[1. 创建工程](#1-创建工程)  
-&emsp;[2. 将 Java 代码转换成 Kotlin 代码](#2-将-java-代码转换成-kotlin-代码)  
-&emsp;[3. 在工程中配置 Kotlin](#3-在工程中配置-kotlin)  
-&emsp;[4. 剩下的工作](#4-剩下的工作)  
-
-<!-- /MDTOC -->
+title: Kotlin Android Getting Started
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 ---
 

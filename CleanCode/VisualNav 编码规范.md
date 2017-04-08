@@ -1,44 +1,9 @@
-# VisualNav 编码规范
-
-Tags: CodingStandard
-
-Base on @betakuang's version.
-Modified by @wafer
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[VisualNav 编码规范](#visualnav-编码规范)  
-&emsp;[1. 通用规范](#1-通用规范)  
-&emsp;[2. Java 编码规范](#2-java-编码规范)  
-&emsp;&emsp;[2.1 文件组织](#21-文件组织)  
-&emsp;&emsp;[2.2 注释](#22-注释)  
-&emsp;&emsp;&emsp;[2.2.1 类/接口注释](#221-类接口注释)  
-&emsp;&emsp;&emsp;[2.2.2 方法注释](#222-方法注释)  
-&emsp;&emsp;&emsp;[2.2.3 一般注释](#223-一般注释)  
-&emsp;&emsp;&emsp;[2.2.4 关于调试用注释](#224-关于调试用注释)  
-&emsp;&emsp;[2.3 缩进与排版](#23-缩进与排版)  
-&emsp;&emsp;&emsp;[2.3.1 换行](#231-换行)  
-&emsp;&emsp;&emsp;[2.3.2 空格与括号](#232-空格与括号)  
-&emsp;&emsp;&emsp;[2.3.3 空行](#233-空行)  
-&emsp;&emsp;&emsp;[2.4.6 变量与常量名](#246-变量与常量名)  
-&emsp;&emsp;[2.5 其他规范](#25-其他规范)  
-&emsp;&emsp;&emsp;[2.5.1 异常处理](#251-异常处理)  
-&emsp;&emsp;&emsp;[2.5.2 import 规范](#252-import-规范)  
-&emsp;&emsp;&emsp;[2.5.3 Java Annotation 的使用规范](#253-java-annotation-的使用规范)  
-&emsp;&emsp;&emsp;[2.5.4 使用 TODO 注释](#254-使用-todo-注释)  
-&emsp;[3. XML 编码规范](#3-xml-编码规范)  
-&emsp;[4. Git 规范 {#git-standards}](#4-git-规范-#git-standards)  
-&emsp;&emsp;[4.1 提交](#41-提交)  
-&emsp;&emsp;[4.2 拉取](#42-拉取)  
-&emsp;&emsp;[4.3 分支](#43-分支)  
-&emsp;&emsp;[4.4 合并](#44-合并)  
-&emsp;&emsp;[4.5 冲突](#45-冲突)  
-&emsp;&emsp;[4.6 重构 {#refactor}](#46-重构-#refactor)  
-&emsp;&emsp;[4.7 热修补 （HotFix）](#47-热修补-（hotfix）)  
-
-<!-- /MDTOC -->
+title: VisualNav 编码规范
+date: 2017-04-08
+categories: CleanCode
+tags: CleanCode
+---
 
 --------------------------------------
 

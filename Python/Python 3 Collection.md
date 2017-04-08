@@ -1,16 +1,9 @@
-# Python 3 Collection
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Python 3 Collection](#python-3-collection)   
-&emsp;[1. 列表(list)](#1-列表list)   
-&emsp;[2. 元组(tupple)](#2-元组tupple)   
-&emsp;[3. 字典(dict)](#3-字典dict)   
-&emsp;[4. 序列](#4-序列)   
-&emsp;[5. 集合](#5-集合)   
-&emsp;[6. 引用](#6-引用)   
-
-<!-- /MDTOC -->
+---
+title: Python 3 Collection
+date: 2017-04-08
+categories: Python
+tags: Python
+---
 
 ## 1. 列表(list)
 

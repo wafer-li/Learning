@@ -1,19 +1,9 @@
-# Kotlin 可见性修饰符
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 可见性修饰符](#kotlin-可见性修饰符)
-&emsp;[1. 概述](#1-概述)
-&emsp;[2. 包级别](#2-包级别)
-&emsp;[3. 类级别](#3-类级别)
-&emsp;[4. 构造器](#4-构造器)
-&emsp;[5. 关于模块](#5-关于模块)
-
-<!-- /MDTOC -->
+title: Kotlin 可见性修饰符
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

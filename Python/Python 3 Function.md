@@ -1,23 +1,9 @@
-# Python
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Python](#python)   
-&emsp;[1. 函数的定义](#1-函数的定义)   
-&emsp;[2. 函数参数](#2-函数参数)   
-&emsp;[3. 变量作用域](#3-变量作用域)   
-&emsp;[4. 默认参数](#4-默认参数)   
-&emsp;[5. 关键参数](#5-关键参数)   
-&emsp;[6. 不定参数](#6-不定参数)   
-&emsp;[7. Keyword-only 参数](#7-keyword-only-参数)   
-&emsp;[8. return 语句](#8-return-语句)   
-&emsp;[9. DocStrings](#9-docstrings)   
-&emsp;[10. 注解(Annotations)](#10-注解annotations)   
-&emsp;&emsp;[10.1 参数注解](#101-参数注解)   
-&emsp;&emsp;[10.2 返回值注解](#102-返回值注解)   
-&emsp;&emsp;[10.3 Lambda 表达式](#103-lambda-表达式)   
-
-<!-- /MDTOC -->
+---
+title: Python 3 Function
+date: 2017-04-08
+categories: Python
+tags: Python
+---
 
 ## 1. 函数的定义
 

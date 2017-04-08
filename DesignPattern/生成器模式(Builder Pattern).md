@@ -1,21 +1,9 @@
-# 生成器模式(Builder Pattern)
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[生成器模式(Builder Pattern)](#生成器模式builder-pattern)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[2. 结构类图](#2-结构类图)   
-&emsp;[3. 构造复杂产品](#3-构造复杂产品)   
-&emsp;[4. 内部生成器减少构造器](#4-内部生成器减少构造器)   
-&emsp;&emsp;[4.1 构造器爆炸](#41-构造器爆炸)   
-&emsp;&emsp;[4.2 实现](#42-实现)   
-&emsp;[5. 模式扩展](#5-模式扩展)   
-&emsp;[5. 与抽象工厂的不同](#5-与抽象工厂的不同)   
-&emsp;[6. 优缺点](#6-优缺点)   
-&emsp;&emsp;[6.1 优点](#61-优点)   
-&emsp;&emsp;[6.2 缺点](#62-缺点)   
-
-<!-- /MDTOC -->
+---
+title: 生成器模式(Builder Pattern)
+date: 2017-04-08
+categories: DesignPattern
+tags: DesignPattern
+---
 
 ## 1. 概述
 

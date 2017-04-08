@@ -1,20 +1,9 @@
-# Genymotion Problems & Solutions
-
-Tags: Android
-
-这里是 Genemotion 的一些问题解答和 小 Tips
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Genymotion Problems & Solutions](#genymotion-problems-solutions)  
-&emsp;[0. 简介](#0-简介)  
-&emsp;[1. Unable connect to virtual_device](#1-unable-connect-to-virtual_device)  
-&emsp;&emsp;[1.1 Virtual Host Error](#11-virtual-host-error)  
-&emsp;[2. 虚拟机链接不上网络](#2-虚拟机链接不上网络)  
-
-<!-- /MDTOC -->
+title: Genymotion Problems & Solutions
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 ---
 

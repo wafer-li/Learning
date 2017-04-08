@@ -1,14 +1,9 @@
-# C# Const and Readonly Field
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[C# Const and Readonly Field](#c#-const-and-readonly-field)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[2. Const](#2-const)   
-&emsp;[3. Readonly Field](#3-readonly-field)   
-&emsp;[4. 两者区别](#4-两者区别)   
-
-<!-- /MDTOC -->
+---
+title: C# Const and Readonly Field
+date: 2017-04-08
+categories: C#
+tags: C#
+---
 
 ## 1. 概述
 

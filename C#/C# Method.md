@@ -1,18 +1,9 @@
-# C# Method
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[C# Method](#c#-method)
-&emsp;[1. 定义](#1-定义)
-&emsp;[2. 默认按值传递](#2-默认按值传递)
-&emsp;[3. 输出参数](#3-输出参数)
-&emsp;[4. 按引用传递](#4-按引用传递)
-&emsp;[5. 不定参数](#5-不定参数)
-&emsp;[6. 可选参数](#6-可选参数)
-&emsp;[7. 命名参数](#7-命名参数)
-&emsp;[8. 方法重载](#8-方法重载)
-
-<!-- /MDTOC -->
+---
+title: C# Method
+date: 2017-04-08
+categories: C#
+tags: C#
+---
 ## 1. 定义
 
 C# 中的方法定义和 Java 没有区别。

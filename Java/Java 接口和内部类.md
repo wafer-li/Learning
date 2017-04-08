@@ -1,19 +1,9 @@
-# Java  接口和内部类
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Java  接口和内部类](#java-接口和内部类)   
-&emsp;[1. 接口](#1-接口)   
-&emsp;&emsp;[1.1 接口](#11-接口)   
-&emsp;&emsp;[1.2 对象克隆](#12-对象克隆)   
-&emsp;[2. 内部类](#2-内部类)   
-&emsp;&emsp;[2.1 概述](#21-概述)   
-&emsp;&emsp;[2.2 普通内部类](#22-普通内部类)   
-&emsp;&emsp;[2.3 局部内部类](#23-局部内部类)   
-&emsp;&emsp;[2.4 匿名内部类](#24-匿名内部类)   
-&emsp;&emsp;[2.5 静态内部类](#25-静态内部类)   
-
-<!-- /MDTOC -->
+---
+title: Java 接口和内部类
+date: 2017-04-08
+categories: Java
+tags: Java
+---
 
 ## 1. 接口
 

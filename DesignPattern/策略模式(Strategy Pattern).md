@@ -1,17 +1,9 @@
-# 策略模式(Strategy Pattern)
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[策略模式(Strategy Pattern)](#策略模式strategy-pattern)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[2. OO 基础](#2-oo-基础)   
-&emsp;[3. 设计原则](#3-设计原则)   
-&emsp;[4.  具体实现](#4-具体实现)   
-&emsp;&emsp;[4.1 使用接口封装行为](#41-使用接口封装行为)   
-&emsp;&emsp;[4.2 对象包含接口](#42-对象包含接口)   
-&emsp;&emsp;[4.3 使用 Setter 实现运行时更改行为](#43-使用-setter-实现运行时更改行为)   
-
-<!-- /MDTOC -->
+---
+title: 策略模式(Strategy Pattern)
+date: 2017-04-08
+categories: DesignPattern
+tags: DesignPattern
+---
 
 ## 1. 概述
 

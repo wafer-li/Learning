@@ -1,18 +1,9 @@
-# Python 3 Advanced Skill
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Python 3 Advanced Skill](#python-3-advanced-skill)   
-&emsp;[1. 函数返回多个值](#1-函数返回多个值)   
-&emsp;[2. 特殊方法](#2-特殊方法)   
-&emsp;[3. 单行语句块](#3-单行语句块)   
-&emsp;[4. Lambda 表达式](#4-lambda-表达式)   
-&emsp;[5. 列表综合](#5-列表综合)   
-&emsp;[6. `exec` 和 `eval`](#6-exec-和-eval)   
-&emsp;[7. `assert` 语句](#7-assert-语句)   
-&emsp;[8. repr 函数](#8-repr-函数)   
-
-<!-- /MDTOC -->
+---
+title: Python 3 Advanced Skill
+date: 2017-04-08
+categories: Python
+tags: Python
+---
 
 ## 1. 函数返回多个值
 

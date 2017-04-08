@@ -1,13 +1,9 @@
-# Android Create Asserts Folders
-
-<!-- MDTOC maxdepth:6 firsth1:0 numbering:1 flatten:0 bullets:0 updateOnSave:1 -->
-
-1. [概述](#概述)   
-2. [右边栏移动到 Android 视图](#右边栏移动到-android-视图)   
-3. [在 app 处右键](#在-app-处右键)   
-4. [按照对话框提示进行即可](#按照对话框提示进行即可)   
-
-<!-- /MDTOC -->
+---
+title: Create Asserts Folder
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 ## 概述
 

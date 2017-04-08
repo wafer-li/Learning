@@ -1,30 +1,9 @@
-# Java 多线程基础 
-
-Tags: Java
-
-Base on *Core Java Volume Ⅰ——Fundamentals* and many Posts
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Java 多线程基础](#java-多线程基础)   
-&emsp;[1.  创建线程](#1-创建线程)   
-&emsp;&emsp;[1.1 通过 `Runnable` 接口创建](#11-通过-runnable-接口创建)   
-&emsp;&emsp;[1.2 通过继承 `Thread` 类实现](#12-通过继承-thread-类实现)   
-&emsp;[2. 中断线程](#2-中断线程)   
-&emsp;&emsp;[2.1 中断置位和检测](#21-中断置位和检测)   
-&emsp;&emsp;[2.2 关于 `InterruptedException` 异常](#22-关于-interruptedexception-异常)   
-&emsp;&emsp;&emsp;[2.2.1 抛出时机](#221-抛出时机)   
-&emsp;&emsp;&emsp;[2.2.2 `InterruptedException` 的处理](#222-interruptedexception-的处理)   
-&emsp;[3. 线程的生命周期](#3-线程的生命周期)   
-&emsp;&emsp;&emsp;[附： Java 如何终止一个线程](#附：-java-如何终止一个线程)   
-&emsp;[4. 线程属性](#4-线程属性)   
-&emsp;&emsp;[4.1 优先级](#41-优先级)   
-&emsp;&emsp;[4.2 守护线程](#42-守护线程)   
-&emsp;&emsp;[4.3 `uncaughtExceptionHandler`](#43-uncaughtexceptionhandler)   
-
-<!-- /MDTOC -->
+title: Java 多线程基础
+date: 2017-04-08
+categories: Java
+tags: Java
+---
 
 ---
 

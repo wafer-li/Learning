@@ -1,25 +1,9 @@
-# Java 多线程工具
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Java 多线程工具](#java-多线程工具)   
-&emsp;[1. 并发工具](#1-并发工具)   
-&emsp;&emsp;[1.1 阻塞队列](#11-阻塞队列)   
-&emsp;&emsp;&emsp;[1.1.1 API](#111-api)   
-&emsp;&emsp;&emsp;[1.1.2 例子](#112-例子)   
-&emsp;&emsp;[1.2 线程安全的集合](#12-线程安全的集合)   
-&emsp;[2. `Callable` 和  `Future`](#2-callable-和-future)   
-&emsp;&emsp;[2.1 `Callable`](#21-callable)   
-&emsp;&emsp;[2.2 `Future`](#22-future)   
-&emsp;&emsp;[2.3 `FutureTask`](#23-futuretask)   
-&emsp;[3. 执行器(Executor)](#3-执行器executor)   
-&emsp;&emsp;[3.1 基本使用](#31-基本使用)   
-&emsp;&emsp;[3.2 `ScheduledExecutorService` 预定执行](#32-scheduledexecutorservice-预定执行)   
-&emsp;&emsp;[3.3 控制任务组](#33-控制任务组)   
-&emsp;&emsp;[3.4 Fork-Join 框架](#34-fork-join-框架)   
-&emsp;[4. 同步器(Synchronizer)](#4-同步器synchronizer)   
-
-<!-- /MDTOC -->
+---
+title: Java 多线程工具
+date: 2017-04-08
+categories: Java
+tags: Java
+---
 
 ## 1. 并发工具
 

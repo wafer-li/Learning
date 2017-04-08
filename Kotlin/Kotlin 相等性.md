@@ -1,17 +1,9 @@
-# Kotlin 相等性
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 相等性](#kotlin-相等性)
-&emsp;[1. 概述](#1-概述)
-&emsp;[2. 引用相等性](#2-引用相等性)
-&emsp;[3. 结构相等性](#3-结构相等性)
-
-<!-- /MDTOC -->
+title: Kotlin 相等性
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

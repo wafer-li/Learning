@@ -1,18 +1,9 @@
-# Scala 类和对象基础
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Scala 类和对象基础](#scala-类和对象基础)   
-&emsp;[1. 简介](#1-简介)   
-&emsp;[2. 构造器](#2-构造器)   
-&emsp;[3. 定义和创建](#3-定义和创建)   
-&emsp;[3. 字段和方法](#3-字段和方法)   
-&emsp;[4. Getter 和 Setter](#4-getter-和-setter)   
-&emsp;[5. 可见性简述](#5-可见性简述)   
-&emsp;[6. 伴生对象](#6-伴生对象)   
-&emsp;[7. 类的解析过程](#7-类的解析过程)   
-
-<!-- /MDTOC -->
+---
+title: Scala 类和对象基础
+date: 2017-04-08
+categories: Scala
+tags: Scala
+---
 
 ## 1. 简介
 

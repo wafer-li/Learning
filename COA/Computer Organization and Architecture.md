@@ -1,28 +1,9 @@
-# Computer Organization and Architecture
-
-Tags: COA
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Computer Organization and Architecture](#computer-organization-and-architecture)  
-&emsp;[Introduction](#introduction)  
-&emsp;&emsp;[1.Basic Concepts](#1basic-concepts)  
-&emsp;[Computer Performance design and assessment](#computer-performance-design-and-assessment)  
-&emsp;&emsp;[1. Designing for performance](#1-designing-for-performance)  
-&emsp;&emsp;&emsp;[1) The Microprocessor Speed](#1-the-microprocessor-speed)  
-&emsp;&emsp;&emsp;[2) The balance (Balance is the key)](#2-the-balance-balance-is-the-key)  
-&emsp;&emsp;&emsp;[3) Imporve the chip O&A](#3-imporve-the-chip-oa)  
-&emsp;&emsp;[2. Performance Assessment](#2-performance-assessment)  
-&emsp;&emsp;&emsp;[1) Clock Speed](#1-clock-speed)  
-&emsp;&emsp;&emsp;[2) Instruction Execution Rate](#2-instruction-execution-rate)  
-&emsp;&emsp;&emsp;[3) Amdahl's Law](#3-amdahls-law)  
-&emsp;&emsp;&emsp;[4) Supplement](#4-supplement)  
-&emsp;[Computer System](#computer-system)  
-&emsp;&emsp;[1. Computer Components](#1-computer-components)  
-
-<!-- /MDTOC -->
+title: Computer Organization and Architecture
+date: 2017-04-08
+categories: COA
+tags: COA
+---
 
 ---
 

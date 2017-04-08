@@ -1,18 +1,9 @@
-# Kotlin 接口
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 接口](#kotlin-接口)   
-&emsp;[1. 基本形式](#1-基本形式)   
-&emsp;[2. 实现接口](#2-实现接口)   
-&emsp;[3. 声明属性](#3-声明属性)   
-&emsp;[4. 解决冲突](#4-解决冲突)   
-
-<!-- /MDTOC -->
+title: Kotlin 接口
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

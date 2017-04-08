@@ -1,32 +1,9 @@
-# 散列表(Hash Table)
-
-Tags: Algorithm
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[散列表(Hash Table)](#散列表hash-table)   
-&emsp;[1. 介绍](#1-介绍)   
-&emsp;[2. 散列函数](#2-散列函数)   
-&emsp;&emsp;[2.1 Java 的约定](#21-java-的约定)   
-&emsp;&emsp;[2.2 散列计算方法](#22-散列计算方法)   
-&emsp;&emsp;[2.3 使用 `hashCode` 的计算问题](#23-使用-hashcode-的计算问题)   
-&emsp;&emsp;[2.4 浮点数](#24-浮点数)   
-&emsp;&emsp;[2.5 字符串](#25-字符串)   
-&emsp;&emsp;[2.6 组合键](#26-组合键)   
-&emsp;&emsp;[1.6 缓存](#16-缓存)   
-&emsp;&emsp;[1.7 结论](#17-结论)   
-&emsp;[3. 碰撞处理](#3-碰撞处理)   
-&emsp;&emsp;[3.1 拉链法](#31-拉链法)   
-&emsp;&emsp;[3.1.1 实现](#311-实现)   
-&emsp;&emsp;&emsp;[3.1.2 性能](#312-性能)   
-&emsp;&emsp;[3.2 开放地址法](#32-开放地址法)   
-&emsp;&emsp;&emsp;[3.2.1 实现](#321-实现)   
-&emsp;&emsp;&emsp;[3.2.2 性能](#322-性能)   
-&emsp;[4. 结论](#4-结论)   
-
-<!-- /MDTOC -->
+title: 散列表(Hash Table)
+date: 2017-04-08
+categories: Algorithm
+tags: Algorithm
+---
 
 ---
 

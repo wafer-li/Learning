@@ -1,15 +1,9 @@
-#  快速选择算法解 Top K 问题
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[快速选择算法解 Top K 问题](#快速选择算法解-top-k-问题)
-&emsp;[1. Top K 问题](#1-top-k-问题)
-&emsp;[2.  快速选择算法](#2-快速选择算法)
-&emsp;&emsp;[2.1 算法过程](#21-算法过程)
-&emsp;&emsp;[2.2 实现](#22-实现)
-&emsp;[3. 性能](#3-性能)
-
-<!-- /MDTOC -->
+---
+title: 快速选择算法解 Top K 问题
+date: 2017-04-08
+categories: Algorithm
+tags: Algorithm
+---
 
 ## 1. Top K 问题
 

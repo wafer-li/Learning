@@ -1,13 +1,9 @@
-# Kotlin 使用 Gradle
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 使用 Gradle](#kotlin-使用-gradle)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[2. 去除 `src` 中的 `java` 目录](#2-去除-src-中的-java-目录)   
-&emsp;[2. 指定字节码版本](#2-指定字节码版本)   
-
-<!-- /MDTOC -->
+---
+title: Kotlin 使用 Gradle
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ## 1. 概述
 

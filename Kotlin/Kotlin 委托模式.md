@@ -1,17 +1,9 @@
-# Kotlin 委托模式
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 委托模式](#kotlin-委托模式)
-&emsp;[1. 委托模式](#1-委托模式)
-&emsp;[2. Java 例子](#2-java-例子)
- [3. Kotlin 的委托模式](#3-kotlin-的委托模式)
-
-<!-- /MDTOC -->
+title: Kotlin 委托模式
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

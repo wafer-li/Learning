@@ -1,13 +1,9 @@
-# Python 3 I/O
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Python 3 I/O](#python-3-io)   
-&emsp;[1. 使用 `input()` 进行输入](#1-使用-input-进行输入)   
-&emsp;[2. 文件输入输出](#2-文件输入输出)   
-&emsp;[3. pickle 模块](#3-pickle-模块)   
-
-<!-- /MDTOC -->
+---
+title: Python 3 IO
+date: 2017-04-08
+categories: Python
+tags: Python
+---
 
 
 ## 1. 使用 `input()` 进行输入

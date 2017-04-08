@@ -1,19 +1,9 @@
-# Kotlin 对象
-
-Tags: Kotlin
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[Kotlin 对象](#kotlin-对象)   
-&emsp;[1. 概述](#1-概述)   
-&emsp;[2. 对象表达式](#2-对象表达式)   
-&emsp;[3. 对象声明](#3-对象声明)   
-&emsp;[4. 伴生对象(companion object)](#4-伴生对象companion-object)   
-&emsp;[5. 对象表达式 和 对象声明 的不同点](#5-对象表达式-和-对象声明-的不同点)   
-
-<!-- /MDTOC -->
+title: Kotlin 对象
+date: 2017-04-08
+categories: Kotlin
+tags: Kotlin
+---
 
 ---
 

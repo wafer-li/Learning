@@ -1,27 +1,9 @@
-# RecyclerView
-
-Tags: Android
-
-API 21 新增的用于替代 ListView 的组件
-
 ---
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[RecyclerView](#recyclerview)  
-&emsp;[1. 一般的使用](#1-一般的使用)  
-&emsp;&emsp;[1.1 添加编译依赖](#11-添加编译依赖)  
-&emsp;&emsp;[1.2 界面的基本设置](#12-界面的基本设置)  
-&emsp;&emsp;[1.3 设置 **LayoutManager** 和 **Adapter**](#13-设置-layoutmanager-和-adapter)  
-&emsp;&emsp;[1.4 定义 Adapter 和重载方法](#14-定义-adapter-和重载方法)  
-&emsp;[2. 多 Item 布局实现](#2-多-item-布局实现)  
-&emsp;[3. 设置 OnItemClickListener](#3-设置-onitemclicklistener)  
-&emsp;&emsp;[2.1 定义一个 Listener 接口](#21-定义一个-listener-接口)  
-&emsp;&emsp;[2.2 为 Adapter 添加接口成员](#22-为-adapter-添加接口成员)  
-&emsp;&emsp;[2.3 设置点击响应并将其回调](#23-设置点击响应并将其回调)  
-&emsp;&emsp;[2.4 在 Acitivity 或者 Fragment 中响应回调](#24-在-acitivity-或者-fragment-中响应回调)  
-
-<!-- /MDTOC -->
+title: RecyclerView
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 ---
 
