@@ -1,28 +1,9 @@
-# My Linux Experiences
-
-Tags: Linux
-
--------------------------------------------------
-
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:0 updateOnSave:1 -->
-
-[My Linux Experiences](#my-linux-experiences)  
-&emsp;[Linux Mint Installation Notes](#linux-mint-installation-notes)  
-&emsp;&emsp;[1. Using the USB boot](#1-using-the-usb-boot)  
-&emsp;&emsp;[2. Partition](#2-partition)  
-&emsp;&emsp;[3. Dual Boot](#3-dual-boot)  
-&emsp;&emsp;&emsp;[1) Single Hard Disk](#1-single-hard-disk)  
-&emsp;&emsp;&emsp;[2) Dual or Multiple Hard Disks](#2-dual-or-multiple-hard-disks)  
-&emsp;&emsp;[4. Proxy](#4-proxy)  
-&emsp;&emsp;[5. Enviroment Variables](#5-enviroment-variables)  
-&emsp;&emsp;[6. About the `unable to run "mate-settings deamon"`](#6-about-the-unable-to-run-mate-settings-deamon)  
-&emsp;&emsp;[7. About my battery problems](#7-about-my-battery-problems)  
-&emsp;&emsp;[8. Zsh](#8-zsh)  
-&emsp;&emsp;[9. Vim](#9-vim)  
-
-<!-- /MDTOC -->
-
-----
+---
+title: My Linux Experiences
+date: 2017-04-08
+categories: Linux
+tags: Linux
+---
 
 ## Linux Mint Installation Notes
 
@@ -30,6 +11,8 @@ Tags: Linux
 
 > Do not use the hard disk boot option, it will cause a lot of problems.
 As I am known, if you do that, the battery will be some weird problems.
+
+<!-- more -->
 
 ### 2. Partition
 

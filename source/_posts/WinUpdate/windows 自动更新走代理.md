@@ -5,13 +5,11 @@ categories: WinUpdate
 tags: WinUpdate
 ---
 
-Tags: WinUpdate Proxy
-
----
-
 本部校园网 v4 收费，windows 更新又是刚需，那么如何让 windows 自动更新走代理呢？
 
 其实只需要一条命令
+
+<!-- more -->
 
 ```cmd
 netsh winhttp set proxy proxy-server="proxyserver:8080"
