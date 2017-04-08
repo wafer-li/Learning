@@ -5,8 +5,6 @@ categories: CleanCode
 tags: CleanCode
 ---
 
----
-
 ## 1. 观点
 
 1. 代码混乱的代价十分庞大

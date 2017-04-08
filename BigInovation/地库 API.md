@@ -5,8 +5,6 @@ categories: BigInovation
 tags: BigInovation
 ---
 
----
-
 ## Global rules
 
 ### Request

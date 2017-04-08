@@ -5,8 +5,6 @@ categories: Android
 tags: Android
 ---
 
----
-
 ## 1. .gitignore 文件
 
 > 如果你想要尽量的减少冲突，就**不要直接使用** Android Studio 默认生成的 `.gitignore` 文件，而是要在 `.gitignore` 中添加一些项目，或者直接导入其内置的许多模板。

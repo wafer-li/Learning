@@ -5,8 +5,6 @@ categories: Kotlin
 tags: Kotlin
 ---
 
----
-
 ## 0. 概述
 
 由于 Android Studio 基于 IntelliJ IDEA 开发，所以很容易在 Android Studio 上使用 Kotlin 开发 Android。

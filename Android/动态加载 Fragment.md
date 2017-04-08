@@ -5,8 +5,6 @@ categories: Android
 tags: Android
 ---
 
----
-
 ## 1. 步骤
 
 ### 1.1 获取 `FragmentManager`

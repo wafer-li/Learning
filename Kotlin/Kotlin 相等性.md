@@ -5,8 +5,6 @@ categories: Kotlin
 tags: Kotlin
 ---
 
----
-
 ## 1. 概述
 
 Kotlin 中拥有两种相等性类型

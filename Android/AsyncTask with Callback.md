@@ -5,8 +5,6 @@ categories: Android
 tags: Android
 ---
 
----
-
 ## 1. 定义一个用于回调的接口
 
 ```java

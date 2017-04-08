@@ -5,8 +5,6 @@ categories: Android
 tags: Android
 ---
 
----
-
 ## 1. 介绍
 
 Volley 提供了基本的 `StringRequest`，`JsonObjectRequest` 和 `JsonArrayRequest` 来满足字符串请求和 JSON 请求。

@@ -5,8 +5,6 @@ categories: Java
 tags: Java
 ---
 
----
-
 ## 1. 异常分类
 
 ※具体的结构层次如图

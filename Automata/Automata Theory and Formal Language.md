@@ -5,8 +5,6 @@ categories: Automata
 tags: Automata
 ---
 
----
-
 ## 1. Automata
 
 ### 1.5 The Central Concept of Automata Theory

@@ -5,8 +5,6 @@ categories: Android
 tags: Android
 ---
 
----
-
 ## 概述
 
 Navigation drawer 作为 Android Material Design 中主流的一种导航方式，当然受到 Google 的重视，所以，作为 MD 设计推出的实现部分，Android 更新了 support library 增加了关于 Navigation Drawer 的支持。

@@ -5,8 +5,6 @@ categories: Android
 tags: Android
 ---
 
----
-
 ## 1. Volley 介绍与基本使用场景
 
 Volley 是 Google 在 2013 年 I/O 大会上发布的一个 Android 的网络框架库，用于简化 Android 构建网络连接的步骤，同时提供 **缓存**、**网络优先级**等功能。

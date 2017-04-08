@@ -5,8 +5,6 @@ categories: Android
 tags: Android
 ---
 
----
-
 ## 1. 介绍
 
 `TextInputLayout` 是 Android 6.0 提供的新的输入框架，可以显示一个更好的输入效果。

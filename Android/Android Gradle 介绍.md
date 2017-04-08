@@ -5,8 +5,6 @@ categories: Android
 tags: Android
 ---
 
----
-
 ## 0. 简介
 
 Android Studio 使用 gradle 自动化编译工具用于替代老旧的 Ant Build。目前已经成为 Android App 构建的主流工具。

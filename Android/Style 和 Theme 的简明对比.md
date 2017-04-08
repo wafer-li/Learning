@@ -5,8 +5,6 @@ categories: Android
 tags: Android
 ---
 
----
-
 ## 1. Style 应用于局部，而 Theme 应用于整体
 
 一个 `Style` 只对一个 `View` 组件有效；
