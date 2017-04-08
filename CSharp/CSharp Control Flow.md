@@ -1,15 +1,18 @@
 ---
 title: C# Control Flow
 date: 2017-04-08
-categories: C#
-tags: C#
+categories: CSharp
+tags: CSharp
 ---
 
 ## 1. if/else
 
 只接受布尔值
 
-<!-- more -->## 2. 逻辑运算符
+
+<!-- more -->
+
+## 2. 逻辑运算符
 
 `&&` `||` `!`
 

@@ -1,8 +1,8 @@
 ---
 title: C# Method
 date: 2017-04-08
-categories: C#
-tags: C#
+categories: CSharp
+tags: CSharp
 ---
 ## 1. 定义
 
@@ -15,7 +15,10 @@ int Add(int x, int y)
 }
 ```
 
-<!-- more -->## 2. 默认按值传递
+
+<!-- more -->
+
+## 2. 默认按值传递
 
 C# 默认的参数传递是 **按值传递** 的；
 也就是说，方法中拿到的参数实际上是实参的一个 **副本**

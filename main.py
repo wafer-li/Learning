@@ -18,7 +18,7 @@ date: 2017-04-08
 categories: ''' + category+ '''
 tags: ''' + category + '''
 ---'''
-                file_content = re.sub(r'(?s)(-+.+?##.*?)##', r'\1\r<!-- more -->\r\r##', file_content)
+                file_content = re.sub(r'tags.*', r'tags: CSharp', file_content)
 
                 f.close()
                 f = open(os.path.join(subdir, file), 'w')
