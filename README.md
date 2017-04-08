@@ -1,4 +1,9 @@
-# Learning
+---
+title: README
+date: 2017-04-08
+categories: Learning
+tags: Learning
+---
 
 Some of my learning notes.
 

@@ -1,4 +1,9 @@
-# Android 多个 Icon 问题
+---
+title: Android 多个 icon 问题
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 最近在开发中遇到的 Android App 安装后，同一个 app 居然在应用列表里出现了**两个或者以上的图标**，这是怎么回事呢？
 

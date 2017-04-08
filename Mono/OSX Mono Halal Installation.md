@@ -1,4 +1,9 @@
-# OSX Mono Halal Installation
+---
+title: OSX Mono Halal Installation
+date: 2017-04-08
+categories: Mono
+tags: Mono
+---
 
 在开发时，总想保证自己的开发平台得到及时的更新；
 

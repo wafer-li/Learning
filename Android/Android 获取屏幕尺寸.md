@@ -1,4 +1,9 @@
-# Android 获取屏幕尺寸
+---
+title: Android 获取屏幕尺寸
+date: 2017-04-08
+categories: Android
+tags: Android
+---
 
 有时候为了实现 Respnsive 或者一些其他的需求，我们就需要拿到当前屏幕的尺寸。
 

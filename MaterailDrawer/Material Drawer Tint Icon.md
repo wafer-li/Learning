@@ -1,4 +1,9 @@
-# Material Drawer Tint Icon
+---
+title: Material Drawer Tint Icon
+date: 2017-04-08
+categories: MaterailDrawer
+tags: MaterailDrawer
+---
 
 Material Drawer 是 GitHub 上有名的 Android Navigation Drawer 的实现库，目前有 6000 左右个星，充分说明它的流行和稳定性。
 

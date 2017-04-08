@@ -1,4 +1,9 @@
-# SSH clone GitHub Gist
+---
+title: SSH clone GitHub Gist
+date: 2017-04-08
+categories: GitHub
+tags: GitHub
+---
 
 Tags: GitHub
 
