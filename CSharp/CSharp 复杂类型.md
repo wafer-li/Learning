@@ -1,8 +1,8 @@
 ---
 title: C# 复杂类型
 date: 2017-04-08
-categories: C#
-tags: C#
+categories: CSharp
+tags: CSharp
 ---
 
 ## 1. 数组
@@ -22,7 +22,10 @@ string[] stringArray = new string[] {"1", "2", "3"};
 var c = new[] {1, 2, 3};
 ```
 
-<!-- more -->### 1.1 多维数组
+
+<!-- more -->
+
+### 1.1 多维数组
 
 C# 比较神奇的一点就是它有 **两种** 多维数组类型：矩形数组和交错数组。
 
@@ -67,7 +70,10 @@ int[][] jagArray = new int[5][];
 
 ## 2. 枚举
 
-<!-- more -->### 2.1 声明与使用
+
+<!-- more -->
+
+### 2.1 声明与使用
 
 使用 `enum` 定义枚举。
 

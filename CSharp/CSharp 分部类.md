@@ -1,8 +1,8 @@
 ---
 title: C# 分部类
 date: 2017-04-08
-categories: C#
-tags: C#
+categories: CSharp
+tags: CSharp
 ---
 
 当开发大型项目时，会出现某个类非常长的情况。

@@ -1,8 +1,8 @@
 ---
 title: C# Const and Readonly Field
 date: 2017-04-08
-categories: C#
-tags: C#
+categories: CSharp
+tags: CSharp
 ---
 
 ## 1. 概述
@@ -11,7 +11,10 @@ C# 提供了两种 **常量级别** 数据，相当于 Kotlin 中的 `const` 和
 
 使用 `const` 和 `readonly` 来进行修饰
 
-<!-- more -->## 2. Const
+
+<!-- more -->
+
+## 2. Const
 
 `const` 类型是 **编译时常量**。
 
@@ -35,7 +38,10 @@ C# 提供了两种 **常量级别** 数据，相当于 Kotlin 中的 `const` 和
 
 3. 如果不被初始化，那么显式字段拥有默认值
 
-<!-- more -->## 4. 两者区别
+
+<!-- more -->
+
+## 4. 两者区别
 
 C# 中 `const` 和 `readonly` 的主要区别在于：
 

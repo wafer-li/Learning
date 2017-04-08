@@ -1,8 +1,8 @@
 ---
 title: C# Class Basic
 date: 2017-04-08
-categories: C#
-tags: C#
+categories: CSharp
+tags: CSharp
 ---
 
 ## 1. 概述
@@ -11,7 +11,10 @@ C# 类的基本语法和 Java 无异
 
 下面只具体讲讲有区别的地方
 
-<!-- more -->## 2. 构造函数链
+
+<!-- more -->
+
+## 2. 构造函数链
 
 Java 中可以通过在构造函数中使用 `this` 来调用另一个构造函数，从而实现构造函数的职责委托链条。
 

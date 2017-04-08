@@ -1,8 +1,8 @@
 ---
 title: C# Object Initialization
 date: 2017-04-08
-categories: C#
-tags: C#
+categories: CSharp
+tags: CSharp
 ---
 
 ## 1. 概述
@@ -11,7 +11,10 @@ tags: C#
 
 简单的来说就是通过类似 **数组初始化** 的方法来对变量进行初始化操作。
 
-<!-- more -->## 2. 语法
+
+<!-- more -->
+
+## 2. 语法
 
 ```csharp
 Point p = new Point {x = 1.0, y = 2.0};
